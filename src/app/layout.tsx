@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { NetworkBackground } from "@/components/network-background";
 import { siteConfig, siteMetadataBase } from "@/lib/site";
 
 const geistSans = Geist({
@@ -19,9 +17,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   ...siteMetadataBase,
   icons: {
-    icon: "/strong-8k.PNG?v=2",
-    shortcut: "/strong-8k.PNG?v=2",
-    apple: "/strong-8k.PNG?v=2",
+    icon: "/logo.PNG",
+    shortcut: "/logo.PNG",
+    apple: "/logo.PNG",
   },
 };
 
@@ -30,7 +28,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
-    alternateName: [siteConfig.shortName, "Strong 8K IPTV UK", "Strong 8K IPTV USA"],
+    alternateName: [siteConfig.shortName, "Sky Glass IPTV UK", "IPTV UK"],
     url: siteConfig.siteUrl,
     description: siteConfig.description,
     inLanguage: "en-GB",
@@ -40,7 +38,7 @@ const jsonLd = [
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.siteUrl,
-    logo: `${siteConfig.siteUrl}/strong-8k.PNG`,
+    logo: `${siteConfig.siteUrl}/logo.PNG`,
     contactPoint: {
       "@type": "ContactPoint",
       email: siteConfig.email,
@@ -69,19 +67,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="relative min-h-full flex flex-col bg-black text-white">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <NetworkBackground />
-          <div className="relative z-10 flex min-h-full flex-1 flex-col">
-            {children}
-          </div>
-        </ThemeProvider>
+      <body className="relative flex min-h-full flex-col bg-white text-[#0B0E2C]">
+        <div className="relative z-10 flex min-h-full flex-1 flex-col bg-white">
+          {children}
+        </div>
       </body>
     </html>
   );

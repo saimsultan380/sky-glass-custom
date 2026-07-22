@@ -1,119 +1,131 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Tv, MonitorPlay, Headphones } from "lucide-react";
+import {
+  Clock,
+  CalendarDays,
+  Headphones,
+  CreditCard,
+  Zap,
+  Monitor,
+  ShieldCheck,
+} from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { FadeIn } from "@/components/animation/fade-in";
-import { MaskReveal } from "@/components/animation/mask-reveal";
-import { motion } from "framer-motion";
 
-const HERO_FEATURES = [
-  { label: "40,000+ Live Channels", icon: Tv },
-  { label: "HD, 4K & 8K Streaming", icon: MonitorPlay },
-  { label: "24/7 Support", icon: Headphones },
-];
+const TRUST_ITEMS = [
+  { label: "Quick Activation", icon: Zap, color: "#FF6B2C" },
+  { label: "Popular Devices Supported", icon: Monitor, color: "#7B2FFF" },
+  { label: "Setup Assistance Available", icon: ShieldCheck, color: "#2563EB" },
+] as const;
 
 export function HeroSection() {
   return (
-    <section className="relative isolate">
-      <Container className="relative z-10 grid min-h-[100svh] items-start gap-4 pb-8 pt-28 sm:gap-6 sm:pt-32 lg:grid-cols-[minmax(0,1.08fr)_minmax(280px,0.85fr)] lg:items-center lg:gap-10 lg:pb-14 lg:pt-32">
-        <FadeIn delay={0.08} className="order-1 flex justify-center lg:order-2">
-          <div className="relative w-full max-w-[180px] sm:max-w-[250px] lg:max-w-[360px]">
-            <div
-              aria-hidden
-              className="absolute inset-8 rounded-full blur-3xl"
-              style={{ background: "rgba(212, 168, 75, 0.18)" }}
-            />
-            <Image
-              src="/strong-8k.PNG?v=2"
-              alt="Strong 8K IPTV logo"
-              width={1024}
-              height={1024}
-              loading="eager"
-              unoptimized
-              className="relative h-auto w-full object-contain drop-shadow-[0_0_24px_rgba(212,168,75,0.25)]"
-            />
-          </div>
-        </FadeIn>
+    <section className="relative bg-white pt-4 sm:pt-6">
+      <Container className="pb-5 pt-2 sm:pb-12 sm:pt-8 lg:pb-16 lg:pt-12" animate={false}>
+        <div className="grid items-center gap-4 sm:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 xl:gap-14">
+          <div className="order-1 min-w-0">
+            <h1 className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]">
+              Sky Glass{" "}
+              <span className="text-gradient-brand">IPTV UK</span>
+              {" "}
+              – Live TV, Sports, Movies & Series in One Place
+            </h1>
 
-        <div className="order-2 text-left lg:order-1">
-          <MaskReveal
-            delay={0.2}
-            align="left"
-            className="max-w-[720px] text-[28px] font-bold leading-[1.12] tracking-tight text-gradient-brand sm:text-4xl md:text-[44px] lg:text-[48px]"
-          >
-            Strong 8K IPTV UK – Premium IPTV Subscription with 40,000+ Channels & 8K UHD Streaming
-          </MaskReveal>
-
-          <FadeIn delay={0.2}>
-            <div
-              className="mt-3 max-w-[700px] space-y-2 text-[11px] leading-[1.5] sm:mt-4 sm:space-y-3 sm:text-sm sm:leading-[1.65]"
-              style={{ color: "var(--hero-muted)" }}
-            >
+            <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
               <p>
-                Tired of buffering screens and washed-out picture quality? Strong 8K IPTV brings crystal-clear streaming up to 8K UHD to homes across the United Kingdom — 40,000+ live channels and 120,000+ movies and series on demand, all on one subscription with instant activation.
+                Enjoy a smarter way to watch entertainment with Sky Glass IPTV,
+                a flexible IPTV service designed for viewers across the UK.
               </p>
               <p>
-                Whether you watch on a Smart TV, Firestick, Android box, iPhone, or PC, your Strong 8K subscription follows you everywhere. Setup takes minutes, every major IPTV player is supported, and our team is on hand 24/7 whenever you need them.
+                Explore available live television, sports, movies and popular
+                series through one organised service compatible with Firestick,
+                Android devices, Smart TVs, Apple TV, smartphones, tablets and
+                computers.
+              </p>
+              <p>
+                Choose a flexible subscription, receive quick activation and
+                test the service on your preferred device with a 24-hour trial
+                before selecting a longer plan.
               </p>
             </div>
-          </FadeIn>
 
-          <FadeIn delay={0.28}>
-            <div className="mt-5 flex flex-row items-stretch justify-start gap-3 sm:mt-6 sm:gap-4">
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="flex-1 sm:flex-initial">
-                <a
-                  href="#pricing"
-                  className="flex min-h-11 items-center justify-center rounded-xl bg-gradient-brand px-4 py-3 text-[13px] font-bold text-black transition-all duration-200 hover:brightness-110 sm:min-w-52 sm:px-7 sm:text-[14px]"
-                  style={{
-                    boxShadow: "var(--hero-cta-primary-shadow)",
-                  }}
-                >
-                  Subscribe Now
-                </a>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="flex-1 sm:flex-initial">
+            <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
+              <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                 <Link
-                  href="/free-trial"
-                  className="flex min-h-11 items-center justify-center rounded-xl bg-gradient-brand px-4 py-3 text-[13px] font-bold text-black transition-all duration-200 hover:brightness-110 sm:min-w-52 sm:px-7 sm:text-[14px]"
-                  style={{
-                    boxShadow: "var(--hero-cta-primary-shadow)",
-                  }}
+                  href="/contact-us"
+                  className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                 >
-                  Start 24-Hour Free Trial
+                  <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+                  Start Your 24-Hour Free Trial
                 </Link>
-              </motion.div>
-            </div>
-          </FadeIn>
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#E91E8C] transition-opacity hover:opacity-75 sm:text-sm"
+                >
+                  <Headphones className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
+                  Contact Us
+                </Link>
+              </div>
 
-          <FadeIn delay={0.36}>
-            <ul className="mt-5 grid grid-cols-3 gap-2 text-center sm:gap-4 sm:text-left lg:max-w-[680px]">
-              {HERO_FEATURES.map((feature) => {
-                const Icon = feature.icon;
-                return (
-                  <li
-                    key={feature.label}
-                    className="flex flex-col items-center gap-1.5 border-r px-1 last:border-r-0 sm:flex-row sm:items-start sm:pr-4 sm:text-left"
-                    style={{ borderColor: "var(--hero-divider)" }}
-                  >
-                    <Icon
-                      className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
-                      style={{ color: "var(--hero-accent)" }}
-                      strokeWidth={1.75}
-                      aria-hidden
-                    />
-                    <span
-                      className="text-[11px] font-medium sm:text-sm"
-                      style={{ color: "var(--hero-muted)" }}
-                    >
-                      {feature.label}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-          </FadeIn>
+              <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
+                <Link
+                  href="/subscription-plans"
+                  className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[10px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                >
+                  <CalendarDays
+                    className="h-4 w-4 shrink-0 text-[#E91E8C]"
+                    strokeWidth={2}
+                    aria-hidden
+                  />
+                  View Sky Glass IPTV Plans
+                </Link>
+                <Link
+                  href="/subscription-plans"
+                  className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#7B2FFF] transition-opacity hover:opacity-75 sm:text-sm"
+                >
+                  <CreditCard className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
+                  Subscription Plans
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="order-2 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[560px] lg:max-w-none">
+              <Image
+                src="/hero.PNG"
+                alt="Sky Glass IPTV on multiple screens"
+                width={1200}
+                height={900}
+                priority
+                unoptimized
+                className="mx-auto h-auto max-h-[260px] w-full object-contain object-center sm:max-h-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 sm:mt-10 lg:mt-14">
+          <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10">
+            {TRUST_ITEMS.map((item) => {
+              const Icon = item.icon;
+              return (
+                <li
+                  key={item.label}
+                  className="flex flex-col items-center justify-center gap-1 px-1.5 py-3 text-center sm:flex-row sm:gap-2.5 sm:px-5 sm:py-5 sm:text-left"
+                >
+                  <Icon
+                    className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
+                    style={{ color: item.color }}
+                    strokeWidth={1.75}
+                    aria-hidden
+                  />
+                  <span className="text-[10px] font-semibold leading-tight text-[#0B0E2C] sm:text-[15px]">
+                    {item.label}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </Container>
     </section>

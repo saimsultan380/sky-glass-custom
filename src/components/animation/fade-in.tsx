@@ -9,8 +9,6 @@ interface FadeInProps {
   className?: string;
   delay?: number;
   duration?: number;
-  /** Play only the first time in view (default true — smoother scrolling) */
-  once?: boolean;
   /** Stagger children by this interval in seconds */
   staggerChildren?: number;
 }
@@ -42,7 +40,6 @@ export function FadeIn({
   className,
   delay = 0,
   duration = 0.35,
-  once = true,
   staggerChildren,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
@@ -57,7 +54,7 @@ export function FadeIn({
         className={cn(className)}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once, margin: "-40px", amount: 0.2 }}
+        viewport={{ once: false, margin: "-40px", amount: 0.2 }}
         variants={containerVariants(staggerChildren)}
       >
         {React.Children.map(children, (child) => (
@@ -72,7 +69,7 @@ export function FadeIn({
       className={cn(className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, margin: "-40px", amount: 0.2 }}
+      viewport={{ once: false, margin: "-40px", amount: 0.2 }}
       variants={itemVariants(duration, delay)}
     >
       {children}

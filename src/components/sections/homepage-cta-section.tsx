@@ -1,112 +1,92 @@
-"use client";
-
 import Link from "next/link";
+import {
+  Clock,
+  CalendarDays,
+  Wrench,
+  Zap,
+  Monitor,
+} from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { ScrollReveal } from "@/components/animation/scroll-reveal";
-import { FadeIn } from "@/components/animation/fade-in";
-import { motion } from "framer-motion";
+
+const TRUST_ITEMS = [
+  { label: "Simple Setup", icon: Wrench, color: "#FF6B2C" },
+  { label: "Quick Activation", icon: Zap, color: "#7B2FFF" },
+  { label: "Popular Devices Supported", icon: Monitor, color: "#2563EB" },
+] as const;
 
 export function HomepageCtaSection() {
   return (
     <section
-      className="relative isolate overflow-hidden py-24 md:py-32"
-      style={{ backgroundColor: "var(--hero-base)" }}
+      id="get-started"
+      className="relative border-t border-[#0B0E2C]/10 bg-white py-16 sm:py-20 lg:py-24"
     >
-      <Container className="relative z-10">
-        <div
-          className="mx-auto rounded-2xl border px-6 py-12 text-center sm:px-10 sm:py-14 md:px-14 md:py-16"
-          style={{
-            backgroundColor: "transparent",
-            borderColor: "var(--feature-card-border)",
-          }}
-        >
-          <FadeIn delay={0.05}>
-            <span
-              className="text-[11px] font-bold uppercase tracking-[0.22em]"
-              style={{ color: "var(--hero-accent)" }}
-            >
-              Get Started
-            </span>
-          </FadeIn>
+      <Container>
+        <div className="mx-auto max-w-5xl rounded-[16px] border border-[#0B0E2C]/10 bg-[#F8FAFC] px-6 py-12 text-center sm:px-10 sm:py-16">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
+            Get Started
+          </p>
+          <h2 className="mt-3 text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            Start Your{" "}
+            <span className="text-gradient-brand">Sky Glass IPTV</span>{" "}
+            Experience
+          </h2>
 
-          <FadeIn delay={0.1}>
-            <h2
-              className="mx-auto mt-5 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-[44px]"
-              style={{ color: "var(--hero-heading)" }}
-            >
-              Ready to Upgrade Your TV Experience with{" "}
-              <span style={{ color: "var(--hero-accent)" }}>Strong 8K IPTV</span>?
-            </h2>
-          </FadeIn>
-
-          <FadeIn delay={0.15}>
-            <p
-              className="mx-auto mt-7 max-w-[680px] text-[15px] leading-[1.8] sm:text-base"
-              style={{ color: "var(--hero-muted)" }}
-            >
-              Stop paying more for less. One Strong 8K subscription brings you 40,000+ live channels,
-              a VOD library bigger than any streaming app, true 8K UHD picture quality, and support
-              that actually answers — from just £9.99.
+          <div className="mx-auto mt-5 max-w-3xl space-y-4 text-[15px] leading-[1.75] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
+            <p>
+              Enjoy available live television, sports, movies and popular series
+              through a flexible service designed for modern streaming devices.
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.18}>
-            <p
-              className="mx-auto mt-5 max-w-[680px] text-[15px] leading-[1.8] sm:text-base"
-              style={{ color: "var(--hero-muted)" }}
-            >
-              Start with the free 24-hour trial. If it&apos;s not the best IPTV subscription
-              you&apos;ve used in the UK, walk away — no card, no commitment, no hard feelings.
+            <p>
+              Begin with a 24-hour trial, confirm compatibility with your
+              preferred device and choose the Sky Glass IPTV subscription that
+              best matches your viewing habits.
             </p>
-          </FadeIn>
+          </div>
 
-          <ScrollReveal direction="up" delay={0.1} once>
-            <div className="mt-10 flex flex-row items-center justify-center gap-3 md:mt-12">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                <Link
-                  href="/free-trial"
-                  className="flex items-center justify-center rounded-xl px-4 py-4 text-[13px] font-bold transition-all duration-200 hover:brightness-110 sm:px-8 sm:text-[15px]"
-                  style={{
-                    background: "var(--hero-cta-primary-bg)",
-                    boxShadow: "var(--hero-cta-primary-shadow)",
-                    color: "var(--hero-cta-primary-fg)",
-                  }}
-                >
-                  Start My Free Trial
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-                <a
-                  href="#pricing"
-                  className="flex items-center justify-center rounded-xl border px-4 py-4 text-[13px] font-bold transition-all duration-200 hover:brightness-110 sm:px-8 sm:text-[15px]"
-                  style={{
-                    borderColor: "var(--hero-pill-border)",
-                    backgroundColor: "transparent",
-                    color: "var(--hero-heading)",
-                  }}
-                >
-                  Subscribe Now
-                </a>
-              </motion.div>
-            </div>
-          </ScrollReveal>
-
-          <FadeIn delay={0.25}>
-            <p
-              className="mx-auto mt-8 max-w-[600px] text-sm leading-[1.75] sm:text-[15px]"
-              style={{ color: "var(--hero-muted)" }}
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
+            <Link
+              href="/contact-us"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-6 py-3 text-[14px] font-semibold text-white transition-opacity duration-150 hover:opacity-90"
             >
-              Questions before you order? Reach our team any time via the{" "}
-              <Link
-                href="/contact-us"
-                className="font-semibold underline transition-colors hover:text-[var(--hero-accent)]"
-                style={{ color: "var(--hero-heading)" }}
-              >
-                Contact Us
-              </Link>{" "}
-              page.
-            </p>
-          </FadeIn>
+              <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+              Start Your 24-Hour Free Trial
+            </Link>
+            <Link
+              href="/subscription-plans"
+              className="border-gradient-brand inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[10px] px-6 py-3 text-[14px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 bg-white"
+            >
+              <CalendarDays
+                className="h-4 w-4 shrink-0 text-[#E91E8C]"
+                strokeWidth={2}
+                aria-hidden
+              />
+              View Sky Glass IPTV Plans
+            </Link>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
+            <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white">
+              {TRUST_ITEMS.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li
+                    key={item.label}
+                    className="flex flex-col items-center justify-center gap-1.5 px-2 py-3.5 text-center sm:flex-row sm:gap-2.5 sm:px-5 sm:py-5 sm:text-left"
+                  >
+                    <Icon
+                      className="h-4 w-4 shrink-0 sm:h-5 sm:w-5"
+                      style={{ color: item.color }}
+                      strokeWidth={1.75}
+                      aria-hidden
+                    />
+                    <span className="text-[10px] font-semibold leading-tight text-[#0B0E2C] sm:text-[15px]">
+                      {item.label}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </Container>
     </section>

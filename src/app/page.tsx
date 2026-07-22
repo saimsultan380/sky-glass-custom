@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/hero-section";
-import { IptvSubscriptionExplainer } from "@/components/sections/iptv-subscription-explainer";
-import { PricingSection } from "@/components/sections/pricing-section";
-import { WhyBestIptvSection } from "@/components/sections/why-best-iptv";
-import { EverythingIncludedSection } from "@/components/sections/everything-included";
-import { FirestickCompatibilitySection } from "@/components/sections/firestick-compatibility";
-import { GetStartedSection } from "@/components/sections/get-started-section";
-import { HomepageFreeTrialSection } from "@/components/sections/homepage-free-trial-section";
-import { HomepageKeyFeaturesSection } from "@/components/sections/homepage-key-features-section";
-import { HomepageTestimonialsSection } from "@/components/sections/subscription-reviews-section";
+import { SmarterIptvExperienceSection } from "@/components/sections/smarter-iptv-experience-section";
+import { WhyChooseSkyGlassSection } from "@/components/sections/why-choose-sky-glass-section";
+import { EntertainmentCategoriesSection } from "@/components/sections/entertainment-categories-section";
+import { SubscriptionPlansOverviewSection } from "@/components/sections/subscription-plans-overview-section";
+import { PopularDevicesSection } from "@/components/sections/popular-devices-section";
+import { FourSimpleStepsSection } from "@/components/sections/four-simple-steps-section";
+import { EverydayViewingSection } from "@/components/sections/everyday-viewing-section";
+import { FreeTrialSection } from "@/components/sections/free-trial-section";
+import { StreamingTipsSection } from "@/components/sections/streaming-tips-section";
+import { ComparisonSection } from "@/components/sections/comparison-section";
+import { KeyBenefitsSection } from "@/components/sections/key-benefits-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { HomepageCtaSection } from "@/components/sections/homepage-cta-section";
 import { Header } from "@/components/layout/header";
@@ -21,6 +23,13 @@ export const metadata: Metadata = {
     absolute: pageTitles.home,
   },
   description: pageDescriptions.home,
+  keywords: [
+    "Sky Glass IPTV",
+    "Sky Glass IPTV UK",
+    "IPTV UK",
+    "IPTV service UK",
+    "IPTV subscription UK",
+  ],
   openGraph: {
     title: pageTitles.home,
     description: pageDescriptions.home,
@@ -36,15 +45,17 @@ export default function Home() {
     <main className="relative flex flex-col">
       <Header />
       <HeroSection />
-      <IptvSubscriptionExplainer />
-      <PricingSection />
-      <WhyBestIptvSection />
-      <EverythingIncludedSection />
-      <FirestickCompatibilitySection />
-      <GetStartedSection />
-      <HomepageFreeTrialSection />
-      <HomepageKeyFeaturesSection />
-      <HomepageTestimonialsSection />
+      <SmarterIptvExperienceSection />
+      <WhyChooseSkyGlassSection />
+      <EntertainmentCategoriesSection />
+      <SubscriptionPlansOverviewSection />
+      <PopularDevicesSection />
+      <FourSimpleStepsSection />
+      <EverydayViewingSection />
+      <FreeTrialSection />
+      <StreamingTipsSection />
+      <ComparisonSection />
+      <KeyBenefitsSection />
       <FaqSection />
       <HomepageCtaSection />
       <Footer />

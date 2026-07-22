@@ -9,8 +9,6 @@ interface ScrollRevealProps {
   className?: string;
   delay?: number;
   duration?: number;
-  /** Play only the first time in view (default true — smoother scrolling) */
-  once?: boolean;
   direction?: "up" | "down" | "left" | "right" | "none";
 }
 
@@ -19,7 +17,6 @@ export function ScrollReveal({
   className,
   delay = 0,
   duration = 0.4,
-  once = true,
   direction = "up",
 }: ScrollRevealProps) {
   const reduceMotion = useReducedMotion();
@@ -54,7 +51,7 @@ export function ScrollReveal({
       className={cn(className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, margin: "-50px", amount: 0.15 }}
+      viewport={{ once: false, margin: "-50px", amount: 0.15 }}
       variants={variants}
     >
       {children}

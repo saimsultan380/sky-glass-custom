@@ -1,42 +1,51 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+import { ContactHero } from "@/components/sections/contact-hero";
+import { ContactHelpOptions } from "@/components/sections/contact-help-options";
+import { ContactFormSection } from "@/components/sections/contact-form-section";
+import { ContactSupportProcess } from "@/components/sections/contact-support-process";
+import { ContactFaq } from "@/components/sections/contact-faq";
+import { ContactCta } from "@/components/sections/contact-cta";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
-import { ContactHero } from "@/components/sections/contact-hero";
-import { ContactHowToClaim } from "@/components/sections/contact-how-to-claim";
-import { ContactWhatsIncluded } from "@/components/sections/contact-whats-included";
-import { ContactMethodsForm } from "@/components/sections/contact-methods-form";
-import { ContactHelpTopics } from "@/components/sections/contact-help-topics";
-import { ContactFaqSection } from "@/components/sections/contact-faq-section";
-import { ContactCtaSection } from "@/components/sections/contact-cta-section";
-import { pageDescriptions, pageTitles } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: pageTitles.contactUs,
+  title: "Contact Sky Glass IPTV – UK Trial & Setup Support",
+  description: "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
+  keywords: [
+    "Contact Sky Glass IPTV",
+    "IPTV free trial UK",
+    "Sky Glass IPTV support",
+    "IPTV setup support UK",
+  ],
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/contact-us`,
   },
-  description: pageDescriptions.contactUs,
   openGraph: {
-    title: pageTitles.contactUs,
-    description: pageDescriptions.contactUs,
+    title: "Contact Sky Glass IPTV – UK Trial & Setup Support",
+    description: "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
+    url: `${siteConfig.siteUrl}/contact-us`,
+    type: "website",
+    siteName: siteConfig.name,
   },
   twitter: {
-    title: pageTitles.contactUs,
-    description: pageDescriptions.contactUs,
+    card: "summary_large_image",
+    title: "Contact Sky Glass IPTV – UK Trial & Setup Support",
+    description: "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
   },
 };
 
 export default function ContactUsPage() {
   return (
-    <main className="relative flex flex-col">
+    <main className="flex flex-col">
       <Header />
       <ContactHero />
-      <ContactHowToClaim />
-      <ContactWhatsIncluded />
-      <ContactMethodsForm />
-      <ContactHelpTopics />
-      <ContactFaqSection />
-      <ContactCtaSection />
+      <ContactFormSection />
+      <ContactHelpOptions />
+      <ContactSupportProcess />
+      <ContactFaq />
+      <ContactCta />
       <Footer />
       <FloatingWhatsApp />
     </main>

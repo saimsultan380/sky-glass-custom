@@ -1,135 +1,90 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Container } from "@/components/layout/container";
 import { Mail, MessageCircle } from "lucide-react";
+import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/lib/site";
 
 const FOOTER_LINKS = {
   service: [
     { label: "Home", href: "/" },
-    { label: "Subscription Plan", href: "/subscription-plans" },
+    { label: "Plans", href: "/subscription-plans" },
     { label: "Installation Guide", href: "/installation-guide" },
-    { label: "Reseller Panel", href: "/reseller-panel" },
-    { label: "Contact Us", href: "/contact-us" },
+    { label: "Reseller", href: "/reseller-panel" },
+    { label: "Contact", href: "/contact-us" },
   ],
   support: [
-    { label: "Pricing Plans", href: "/subscription-plans#pricing" },
+    { label: "Subscription Plans", href: "/subscription-plans" },
     { label: "Free Trial", href: "/contact-us" },
-    { label: "Device Compatibility", href: "#device-compatibility" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Device Compatibility", href: "/#popular-devices" },
+    { label: "FAQ", href: "/#faq" },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
     { label: "Refund Policy", href: "#" },
   ],
-};
-
-const TRUST_POINTS = [
-  "20,000+ Live Channels",
-  "7-Day Money-Back Guarantee",
-  "24/7 UK Support",
-  "No Contract",
-];
+} as const;
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      className="relative isolate border-t"
-      style={{
-        backgroundColor: "var(--footer-bg)",
-        borderColor: "var(--footer-border)",
-      }}
-    >
-
-
-      <Container className="py-14 md:py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr] lg:gap-16">
-          {/* Brand column */}
-          <div>
-            <Link href="/" className="inline-flex items-center gap-2.5 no-underline">
+    <footer className="border-t border-[#0B0E2C]/10 bg-white pb-8 pt-16 sm:pt-20 lg:pt-24">
+      <Container animate={false}>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+          {/* Brand Col */}
+          <div className="lg:col-span-5">
+            <Link href="/" className="inline-block">
               <Image
-                src="/strong-8k.PNG?v=2"
-                alt="Strong 8K IPTV"
-                width={64}
-                height={64}
+                src="/logo.PNG"
+                alt="Sky Glass IPTV"
+                width={380}
+                height={106}
                 unoptimized
-                className="h-12 w-12 object-contain sm:h-[3.25rem] sm:w-[3.25rem]"
+                className="h-20 w-auto object-contain sm:h-24"
               />
             </Link>
-
-            <p
-              className="mt-4 max-w-sm text-sm leading-relaxed"
-              style={{ color: "var(--footer-muted)" }}
-            >
-              Premium IPTV streaming for UK & USA — 40,000+ live channels,
-              120,000+ on-demand titles, up to 8K UHD, and instant activation.
+            <p className="mt-6 max-w-sm text-[15px] leading-[1.7] text-[#5C607A]">
+              Flexible IPTV for UK viewers — live television, sports, movies and
+              series on Firestick, Android, Smart TVs, Apple devices and more.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              {TRUST_POINTS.map((point) => (
-                <span
-                  key={point}
-                  className="rounded-full border px-3 py-1 text-[11px] font-medium"
-                  style={{
-                    borderColor: "rgba(255, 255, 255, 0.22)",
-                    backgroundColor: "transparent",
-                    color: "var(--hero-pill-text)",
-                  }}
-                >
-                  {point}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-[var(--hero-accent)]"
-                style={{ color: "var(--footer-link)" }}
+            <div className="mt-8 space-y-4">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center gap-2.5 text-[15px] font-medium text-[#0B0E2C] transition-colors hover:text-[#E91E8C]"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden />
-                WhatsApp Support
-              </a>
-              <span
-                className="hidden h-4 w-px sm:block"
-                style={{ backgroundColor: "var(--footer-border)" }}
-                aria-hidden
-              />
+                <MessageCircle className="h-5 w-5 text-[#E91E8C]" />
+                Contact Support
+              </Link>
+              <br />
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-[var(--hero-accent)]"
-                style={{ color: "var(--footer-link)" }}
+                className="inline-flex items-center gap-2.5 text-[15px] font-medium text-[#0B0E2C] transition-colors hover:text-[#7B2FFF]"
               >
-                <Mail className="h-4 w-4" aria-hidden />
+                <Mail className="h-5 w-5 text-[#7B2FFF]" />
                 {siteConfig.email}
               </a>
             </div>
           </div>
 
-          {/* Link columns */}
-          <div className="grid gap-10 sm:grid-cols-3">
+          {/* Links Cols */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7 lg:pl-10">
             {Object.entries(FOOTER_LINKS).map(([group, links]) => (
               <div key={group}>
-                <h3
-                  className="text-xs font-bold uppercase tracking-[0.18em]"
-                  style={{ color: "var(--hero-accent)" }}
-                >
+                <h3 className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#0B0E2C]">
                   {group === "service"
                     ? "Service"
                     : group === "support"
                       ? "Support"
                       : "Legal"}
                 </h3>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-6 space-y-4">
                   {links.map((link) => (
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-sm transition-colors duration-150 hover:text-[var(--hero-accent)]"
-                        style={{ color: "var(--footer-link)" }}
+                        className="text-[15px] text-[#5C607A] transition-colors hover:text-[#E91E8C]"
                       >
                         {link.label}
                       </Link>
@@ -141,21 +96,41 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="mt-12 flex flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between"
-          style={{ borderColor: "var(--footer-border)" }}
-        >
-          <p className="text-xs" style={{ color: "var(--footer-muted)" }}>
+        {/* Notice */}
+        <div className="mt-16 border-t border-[#0B0E2C]/10 pt-10 sm:mt-20">
+          <h3 className="text-[14px] font-bold text-[#0B0E2C]">
+            Independent Service Notice
+          </h3>
+          <div className="mt-4 grid gap-5 text-[13px] leading-[1.7] text-[#5C607A] sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <p>
+              Sky Glass IPTV is an independent IPTV service and is not
+              affiliated with, endorsed by, sponsored by or officially connected
+              to Sky UK Limited, Sky Group, Sky Glass or any of their parent
+              companies, subsidiaries, broadcasters or associated brands.
+            </p>
+            <p>
+              Any third-party names, trademarks, product names or device names
+              mentioned on this website are used only for identification and
+              compatibility information. All trademarks remain the property of
+              their respective owners.
+            </p>
+            <p className="sm:col-span-2 lg:col-span-1">
+              Sky Glass IPTV is the name of our independent service and should
+              not be interpreted as representing Sky or an official Sky
+              television product.
+            </p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#0B0E2C]/10 pt-8 sm:flex-row">
+          <p className="text-[13px] text-[#5C607A]">
             © {year} {siteConfig.name}. All rights reserved.
           </p>
-          <p
-            className="max-w-xl text-xs leading-relaxed md:text-right"
-            style={{ color: "var(--footer-muted)" }}
-          >
-            {siteConfig.name} is an independent streaming service provider. Channel
-            availability may vary. Use responsibly and in accordance with local
-            regulations.
+          <p className="max-w-2xl text-center text-[12px] leading-relaxed text-[#5C607A] sm:text-right">
+            Sky Glass IPTV is an independent service and is not affiliated with,
+            endorsed by or connected to Sky UK Limited, Sky Group or the
+            official Sky Glass product.
           </p>
         </div>
       </Container>

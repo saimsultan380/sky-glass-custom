@@ -1,42 +1,42 @@
 /**
- * Site-wide brand & SEO defaults for Strong 8K IPTV.
+ * Site-wide brand & SEO defaults for Sky Glass IPTV.
  * Update `siteUrl` (and email) when the final domain is ready.
  *
  * `pageTitles` are the exact SERP / browser <title> strings — keep them in sync
  * with each page's metadata.title.absolute.
  */
 export const siteConfig = {
-  name: "Strong 8K IPTV",
-  shortName: "Strong 8K",
-  tagline: "Premium 8K IPTV Subscription for UK & USA",
+  name: "Sky Glass IPTV",
+  shortName: "Sky Glass",
+  tagline: "Live TV, Sports, Movies & Series in One Place",
   description:
-    "Strong 8K IPTV – premium IPTV subscription for UK & USA. 40,000+ live channels, 120,000+ movies & series, HD/4K/8K streaming, instant activation and 24/7 support. Free 24-hour trial available.",
-  /** Change this when your domain is ready */
-  siteUrl: "https://strong8k.com",
-  email: "support@strong8k.com",
+    "Discover Sky Glass IPTV UK for live TV, sports, movies and popular series. Request a 24-hour trial, compare flexible plans and receive setup support.",
+  /** Production domain */
+  siteUrl: "https://skyglass-iptv.co",
+  email: "support@skyglass-iptv.co",
   locale: "en_GB",
-  twitterHandle: "@strong8k",
+  twitterHandle: "@skyglassiptv",
 } as const;
 
 /** Exact SERP titles (shown in Google + browser tab) */
 export const pageTitles = {
-  home: "Strong 8K IPTV – Premium 8K IPTV Subscription for UK & USA",
-  subscriptionPlans: "Strong 8K IPTV Subscription Plans & Prices UK",
-  installationGuide: "Strong 8K IPTV Installation Guide – Set Up Any Device in Minutes",
-  resellerPanel: "Strong 8K IPTV Reseller Panel UK – Start Your Own IPTV Business",
-  contactUs: "IPTV Free Trial UK – Test Strong 8K Free for 24 Hours",
+  home: "Sky Glass IPTV UK – Live TV, Sports, Movies & Series",
+  subscriptionPlans: "Sky Glass IPTV Subscription Plans UK – Flexible Packages",
+  installationGuide: "Sky Glass IPTV Installation Guide – Firestick, Android & TV",
+  resellerPanel: "Sky Glass IPTV Reseller Panel UK – Start Your Own IPTV Business",
+  contactUs: "IPTV Free Trial UK – Test Sky Glass Free for 24 Hours",
 } as const;
 
 export const pageDescriptions = {
   home: siteConfig.description,
   subscriptionPlans:
-    "Compare Strong 8K IPTV subscription plans UK. From £9.99/mo — 40,000+ channels, 120,000+ VOD, up to 8K UHD, instant activation. No contracts. Free 24-hour trial available.",
+    "Compare Sky Glass IPTV subscription plans for UK viewers. Choose Standard or Premium, select a duration and request a 24-hour trial before subscribing.",
   installationGuide:
-    "Step-by-step Strong 8K IPTV installation guide for Firestick, Android TV, Smart TVs, iPhone, Android, Windows and Mac. Average setup under 5 minutes. 24/7 WhatsApp support.",
+    "Install Sky Glass IPTV on Firestick, Android, Smart TVs, Apple devices, Windows and Mac using clear setup steps and compatible application guidance.",
   resellerPanel:
-    "Become an IPTV reseller in the UK with Strong 8K. Credits from £59.99, non-expiring balance, white label branding, sub-reseller network, instant activation and 24/7 support.",
+    "Become an IPTV reseller in the UK with Sky Glass. White label branding, flexible credits, sub-reseller tools, instant activation and dedicated support.",
   contactUs:
-    "Claim a free IPTV trial UK with Strong 8K — 24 hours of full access to 40,000+ channels and 120,000+ VOD. No card, no commitment. Contact us 24/7 on WhatsApp for trials, setup and support.",
+    "Claim a free IPTV trial UK with Sky Glass — 24 hours of access to live TV, sports, movies and series. Contact us for trials, setup and support.",
 } as const;
 
 export const siteMetadataBase = {
@@ -47,14 +47,11 @@ export const siteMetadataBase = {
   creator: siteConfig.name,
   publisher: siteConfig.name,
   keywords: [
-    "Strong 8K IPTV",
-    "8K IPTV",
+    "Sky Glass IPTV",
+    "Sky Glass IPTV UK",
     "IPTV UK",
-    "IPTV USA",
-    "IPTV subscription",
-    "Firestick IPTV",
-    "4K IPTV",
-    "IPTV reseller",
+    "IPTV service UK",
+    "IPTV subscription UK",
   ],
   openGraph: {
     type: "website" as const,

@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 type WordToken = {
   text: string;
   style?: CSSProperties;
+  className?: string;
 };
 
 type MaskRevealProps = {
@@ -29,11 +30,12 @@ function pushWords(
   tokens: WordToken[],
   text: string,
   style?: CSSProperties,
+  className?: string,
 ) {
   const parts = text.split(/(\s+)/);
   for (const part of parts) {
     if (!part || /^\s+$/.test(part)) continue;
-    tokens.push({ text: part, style });
+    tokens.push({ text: part, style, className });
   }
 }
 
@@ -41,6 +43,7 @@ function pushWords(
 function tokenize(
   children: ReactNode,
   inheritedStyle?: CSSProperties,
+  inheritedClass?: string,
 ): WordToken[] {
   const tokens: WordToken[] = [];
 
@@ -48,13 +51,14 @@ function tokenize(
     if (child == null || typeof child === "boolean") return;
 
     if (typeof child === "string" || typeof child === "number") {
-      pushWords(tokens, String(child), inheritedStyle);
+      pushWords(tokens, String(child), inheritedStyle, inheritedClass);
       return;
     }
 
-    if (isValidElement<{ children?: ReactNode; style?: CSSProperties }>(child)) {
+    if (isValidElement<{ children?: ReactNode; style?: CSSProperties; className?: string }>(child)) {
       const nextStyle = { ...inheritedStyle, ...child.props.style };
-      tokenize(child.props.children, nextStyle).forEach((t) => tokens.push(t));
+      const nextClass = cn(inheritedClass, child.props.className);
+      tokenize(child.props.children, nextStyle, nextClass).forEach((t) => tokens.push(t));
     }
   });
 
@@ -112,6 +116,7 @@ export function MaskReveal({
             key={`${word.text}-${i}`}
             className={cn(
               "inline-block",
+              word.className,
               useGradient && "text-gradient-brand",
             )}
             style={useGradient ? undefined : word.style}
@@ -129,7 +134,7 @@ export function MaskReveal({
         className={rowClass}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.4, margin: "0px 0px -40px 0px" }}
+        viewport={{ once: false, amount: 0.4, margin: "0px 0px -40px 0px" }}
         variants={{
           ...containerVariants,
           visible: {
@@ -148,6 +153,7 @@ export function MaskReveal({
             <motion.span
               className={cn(
                 "inline-block origin-bottom",
+                word.className,
                 useGradient && "text-gradient-brand",
               )}
               style={useGradient ? undefined : word.style}

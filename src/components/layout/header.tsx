@@ -3,18 +3,26 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Subscription Plan", href: "/subscription-plans" },
+  { label: "Plans", href: "/subscription-plans" },
   { label: "Installation Guide", href: "/installation-guide" },
-  { label: "Reseller Panel", href: "/reseller-panel" },
-  { label: "Contact Us", href: "/contact-us" },
+  { label: "Reseller", href: "/reseller-panel" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
+function isActivePath(pathname: string, href: string) {
+  const path = pathname.replace(/\/$/, "") || "/";
+  const target = href.replace(/\/$/, "") || "/";
+  if (target === "/") return path === "/";
+  return path === target || path.startsWith(`${target}/`);
+}
+
 export function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -24,163 +32,133 @@ export function Header() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
     <>
-      <header className="pointer-events-none fixed left-0 right-0 top-0 z-[80] px-4 pt-5 sm:px-6 lg:px-8">
-        <nav
-          aria-label="Main navigation"
-          className="pointer-events-auto relative mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-2xl border px-4 py-2.5 backdrop-blur-xl sm:px-5 sm:py-3 lg:max-w-6xl"
-          style={{
-            borderColor: "var(--hero-nav-border)",
-            backgroundColor: "var(--hero-nav-bg)",
-            boxShadow: "var(--hero-nav-shadow)",
-          }}
-        >
-          {/* Logo */}
-          <Link
-            href="/"
-            id="hero-logo"
-            className="flex shrink-0 items-center gap-2.5 no-underline"
-            onClick={closeMenu}
+      <header className="sticky top-0 z-[80] w-full bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+          <nav
+            aria-label="Main navigation"
+            className="mx-auto flex h-[60px] w-full items-center justify-between gap-4 rounded-[8px] border border-[#0B0E2C]/10 bg-white px-6 shadow-[0_4px_20px_rgba(11,14,44,0.04)] sm:h-[72px] sm:px-8"
           >
-            <Image
-              src="/strong-8k.PNG?v=2"
-              alt="Strong 8K IPTV"
-              width={64}
-              height={64}
-              loading="eager"
-              unoptimized
-              className="h-12 w-12 object-contain sm:h-[3.25rem] sm:w-[3.25rem]"
-            />
-          </Link>
+            <Link
+              href="/"
+              id="hero-logo"
+              className="relative flex h-14 shrink-0 items-center no-underline sm:h-16"
+              onClick={closeMenu}
+            >
+              <Image
+                src="/logo.PNG"
+                alt="Sky Glass"
+                width={320}
+                height={90}
+                priority
+                unoptimized
+                className="h-14 w-auto object-contain sm:h-16"
+              />
+            </Link>
 
-          {/* Nav links + actions */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-5">
-            <div className="hidden items-center gap-6 md:flex">
-              {NAV_LINKS.map((link) => (
+          <div className="hidden items-center gap-8 lg:flex">
+            {NAV_LINKS.map((link) => {
+              const active = isActivePath(pathname, link.href);
+              return (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium transition-colors duration-150 hover:text-[var(--hero-accent)]"
-                  style={{ color: "var(--hero-nav-link)" }}
+                  className="relative pb-1 text-[15px] font-medium text-[#0B0E2C] transition-opacity duration-150 hover:opacity-70"
                 >
                   {link.label}
+                  {active && (
+                    <span
+                      aria-hidden
+                      className="absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-gradient-brand"
+                    />
+                  )}
                 </Link>
-              ))}
-            </div>
+              );
+            })}
+          </div>
 
-            {/* Mobile menu toggle */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/contact-us"
+              id="hero-get-started"
+              className="hidden rounded-[8px] bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90 lg:inline-flex"
+            >
+              Get Started
+            </Link>
+
             <button
               type="button"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-black/5 dark:hover:bg-white/5 md:hidden"
-              style={{ color: "var(--hero-nav-text)" }}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[8px] text-[#0B0E2C] transition-opacity hover:opacity-70 lg:hidden"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen((open) => !open)}
             >
               {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-6 w-6" strokeWidth={1.75} />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-6 w-6" strokeWidth={1.75} />
               )}
             </button>
-
-            {/* Desktop CTA */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:inline-flex"
-            >
-              <Link
-                href="/contact-us"
-                id="hero-get-started"
-                className="shrink-0 rounded-xl bg-gradient-brand px-4 py-2 text-sm font-semibold text-black shadow-sm transition-all duration-200 hover:brightness-110 sm:px-5"
-                style={{
-                  boxShadow: "var(--hero-cta-primary-shadow)",
-                }}
-              >
-                Subscribe Now
-              </Link>
-            </motion.div>
           </div>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      {/* Mobile navigation overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            <motion.button
-              type="button"
-              aria-label="Close menu"
-              className="fixed inset-0 z-[70] bg-black/50 backdrop-blur-sm md:hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={closeMenu}
-            />
+      {mobileMenuOpen && (
+        <>
+          <button
+            type="button"
+            aria-label="Close menu"
+            className="fixed inset-0 z-[70] bg-[#0B0E2C]/25 lg:hidden"
+            onClick={closeMenu}
+          />
 
-            <motion.nav
-              aria-label="Mobile navigation"
-              className="fixed left-0 right-0 top-0 z-[75] border-b px-4 pb-8 pt-[5.5rem] shadow-2xl sm:px-6 md:hidden"
-              style={{
-                borderColor: "var(--hero-nav-border)",
-                backgroundColor: "var(--hero-nav-bg)",
-              }}
-              initial={{ y: "-100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-100%" }}
-              transition={{ type: "spring", damping: 28, stiffness: 280 }}
-            >
-              <div className="mx-auto flex max-w-5xl flex-col gap-1">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.div
+          <nav
+            aria-label="Mobile navigation"
+            className="fixed inset-x-0 top-[80px] z-[75] border-b border-[#0B0E2C]/10 bg-white px-4 py-6 shadow-sm sm:top-[96px] sm:px-6 lg:hidden"
+          >
+            <div className="mx-auto flex max-w-7xl flex-col gap-1">
+              {NAV_LINKS.map((link) => {
+                const active = isActivePath(pathname, link.href);
+                return (
+                  <Link
                     key={link.label}
-                    initial={{ opacity: 0, y: -12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 + i * 0.04 }}
+                    href={link.href}
+                    className="rounded-[10px] px-4 py-3 text-base font-medium text-[#0B0E2C] transition-colors hover:bg-[#0B0E2C]/4"
+                    onClick={closeMenu}
                   >
-                    <Link
-                      href={link.href}
-                      className="block rounded-xl px-4 py-3.5 text-base font-medium transition-colors hover:bg-black/5 hover:text-[var(--hero-accent)] dark:hover:bg-white/5"
-                      style={{ color: "var(--hero-nav-text)" }}
-                      onClick={closeMenu}
-                    >
+                    <span className="relative inline-block pb-0.5">
                       {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      {active && (
+                        <span
+                          aria-hidden
+                          className="absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-gradient-brand"
+                        />
+                      )}
+                    </span>
+                  </Link>
+                );
+              })}
 
-                <motion.div
-                  initial={{ opacity: 0, y: -12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.22 }}
-                  className="mt-4 px-4"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Link
-                      href="/contact-us"
-                      className="flex w-full items-center justify-center rounded-xl bg-gradient-brand px-5 py-3 text-sm font-semibold text-black shadow-sm transition-all duration-200 hover:brightness-110"
-                      style={{
-                        boxShadow: "var(--hero-cta-primary-shadow)",
-                      }}
-                      onClick={closeMenu}
-                    >
-                      Subscribe Now
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.nav>
-          </>
-        )}
-      </AnimatePresence>
+              <Link
+                href="/contact-us"
+                className="mt-3 flex w-full items-center justify-center rounded-[8px] bg-gradient-brand px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                onClick={closeMenu}
+              >
+                Get Started
+              </Link>
+            </div>
+          </nav>
+        </>
+      )}
     </>
   );
 }

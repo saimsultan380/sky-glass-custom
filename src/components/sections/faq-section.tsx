@@ -1,11 +1,8 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { ScrollReveal } from "@/components/animation/scroll-reveal";
-import { FadeIn } from "@/components/animation/fade-in";
 import { cn } from "@/lib/utils";
 
 export type FaqItem = {
@@ -16,77 +13,54 @@ export type FaqItem = {
 
 const HOMEPAGE_FAQS: FaqItem[] = [
   {
-    id: "what-is-strong-8k",
-    q: "What is Strong 8K IPTV and how does it work?",
-    a: "Strong 8K IPTV is a subscription television service that streams live channels and on-demand content over your internet connection. After ordering, you receive login credentials (M3U or Xtream Codes) to enter into any compatible IPTV app. Once logged in, you get instant access to 40,000+ live channels and 120,000+ movies and series.",
+    id: "what-is-sky-glass",
+    q: "What is Sky Glass IPTV?",
+    a: "Sky Glass IPTV is an internet-based streaming service that provides access to available live television and on-demand entertainment through compatible devices and IPTV applications.",
   },
   {
-    id: "firestick",
-    q: "Does Strong 8K IPTV work on Firestick?",
-    a: (
-      <>
-        Yes. The Amazon Firestick is one of the most popular devices among our UK customers.
-        Install an IPTV player such as IPTV Smarters or TiviMate, enter your Strong 8K credentials,
-        and you&apos;re watching within minutes. A full Firestick walkthrough is available in our{" "}
-        <Link
-          href="/installation-guide"
-          className="font-semibold underline transition-colors hover:text-[var(--hero-accent)]"
-          style={{ color: "var(--hero-heading)" }}
-        >
-          Installation Guide
-        </Link>
-        .
-      </>
-    ),
+    id: "supported-devices",
+    q: "Which devices support Sky Glass IPTV?",
+    a: "Supported platforms include Firestick, Fire TV, Android TV, Google TV, Android phones and tablets, selected Smart TVs, Apple devices, Windows PCs and Mac computers.",
   },
   {
-    id: "internet-speed",
-    q: "What internet speed do I need for Strong 8K IPTV?",
-    a: "For HD streaming, 10–15 Mbps is enough. For 4K we recommend 25 Mbps or higher, and for the best 8K UHD experience, 50 Mbps+. Thanks to HEVC/H.265 compression, Strong 8K uses less bandwidth than most services at the same quality level.",
+    id: "official-app",
+    q: "Is there an official Sky Glass IPTV app?",
+    a: "Yes. The official application is available for compatible Android and Firestick devices. Alternative IPTV players are used on other supported platforms.",
   },
   {
     id: "free-trial",
-    q: "Is there a free trial available?",
-    a: "Yes — every new customer can claim a free 24-hour trial with full access to all channels, VOD, and picture quality options. No card details required. Simply message us on WhatsApp to activate it.",
+    q: "Can I try Sky Glass IPTV before subscribing?",
+    a: "Yes. A 24-hour trial is available so you can test device compatibility, navigation and general streaming performance.",
   },
   {
-    id: "activation",
-    q: "How fast is activation after payment?",
-    a: "Activation is usually instant. Your login details are sent by WhatsApp or email within minutes of your order being confirmed — at most, within one hour during exceptionally busy periods.",
+    id: "live-sports",
+    q: "Does Sky Glass IPTV include live sports?",
+    a: "Available packages may include football, cricket, motorsport, combat sports and other sporting events. Availability depends on the package, content source and broadcasting schedule.",
   },
   {
-    id: "devices",
-    q: "How many devices can I use with one subscription?",
-    a: "A standard Strong 8K subscription covers one screen at a time. You can install the service on multiple devices and switch between them freely. If you'd like to watch on two or more screens simultaneously, multi-screen plans are available at a small extra cost.",
+    id: "hd-4k",
+    q: "Does Sky Glass IPTV support HD and 4K?",
+    a: "Selected content may be available in HD, Full HD or 4K where supported. Actual quality depends on the source, application, device and internet connection.",
   },
   {
-    id: "players",
-    q: "Which IPTV players are compatible with Strong 8K?",
-    a: "All major players. Strong 8K supports M3U, Xtream Codes, MAG, and Enigma2 formats, which means it works with IPTV Smarters Pro, TiviMate, IBO Player, Smart IPTV, GSE, XCIPTV, Perfect Player, VLC, and many more.",
+    id: "multiple-devices",
+    q: "Can I use Sky Glass IPTV on more than one device?",
+    a: "You may configure the service on compatible devices. Simultaneous viewing depends on the number of connections included with your selected plan.",
   },
   {
-    id: "vs-netflix",
-    q: "What's the difference between Strong 8K IPTV and Netflix?",
-    a: "Netflix is a video-on-demand library only. Strong 8K gives you both: 40,000+ live TV channels — including live sports and news — plus an on-demand library of 120,000+ movies and series that's larger than any single streaming app.",
+    id: "satellite-dish",
+    q: "Do I need a satellite dish?",
+    a: "No. Sky Glass IPTV uses an internet connection and compatible application rather than a traditional satellite dish.",
   },
   {
-    id: "reseller",
-    q: "Can I become a Strong 8K reseller?",
-    a: (
-      <>
-        Yes. If you&apos;d like to sell IPTV subscriptions under your own margin, our reseller
-        panel gives you credits, instant account creation, and full pricing control. Learn more on
-        our{" "}
-        <Link
-          href="/reseller-panel"
-          className="font-semibold underline transition-colors hover:text-[var(--hero-accent)]"
-          style={{ color: "var(--hero-heading)" }}
-        >
-          Reseller Panel
-        </Link>{" "}
-        page.
-      </>
-    ),
+    id: "installation-support",
+    q: "Is installation support available?",
+    a: "Yes. Setup assistance is available for the official application and supported alternative IPTV players.",
+  },
+  {
+    id: "internet-connection",
+    q: "Which internet connection is recommended?",
+    a: "A stable broadband connection is recommended. Ethernet or strong Wi-Fi generally provides better performance, particularly for higher-quality streams.",
   },
 ];
 
@@ -94,91 +68,73 @@ function AccordionItem({
   faq,
   isOpen,
   onToggle,
-  delay,
   compact = false,
 }: {
   faq: FaqItem;
   isOpen: boolean;
   onToggle: () => void;
-  delay: number;
   compact?: boolean;
 }) {
   return (
-    <ScrollReveal direction="up" delay={delay} once>
-      <div
-        className="overflow-hidden rounded-2xl border transition-all duration-200"
-        style={{
-          backgroundColor: "transparent",
-          borderColor: isOpen
-            ? "var(--hero-accent)"
-            : "var(--feature-card-border)",
-        }}
+    <div
+      className={cn(
+        "overflow-hidden rounded-[8px] border transition-colors duration-200",
+        isOpen ? "border-[#E91E8C]/40" : "border-[#0B0E2C]/10"
+      )}
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        className={cn(
+          "flex w-full items-center justify-between gap-3 text-left",
+          compact ? "px-4 py-4" : "px-5 py-4 sm:px-6 sm:py-5"
+        )}
+        aria-expanded={isOpen}
       >
-        <button
-          onClick={onToggle}
+        <h3
           className={cn(
-            "flex w-full items-center justify-between gap-3 text-left",
-            compact ? "px-4 py-4" : "px-6 py-5 md:px-7"
+            "font-bold leading-snug text-[#0B0E2C]",
+            compact ? "text-sm" : "text-[15px] sm:text-base"
           )}
-          aria-expanded={isOpen}
         >
-          <h3
+          {faq.q}
+        </h3>
+        <span
+          className={cn(
+            "flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300",
+            isOpen
+              ? "rotate-180 border-[#E91E8C]/40 bg-[rgba(233,30,140,0.08)]"
+              : "rotate-0 border-[#0B0E2C]/10"
+          )}
+        >
+          <ChevronDown
             className={cn(
-              "font-bold leading-snug",
-              compact ? "text-sm" : "text-[15px] md:text-base"
+              "h-4 w-4 transition-colors duration-200",
+              isOpen ? "text-[#E91E8C]" : "text-[#5C607A]"
             )}
-            style={{ color: "var(--hero-heading)" }}
-          >
-            {faq.q}
-          </h3>
-          <span
-            className={cn(
-              "flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300",
-              isOpen ? "rotate-180" : "rotate-0"
-            )}
-            style={{
-              borderColor: isOpen
-                ? "var(--hero-accent)"
-                : "var(--feature-card-border)",
-              backgroundColor: isOpen
-                ? "color-mix(in srgb, var(--hero-accent) 12%, transparent)"
-                : "transparent",
-            }}
-          >
-            <ChevronDown
-              className="h-4 w-4 transition-colors duration-200"
-              style={{
-                color: isOpen ? "var(--hero-accent)" : "var(--feature-body)",
-              }}
-              strokeWidth={2.5}
-            />
-          </span>
-        </button>
+            strokeWidth={2.25}
+          />
+        </span>
+      </button>
 
-        <div
-          className={cn(
-            "grid transition-all duration-300 ease-in-out",
-            isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-          )}
-        >
-          <div className="overflow-hidden">
-            <div
-              className={cn(
-                "border-t text-sm leading-[1.8]",
-                compact ? "px-4 pb-4 pt-3" : "px-6 pb-6 pt-4 md:px-7 md:pb-7"
-              )}
-              style={{
-                borderColor:
-                  "color-mix(in srgb, var(--hero-accent) 20%, transparent)",
-                color: "var(--feature-body)",
-              }}
-            >
-              {faq.a}
-            </div>
+      <div
+        className={cn(
+          "grid transition-all duration-300 ease-in-out",
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        )}
+      >
+        <div className="overflow-hidden">
+          <div
+            className={cn(
+              "border-t border-[#0B0E2C]/8 text-sm leading-[1.75] text-[#5C607A]",
+              compact ? "px-4 pb-4 pt-3" : "px-5 pb-5 pt-3 sm:px-6 sm:pb-6"
+            )}
+          >
+            {faq.a}
           </div>
         </div>
       </div>
-    </ScrollReveal>
+    </div>
   );
 }
 
@@ -200,13 +156,12 @@ export function FaqAccordionList({
 
   return (
     <div className="space-y-3">
-      {faqs.map((faq, i) => (
+      {faqs.map((faq) => (
         <AccordionItem
           key={faq.id}
           faq={faq}
           isOpen={openId === faq.id}
           onToggle={() => toggle(faq.id)}
-          delay={0.04 * Math.min(i, 4)}
           compact={compact}
         />
       ))}
@@ -234,46 +189,27 @@ export function FaqAccordionSection({
   return (
     <section
       id={id}
-      className="relative py-20 md:py-28"
-      style={{ backgroundColor: "var(--hero-base)" }}
+      className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 40% 60% at 0% 50%, var(--hero-blush-left) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 100% 50%, var(--hero-blush-right) 0%, transparent 70%)",
-        }}
-      />
+      <Container className="py-16 sm:py-20 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
+          <div className="lg:sticky lg:top-28 lg:pt-1">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-10 bg-gradient-brand" aria-hidden />
+              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
+                {eyebrow}
+              </span>
+            </div>
 
-      <Container className="relative z-10">
-        <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-start lg:gap-16">
-          <div className="self-start lg:pt-1">
-            <FadeIn delay={0.05}>
-              <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-10 bg-gradient-brand" />
-                <span
-                  className="text-[11px] font-bold uppercase tracking-[0.22em]"
-                  style={{ color: "var(--hero-accent)" }}
-                >
-                  {eyebrow}
-                </span>
-              </div>
-            </FadeIn>
+            <h2 className="max-w-xl text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+              {title}
+            </h2>
 
-            <FadeIn delay={0.1}>
-              <h2
-                className="max-w-xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-[44px]"
-                style={{ color: "var(--hero-heading)" }}
-              >
-                {title}
-              </h2>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <p className="mt-6 max-w-sm text-sm leading-[1.75]" style={{ color: "var(--hero-muted)" }}>
+            {description && (
+              <p className="mt-5 max-w-sm text-[15px] leading-[1.75] text-[#5C607A] sm:text-base">
                 {description}
               </p>
-            </FadeIn>
+            )}
           </div>
 
           <div className="min-w-0">
@@ -289,13 +225,15 @@ export function FaqSection() {
   return (
     <FaqAccordionSection
       faqs={HOMEPAGE_FAQS}
-      defaultOpenId="what-is-strong-8k"
+      defaultOpenId="what-is-sky-glass"
+      eyebrow="FAQ"
       title={
         <>
           Frequently Asked Questions About{" "}
-          <span style={{ color: "var(--hero-accent)" }}>Strong 8K IPTV</span>
+          <span className="text-gradient-brand">Sky Glass IPTV UK</span>
         </>
       }
+      description="Answers about devices, the official app, trials, sports, picture quality, connections and setup support."
     />
   );
 }
