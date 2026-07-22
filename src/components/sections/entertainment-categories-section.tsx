@@ -99,17 +99,17 @@ export function EntertainmentCategoriesSection() {
       id="entertainment-categories"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
+      <Container className="py-10 sm:py-16 lg:py-24">
+        <div className="grid items-start gap-6 sm:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
           <div className="lg:sticky lg:top-28">
             <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
               What’s Included
             </p>
-            <h2 className="mt-3 max-w-md text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            <h2 className="mt-2 max-w-md text-[22px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
               Entertainment for Every Type of{" "}
               <span className="text-gradient-brand">Viewer</span>
             </h2>
-            <div className="mt-5 space-y-4 text-[15px] leading-[1.75] text-[#5C607A] sm:text-base sm:leading-[1.8]">
+            <div className="mt-4 space-y-3 text-[14px] leading-[1.7] text-[#5C607A] sm:mt-5 sm:space-y-4 sm:text-base sm:leading-[1.8]">
               <p>Different viewers have different entertainment preferences.</p>
               <p>
                 Some follow live sports throughout the week, while others prefer
@@ -131,38 +131,38 @@ export function EntertainmentCategoriesSection() {
             </Link>
           </div>
 
-          <div className="grid gap-4 sm:gap-6">
+          <div className="grid gap-3 sm:gap-6">
             {CATEGORIES.map((category) => {
               const Icon = category.icon;
               return (
                 <article
                   key={category.title}
-                  className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-6 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                  className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-4 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                   style={{
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${category.color}1A`,
                     "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${category.color}33`,
                   } as React.CSSProperties}
                 >
-                  <div className="relative z-10 flex gap-4">
+                  <div className="relative z-10 flex gap-3 sm:gap-4">
                     <span className="accent-line-brand" aria-hidden />
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-3 sm:gap-4">
                         <span
-                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] border border-[#0B0E2C]/5"
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12"
                           style={{ color: category.color, backgroundColor: `${category.color}15` }}
                         >
-                          <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                          <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                         </span>
-                        <h3 className="text-xl font-bold tracking-tight text-[#0B0E2C]">
+                        <h3 className="text-lg font-bold tracking-tight text-[#0B0E2C] sm:text-xl">
                           {category.title}
                         </h3>
                       </div>
 
-                      <div className="mt-5 space-y-3 text-[14px] leading-[1.7] text-[#5C607A] sm:text-[15px] sm:leading-[1.75]">
+                      <div className="mt-4 space-y-2.5 text-[13px] leading-[1.65] text-[#5C607A] sm:mt-5 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
                         {category.tagsIntro && <p>{category.tagsIntro}</p>}
 
                         {category.tags && (
-                          <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">
+                          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2.5 sm:mt-4 sm:gap-x-4 sm:gap-y-3 sm:grid-cols-3">
                             {category.tags.map((tag) => (
                               <li
                                 key={tag}
@@ -186,7 +186,7 @@ export function EntertainmentCategoriesSection() {
                         )}
 
                         {category.body.length > 0 && (
-                          <div className="mt-4 space-y-3">
+                          <div className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
                             {category.body.map((paragraph) => (
                               <p key={paragraph}>{paragraph}</p>
                             ))}

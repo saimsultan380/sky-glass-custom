@@ -87,14 +87,14 @@ function AccordionItem({
         onClick={onToggle}
         className={cn(
           "flex w-full items-center justify-between gap-3 text-left",
-          compact ? "px-4 py-4" : "px-5 py-4 sm:px-6 sm:py-5"
+          compact ? "px-3.5 py-3.5" : "px-4 py-3.5 sm:px-6 sm:py-5"
         )}
         aria-expanded={isOpen}
       >
         <h3
           className={cn(
             "font-bold leading-snug text-[#0B0E2C]",
-            compact ? "text-sm" : "text-[15px] sm:text-base"
+            compact ? "text-sm" : "text-[14px] sm:text-base"
           )}
         >
           {faq.q}
@@ -126,8 +126,8 @@ function AccordionItem({
         <div className="overflow-hidden">
           <div
             className={cn(
-              "border-t border-[#0B0E2C]/8 text-sm leading-[1.75] text-[#5C607A]",
-              compact ? "px-4 pb-4 pt-3" : "px-5 pb-5 pt-3 sm:px-6 sm:pb-6"
+              "border-t border-[#0B0E2C]/8 text-[13px] leading-[1.7] text-[#5C607A] sm:text-sm sm:leading-[1.75]",
+              compact ? "px-3.5 pb-3.5 pt-2.5" : "px-4 pb-4 pt-2.5 sm:px-6 sm:pb-6 sm:pt-3"
             )}
           >
             {faq.a}
@@ -155,7 +155,7 @@ export function FaqAccordionList({
     setOpenId((prev) => (prev === faqId ? null : faqId));
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2.5 sm:space-y-3">
       {faqs.map((faq) => (
         <AccordionItem
           key={faq.id}
@@ -191,22 +191,22 @@ export function FaqAccordionSection({
       id={id}
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
+      <Container className="py-10 sm:py-16 lg:py-24">
+        <div className="grid gap-6 sm:gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:pt-1">
-            <div className="mb-4 flex items-center gap-3">
+            <div className="mb-3 flex items-center gap-3 sm:mb-4">
               <span className="h-px w-10 bg-gradient-brand" aria-hidden />
               <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
                 {eyebrow}
               </span>
             </div>
 
-            <h2 className="max-w-xl text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            <h2 className="max-w-xl text-[22px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
               {title}
             </h2>
 
             {description && (
-              <p className="mt-5 max-w-sm text-[15px] leading-[1.75] text-[#5C607A] sm:text-base">
+              <p className="mt-4 max-w-sm text-[14px] leading-[1.7] text-[#5C607A] sm:mt-5 sm:text-base">
                 {description}
               </p>
             )}

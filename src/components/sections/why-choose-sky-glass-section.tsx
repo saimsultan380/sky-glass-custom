@@ -106,16 +106,16 @@ export function WhyChooseSkyGlassSection() {
       id="why-choose-sky-glass"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
             Why Choose Us
           </p>
-          <h2 className="mt-3 text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="mt-2 text-[22px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
             Why UK Viewers Choose{" "}
             <span className="text-gradient-brand">Sky Glass IPTV</span>
           </h2>
-          <div className="mt-5 space-y-3 text-[15px] leading-[1.75] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
+          <div className="mt-4 space-y-2.5 text-[14px] leading-[1.7] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
             <p>
               Choosing an IPTV service involves more than comparing content
               numbers. Device compatibility, plan clarity, navigation,
@@ -133,7 +133,7 @@ export function WhyChooseSkyGlassSection() {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        <div className="mt-8 grid gap-3 sm:mt-16 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
           {FEATURES.map((feature) => {
             const Icon = feature.icon;
             const isWide = feature.className?.includes("col-span-2");
@@ -142,7 +142,7 @@ export function WhyChooseSkyGlassSection() {
               <article
                 key={feature.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-6 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-4 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   feature.className
                 )}
                 style={{
@@ -153,21 +153,21 @@ export function WhyChooseSkyGlassSection() {
                 <div className="relative z-10 flex">
                   <div
                     className={cn(
-                      "flex min-w-0 flex-1 flex-col gap-6",
+                      "flex min-w-0 flex-1 flex-col gap-4 sm:gap-6",
                       isWide && "md:flex-row md:items-start md:justify-between md:gap-10"
                     )}
                   >
                     <div className={cn("flex flex-col", isWide && "md:w-[45%] lg:w-[50%]")}>
                       <span
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] border border-[#0B0E2C]/5"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12"
                         style={{ color: feature.color, backgroundColor: `${feature.color}15` }}
                       >
-                        <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                        <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                       </span>
-                      <h3 className="mt-5 text-xl font-bold tracking-tight text-[#0B0E2C]">
+                      <h3 className="mt-4 text-lg font-bold tracking-tight text-[#0B0E2C] sm:mt-5 sm:text-xl">
                         {feature.title}
                       </h3>
-                      <div className="mt-3 space-y-3 text-[14px] leading-[1.7] text-[#5C607A] sm:text-[15px] sm:leading-[1.75]">
+                      <div className="mt-2.5 space-y-2.5 text-[13px] leading-[1.65] text-[#5C607A] sm:mt-3 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
                         {feature.body.map((paragraph) => (
                           <p key={paragraph}>{paragraph}</p>
                         ))}
@@ -211,7 +211,7 @@ export function WhyChooseSkyGlassSection() {
           })}
         </div>
 
-        <div className="mt-10 flex justify-center sm:mt-12">
+        <div className="mt-8 flex justify-center sm:mt-12">
           <Link
             href="/installation-guide"
             className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[12px] bg-gradient-brand px-8 py-3 text-[15px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:w-auto"

@@ -26,14 +26,14 @@ export function SmarterIptvExperienceSection() {
       id="smarter-iptv-experience"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16 xl:gap-20">
+      <Container className="py-10 sm:py-16 lg:py-24">
+        <div className="grid items-start gap-6 sm:gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16 xl:gap-20">
           <div className="lg:sticky lg:top-28">
             <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
               Sky Glass IPTV UK
             </p>
 
-            <h2 className="mt-3 max-w-md text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            <h2 className="mt-2 max-w-md text-[22px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
               A Smarter{" "}
               <span className="text-gradient-brand">IPTV</span> Experience for
               UK Viewers
@@ -67,7 +67,7 @@ export function SmarterIptvExperienceSection() {
             </Link>
           </div>
 
-          <div className="max-w-2xl space-y-5 text-[15px] leading-[1.75] text-[#5C607A] sm:text-base sm:leading-[1.8]">
+          <div className="max-w-2xl space-y-3 text-[14px] leading-[1.7] text-[#5C607A] sm:space-y-5 sm:text-base sm:leading-[1.8]">
             <p>
               Sky Glass IPTV is designed for viewers who want greater
               flexibility over how and where they access their favourite
@@ -96,7 +96,7 @@ export function SmarterIptvExperienceSection() {
               viewers trying internet-based television for the first time.
             </p>
 
-            <ul className="grid gap-3 border-t border-[#0B0E2C]/10 pt-6 sm:hidden">
+            <ul className="grid gap-2.5 border-t border-[#0B0E2C]/10 pt-4 sm:hidden">
               {HIGHLIGHTS.map((item) => {
                 const Icon = item.icon;
                 return (

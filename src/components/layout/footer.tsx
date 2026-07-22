@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, MessageCircle } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { BrandLogo } from "@/components/brand-logo";
 import { siteConfig } from "@/lib/site";
 
 const FOOTER_LINKS = {
@@ -34,15 +34,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Col */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block">
-              <Image
-                src="/logo.PNG"
-                alt="Sky Glass IPTV"
-                width={380}
-                height={106}
-                unoptimized
-                className="h-20 w-auto object-contain sm:h-24"
-              />
+            <Link href="/" className="inline-flex items-center">
+              <BrandLogo heightClassName="h-14 sm:h-16" />
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-[1.7] text-[#5C607A]">
               Flexible IPTV for UK viewers — live television, sports, movies and

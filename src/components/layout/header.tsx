@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -41,27 +41,19 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-[80] w-full bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <header className="sticky top-0 z-[80] w-full">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <nav
             aria-label="Main navigation"
-            className="mx-auto flex h-[60px] w-full items-center justify-between gap-4 rounded-[8px] border border-[#0B0E2C]/10 bg-white px-6 shadow-[0_4px_20px_rgba(11,14,44,0.04)] sm:h-[72px] sm:px-8"
+            className="mx-auto flex h-[60px] w-full items-center justify-between gap-4 rounded-[8px] border border-white/40 bg-white/60 px-6 shadow-[0_4px_20px_rgba(11,14,44,0.06)] backdrop-blur-xl backdrop-saturate-150 sm:h-[72px] sm:px-8"
           >
             <Link
               href="/"
               id="hero-logo"
-              className="relative flex h-14 shrink-0 items-center no-underline sm:h-16"
+              className="relative flex shrink-0 items-center no-underline"
               onClick={closeMenu}
             >
-              <Image
-                src="/logo.PNG"
-                alt="Sky Glass"
-                width={320}
-                height={90}
-                priority
-                unoptimized
-                className="h-14 w-auto object-contain sm:h-16"
-              />
+              <BrandLogo priority heightClassName="h-11 sm:h-[52px]" />
             </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
@@ -108,31 +100,21 @@ export function Header() {
               )}
             </button>
           </div>
-        </nav>
-      </div>
-    </header>
+          </nav>
 
-      {mobileMenuOpen && (
-        <>
-          <button
-            type="button"
-            aria-label="Close menu"
-            className="fixed inset-0 z-[70] bg-[#0B0E2C]/25 lg:hidden"
-            onClick={closeMenu}
-          />
-
+          {mobileMenuOpen && (
           <nav
             aria-label="Mobile navigation"
-            className="fixed inset-x-0 top-[80px] z-[75] border-b border-[#0B0E2C]/10 bg-white px-4 py-6 shadow-sm sm:top-[96px] sm:px-6 lg:hidden"
+            className="absolute inset-x-4 top-full z-[75] mt-3 rounded-[12px] border border-white/40 bg-white/80 p-3 shadow-[0_16px_40px_rgba(11,14,44,0.14)] backdrop-blur-2xl backdrop-saturate-150 sm:inset-x-6 sm:p-4 lg:hidden"
           >
-            <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            <div className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => {
                 const active = isActivePath(pathname, link.href);
                 return (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="rounded-[10px] px-4 py-3 text-base font-medium text-[#0B0E2C] transition-colors hover:bg-[#0B0E2C]/4"
+                    className="rounded-[10px] px-4 py-3 text-base font-medium text-[#0B0E2C] transition-colors hover:bg-[#0B0E2C]/5"
                     onClick={closeMenu}
                   >
                     <span className="relative inline-block pb-0.5">
@@ -150,14 +132,24 @@ export function Header() {
 
               <Link
                 href="/contact-us"
-                className="mt-3 flex w-full items-center justify-center rounded-[8px] bg-gradient-brand px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="mt-2 flex w-full items-center justify-center rounded-[8px] bg-gradient-brand px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 onClick={closeMenu}
               >
                 Get Started
               </Link>
             </div>
           </nav>
-        </>
+        )}
+      </div>
+    </header>
+
+      {mobileMenuOpen && (
+        <button
+          type="button"
+          aria-label="Close menu"
+          className="fixed inset-0 z-[70] bg-[#0B0E2C]/20 lg:hidden"
+          onClick={closeMenu}
+        />
       )}
     </>
   );

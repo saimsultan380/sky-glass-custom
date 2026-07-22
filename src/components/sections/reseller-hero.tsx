@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, LayoutDashboard, CreditCard, HeadphonesIcon } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { MaskReveal } from "@/components/animation/mask-reveal";
 
 const TRUST_ITEMS = [
   { label: "Professional Dashboard", icon: LayoutDashboard, color: "#FF6B2C" },
@@ -15,10 +16,14 @@ export function ResellerHero() {
       <Container className="pb-5 pt-2 sm:pb-12 sm:pt-8 lg:pb-16 lg:pt-12" animate={false}>
         <div className="grid items-center gap-4 sm:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 xl:gap-14">
           <div className="order-1 min-w-0">
-            <h1 className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]">
+            <MaskReveal
+              as="h1"
+              align="left"
+              className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
+            >
               Sky Glass IPTV Reseller UK –{" "}
               <span className="text-gradient-brand">Start and Grow Your IPTV Business</span>
-            </h1>
+            </MaskReveal>
 
             <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
               <p>
