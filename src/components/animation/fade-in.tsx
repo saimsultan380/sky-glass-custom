@@ -54,7 +54,7 @@ export function FadeIn({
         className={cn(className)}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, margin: "-40px", amount: 0.2 }}
+        viewport={{ once: true, margin: "-40px", amount: 0.2 }}
         variants={containerVariants(staggerChildren)}
       >
         {React.Children.map(children, (child) => (
@@ -69,7 +69,7 @@ export function FadeIn({
       className={cn(className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: "-40px", amount: 0.2 }}
+      viewport={{ once: true, margin: "-40px", amount: 0.2 }}
       variants={itemVariants(duration, delay)}
     >
       {children}

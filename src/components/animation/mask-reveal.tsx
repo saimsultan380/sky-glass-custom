@@ -134,7 +134,7 @@ export function MaskReveal({
         className={rowClass}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4, margin: "0px 0px -40px 0px" }}
+        viewport={{ once: true, amount: 0.4, margin: "0px 0px -40px 0px" }}
         variants={{
           ...containerVariants,
           visible: {
