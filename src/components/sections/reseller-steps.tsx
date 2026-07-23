@@ -39,10 +39,10 @@ const steps = [
 
 export function ResellerSteps() {
   return (
-    <section className="border-b border-[#0B0E2C]/10 bg-white py-6 sm:py-24 lg:py-32">
+    <section className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24">
       <Container>
         <div className="text-center">
-          <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             How the Sky Glass IPTV{" "}
             <span className="text-gradient-brand">Reseller Programme Works</span>
           </h2>
@@ -82,13 +82,13 @@ export function ResellerSteps() {
         </div>
 
         {/* Mobile / tablet stacked cards */}
-        <div className="mt-5 grid gap-2.5 sm:mt-12 sm:gap-6 lg:hidden">
+        <div className="mt-6 grid gap-4 sm:mt-12 sm:gap-6 lg:hidden">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.number}
-                className="relative flex flex-col gap-3 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] sm:flex-row sm:items-center sm:gap-6 sm:p-8"
+                className="relative flex flex-col gap-3 overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] sm:flex-row sm:items-center sm:gap-6 sm:p-8"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${step.color}1A`,
@@ -96,7 +96,7 @@ export function ResellerSteps() {
                 }
               >
                 <div
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/10 bg-white shadow-sm sm:h-20 sm:w-20 sm:rounded-[8px]"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-white shadow-sm sm:h-20 sm:w-20 sm:rounded-[1px]"
                   style={{ color: step.color }}
                 >
                   <Icon className="h-4 w-4 sm:h-10 sm:w-10" />
@@ -106,11 +106,11 @@ export function ResellerSteps() {
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0B0E2C] text-[10px] font-bold text-white sm:h-6 sm:w-6 sm:text-[11px]">
                       {step.number}
                     </span>
-                    <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-xl">
+                    <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="mt-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-3 sm:text-base sm:leading-relaxed">
+                  <p className="mt-1.5 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:text-base sm:leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export function ResellerSteps() {
         <div className="mt-5 text-center sm:mt-16">
           <Link
             href="/contact-us"
-            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[10px] bg-gradient-brand px-8 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:w-auto sm:py-3 sm:text-[16px]"
+            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[1px] bg-gradient-brand px-8 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:w-auto sm:py-3 sm:text-[16px]"
           >
             Start Your Reseller Application
             <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />

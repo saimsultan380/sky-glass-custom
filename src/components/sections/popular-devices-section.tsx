@@ -113,16 +113,13 @@ export function PopularDevicesSection() {
       id="popular-devices"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Device Compatibility
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Watch Sky Glass IPTV on{" "}
             <span className="text-gradient-brand">Popular Devices</span>
           </h2>
-          <div className="mt-3 space-y-1.5 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
+          <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
             <p>
               One of the main advantages of IPTV is the ability to access
               entertainment on different internet-connected devices.
@@ -135,7 +132,7 @@ export function PopularDevicesSection() {
           </div>
         </div>
 
-        <div className="mt-5 grid gap-2.5 sm:mt-14 sm:gap-6 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {DEVICES.map((device) => {
             const Icon = device.icon;
             const isOfficial = device.badge === "Official App";
@@ -144,7 +141,7 @@ export function PopularDevicesSection() {
               <article
                 key={device.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   device.featured && "ring-1 ring-inset ring-[#E91E8C]/20"
                 )}
                 style={{
@@ -156,28 +153,28 @@ export function PopularDevicesSection() {
                   <div className="flex min-w-0 flex-1 flex-col">
                     <div className="flex items-start justify-between gap-2.5">
                       <span
-                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12 sm:rounded-[12px]"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-12 sm:w-12 sm:rounded-[1px]"
                         style={{ color: device.color, backgroundColor: `${device.color}15` }}
                       >
                         <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                       </span>
                       <span
                         className={cn(
-                          "rounded-[6px] px-2 py-0.5 text-[10px] font-semibold tracking-wide sm:rounded-[8px] sm:px-2.5 sm:py-1 sm:text-[11px]",
+                          "rounded-[1px] px-2 py-0.5 text-[10px] font-semibold tracking-wide sm:rounded-[1px] sm:px-2.5 sm:py-1 sm:text-[11px]",
                           isOfficial
                             ? "bg-gradient-brand text-white"
-                            : "border border-[#0B0E2C]/12 text-[#5C607A]"
+                            : "bg-[#0B0E2C]/5 text-[#5C607A]"
                         )}
                       >
                         {device.badge}
                       </span>
                     </div>
 
-                    <h3 className="mt-2.5 text-[15px] font-bold tracking-tight text-[#0B0E2C] sm:mt-5 sm:text-xl">
+                    <h3 className="mt-2.5 text-base font-bold tracking-tight text-[#0B0E2C] sm:mt-5 sm:text-xl">
                       {device.title}
                     </h3>
 
-                    <p className="mt-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-3 sm:text-[15px] sm:leading-[1.75]">
+                    <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:text-[15px] sm:leading-[1.75]">
                       {device.description}
                     </p>
 
@@ -190,28 +187,28 @@ export function PopularDevicesSection() {
                     {device.list && (
                       <ul
                         className={cn(
-                          "mt-1.5 space-y-1.5 sm:mt-3 sm:space-y-2.5",
+                          "mt-2 space-y-2.5 sm:mt-3 sm:space-y-3",
                           !device.listIntro &&
-                            "mt-2.5 border-t border-[#0B0E2C]/8 pt-2.5 sm:mt-5 sm:pt-5"
+                            "mt-2.5 border-t border-[#0B0E2C]/8 pt-3 sm:mt-5 sm:pt-5"
                         )}
                       >
                         {device.list.map((item) => (
                           <li
                             key={item}
-                            className="flex items-start gap-2 text-[12px] leading-snug text-[#0B0E2C] sm:gap-2.5 sm:text-[14px]"
+                            className="flex items-start gap-2.5 text-[13px] leading-snug text-[#0B0E2C] sm:gap-3 sm:text-[14px]"
                           >
                             <span
-                              className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full sm:mt-1 sm:h-4 sm:w-4"
+                              className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full sm:mt-1"
                               style={{ backgroundColor: `${device.color}1A` }}
                               aria-hidden
                             >
                               <Check
-                                className="h-2 w-2 sm:h-2.5 sm:w-2.5"
+                                className="h-2.5 w-2.5"
                                 style={{ color: device.color }}
                                 strokeWidth={3}
                               />
                             </span>
-                            <span>{item}</span>
+                            <span className="min-w-0">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -223,12 +220,15 @@ export function PopularDevicesSection() {
           })}
         </div>
 
-        <div className="mt-5 flex justify-center sm:mt-12">
+        <div className="mt-6 flex justify-center sm:mt-12">
           <Link
             href="/installation-guide"
-            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
+            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
           >
-            View the Sky Glass IPTV Installation Guide
+            <span className="sm:hidden">View Installation Guide</span>
+            <span className="hidden sm:inline">
+              View the Sky Glass IPTV Installation Guide
+            </span>
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
           </Link>
         </div>

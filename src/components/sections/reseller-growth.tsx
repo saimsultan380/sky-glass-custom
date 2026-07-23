@@ -37,16 +37,16 @@ export function ResellerGrowth() {
   ];
 
   return (
-    <section className="border-b border-[#0B0E2C]/10 bg-white py-6 sm:py-24 lg:py-32">
+    <section className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24">
       <Container>
         <div className="grid gap-6 sm:gap-16 lg:grid-cols-2">
           {/* Left Column: Branding */}
           <div>
-            <h2 className="text-[18px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-3xl sm:leading-[1.15] lg:text-[32px]">
+            <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[34px]">
               Create Your Own{" "}
               <span className="text-gradient-brand">Customer-Facing Brand</span>
             </h2>
-            <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
+            <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
               The reseller panel manages subscription creation, but you can
               build your own customer-facing identity around your business.
               Depending on the reseller arrangement, you may be able to use your
@@ -57,14 +57,14 @@ export function ResellerGrowth() {
               {brandElements.map((element) => (
                 <div key={element} className="flex items-center gap-2 sm:gap-3">
                   <Check className="h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-5 sm:w-5" />
-                  <span className="text-[12px] font-medium text-[#0B0E2C] sm:text-[16px]">
+                  <span className="text-[14px] font-medium text-[#0B0E2C] sm:text-[16px]">
                     {element}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-3 space-y-1.5 rounded-[8px] bg-[#F5F5F7] p-3 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-8 sm:space-y-4 sm:p-6 sm:text-sm sm:leading-relaxed">
+            <div className="mt-3 space-y-1.5 rounded-[1px] bg-[#F5F5F7] p-5 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:space-y-4 sm:p-6 sm:text-sm sm:leading-relaxed">
               <p>
                 A clear brand helps customers recognise your service and
                 separates your business from competing resellers.
@@ -81,11 +81,11 @@ export function ResellerGrowth() {
 
           {/* Right Column: Growth Tips */}
           <div>
-            <h2 className="text-[18px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-3xl sm:leading-[1.15] lg:text-[32px]">
+            <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[34px]">
               Grow Your{" "}
               <span className="text-gradient-brand">IPTV Reseller Business</span>
             </h2>
-            <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
+            <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
               A reseller panel provides management tools, but long-term growth
               depends on how effectively you market and support your service.
             </p>
@@ -94,12 +94,12 @@ export function ResellerGrowth() {
               {growthTips.map((tip) => (
                 <div
                   key={tip.title}
-                  className="rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-sm sm:p-5"
+                  className="rounded-[1px] bg-white p-5 shadow-sm sm:p-5"
                 >
                   <h3 className="text-[14px] font-bold text-[#0B0E2C] sm:text-lg">
                     {tip.title}
                   </h3>
-                  <p className="mt-1 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-2 sm:text-[15px] sm:leading-relaxed">
+                  <p className="mt-1 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-2 sm:text-[15px] sm:leading-relaxed">
                     {tip.description}
                   </p>
                 </div>

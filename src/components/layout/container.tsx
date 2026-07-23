@@ -4,7 +4,10 @@ import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;
-  /** Soft scroll reveal for below-fold section content (default true) */
+  /**
+   * Soft scroll reveal for top-level Container children.
+   * Default off — sitewide per-box/text motion is handled by AutoScrollReveal.
+   */
   animate?: boolean;
   /**
    * Light stagger between top-level Container children (~0.08–0.12).
@@ -17,7 +20,7 @@ export function Container({
   children,
   className,
   as: Component = "div",
-  animate = true,
+  animate = false,
   staggerChildren = 0.1,
   ...props
 }: ContainerProps) {

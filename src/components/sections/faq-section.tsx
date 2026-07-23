@@ -78,8 +78,8 @@ function AccordionItem({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-[8px] border transition-colors duration-200",
-        isOpen ? "border-[#E91E8C]/40" : "border-[#0B0E2C]/10"
+        "overflow-hidden rounded-[1px] border transition-colors duration-200",
+        isOpen ? "border-[#E91E8C]/40" : "border-transparent"
       )}
     >
       <button
@@ -104,7 +104,7 @@ function AccordionItem({
             "flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300",
             isOpen
               ? "rotate-180 border-[#E91E8C]/40 bg-[rgba(233,30,140,0.08)]"
-              : "rotate-0 border-[#0B0E2C]/10"
+              : "rotate-0 border-transparent"
           )}
         >
           <ChevronDown
@@ -172,7 +172,6 @@ export function FaqAccordionList({
 type FaqSectionProps = {
   faqs: FaqItem[];
   defaultOpenId?: string;
-  eyebrow?: string;
   title: ReactNode;
   description?: string;
   id?: string;
@@ -181,7 +180,6 @@ type FaqSectionProps = {
 export function FaqAccordionSection({
   faqs,
   defaultOpenId,
-  eyebrow = "FAQ",
   title,
   description = "Clear answers about setup, devices, streaming quality, activation, and your subscription.",
   id = "faq",
@@ -191,22 +189,15 @@ export function FaqAccordionSection({
       id={id}
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="grid gap-4 sm:gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:pt-1">
-            <div className="mb-2 flex items-center gap-3 sm:mb-4">
-              <span className="h-px w-8 bg-gradient-brand sm:w-10" aria-hidden />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-                {eyebrow}
-              </span>
-            </div>
-
-            <h2 className="max-w-xl text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            <h2 className="max-w-xl text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
               {title}
             </h2>
 
             {description && (
-              <p className="mt-3 max-w-sm text-[13px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:text-base">
+              <p className="mt-4 max-w-sm text-[14px] leading-[1.6] text-[#5C607A] sm:mt-5 sm:text-base">
                 {description}
               </p>
             )}
@@ -226,7 +217,6 @@ export function FaqSection() {
     <FaqAccordionSection
       faqs={HOMEPAGE_FAQS}
       defaultOpenId="what-is-sky-glass"
-      eyebrow="FAQ"
       title={
         <>
           Frequently Asked Questions About{" "}

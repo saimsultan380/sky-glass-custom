@@ -127,18 +127,15 @@ export function ComparisonSection() {
       id="iptv-vs-traditional-tv"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Comparison
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Sky Glass IPTV Compared with{" "}
             <span className="text-gradient-brand">Traditional Television</span>
           </h2>
         </div>
 
-        <div className="mt-5 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 sm:mt-12">
+        <div className="mt-5 overflow-hidden rounded-[1px] sm:mt-12">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
@@ -173,7 +170,7 @@ export function ComparisonSection() {
                       {row.feature}
                     </th>
                     <td className="px-3 py-2.5 sm:px-6 sm:py-4">
-                      <div className="-mx-2 rounded-[8px] px-2 py-0.5 sm:-mx-3 sm:px-3 sm:py-1">
+                      <div className="-mx-2 rounded-[1px] px-2 py-0.5 sm:-mx-3 sm:px-3 sm:py-1">
                         <CellValue
                           value={row.skyGlass}
                           tone={row.skyTone}
@@ -194,7 +191,7 @@ export function ComparisonSection() {
           </div>
         </div>
 
-        <p className="mx-auto mt-4 max-w-2xl text-center text-[12px] leading-[1.5] text-[#5C607A] sm:mt-10 sm:text-[15px] sm:leading-[1.75]">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-[14px] leading-[1.55] text-[#5C607A] sm:mt-10 sm:text-[15px] sm:leading-[1.75]">
           The right option depends on your viewing preferences, device
           requirements, budget and internet connection.
         </p>

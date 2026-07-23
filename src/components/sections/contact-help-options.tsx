@@ -103,13 +103,13 @@ const helpOptions = [
 
 export function ContactHelpOptions() {
   return (
-    <section className="border-b border-[#0B0E2C]/10 bg-white py-6 sm:py-24 lg:py-32">
+    <section className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24">
       <Container>
         <div className="text-center">
-          <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Support <span className="text-gradient-brand">Categories</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
+          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
             Find the right assistance for your Sky Glass IPTV experience.
           </p>
         </div>
@@ -131,7 +131,7 @@ export function ContactHelpOptions() {
           </defs>
         </svg>
 
-        <div className="mt-5 grid gap-2.5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2">
           {helpOptions.map((option) => {
             const Icon = option.icon;
             const isWide = option.className?.includes("col-span-2");
@@ -140,7 +140,7 @@ export function ContactHelpOptions() {
               <article
                 key={option.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   option.className
                 )}
                 style={
@@ -153,7 +153,7 @@ export function ContactHelpOptions() {
                 <div className="relative z-10 flex h-full flex-1 flex-col">
                   <div className="flex items-center gap-2.5 sm:gap-4">
                     <div
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/10 bg-white shadow-sm sm:h-14 sm:w-14 sm:rounded-[8px]"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-white shadow-sm sm:h-14 sm:w-14 sm:rounded-[1px]"
                       style={{ color: option.color }}
                     >
                       <Icon className="h-4 w-4 sm:h-7 sm:w-7" />
@@ -163,30 +163,33 @@ export function ContactHelpOptions() {
                     </h3>
                   </div>
 
-                  <p className="mt-2.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-relaxed">
+                  <p className="mt-2.5 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-relaxed">
                     {option.description}
                   </p>
 
                   {option.listTitle && (
-                    <p className="mt-2.5 text-[12px] font-semibold text-[#0B0E2C] sm:mt-6 sm:text-base">
+                    <p className="mt-2.5 text-[14px] font-semibold text-[#0B0E2C] sm:mt-6 sm:text-base">
                       {option.listTitle}
                     </p>
                   )}
 
                   <ul
                     className={cn(
-                      "mt-2 grid grid-cols-2 gap-x-2 gap-y-1.5 sm:mt-4 sm:gap-3",
+                      "mt-2.5 grid grid-cols-1 gap-x-4 gap-y-2.5 sm:mt-4 sm:gap-3",
                       isWide ? "sm:grid-cols-3" : "sm:grid-cols-2"
                     )}
                   >
                     {option.list.map((item) => (
-                      <li key={item} className="flex items-start gap-1.5 sm:gap-2">
+                      <li
+                        key={item}
+                        className="flex items-start gap-2.5 sm:gap-3"
+                      >
                         <Check
-                          className="mt-0.5 h-3.5 w-3.5 shrink-0 sm:mt-1 sm:h-4 sm:w-4"
+                          className="mt-0.5 h-4 w-4 shrink-0"
                           style={{ stroke: "url(#contact-help-gradient)" }}
                           strokeWidth={3}
                         />
-                        <span className="text-[11px] leading-snug text-[#0B0E2C] sm:text-sm">
+                        <span className="min-w-0 text-[13px] leading-snug text-[#0B0E2C] sm:text-sm">
                           {item}
                         </span>
                       </li>
@@ -194,7 +197,7 @@ export function ContactHelpOptions() {
                   </ul>
 
                   {option.footerText && (
-                    <div className="mt-3 rounded-[8px] bg-[#F5F5F7] p-2.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-6 sm:p-4 sm:text-sm sm:leading-relaxed">
+                    <div className="mt-3 rounded-[1px] bg-[#F5F5F7] p-4 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:p-4 sm:text-sm sm:leading-relaxed">
                       {option.footerText}
                     </div>
                   )}

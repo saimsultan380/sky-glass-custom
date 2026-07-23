@@ -16,7 +16,7 @@ interface ScrollRevealProps {
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 const OFFSET = 20;
-const VIEWPORT = { once: true, margin: "-50px", amount: 0.15 } as const;
+const VIEWPORT = { once: false, margin: "-8% 0px", amount: 0.15 } as const;
 
 function makeItemVariants(
   duration: number,

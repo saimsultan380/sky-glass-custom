@@ -58,7 +58,6 @@ export function PlansFaqSection() {
     <FaqAccordionSection
       faqs={PLANS_FAQS}
       defaultOpenId="whats-included"
-      eyebrow="FAQ"
       title={
         <>
           Frequently Asked Questions About{" "}

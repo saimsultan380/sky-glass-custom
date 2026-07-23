@@ -65,20 +65,20 @@ const features = [
 
 export function ResellerFeatures() {
   return (
-    <section className="border-b border-[#0B0E2C]/10 bg-white py-6 sm:py-24 lg:py-32">
+    <section className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24">
       <Container>
         <div className="text-center">
-          <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Sky Glass IPTV{" "}
             <span className="text-gradient-brand">Reseller Panel Features</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
+          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
             The Sky Glass IPTV Reseller Panel provides the essential tools
             needed to manage a customer base.
           </p>
         </div>
 
-        <div className="mt-5 grid gap-2.5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
             const isWide =
@@ -89,7 +89,7 @@ export function ResellerFeatures() {
               <article
                 key={feature.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   feature.className
                 )}
                 style={
@@ -108,7 +108,7 @@ export function ResellerFeatures() {
                   <div className="flex items-center gap-2.5 sm:gap-4">
                     <div
                       className={cn(
-                        "flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/10 bg-white shadow-sm sm:h-14 sm:w-14 sm:rounded-[8px]",
+                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-white shadow-sm sm:h-14 sm:w-14 sm:rounded-[1px]",
                         isWide && "md:h-16 md:w-16"
                       )}
                       style={{ color: feature.color }}
@@ -120,13 +120,13 @@ export function ResellerFeatures() {
                         )}
                       />
                     </div>
-                    <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-xl">
+                    <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
                       {feature.title}
                     </h3>
                   </div>
                   <p
                     className={cn(
-                      "mt-2.5 flex-1 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed",
+                      "mt-2.5 flex-1 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed",
                       isWide && "md:mt-0"
                     )}
                   >

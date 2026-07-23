@@ -72,16 +72,13 @@ export function EverydayViewingSection() {
       id="everyday-viewing"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Everyday Experience
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Designed for Simple{" "}
             <span className="text-gradient-brand">Everyday Viewing</span>
           </h2>
-          <div className="mt-3 space-y-1.5 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
+          <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
             <p>
               A good IPTV experience should be straightforward to navigate and
               easy to use.
@@ -93,7 +90,7 @@ export function EverydayViewingSection() {
           </div>
         </div>
 
-        <div className="mt-5 grid gap-2.5 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-6 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-6">
           {FEATURES.map((feature, index) => {
             const Icon = feature.icon;
             const isLastOdd =
@@ -103,7 +100,7 @@ export function EverydayViewingSection() {
               <article
                 key={feature.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   index < 3
                     ? "lg:col-span-2"
                     : isLastOdd
@@ -118,12 +115,12 @@ export function EverydayViewingSection() {
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="flex items-center gap-2.5 sm:gap-4">
                     <span
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12 sm:rounded-[12px]"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-12 sm:w-12 sm:rounded-[1px]"
                       style={{ color: feature.color, backgroundColor: `${feature.color}15` }}
                     >
                       <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                     </span>
-                    <h3 className="text-[15px] font-bold tracking-tight text-[#0B0E2C] sm:text-xl">
+                    <h3 className="text-base font-bold tracking-tight text-[#0B0E2C] sm:text-xl">
                       {feature.title}
                     </h3>
                   </div>
@@ -139,7 +136,7 @@ export function EverydayViewingSection() {
                       {feature.list.map((item) => (
                         <li
                           key={item}
-                          className="inline-flex items-center gap-1.5 rounded-[6px] border border-[#0B0E2C]/10 bg-[#0B0E2C]/[0.02] px-2 py-1 text-[11px] font-semibold text-[#0B0E2C] sm:gap-2 sm:rounded-[8px] sm:px-3.5 sm:py-2 sm:text-[13px]"
+                          className="inline-flex items-center gap-1.5 rounded-[1px] bg-[#0B0E2C]/[0.02] px-2 py-1 text-[11px] font-semibold text-[#0B0E2C] sm:gap-2 sm:rounded-[1px] sm:px-3.5 sm:py-2 sm:text-[13px]"
                         >
                           <Check
                             className="h-3 w-3 sm:h-3.5 sm:w-3.5"
@@ -153,7 +150,7 @@ export function EverydayViewingSection() {
                     </ul>
                   )}
 
-                  <div className="mt-2.5 space-y-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-5 sm:space-y-2.5 sm:text-[15px] sm:leading-[1.75]">
+                  <div className="mt-3 space-y-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:space-y-2.5 sm:text-[15px] sm:leading-[1.75]">
                     {feature.body.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

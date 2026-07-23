@@ -3,25 +3,22 @@ import { MonitorPlay, Smartphone, Check, Info } from "lucide-react";
 export function AppleContent() {
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-        Apple Devices
-      </p>
-      <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-3xl sm:leading-[1.15] lg:text-[36px]">
+      <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[38px]">
         Set Up on{" "}
         <span className="text-[#7B2FFF]">Apple TV, iPhone & iPad</span>
       </h2>
-      <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
+      <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
         Apple users can access Sky Glass IPTV through compatible applications
         available from the Apple App Store.
       </p>
 
-      <div className="mt-5 grid gap-2.5 sm:mt-8 sm:gap-6 lg:grid-cols-2">
-        <div className="rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(123,47,255,0.08)] sm:p-6">
+      <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-2">
+        <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(123,47,255,0.08)] sm:p-6">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#7B2FFF]/10 text-[#7B2FFF] sm:h-10 sm:w-10">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-[#7B2FFF]/10 text-[#7B2FFF] sm:h-10 sm:w-10">
               <MonitorPlay className="h-3.5 w-3.5 sm:h-5 sm:w-5" strokeWidth={1.75} />
             </span>
-            <h3 className="text-[14px] font-bold leading-snug text-[#0B0E2C] sm:text-xl">
+            <h3 className="text-base font-bold leading-snug text-[#0B0E2C] sm:text-xl">
               Apple TV
             </h3>
           </div>
@@ -32,7 +29,7 @@ export function AppleContent() {
             {["IBO Player Pro", "iPlayTV", "Other tvOS IPTV apps"].map((app) => (
               <li
                 key={app}
-                className="flex items-center gap-2 text-[12px] text-[#0B0E2C] sm:text-[14px]"
+                className="flex items-center gap-2 text-[14px] text-[#0B0E2C] sm:text-[14px]"
               >
                 <Check className="h-3.5 w-3.5 text-[#7B2FFF] sm:h-4 sm:w-4" />
                 {app}
@@ -54,18 +51,18 @@ export function AppleContent() {
                 <span className="text-[12px] font-bold text-[#7B2FFF] sm:text-[13px]">
                   {i + 1}.
                 </span>
-                <p className="text-[12px] text-[#5C607A] sm:text-[13px]">{step}</p>
+                <p className="text-[14px] text-[#5C607A] sm:text-[13px]">{step}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(233,30,140,0.08)] sm:p-6">
+        <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(233,30,140,0.08)] sm:p-6">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#E91E8C]/10 text-[#E91E8C] sm:h-10 sm:w-10">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-[#E91E8C]/10 text-[#E91E8C] sm:h-10 sm:w-10">
               <Smartphone className="h-3.5 w-3.5 sm:h-5 sm:w-5" strokeWidth={1.75} />
             </span>
-            <h3 className="text-[14px] font-bold leading-snug text-[#0B0E2C] sm:text-xl">
+            <h3 className="text-base font-bold leading-snug text-[#0B0E2C] sm:text-xl">
               iPhone & iPad
             </h3>
           </div>
@@ -77,7 +74,7 @@ export function AppleContent() {
               (app) => (
                 <li
                   key={app}
-                  className="flex items-center gap-2 text-[12px] text-[#0B0E2C] sm:text-[14px]"
+                  className="flex items-center gap-2 text-[14px] text-[#0B0E2C] sm:text-[14px]"
                 >
                   <Check className="h-3.5 w-3.5 text-[#E91E8C] sm:h-4 sm:w-4" />
                   {app}
@@ -100,18 +97,18 @@ export function AppleContent() {
                 <span className="text-[12px] font-bold text-[#E91E8C] sm:text-[13px]">
                   {i + 1}.
                 </span>
-                <p className="text-[12px] text-[#5C607A] sm:text-[13px]">{step}</p>
+                <p className="text-[14px] text-[#5C607A] sm:text-[13px]">{step}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="mt-3 flex items-start gap-2.5 rounded-[8px] border border-[#0B0E2C]/10 p-3 sm:mt-6 sm:gap-3 sm:p-5">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-[#2563EB]/10 text-[#2563EB]">
+      <div className="mt-3 flex items-start gap-2.5 rounded-[1px] p-5 sm:mt-6 sm:gap-3 sm:p-5">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-[#2563EB]/10 text-[#2563EB]">
           <Info className="h-3.5 w-3.5" strokeWidth={1.75} />
         </span>
-        <p className="text-[12px] leading-[1.5] text-[#5C607A] sm:text-[13px] sm:leading-relaxed">
+        <p className="text-[14px] leading-[1.55] text-[#5C607A] sm:text-[13px] sm:leading-relaxed">
           <strong>Note:</strong> Third-party application charges are separate
           from your Sky Glass IPTV subscription. The official Android
           application cannot be installed directly on Apple devices.

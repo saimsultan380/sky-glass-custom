@@ -30,18 +30,15 @@ export function FreeTrialSection() {
       id="free-trial"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="grid items-start gap-4 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14 xl:gap-16">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-              24-Hour Trial
-            </p>
-            <h2 className="mt-1.5 max-w-lg text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            <h2 className="max-w-lg text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
               Try Sky Glass IPTV for{" "}
               <span className="text-gradient-brand">24 Hours</span>
             </h2>
 
-            <div className="mt-3 space-y-1.5 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
+            <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
               <p>
                 A trial helps you understand how the service performs on your
                 own device and internet connection before selecting a longer
@@ -61,7 +58,7 @@ export function FreeTrialSection() {
               <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto">
                 <Link
                   href="/contact-us"
-                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-5 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-5 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
                 >
                   <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                   Request Your 24-Hour Trial
@@ -71,7 +68,7 @@ export function FreeTrialSection() {
               <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto">
                 <Link
                   href="/contact-us"
-                  className="border-gradient-brand inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[10px] px-5 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
+                  className="border-gradient-brand inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] px-5 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
                 >
                   <Headphones
                     className="h-4 w-4 shrink-0 text-[#E91E8C]"
@@ -84,7 +81,7 @@ export function FreeTrialSection() {
             </div>
           </div>
 
-          <div className="rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 sm:p-8">
+          <div className="rounded-[1px] bg-white p-5 sm:p-8">
             <p className="text-[12px] font-semibold text-[#0B0E2C] sm:text-sm">
               During the Sky Glass IPTV 24-hour trial, you can evaluate:
             </p>
@@ -95,10 +92,10 @@ export function FreeTrialSection() {
                 return (
                   <li
                     key={item.label}
-                    className="flex items-center gap-2 rounded-[8px] border border-[#0B0E2C]/8 px-2.5 py-2 sm:gap-3 sm:px-3.5 sm:py-3"
+                    className="flex items-center gap-2.5 rounded-[1px] px-3 py-2.5 sm:gap-3 sm:px-3.5 sm:py-3"
                   >
                     <span
-                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[7px] sm:h-9 sm:w-9 sm:rounded-[8px]"
+                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[1px] sm:h-9 sm:w-9 sm:rounded-[1px]"
                       style={{
                         backgroundColor: `${item.color}14`,
                         color: item.color,
@@ -106,7 +103,7 @@ export function FreeTrialSection() {
                     >
                       <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="flex-1 text-[12px] font-medium text-[#0B0E2C] sm:text-[15px]">
+                    <span className="flex-1 text-[14px] font-medium text-[#0B0E2C] sm:text-[15px]">
                       {item.label}
                     </span>
                     <Check

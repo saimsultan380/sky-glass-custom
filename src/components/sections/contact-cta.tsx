@@ -12,19 +12,16 @@ export function ContactCta() {
   return (
     <section
       id="contact-cta"
-      className="relative border-t border-[#0B0E2C]/10 bg-white py-6 sm:py-20 lg:py-24"
+      className="relative border-t border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24"
     >
       <Container>
-        <div className="mx-auto max-w-5xl rounded-[12px] border border-[#0B0E2C]/10 bg-[#F8FAFC] px-4 py-6 text-center sm:rounded-[8px] sm:px-10 sm:py-16">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Get in Touch
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+        <div className="mx-auto max-w-5xl rounded-[1px] bg-[#F8FAFC] px-5 py-8 text-center sm:rounded-[1px] sm:px-10 sm:py-16">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Contact{" "}
             <span className="text-gradient-brand">Sky Glass IPTV</span> Today
           </h2>
 
-          <div className="mx-auto mt-3 max-w-3xl space-y-1.5 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
+          <div className="mx-auto mt-3 max-w-3xl space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
             <p>
               Whether you want to request a trial, compare subscription options,
               submit a reseller enquiry or receive setup assistance, the Sky
@@ -40,14 +37,14 @@ export function ContactCta() {
           <div className="mt-4 flex flex-col items-stretch justify-center gap-2.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href="#contact-form"
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
               Request Your 24-Hour Free Trial
             </Link>
             <Link
               href="#contact-form"
-              className="border-gradient-brand inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[8px] bg-white px-6 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
+              className="border-gradient-brand inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[1px] bg-white px-6 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <MessageCircle
                 className="h-4 w-4 shrink-0 text-[#E91E8C]"
@@ -59,7 +56,7 @@ export function ContactCta() {
           </div>
 
           <div className="mx-auto mt-5 max-w-3xl sm:mt-12">
-            <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white">
+            <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[1px] bg-white">
               {TRUST_ITEMS.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -73,7 +70,7 @@ export function ContactCta() {
                       strokeWidth={1.75}
                       aria-hidden
                     />
-                    <span className="text-[9px] font-semibold leading-tight text-[#0B0E2C] sm:text-[15px]">
+                    <span className="text-[11px] font-semibold leading-tight text-[#0B0E2C] sm:text-[15px]">
                       {item.label}
                     </span>
                   </li>

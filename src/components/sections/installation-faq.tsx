@@ -58,7 +58,6 @@ export function InstallationFaq() {
     <FaqAccordionSection
       faqs={INSTALL_FAQS}
       defaultOpenId="firestick-app"
-      eyebrow="FAQ"
       title={
         <>
           Frequently Asked Questions About{" "}

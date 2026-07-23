@@ -61,16 +61,13 @@ export function FourSimpleStepsSection() {
       id="four-simple-steps"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Getting Started
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Start Watching in{" "}
             <span className="text-gradient-brand">Four Simple Steps</span>
           </h2>
-          <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
+          <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
             Getting started with Sky Glass IPTV does not require advanced
             technical knowledge.
           </p>
@@ -88,7 +85,7 @@ export function FourSimpleStepsSection() {
               return (
                 <li key={item.step} className="relative flex flex-col">
                   <div className="flex flex-col items-center text-center">
-                    <span className="relative z-[1] flex h-[72px] w-[72px] items-center justify-center rounded-full border border-[#0B0E2C]/10 bg-white">
+                    <span className="relative z-[1] flex h-[72px] w-[72px] items-center justify-center rounded-full bg-white">
                       <span
                         className="flex h-14 w-14 items-center justify-center rounded-full"
                         style={{ backgroundColor: `${item.color}14`, color: item.color }}
@@ -115,23 +112,22 @@ export function FourSimpleStepsSection() {
         </div>
 
         {/* Mobile / tablet: stacked cards */}
-        <ol className="mt-5 grid gap-2.5 sm:mt-12 sm:gap-5 lg:hidden">
+        <ol className="mt-6 grid gap-4 sm:mt-12 sm:gap-5 lg:hidden">
           {STEPS.map((item) => {
             const Icon = item.icon;
             return (
               <li
                 key={item.step}
-                className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                 style={{
                   "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${item.color}1A`,
                   "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${item.color}33`,
                 } as React.CSSProperties}
               >
                 <div className="relative z-10 flex gap-2.5 sm:gap-4">
-                  <span className="accent-line-brand hidden sm:block" aria-hidden />
                   <div className="flex min-w-0 flex-1 items-start gap-2.5 sm:gap-5">
                     <span
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12 sm:rounded-[12px]"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-12 sm:w-12 sm:rounded-[1px]"
                       style={{ color: item.color, backgroundColor: `${item.color}15` }}
                     >
                       <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
@@ -143,7 +139,7 @@ export function FourSimpleStepsSection() {
                       <h3 className="mt-0.5 text-[15px] font-bold tracking-tight text-[#0B0E2C] sm:mt-1.5 sm:text-xl">
                         {item.title}
                       </h3>
-                      <div className="mt-1.5 space-y-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-3 sm:text-[15px] sm:leading-[1.75]">
+                      <div className="mt-1.5 space-y-1.5 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:text-[15px] sm:leading-[1.75]">
                         {item.body.map((paragraph) => (
                           <p key={paragraph}>{paragraph}</p>
                         ))}
@@ -156,10 +152,10 @@ export function FourSimpleStepsSection() {
           })}
         </ol>
 
-        <div className="mt-5 flex justify-center sm:mt-12">
+        <div className="mt-6 flex justify-center sm:mt-12">
           <Link
             href="/contact-us"
-            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
+            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
           >
             Start Your Sky Glass IPTV Trial
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />

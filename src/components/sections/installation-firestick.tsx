@@ -72,26 +72,23 @@ const STEPS = [
 export function FirestickContent() {
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-        Firestick Setup
-      </p>
-      <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-3xl sm:leading-[1.15] lg:text-[36px]">
+      <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[38px]">
         Install Sky Glass IPTV on{" "}
         <span className="text-gradient-brand">Firestick</span>
       </h2>
-      <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
+      <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
         The official Sky Glass IPTV app can be installed on Amazon Fire TV Stick
         and other compatible Fire TV devices.
       </p>
 
-      <div className="mt-5 grid gap-2.5 sm:mt-8 sm:gap-5 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2">
         {STEPS.map((step, idx) => {
           const Icon = step.icon;
           return (
             <div
               key={step.title}
               className={cn(
-                "group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-6",
+                "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6",
                 idx === STEPS.length - 1 && "md:col-span-2"
               )}
               style={
@@ -104,7 +101,7 @@ export function FirestickContent() {
               <div className="relative z-10 flex h-full flex-col">
                 <div className="flex items-center gap-2.5 sm:gap-3">
                   <span
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] border border-[#0B0E2C]/5 sm:h-11 sm:w-11"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-11 sm:w-11"
                     style={{
                       color: step.color,
                       backgroundColor: `${step.color}15`,
@@ -124,7 +121,7 @@ export function FirestickContent() {
                   {step.items.map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-[12px] leading-snug text-[#5C607A] sm:gap-2.5 sm:text-[14px] sm:leading-relaxed"
+                      className="flex items-start gap-2 text-[13px] leading-snug text-[#5C607A] sm:gap-2.5 sm:text-[14px] sm:leading-relaxed"
                     >
                       <span
                         className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
@@ -136,14 +133,14 @@ export function FirestickContent() {
                 </ul>
 
                 {step.note && (
-                  <div className="mt-3 flex items-start gap-2 rounded-[8px] bg-[#E91E8C]/5 p-2.5 text-[11px] text-[#0B0E2C] sm:mt-4 sm:p-3 sm:text-[12px]">
+                  <div className="mt-3 flex items-start gap-2 rounded-[1px] bg-[#E91E8C]/5 p-3.5 text-[13px] text-[#0B0E2C] sm:mt-4 sm:p-3 sm:text-[12px]">
                     <MonitorCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#E91E8C] sm:h-4 sm:w-4" />
                     <p>{step.note}</p>
                   </div>
                 )}
 
                 {step.warning && (
-                  <div className="mt-3 flex items-start gap-2 rounded-[8px] bg-[#FF6B2C]/5 p-2.5 text-[11px] text-[#0B0E2C] sm:mt-4 sm:p-3 sm:text-[12px]">
+                  <div className="mt-3 flex items-start gap-2 rounded-[1px] bg-[#FF6B2C]/5 p-3.5 text-[13px] text-[#0B0E2C] sm:mt-4 sm:p-3 sm:text-[12px]">
                     <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#FF6B2C] sm:h-4 sm:w-4" />
                     <p>{step.warning}</p>
                   </div>
@@ -157,7 +154,7 @@ export function FirestickContent() {
       <div className="mt-5 sm:mt-8">
         <Link
           href="/contact-us"
-          className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
+          className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
         >
           <Headphones className="h-4 w-4 shrink-0" strokeWidth={2} />
           Get Firestick Setup Help

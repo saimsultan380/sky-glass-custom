@@ -18,7 +18,7 @@ const TRUST_ITEMS = [
 
 export function InstallationHero() {
   return (
-    <section className="relative bg-white pt-4 sm:pt-6">
+    <section data-hero className="relative bg-white pt-4 sm:pt-6">
       <Container className="pb-5 pt-2 sm:pb-12 sm:pt-8 lg:pb-16 lg:pt-12" animate={false}>
         <div className="grid items-center gap-4 sm:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 xl:gap-14">
           <div className="order-1 min-w-0">
@@ -52,7 +52,7 @@ export function InstallationHero() {
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
                     href="/contact-us"
-                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Zap className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                     Install Sky Glass IPTV
@@ -62,7 +62,7 @@ export function InstallationHero() {
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
                     href="/contact-us"
-                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Headphones
                       className="h-4 w-4 shrink-0 text-[#E91E8C]"
@@ -92,7 +92,7 @@ export function InstallationHero() {
         </div>
 
         <FadeIn delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
-          <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10">
+          <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[1px]">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
               return (

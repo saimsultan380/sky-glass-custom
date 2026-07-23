@@ -119,16 +119,13 @@ export function InstallationDeviceGuide() {
       id="device-guides"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-16 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-xl lg:text-left">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Installation Guide
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Supported Devices for{" "}
             <span className="text-gradient-brand">Sky Glass IPTV</span>
           </h2>
-          <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.8]">
+          <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.8]">
             Select your device to view the matching installation steps, player
             options and setup tips.
           </p>
@@ -140,29 +137,27 @@ export function InstallationDeviceGuide() {
             aria-label="Device installation guides"
             className="lg:sticky lg:top-28"
           >
-            <ul className="space-y-2 sm:space-y-2.5">
+            <ul className="grid grid-cols-2 gap-2 sm:gap-2.5 lg:grid-cols-1">
               {DEVICES.map((device) => {
                 const Icon = device.icon;
                 const isActive = device.id === activeId;
                 return (
-                  <li key={device.id}>
+                  <li key={device.id} className="min-w-0">
                     <button
                       type="button"
                       onClick={() => selectDevice(device.id)}
                       className={cn(
-                        "group flex w-full items-center gap-2.5 rounded-[8px] border px-3 py-2.5 text-left transition-all duration-200 sm:gap-3 sm:px-3.5 sm:py-3.5",
+                        "group flex h-full w-full items-start gap-2 rounded-[1px] border px-2.5 py-2.5 text-left transition-all duration-200 sm:gap-3 sm:px-3.5 sm:py-3.5 lg:items-center",
                         isActive
                           ? "border-transparent bg-gradient-brand text-white shadow-[0_8px_24px_rgba(233,30,140,0.22)]"
-                          : "border-[#0B0E2C]/10 bg-white shadow-[0_2px_10px_rgba(11,14,44,0.03)] hover:border-[#0B0E2C]/20 hover:bg-[#0B0E2C]/[0.02]"
+                          : "border-transparent bg-white shadow-[0_2px_10px_rgba(11,14,44,0.03)] hover:bg-[#0B0E2C]/[0.02]"
                       )}
                       aria-pressed={isActive}
                     >
                       <span
                         className={cn(
-                          "flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] sm:h-10 sm:w-10",
-                          isActive
-                            ? "bg-white/15 text-white"
-                            : "border border-[#0B0E2C]/5"
+                          "flex h-8 w-8 shrink-0 items-center justify-center rounded-[1px] sm:h-10 sm:w-10",
+                          isActive ? "bg-white/15 text-white" : ""
                         )}
                         style={
                           isActive
@@ -178,7 +173,7 @@ export function InstallationDeviceGuide() {
                       <span className="min-w-0 flex-1">
                         <span
                           className={cn(
-                            "block text-[13px] font-bold leading-snug sm:text-[14px]",
+                            "block text-[11px] font-bold leading-snug sm:text-[14px]",
                             isActive ? "text-white" : "text-[#0B0E2C]"
                           )}
                         >
@@ -186,7 +181,7 @@ export function InstallationDeviceGuide() {
                         </span>
                         <span
                           className={cn(
-                            "mt-0.5 block text-[11px] leading-snug sm:text-[12px]",
+                            "mt-0.5 hidden text-[12px] leading-snug sm:block",
                             isActive ? "text-white/80" : "text-[#5C607A]"
                           )}
                         >
@@ -195,7 +190,7 @@ export function InstallationDeviceGuide() {
                       </span>
                       <ChevronRight
                         className={cn(
-                          "h-4 w-4 shrink-0 transition-colors",
+                          "mt-0.5 hidden h-4 w-4 shrink-0 transition-colors lg:block",
                           isActive
                             ? "text-white"
                             : "text-[#0B0E2C]/25 group-hover:text-[#0B0E2C]/50"
@@ -213,7 +208,7 @@ export function InstallationDeviceGuide() {
           <div
             ref={contentRef}
             id={`install-${activeDevice.id}`}
-            className="min-w-0 rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 sm:p-6 lg:p-8"
+            className="min-w-0 rounded-[1px] bg-white p-5 sm:p-6 lg:p-8"
           >
             {activeDevice.content}
           </div>

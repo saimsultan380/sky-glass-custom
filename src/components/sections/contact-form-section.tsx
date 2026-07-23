@@ -17,7 +17,7 @@ const MESSAGE_INCLUDES = [
 ];
 
 const fieldClassName =
-  "w-full rounded-[8px] border border-[#0B0E2C]/10 bg-[#F5F5F7] px-3 py-2.5 text-[13px] outline-none transition-colors focus:border-[#7B2FFF] focus:bg-white focus:ring-1 focus:ring-[#7B2FFF] sm:px-4 sm:py-3 sm:text-[15px]";
+  "w-full rounded-[1px] border border-[#0B0E2C]/10 bg-[#F5F5F7] px-3.5 py-3 text-[14px] outline-none transition-colors focus:border-[#7B2FFF] focus:bg-white focus:ring-1 focus:ring-[#7B2FFF] sm:px-4 sm:py-3 sm:text-[15px]";
 
 export function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -31,22 +31,22 @@ export function ContactFormSection() {
   return (
     <section
       id="contact-form"
-      className="border-b border-[#0B0E2C]/10 bg-white py-6 sm:py-24 lg:py-32"
+      className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24"
     >
       <Container>
         <div className="grid gap-4 sm:gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-10">
-              <h2 className="text-[18px] font-bold text-[#0B0E2C] sm:text-3xl">
+            <div className="rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-10">
+              <h2 className="text-[26px] font-bold text-[#0B0E2C] sm:text-[32px]">
                 Send an <span className="text-gradient-brand">Enquiry</span>
               </h2>
-              <p className="mt-1.5 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-2 sm:text-base">
+              <p className="mt-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-2 sm:text-base">
                 Please check that your contact information is correct before
                 submitting the form.
               </p>
 
-              <form className="mt-4 space-y-3.5 sm:mt-8 sm:space-y-6" onSubmit={handleSubmit}>
+              <form className="mt-5 space-y-4 sm:mt-8 sm:space-y-6" onSubmit={handleSubmit}>
                 <div className="grid gap-3.5 sm:gap-6 sm:grid-cols-2">
                   <div>
                     <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
@@ -133,7 +133,7 @@ export function ContactFormSection() {
 
                 <button
                   type="submit"
-                  className="flex min-h-[44px] w-full items-center justify-center rounded-[8px] bg-gradient-brand px-6 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:px-8 sm:py-4 sm:text-[16px]"
+                  className="flex min-h-[44px] w-full items-center justify-center rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:px-8 sm:py-4 sm:text-[16px]"
                 >
                   {submitted ? "Message Sent Successfully!" : "Send Your Enquiry"}
                 </button>
@@ -144,17 +144,17 @@ export function ContactFormSection() {
           {/* Right Column: Info */}
           <div className="lg:col-span-5">
             <div className="sticky top-24">
-              <div className="rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-8">
+              <div className="rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-8">
                 <div className="flex items-center gap-2.5 sm:gap-3">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-[#FF6B2C]/10 sm:h-12 sm:w-12">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-[#FF6B2C]/10 sm:h-12 sm:w-12">
                     <Info className="h-4 w-4 text-[#FF6B2C] sm:h-6 sm:w-6" />
                   </div>
-                  <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-xl">
+                  <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
                     What to <span className="text-gradient-brand">Include</span>
                   </h3>
                 </div>
 
-                <p className="mt-3 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed">
+                <p className="mt-3 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed">
                   Providing complete information helps the support team
                   understand the problem and respond with the correct
                   instructions. Please include:
@@ -181,7 +181,7 @@ export function ContactFormSection() {
                   {MESSAGE_INCLUDES.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-2 text-[12px] text-[#0B0E2C] sm:gap-3 sm:text-[15px]"
+                      className="flex items-start gap-2 text-[14px] text-[#0B0E2C] sm:gap-3 sm:text-[15px]"
                     >
                       <Check
                         className="mt-0.5 h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4"
@@ -193,7 +193,7 @@ export function ContactFormSection() {
                   ))}
                 </ul>
 
-                <div className="mt-3 rounded-[8px] border-l-4 border-[#E91E8C] bg-[#F5F5F7] p-3 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-8 sm:p-5 sm:text-sm sm:leading-relaxed">
+                <div className="mt-3 rounded-[1px] bg-[#F5F5F7] p-4 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:p-5 sm:text-sm sm:leading-relaxed">
                   <strong className="text-[#0B0E2C]">Security Note:</strong> Do
                   not send payment-card information, passwords for unrelated
                   accounts or unnecessary sensitive personal details.

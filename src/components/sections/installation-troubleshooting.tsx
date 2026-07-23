@@ -80,24 +80,21 @@ export function InstallationTroubleshooting() {
       id="troubleshooting"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-6 sm:py-20 lg:py-24">
+      <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
-            Support
-          </p>
-          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Common Sky Glass IPTV{" "}
             <span className="text-gradient-brand">Setup Problems</span>
           </h2>
         </div>
 
-        <div className="mt-5 grid gap-2.5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {PROBLEMS.map((problem) => {
             const Icon = problem.icon;
             return (
               <div
                 key={problem.title}
-                className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-6"
+                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${problem.color}08`,
@@ -106,11 +103,10 @@ export function InstallationTroubleshooting() {
                 }
               >
                 <div className="relative z-10 flex h-full gap-2.5 sm:gap-4">
-                  <span className="accent-line-brand hidden sm:block" aria-hidden />
                   <div className="flex flex-1 flex-col">
                     <div className="flex items-center gap-2.5 sm:gap-3">
                       <span
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] sm:h-10 sm:w-10"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-10 sm:w-10"
                         style={{
                           backgroundColor: `${problem.color}15`,
                           color: problem.color,
@@ -126,7 +122,7 @@ export function InstallationTroubleshooting() {
                       {problem.items.map((item, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-2 text-[12px] leading-snug text-[#5C607A] sm:gap-2.5 sm:text-[13px]"
+                          className="flex items-start gap-2 text-[13px] leading-snug text-[#5C607A] sm:gap-2.5 sm:text-[13px]"
                         >
                           <Check
                             className="mt-0.5 h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5"
@@ -144,7 +140,7 @@ export function InstallationTroubleshooting() {
           })}
         </div>
 
-        <div className="mx-auto mt-4 flex max-w-xl items-center gap-2.5 rounded-[8px] bg-[#E91E8C]/5 p-3 text-[12px] text-[#0B0E2C] sm:mt-12 sm:gap-3 sm:p-4 sm:text-[13px]">
+        <div className="mx-auto mt-4 flex max-w-xl items-center gap-2.5 rounded-[1px] bg-[#E91E8C]/5 p-4 text-[14px] text-[#0B0E2C] sm:mt-12 sm:gap-3 sm:p-4 sm:text-[13px]">
           <AlertTriangle className="h-4 w-4 shrink-0 text-[#E91E8C] sm:h-5 sm:w-5" />
           <p>
             <strong>EPG Not Displaying?</strong> Allow the app time to download

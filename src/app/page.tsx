@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/hero-section";
 import { SmarterIptvExperienceSection } from "@/components/sections/smarter-iptv-experience-section";
 import { WhyChooseSkyGlassSection } from "@/components/sections/why-choose-sky-glass-section";
-import { PlansPricingSection } from "@/components/sections/plans-pricing-section";
 import { EntertainmentCategoriesSection } from "@/components/sections/entertainment-categories-section";
-import { SubscriptionPlansOverviewSection } from "@/components/sections/subscription-plans-overview-section";
 import { PopularDevicesSection } from "@/components/sections/popular-devices-section";
 import { FourSimpleStepsSection } from "@/components/sections/four-simple-steps-section";
 import { EverydayViewingSection } from "@/components/sections/everyday-viewing-section";
@@ -48,9 +46,7 @@ export default function Home() {
       <HeroSection />
       <SmarterIptvExperienceSection />
       <WhyChooseSkyGlassSection />
-      <PlansPricingSection />
       <EntertainmentCategoriesSection />
-      <SubscriptionPlansOverviewSection />
       <PopularDevicesSection />
       <FourSimpleStepsSection />
       <EverydayViewingSection />

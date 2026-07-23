@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig, siteMetadataBase } from "@/lib/site";
+import { AutoScrollReveal } from "@/components/animation/auto-scroll-reveal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,6 +69,7 @@ export default function RootLayout({
         />
       </head>
       <body className="relative flex min-h-full flex-col bg-white text-[#0B0E2C]">
+        <AutoScrollReveal />
         <div className="relative z-10 flex min-h-full flex-1 flex-col bg-white">
           {children}
         </div>
