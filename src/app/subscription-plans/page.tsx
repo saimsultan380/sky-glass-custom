@@ -42,7 +42,7 @@ export default function SubscriptionPlansPage() {
       <Header />
       <PlansHero />
       <PlansChoiceSection />
-      <PlansPricingSection />
+      <PlansPricingSection variant="plans" />
       <PlansComparisonSection />
       <PlansIncludedSection />
       <PlansDevicesSection />
