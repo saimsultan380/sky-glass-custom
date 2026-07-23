@@ -10,25 +10,26 @@ interface ScrollRevealProps {
   delay?: number;
   duration?: number;
   direction?: "up" | "down" | "left" | "right" | "none";
+  /** Optional stagger interval (seconds) when wrapping multiple children */
+  staggerChildren?: number;
 }
 
-export function ScrollReveal({
-  children,
-  className,
-  delay = 0,
-  duration = 0.4,
-  direction = "up",
-}: ScrollRevealProps) {
-  const reduceMotion = useReducedMotion();
-  const offset = 20;
+const EASE = [0.21, 0.47, 0.32, 0.98] as const;
+const OFFSET = 20;
+
+function makeItemVariants(
+  duration: number,
+  delay: number,
+  direction: ScrollRevealProps["direction"],
+): Variants {
   const initial: Record<string, number> = { opacity: 0 };
 
-  if (direction === "up") initial.y = offset;
-  else if (direction === "down") initial.y = -offset;
-  else if (direction === "left") initial.x = offset;
-  else if (direction === "right") initial.x = -offset;
+  if (direction === "up") initial.y = OFFSET;
+  else if (direction === "down") initial.y = -OFFSET;
+  else if (direction === "left") initial.x = OFFSET;
+  else if (direction === "right") initial.x = -OFFSET;
 
-  const variants: Variants = {
+  return {
     hidden: initial,
     visible: {
       opacity: 1,
@@ -37,13 +38,49 @@ export function ScrollReveal({
       transition: {
         duration,
         delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        ease: EASE,
       },
     },
   };
+}
+
+export function ScrollReveal({
+  children,
+  className,
+  delay = 0,
+  duration = 0.45,
+  direction = "up",
+  staggerChildren,
+}: ScrollRevealProps) {
+  const reduceMotion = useReducedMotion();
 
   if (reduceMotion) {
     return <div className={cn(className)}>{children}</div>;
+  }
+
+  const item = makeItemVariants(duration, delay, direction);
+
+  if (staggerChildren) {
+    return (
+      <motion.div
+        className={cn(className)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "0px 0px -60px 0px", amount: 0 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren },
+          },
+        }}
+      >
+        {React.Children.map(children, (child) => (
+          <motion.div variants={makeItemVariants(duration, 0, direction)}>
+            {child}
+          </motion.div>
+        ))}
+      </motion.div>
+    );
   }
 
   return (
@@ -52,7 +89,7 @@ export function ScrollReveal({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "0px 0px -60px 0px", amount: 0 }}
-      variants={variants}
+      variants={item}
     >
       {children}
     </motion.div>

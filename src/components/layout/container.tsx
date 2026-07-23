@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { FadeIn } from "@/components/animation/fade-in";
+import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;
@@ -14,7 +14,11 @@ export function Container({
   animate = true,
   ...props
 }: ContainerProps) {
-  const content = animate ? <FadeIn>{children}</FadeIn> : children;
+  const content = animate ? (
+    <ScrollReveal>{children}</ScrollReveal>
+  ) : (
+    children
+  );
 
   return (
     <Component

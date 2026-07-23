@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, LayoutDashboard, CreditCard, HeadphonesIcon } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 const TRUST_ITEMS = [
   { label: "Professional Dashboard", icon: LayoutDashboard, color: "#FF6B2C" },
@@ -25,39 +26,40 @@ export function ResellerHero() {
               <span className="text-gradient-brand">Start and Grow Your IPTV Business</span>
             </MaskReveal>
 
-            <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
-              <p>
-                Build and manage your own IPTV reseller business with the Sky Glass IPTV Reseller UK programme. Create customer accounts, activate subscriptions and monitor reseller credits through one organised dashboard.
-              </p>
-              <p>
-                Whether you are starting a new online venture or expanding an existing customer service, the reseller panel provides practical management tools and dedicated assistance for the UK market.
-              </p>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
-              <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                >
-                  Become a Sky Glass IPTV Reseller
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+            <ScrollReveal delay={0.28}>
+              <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
+                <p>
+                  Build and manage your own IPTV reseller business with the Sky Glass IPTV Reseller UK programme. Create customer accounts, activate subscriptions and monitor reseller credits through one organised dashboard.
+                </p>
+                <p>
+                  Whether you are starting a new online venture or expanding an existing customer service, the reseller panel provides practical management tools and dedicated assistance for the UK market.
+                </p>
               </div>
 
-              <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                <Link
-                  href="#packages"
-                  className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px] bg-white"
-                >
-                  View Reseller Packages
-                </Link>
+              <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
+                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                  >
+                    Become a Sky Glass IPTV Reseller
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+
+                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
+                  <Link
+                    href="#packages"
+                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px] bg-white"
+                  >
+                    View Reseller Packages
+                  </Link>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
-          {/* Image */}
-          <div className="order-2 flex justify-center lg:justify-end">
+          <ScrollReveal delay={0.2} className="order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[560px] lg:max-w-none">
               <Image
                 src="/hero.PNG"
@@ -69,10 +71,10 @@ export function ResellerHero() {
                 className="mx-auto h-auto max-h-[260px] w-full object-contain object-center sm:max-h-none"
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
-        <div className="mt-4 sm:mt-10 lg:mt-14">
+        <ScrollReveal delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
           <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
@@ -94,7 +96,7 @@ export function ResellerHero() {
               );
             })}
           </ul>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

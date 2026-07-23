@@ -65,38 +65,30 @@ function tokenize(
   return tokens;
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.15,
-    },
-  },
-};
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 const wordVariants = {
-  hidden: { y: "100%", skewY: 8, opacity: 0 },
+  hidden: { y: "115%", skewY: 8, opacity: 0 },
   visible: {
     y: "0%",
     skewY: 0,
     opacity: 1,
     transition: {
-      duration: 0.85,
-      ease: [0.16, 1, 0.3, 1] as const,
+      duration: 0.95,
+      ease: EASE,
     },
   },
 };
 
 /**
- * Staggered skewed text reveal — one viewport observer + staggered children.
- * Plays once for smooth scroll performance.
+ * Skewed text reveal — overflow-hidden mask + inner slide/skew.
+ * Plays once; respects prefers-reduced-motion.
  */
 export function MaskReveal({
   children,
   className,
   style,
-  delay = 0.2,
+  delay = 0.12,
   as: Tag = "h1",
   align = "center",
 }: MaskRevealProps) {
@@ -129,17 +121,17 @@ export function MaskReveal({
   }
 
   return (
-    <Tag className={cn(className)} style={style}>
+    <Tag className={cn("overflow-hidden", className)} style={style}>
       <motion.span
         className={rowClass}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4, margin: "0px 0px -40px 0px" }}
         variants={{
-          ...containerVariants,
+          hidden: {},
           visible: {
             transition: {
-              staggerChildren: 0.05,
+              staggerChildren: 0.045,
               delayChildren: delay,
             },
           },
@@ -152,7 +144,7 @@ export function MaskReveal({
           >
             <motion.span
               className={cn(
-                "inline-block origin-bottom",
+                "inline-block origin-bottom will-change-transform",
                 word.className,
                 useGradient && "text-gradient-brand",
               )}

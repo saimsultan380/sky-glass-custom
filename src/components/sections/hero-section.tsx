@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 const TRUST_ITEMS = [
   { label: "Quick Activation", icon: Zap, color: "#FF6B2C" },
@@ -35,66 +36,68 @@ export function HeroSection() {
               – Live TV, Sports, Movies & Series in One Place
             </MaskReveal>
 
-            <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
-              <p>
-                Enjoy a smarter way to watch entertainment with Sky Glass IPTV,
-                a flexible IPTV service designed for viewers across the UK.
-              </p>
-              <p>
-                Explore available live television, sports, movies and popular
-                series through one organised service compatible with Firestick,
-                Android devices, Smart TVs, Apple TV, smartphones, tablets and
-                computers.
-              </p>
-              <p>
-                Choose a flexible subscription, receive quick activation and
-                test the service on your preferred device with a 24-hour trial
-                before selecting a longer plan.
-              </p>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
-              <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                >
-                  <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-                  Start Your 24-Hour Free Trial
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#E91E8C] transition-opacity hover:opacity-75 sm:text-sm"
-                >
-                  <Headphones className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
-                  Contact Us
-                </Link>
+            <ScrollReveal delay={0.28}>
+              <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
+                <p>
+                  Enjoy a smarter way to watch entertainment with Sky Glass IPTV,
+                  a flexible IPTV service designed for viewers across the UK.
+                </p>
+                <p>
+                  Explore available live television, sports, movies and popular
+                  series through one organised service compatible with Firestick,
+                  Android devices, Smart TVs, Apple TV, smartphones, tablets and
+                  computers.
+                </p>
+                <p>
+                  Choose a flexible subscription, receive quick activation and
+                  test the service on your preferred device with a 24-hour trial
+                  before selecting a longer plan.
+                </p>
               </div>
 
-              <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                <Link
-                  href="/subscription-plans"
-                  className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[10px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                >
-                  <CalendarDays
-                    className="h-4 w-4 shrink-0 text-[#E91E8C]"
-                    strokeWidth={2}
-                    aria-hidden
-                  />
-                  View Sky Glass IPTV Plans
-                </Link>
-                <Link
-                  href="/subscription-plans"
-                  className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#7B2FFF] transition-opacity hover:opacity-75 sm:text-sm"
-                >
-                  <CreditCard className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
-                  Subscription Plans
-                </Link>
+              <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
+                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                  >
+                    <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+                    Start Your 24-Hour Free Trial
+                  </Link>
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#E91E8C] transition-opacity hover:opacity-75 sm:text-sm"
+                  >
+                    <Headphones className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
+                    Contact Us
+                  </Link>
+                </div>
+
+                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
+                  <Link
+                    href="/subscription-plans"
+                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[10px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                  >
+                    <CalendarDays
+                      className="h-4 w-4 shrink-0 text-[#E91E8C]"
+                      strokeWidth={2}
+                      aria-hidden
+                    />
+                    View Sky Glass IPTV Plans
+                  </Link>
+                  <Link
+                    href="/subscription-plans"
+                    className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#7B2FFF] transition-opacity hover:opacity-75 sm:text-sm"
+                  >
+                    <CreditCard className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
+                    Subscription Plans
+                  </Link>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
-          <div className="order-2 flex justify-center lg:justify-end">
+          <ScrollReveal delay={0.2} className="order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[560px] lg:max-w-none">
               <Image
                 src="/hero.PNG"
@@ -106,10 +109,10 @@ export function HeroSection() {
                 className="mx-auto h-auto max-h-[260px] w-full object-contain object-center sm:max-h-none"
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
-        <div className="mt-4 sm:mt-10 lg:mt-14">
+        <ScrollReveal delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
           <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
@@ -131,7 +134,7 @@ export function HeroSection() {
               );
             })}
           </ul>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );
