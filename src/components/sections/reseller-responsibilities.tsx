@@ -17,13 +17,13 @@ export function ResellerResponsibilities() {
   ];
 
   const supportTopics = [
-    "Accessing the reseller panel",
-    "Understanding reseller credits",
+    "Accessing the panel",
+    "Understanding credits",
     "Creating customer accounts",
     "Selecting subscription durations",
     "Renewing eligible accounts",
     "Resolving basic panel issues",
-    "Purchasing additional reseller credits",
+    "Purchasing additional credits",
     "Understanding available packages",
   ];
 
@@ -40,7 +40,7 @@ export function ResellerResponsibilities() {
               Reseller Responsibilities
             </h2>
             <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-relaxed">
-              The Sky Glass IPTV Reseller Panel provides account-management
+              The panel provides account-management
               tools, but each reseller remains responsible for operating their
               own customer-facing business. Responsibilities may include:
             </p>
@@ -71,7 +71,7 @@ export function ResellerResponsibilities() {
               Support for Sky Glass IPTV Resellers
             </h2>
             <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-relaxed">
-              Reseller support is available for questions related to:
+              Support is available for questions related to:
             </p>
 
             <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-4">
@@ -95,7 +95,7 @@ export function ResellerResponsibilities() {
               </p>
               <p>
                 Issues that cannot be resolved through normal setup guidance may
-                then be escalated through the appropriate reseller support
+                then be escalated through the appropriate support
                 channel.
               </p>
             </div>

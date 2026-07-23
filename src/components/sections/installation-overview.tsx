@@ -55,8 +55,8 @@ export function InstallationOverview() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Install Sky Glass IPTV on Your{" "}
-            <span className="text-gradient-brand">Preferred Device</span>
+            Choose Your{" "}
+            <span className="text-gradient-brand">Device</span>
           </h2>
           <div className="mt-3 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
             <p>
@@ -64,9 +64,14 @@ export function InstallationOverview() {
               devices.
             </p>
             <p>
-              Firestick and Android users can install the official Sky Glass
-              IPTV application using the recommended installation method. Other
-              devices can access the service through a compatible IPTV player.
+              Firestick and Android users can install the official application
+              using the recommended installation method.
+            </p>
+            <p>
+              Other devices can access the service through a compatible IPTV
+              player. After installing the appropriate application, enter the
+              subscription information supplied after your trial or subscription
+              has been activated.
             </p>
           </div>
         </div>
@@ -77,7 +82,7 @@ export function InstallationOverview() {
               Official App Support
             </h3>
             <p className="mt-1.5 text-[14px] text-[#5C607A] sm:mt-2 sm:text-sm">
-              Available for these popular platforms:
+              This may include:
             </p>
             <ul className="mt-3 space-y-2.5 sm:mt-5 sm:space-y-3">
               {DEVICES_LIST.map((item) => (
@@ -107,7 +112,7 @@ export function InstallationOverview() {
                         Device
                       </th>
                       <th className="px-3 py-3 text-[12px] font-bold uppercase tracking-wide text-[#5C607A] sm:px-5 sm:py-4 sm:text-[13px]">
-                        Setup Method
+                        Recommended Setup Method
                       </th>
                     </tr>
                   </thead>

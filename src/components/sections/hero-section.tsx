@@ -39,19 +39,21 @@ export function HeroSection() {
             <FadeIn delay={0.2}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Enjoy a smarter way to watch entertainment with Sky Glass IPTV,
-                  a flexible IPTV service designed for viewers across the UK.
+                  Enjoy a simpler way to access live television and on-demand
+                  entertainment with Sky Glass IPTV, a flexible service created
+                  for viewers across the UK.
                 </p>
                 <p>
-                  Explore available live television, sports, movies and popular
-                  series through one organised service compatible with Firestick,
-                  Android devices, Smart TVs, Apple TV, smartphones, tablets and
-                  computers.
+                  Browse available live channels, sports, movies, television
+                  series, news, documentaries and family entertainment through
+                  one organised platform. The service works with popular devices
+                  including Firestick, Android TV, Smart TVs, Apple TV,
+                  smartphones, tablets, Windows computers and Mac devices.
                 </p>
                 <p>
-                  Choose a flexible subscription, receive quick activation and
-                  test the service on your preferred device with a 24-hour trial
-                  before selecting a longer plan.
+                  Choose a subscription that suits your viewing habits, receive
+                  the information needed to complete setup and test the service
+                  with a 24-hour trial before selecting a longer plan.
                 </p>
               </div>
             </FadeIn>

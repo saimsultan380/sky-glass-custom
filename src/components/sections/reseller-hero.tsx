@@ -29,10 +29,17 @@ export function ResellerHero() {
             <FadeIn delay={0.2}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Build and manage your own IPTV reseller business with the Sky Glass IPTV Reseller UK programme. Create customer accounts, activate subscriptions and monitor reseller credits through one organised dashboard.
+                  Build and manage your own IPTV reseller business through the
+                  Sky Glass IPTV Reseller Panel.
                 </p>
                 <p>
-                  Whether you are starting a new online venture or expanding an existing customer service, the reseller panel provides practical management tools and dedicated assistance for the UK market.
+                  Create customer accounts, activate subscriptions and monitor
+                  reseller credits from one organised dashboard.
+                </p>
+                <p>
+                  Whether you are starting a new online venture or expanding an
+                  existing customer service, the programme provides practical
+                  management tools and dedicated assistance for the UK market.
                 </p>
               </div>
             </FadeIn>

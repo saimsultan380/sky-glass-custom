@@ -20,18 +20,18 @@ const STEPS: {
     step: "01",
     icon: ClipboardList,
     color: "#FF6B2C",
-    title: "Request a Trial or Select a Plan",
+    title: "Request a Trial or Choose a Plan",
     body: [
-      "Begin with a 24-hour trial or choose the subscription option that best matches your viewing requirements.",
+      "Begin with a 24-hour trial or select a subscription that matches your preferred duration and number of connections.",
     ],
   },
   {
     step: "02",
     icon: KeyRound,
     color: "#E91E8C",
-    title: "Receive Your Activation Information",
+    title: "Receive Your Account Information",
     body: [
-      "After confirmation, you receive the account or configuration details required for your selected device and application.",
+      "After confirmation, you receive the login or configuration details required for your selected application.",
     ],
   },
   {
@@ -40,17 +40,17 @@ const STEPS: {
     color: "#7B2FFF",
     title: "Install the Correct Application",
     body: [
-      "Install the official Sky Glass IPTV app on compatible Android and Firestick devices.",
-      "For another platform, choose a supported alternative IPTV player from the relevant application store.",
+      "Install the official app on compatible Firestick and Android devices.",
+      "For another platform, install a supported alternative player from the relevant application store.",
     ],
   },
   {
     step: "04",
     icon: PlayCircle,
     color: "#2563EB",
-    title: "Sign In and Start Exploring",
+    title: "Sign In and Explore",
     body: [
-      "Enter the supplied information, allow the available categories to load and begin exploring live television and on-demand entertainment.",
+      "Enter the supplied information, allow the available categories to load and begin browsing available live television and on-demand entertainment.",
     ],
   },
 ];
@@ -68,8 +68,7 @@ export function FourSimpleStepsSection() {
             <span className="text-gradient-brand">Four Simple Steps</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            Getting started with Sky Glass IPTV does not require advanced
-            technical knowledge.
+            Getting started does not require advanced technical knowledge.
           </p>
         </div>
 
@@ -118,7 +117,7 @@ export function FourSimpleStepsSection() {
             return (
               <li
                 key={item.step}
-                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                 style={{
                   "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${item.color}1A`,
                   "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${item.color}33`,
@@ -157,7 +156,7 @@ export function FourSimpleStepsSection() {
             href="/contact-us"
             className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
           >
-            Start Your Sky Glass IPTV Trial
+            Start Your 24-Hour Trial
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
           </Link>
         </div>

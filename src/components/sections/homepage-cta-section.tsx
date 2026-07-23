@@ -30,13 +30,13 @@ export function HomepageCtaSection() {
 
           <div className="mx-auto mt-3 max-w-3xl space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
             <p>
-              Enjoy available live television, sports, movies and popular series
-              through a flexible service designed for modern streaming devices.
+              Access available live television, sports, movies and popular
+              series through a flexible service built for commonly used streaming
+              devices.
             </p>
             <p>
-              Begin with a 24-hour trial, confirm compatibility with your
-              preferred device and choose the Sky Glass IPTV subscription that
-              best matches your viewing habits.
+              Begin with a 24-hour trial, check compatibility with your preferred
+              device and choose the subscription that suits your viewing habits.
             </p>
           </div>
 

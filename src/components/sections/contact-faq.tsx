@@ -39,7 +39,7 @@ const CONTACT_FAQS = [
   {
     id: "third-party-fees",
     q: "Are third-party IPTV player fees included?",
-    a: "No. Some alternative IPTV applications charge their own activation or subscription fee. Those charges are separate from your Sky Glass IPTV plan.",
+    a: "No. Some alternative IPTV applications charge their own activation or subscription fee. Those charges are separate from your plan.",
   },
 ];
 

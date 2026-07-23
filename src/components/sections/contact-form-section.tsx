@@ -55,7 +55,7 @@ export function ContactFormSection() {
                     <input
                       type="text"
                       required
-                      placeholder="Enter your name"
+                      placeholder="Enter the name you want the support team to use when responding."
                       className={fieldClassName}
                     />
                   </div>
@@ -66,7 +66,7 @@ export function ContactFormSection() {
                     <input
                       type="email"
                       required
-                      placeholder="Active email address"
+                      placeholder="Provide an active email address where you can receive activation information or support instructions."
                       className={fieldClassName}
                     />
                   </div>
@@ -75,11 +75,11 @@ export function ContactFormSection() {
                 <div className="grid gap-3.5 sm:gap-6 sm:grid-cols-2">
                   <div>
                     <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
-                      Contact Number (Optional)
+                      Contact Number
                     </label>
                     <input
                       type="tel"
-                      placeholder="For WhatsApp support"
+                      placeholder="Add your contact number when you prefer assistance through a supported messaging service."
                       className={fieldClassName}
                     />
                   </div>
@@ -111,6 +111,7 @@ export function ContactFormSection() {
                     <option value="android_mobile">Android Phone or Tablet</option>
                     <option value="samsung_tv">Samsung Smart TV</option>
                     <option value="lg_tv">LG Smart TV</option>
+                    <option value="other_smart_tv">Other Smart TV</option>
                     <option value="apple_tv">Apple TV</option>
                     <option value="ios">iPhone or iPad</option>
                     <option value="windows">Windows PC</option>
@@ -150,7 +151,8 @@ export function ContactFormSection() {
                     <Info className="h-4 w-4 text-[#FF6B2C] sm:h-6 sm:w-6" />
                   </div>
                   <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
-                    What to <span className="text-gradient-brand">Include</span>
+                    What to Include in Your{" "}
+                    <span className="text-gradient-brand">Message</span>
                   </h3>
                 </div>
 

@@ -42,10 +42,13 @@ export function AppleContent() {
               Setup Steps:
             </p>
             {[
-              "Open App Store and search for player.",
-              "Install and select login method.",
-              "Enter Sky Glass subscription info.",
-              "Save profile and load categories.",
+              "Open the App Store.",
+              "Search for a compatible IPTV player.",
+              "Install and open the application.",
+              "Select the supported login method.",
+              "Enter the subscription information supplied after activation.",
+              "Save the profile.",
+              "Allow the available categories to load.",
             ].map((step, i) => (
               <div key={i} className="flex gap-2 sm:gap-3">
                 <span className="text-[12px] font-bold text-[#7B2FFF] sm:text-[13px]">
@@ -55,6 +58,10 @@ export function AppleContent() {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-[13px] leading-snug text-[#5C607A] sm:mt-4 sm:text-[13px] sm:leading-relaxed">
+            The official Android application cannot be installed directly on
+            Apple TV.
+          </p>
         </div>
 
         <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(233,30,140,0.08)] sm:p-6">
@@ -88,10 +95,13 @@ export function AppleContent() {
               Setup Steps:
             </p>
             {[
-              "Install player from Apple App Store.",
-              "Select login or playlist method.",
-              "Enter Sky Glass subscription info.",
-              "Save profile and wait for loading.",
+              "Open the Apple App Store.",
+              "Install your preferred IPTV player.",
+              "Open the application.",
+              "Select the required login or playlist method.",
+              "Enter your subscription information.",
+              "Save the profile.",
+              "Wait for the available content to load.",
             ].map((step, i) => (
               <div key={i} className="flex gap-2 sm:gap-3">
                 <span className="text-[12px] font-bold text-[#E91E8C] sm:text-[13px]">
@@ -101,6 +111,11 @@ export function AppleContent() {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-[13px] leading-snug text-[#5C607A] sm:mt-4 sm:text-[13px] sm:leading-relaxed">
+            Some applications may offer free trials, subscriptions or one-time
+            activation fees through Apple. These application charges are separate
+            from your IPTV subscription.
+          </p>
         </div>
       </div>
 

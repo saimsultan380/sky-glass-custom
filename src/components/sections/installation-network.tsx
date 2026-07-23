@@ -13,10 +13,10 @@ const PERFORMANCE_FACTORS = [
 
 const RECOMMENDATIONS = [
   "Use a stable broadband connection.",
-  "Connect TVs and streaming boxes via Ethernet.",
+  "Connect televisions and streaming boxes through Ethernet where possible.",
   "Keep Wi-Fi devices close to the router.",
   "Avoid large downloads while streaming.",
-  "Restart the router if playback is unstable.",
+  "Restart the router if playback becomes unstable.",
   "Use a stream quality suitable for your connection.",
   "Keep your IPTV application updated.",
   "Keep your device software updated.",
@@ -62,7 +62,7 @@ export function InstallationNetwork() {
 
           <div className="min-w-0">
             <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
-              Better Performance Tips
+              For better performance:
             </h3>
             <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
               {RECOMMENDATIONS.map((tip, idx) => (

@@ -41,12 +41,6 @@ const PREMIUM_FEATURES = [
 
 const STANDARD_PLANS: DurationPlan[] = [
   {
-    name: "1 MONTH PLAN",
-    price: "9.99",
-    suffix: "/1 month",
-    features: STANDARD_FEATURES,
-  },
-  {
     name: "3 MONTHS PLAN",
     price: "24.99",
     suffix: "/3 months",
@@ -65,15 +59,15 @@ const STANDARD_PLANS: DurationPlan[] = [
     suffix: "/12 months",
     features: STANDARD_FEATURES,
   },
+  {
+    name: "24 MONTHS PLAN",
+    price: "TBC",
+    suffix: "/24 months",
+    features: STANDARD_FEATURES,
+  },
 ];
 
 const PREMIUM_PLANS: DurationPlan[] = [
-  {
-    name: "1 MONTH PLAN",
-    price: "14.99",
-    suffix: "/1 month",
-    features: PREMIUM_FEATURES,
-  },
   {
     name: "3 MONTHS PLAN",
     price: "34.99",
@@ -93,6 +87,12 @@ const PREMIUM_PLANS: DurationPlan[] = [
     suffix: "/12 months",
     features: PREMIUM_FEATURES,
   },
+  {
+    name: "24 MONTHS PLAN",
+    price: "TBC",
+    suffix: "/24 months",
+    features: PREMIUM_FEATURES,
+  },
 ];
 
 export function PlansPricingSection() {
@@ -108,8 +108,7 @@ export function PlansPricingSection() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[50px]">
-            Sky Glass IPTV
-            <br className="hidden sm:block" />
+            Available{" "}
             <span className="text-gradient-brand">Subscription Plans</span>
           </h2>
           <div className="mx-auto mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:max-w-3xl sm:space-y-3 sm:text-base sm:leading-[1.8]">
@@ -200,7 +199,7 @@ export function PlansPricingSection() {
             <article
               key={`${planType}-${plan.name}`}
               className={cn(
-                "group relative mx-auto flex w-full max-w-[320px] flex-col items-center overflow-hidden rounded-[1px] border bg-white px-5 py-6 text-center shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:max-w-[340px] sm:px-5 sm:py-7 lg:max-w-[290px] lg:px-5 lg:py-7",
+                "group relative mx-auto flex w-full max-w-[320px] flex-col items-center overflow-hidden rounded-[1px] border bg-white px-5 py-6 text-center shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:max-w-[340px] sm:px-5 sm:py-7 lg:max-w-[290px] lg:px-5 lg:py-7",
                 plan.popular
                   ? "border-[#E91E8C]/40 ring-1 ring-[#E91E8C]/20"
                   : "border-transparent"
@@ -229,7 +228,7 @@ export function PlansPricingSection() {
                 </span>
                 <div className="mt-1.5 flex items-baseline justify-center sm:mt-2">
                   <span className="text-[34px] font-bold leading-none tracking-tight text-gradient-brand sm:text-[38px]">
-                    £{plan.price}
+                    {plan.price === "TBC" ? "TBC" : `£${plan.price}`}
                   </span>
                 </div>
                 <span className="mt-1.5 text-[13px] font-bold text-[#0B0E2C] sm:text-[14px]">
@@ -240,7 +239,7 @@ export function PlansPricingSection() {
               <hr className="my-4 w-full border-[#0B0E2C]/10 sm:my-5" />
 
               <div className="mb-3 w-full text-left text-[14px] font-bold text-[#0B0E2C] sm:mb-3.5 sm:text-[15px]">
-                {planType} Plan Includes:
+                The {planType} Plan Includes:
               </div>
 
               <ul className="flex w-full flex-1 flex-col items-start gap-2 text-left sm:gap-2.5">

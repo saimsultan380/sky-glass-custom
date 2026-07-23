@@ -69,7 +69,7 @@ export function ContactSupportProcess() {
               <article
                 key={step.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   index === 3 || index === 4 ? "lg:col-span-1" : ""
                 )}
                 style={
@@ -142,7 +142,7 @@ export function ContactSupportProcess() {
               {BEFORE_TECH_SUPPORT.map((item, index) => (
                 <article
                   key={index}
-                  className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6"
+                  className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6"
                   style={
                     {
                       "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px #2563EB1A`,

@@ -8,12 +8,12 @@ const PLANS_FAQS: FaqItem[] = [
   },
   {
     id: "test-before-subscribing",
-    q: "Can I test Sky Glass IPTV before subscribing?",
+    q: "Can I test the service before subscribing?",
     a: "Yes. You can request a 24-hour trial to test compatibility, navigation and general playback performance.",
   },
   {
     id: "which-duration",
-    q: "Which subscription duration should I choose?",
+    q: "Which duration should I choose?",
     a: "A shorter plan provides greater flexibility, while a longer subscription may offer better long-term value. Choose according to your viewing habits and budget.",
   },
   {
@@ -28,7 +28,7 @@ const PLANS_FAQS: FaqItem[] = [
   },
   {
     id: "4k-support",
-    q: "Does Sky Glass IPTV support 4K?",
+    q: "Is 4K supported?",
     a: "Selected content may be available in 4K where supported. Playback quality depends on the source, application, device and internet connection.",
   },
   {
@@ -60,13 +60,10 @@ export function PlansFaqSection() {
       defaultOpenId="whats-included"
       title={
         <>
-          Frequently Asked Questions About{" "}
-          <span className="text-gradient-brand">
-            Sky Glass IPTV Subscriptions
-          </span>
+          Subscription{" "}
+          <span className="text-gradient-brand">FAQs</span>
         </>
       }
-      description="Answers about packages, durations, devices, connections, 4K support, activation and setup assistance."
       id="plans-faq"
     />
   );

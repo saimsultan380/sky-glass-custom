@@ -17,6 +17,8 @@ type Feature = {
   body: string[];
   list?: readonly string[];
   listIntro?: string;
+  list2?: readonly string[];
+  listIntro2?: string;
 };
 
 const FEATURES: Feature[] = [
@@ -25,7 +27,8 @@ const FEATURES: Feature[] = [
     color: "#FF6B2C",
     title: "Organised Categories",
     body: [
-      "Live television, sports, movies and television series are arranged into clear sections, making available content easier to browse.",
+      "Live channels, sports, movies and television series are normally separated into clear sections.",
+      "This reduces the time spent searching through unrelated content.",
     ],
   },
   {
@@ -33,8 +36,8 @@ const FEATURES: Feature[] = [
     color: "#E91E8C",
     title: "Electronic Programme Guide",
     body: [
-      "The Electronic Programme Guide displays available channel schedules and programme information in a familiar television-guide format.",
-      "EPG availability depends on the selected channel, application and content source.",
+      "An Electronic Programme Guide can display channel schedules and programme information in a familiar television-guide format.",
+      "EPG availability depends on the selected channel, content source and application.",
     ],
   },
   {
@@ -42,26 +45,33 @@ const FEATURES: Feature[] = [
     color: "#7B2FFF",
     title: "Catch-Up Support",
     body: [
-      "Where available, Catch-Up functionality provides access to selected programmes after their original broadcast time.",
-      "Not every channel or programme supports Catch-Up.",
+      "Where available, Catch-Up allows access to selected programmes after their original broadcast time.",
+      "Not every channel or programme supports this feature.",
     ],
   },
   {
     icon: MonitorPlay,
     color: "#2563EB",
-    title: "High-Quality Playback",
-    body: [
-      "Actual playback quality depends on the content source, application, device, display and internet connection.",
-    ],
-    listIntro: "Selected content may be available in:",
+    title: "Picture Quality",
+    body: [],
+    listIntro: "Selected streams may be available in:",
     list: ["SD", "HD", "Full HD", "4K"],
+    listIntro2: "Actual quality depends on:",
+    list2: [
+      "The content source",
+      "Selected stream",
+      "Device capability",
+      "Display",
+      "Application",
+      "Internet connection",
+    ],
   },
   {
     icon: Search,
     color: "#E91E8C",
     title: "Search and Favourites",
     body: [
-      "Compatible applications may allow viewers to search for content and save frequently watched channels or categories for quicker access.",
+      "Compatible players may allow you to search for content and save frequently watched channels or categories.",
     ],
   },
 ];
@@ -80,12 +90,12 @@ export function EverydayViewingSection() {
           </h2>
           <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
             <p>
-              A good IPTV experience should be straightforward to navigate and
-              easy to use.
+              A good IPTV service should be easy to understand once setup is
+              complete.
             </p>
             <p>
-              Sky Glass IPTV is designed to help viewers access entertainment
-              without unnecessary technical complexity.
+              The selected application may provide several tools that make
+              regular viewing more convenient.
             </p>
           </div>
         </div>
@@ -100,7 +110,7 @@ export function EverydayViewingSection() {
               <article
                 key={feature.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   index < 3
                     ? "lg:col-span-2"
                     : isLastOdd
@@ -150,11 +160,37 @@ export function EverydayViewingSection() {
                     </ul>
                   )}
 
+                  {feature.list2 && feature.listIntro2 && (
+                    <>
+                      <p className="mt-2.5 text-[12px] font-semibold text-[#0B0E2C] sm:mt-5 sm:text-[14px]">
+                        {feature.listIntro2}
+                      </p>
+                      <ul className="mt-2 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2.5">
+                        {feature.list2.map((item) => (
+                          <li
+                            key={item}
+                            className="inline-flex items-center gap-1.5 rounded-[1px] bg-[#0B0E2C]/[0.02] px-2 py-1 text-[11px] font-semibold text-[#0B0E2C] sm:gap-2 sm:rounded-[1px] sm:px-3.5 sm:py-2 sm:text-[13px]"
+                          >
+                            <Check
+                              className="h-3 w-3 sm:h-3.5 sm:w-3.5"
+                              style={{ color: feature.color }}
+                              strokeWidth={3}
+                              aria-hidden
+                            />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+
+                  {feature.body.length > 0 && (
                   <div className="mt-3 space-y-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:space-y-2.5 sm:text-[15px] sm:leading-[1.75]">
                     {feature.body.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
+                  )}
                 </div>
               </article>
             );

@@ -37,8 +37,8 @@ export function PlansBenefitsSection() {
         <div className="grid items-start gap-4 sm:gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14 xl:gap-16">
           <div className="lg:sticky lg:top-28">
             <h2 className="max-w-md text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-              Why Choose a{" "}
-              <span className="text-gradient-brand">Sky Glass IPTV Plan?</span>
+              Why Choose{" "}
+              <span className="text-gradient-brand">One of Our Plans?</span>
             </h2>
             <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
               Sky Glass IPTV is designed for UK viewers looking for greater
@@ -55,7 +55,7 @@ export function PlansBenefitsSection() {
               return (
                 <li
                   key={benefit.label}
-                  className="group relative flex items-center gap-3 overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:gap-4 sm:p-6"
+                  className="group relative flex items-center gap-3 overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:gap-4 sm:p-6"
                   style={
                     {
                       "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${benefit.color}1A`,

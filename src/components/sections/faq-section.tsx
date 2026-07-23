@@ -15,52 +15,52 @@ const HOMEPAGE_FAQS: FaqItem[] = [
   {
     id: "what-is-sky-glass",
     q: "What is Sky Glass IPTV?",
-    a: "Sky Glass IPTV is an internet-based streaming service that provides access to available live television and on-demand entertainment through compatible devices and IPTV applications.",
+    a: "Sky Glass IPTV is an internet-based service that provides access to available live television and on-demand entertainment through compatible devices and IPTV applications.",
   },
   {
     id: "supported-devices",
-    q: "Which devices support Sky Glass IPTV?",
+    q: "Which devices are supported?",
     a: "Supported platforms include Firestick, Fire TV, Android TV, Google TV, Android phones and tablets, selected Smart TVs, Apple devices, Windows PCs and Mac computers.",
   },
   {
     id: "official-app",
-    q: "Is there an official Sky Glass IPTV app?",
-    a: "Yes. The official application is available for compatible Android and Firestick devices. Alternative IPTV players are used on other supported platforms.",
+    q: "Is there an official app?",
+    a: "Yes. The official application is available for compatible Android and Firestick devices. Other platforms use supported alternative players.",
   },
   {
     id: "free-trial",
-    q: "Can I try Sky Glass IPTV before subscribing?",
-    a: "Yes. A 24-hour trial is available so you can test device compatibility, navigation and general streaming performance.",
+    q: "Can I try the service before subscribing?",
+    a: "Yes. A 24-hour trial is available so you can check compatibility, navigation and general playback performance.",
   },
   {
     id: "live-sports",
-    q: "Does Sky Glass IPTV include live sports?",
-    a: "Available packages may include football, cricket, motorsport, combat sports and other sporting events. Availability depends on the package, content source and broadcasting schedule.",
+    q: "Does the service include live sports?",
+    a: "Available packages may include football, cricket, motorsport, combat sports and other sporting categories. Availability depends on the package and broadcasting schedule.",
   },
   {
     id: "hd-4k",
-    q: "Does Sky Glass IPTV support HD and 4K?",
+    q: "Does it support HD and 4K?",
     a: "Selected content may be available in HD, Full HD or 4K where supported. Actual quality depends on the source, application, device and internet connection.",
   },
   {
     id: "multiple-devices",
-    q: "Can I use Sky Glass IPTV on more than one device?",
-    a: "You may configure the service on compatible devices. Simultaneous viewing depends on the number of connections included with your selected plan.",
+    q: "Can I use the service on several devices?",
+    a: "You may configure the account on compatible devices. Simultaneous viewing depends on the number of connections included with your selected plan.",
   },
   {
     id: "satellite-dish",
-    q: "Do I need a satellite dish?",
-    a: "No. Sky Glass IPTV uses an internet connection and compatible application rather than a traditional satellite dish.",
+    q: "Is a satellite dish required?",
+    a: "No. The service uses an internet connection and compatible application.",
   },
   {
     id: "installation-support",
-    q: "Is installation support available?",
-    a: "Yes. Setup assistance is available for the official application and supported alternative IPTV players.",
+    q: "Is installation assistance available?",
+    a: "Yes. Setup support is available for the official app and supported third-party players.",
   },
   {
     id: "internet-connection",
     q: "Which internet connection is recommended?",
-    a: "A stable broadband connection is recommended. Ethernet or strong Wi-Fi generally provides better performance, particularly for higher-quality streams.",
+    a: "A reliable broadband connection is recommended. Ethernet or strong Wi-Fi generally provides better stability.",
   },
 ];
 
@@ -219,11 +219,11 @@ export function FaqSection() {
       defaultOpenId="what-is-sky-glass"
       title={
         <>
-          Frequently Asked Questions About{" "}
-          <span className="text-gradient-brand">Sky Glass IPTV UK</span>
+          Frequently Asked{" "}
+          <span className="text-gradient-brand">Questions</span>
         </>
       }
-      description="Answers about devices, the official app, trials, sports, picture quality, connections and setup support."
+      description="Clear answers about setup, devices, streaming quality, activation and your subscription."
     />
   );
 }

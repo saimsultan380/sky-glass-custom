@@ -34,6 +34,16 @@ export function ResellerGrowth() {
       description:
         "Professional communication can help build trust and encourage renewals.",
     },
+    {
+      title: "Keep Renewal Records",
+      description:
+        "Monitor subscription expiry dates and remind customers before their service is due for renewal.",
+    },
+    {
+      title: "Reinvest in Your Business",
+      description:
+        "Use part of your revenue to purchase additional credits, improve your website, strengthen marketing, improve customer support and develop clearer setup resources.",
+    },
   ];
 
   return (
@@ -47,7 +57,7 @@ export function ResellerGrowth() {
               <span className="text-gradient-brand">Customer-Facing Brand</span>
             </h2>
             <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
-              The reseller panel manages subscription creation, but you can
+              The panel manages subscription creation, but you can
               build your own customer-facing identity around your business.
               Depending on the reseller arrangement, you may be able to use your
               own:
@@ -83,10 +93,10 @@ export function ResellerGrowth() {
           <div>
             <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[34px]">
               Grow Your{" "}
-              <span className="text-gradient-brand">IPTV Reseller Business</span>
+              <span className="text-gradient-brand">Business</span>
             </h2>
             <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
-              A reseller panel provides management tools, but long-term growth
+              The panel provides management tools, but long-term growth
               depends on how effectively you market and support your service.
             </p>
 

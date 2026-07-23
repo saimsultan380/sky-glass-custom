@@ -3,23 +3,23 @@ import { ArrowRight, Check, Sparkles, Shield } from "lucide-react";
 import { Container } from "@/components/layout/container";
 
 const STANDARD_FEATURES = [
-  "Available live television categories",
+  "Available live television",
   "Sports channels where included",
-  "Movies and television series",
+  "Movies and series",
   "Electronic Programme Guide support",
   "Popular device compatibility",
-  "Installation guidance",
+  "Installation instructions",
   "Customer assistance",
   "Quick activation",
 ] as const;
 
 const PREMIUM_FEATURES = [
   "Expanded live television access",
-  "Available sports and event coverage",
-  "A broader movies and series library",
-  "Electronic Programme Guide support",
-  "Catch-Up functionality where available",
-  "HD, Full HD and 4K options where supported",
+  "Broader sports availability",
+  "A larger movie and series library",
+  "EPG",
+  "Catch-Up where available",
+  "HD, Full HD and 4K where supported",
   "Popular device compatibility",
   "Setup assistance",
   "Quick activation",
@@ -41,16 +41,16 @@ export function SubscriptionPlansOverviewSection() {
             <span className="text-gradient-brand">Subscription Plans</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            Sky Glass IPTV offers flexible subscription options for UK viewers
-            who want to choose a plan based on their preferred duration,
-            connections and entertainment requirements.
+            Sky Glass IPTV offers a choice of subscription options for viewers
+            who want to select a plan based on duration, required features and
+            number of connections.
           </p>
         </div>
 
         <div className="mt-6 grid gap-4 sm:mt-12 sm:gap-6 lg:mt-16 lg:grid-cols-2 lg:gap-8">
           {/* Standard */}
           <article
-            className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:rounded-[1px] sm:p-8"
+            className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:rounded-[1px] sm:p-8"
             style={
               {
                 "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${STANDARD_COLOR}1A`,
@@ -75,9 +75,9 @@ export function SubscriptionPlansOverviewSection() {
               </div>
 
               <p className="mt-3 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:text-[15px] sm:leading-[1.75]">
-                The Standard plan is suitable for viewers looking for
+                The Standard plan is intended for viewers who want
                 straightforward access to available live television and on-demand
-                entertainment.
+                categories.
               </p>
 
               <p className="mt-2.5 text-[12px] font-semibold text-[#0B0E2C] sm:mt-5 sm:text-[14px]">
@@ -118,7 +118,7 @@ export function SubscriptionPlansOverviewSection() {
 
           {/* Premium */}
           <article
-            className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:rounded-[1px] sm:p-8"
+            className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:rounded-[1px] sm:p-8"
             style={
               {
                 "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${PREMIUM_COLOR}1A`,
@@ -143,8 +143,8 @@ export function SubscriptionPlansOverviewSection() {
               </div>
 
               <p className="mt-3 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:text-[15px] sm:leading-[1.75]">
-                The Premium plan is designed for viewers who want broader
-                entertainment access and additional viewing options.
+                The Premium plan is intended for viewers who want broader
+                entertainment access and additional viewing features.
               </p>
 
               <p className="mt-2.5 text-[12px] font-semibold text-[#0B0E2C] sm:mt-5 sm:text-[14px]">
@@ -185,13 +185,15 @@ export function SubscriptionPlansOverviewSection() {
         </div>
 
         <p className="mx-auto mt-4 max-w-2xl text-center text-[14px] leading-[1.55] text-[#5C607A] sm:mt-10 sm:text-[15px]">
-          Full package details, prices in GBP, available durations and
-          connection options can be compared on the dedicated{" "}
+          The dedicated plans page should clearly display prices in GBP,
+          subscription durations, number of connections, simultaneous-viewing
+          rules, trial availability, activation times, renewal details and
+          Standard and Premium differences on the{" "}
           <Link
             href="/subscription-plans"
             className="font-semibold text-[#7B2FFF] transition-opacity hover:opacity-75"
           >
-            Subscription Plans
+            Compare Sky Glass IPTV Subscription Plans
           </Link>{" "}
           page.
         </p>

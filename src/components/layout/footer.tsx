@@ -35,7 +35,7 @@ export function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-center">
-              <BrandLogo heightClassName="h-14 sm:h-16" />
+              <BrandLogo heightClassName="h-9 sm:h-11" />
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-[1.7] text-[#5C607A]">
               Flexible IPTV for UK viewers — live television, sports, movies and
@@ -98,8 +98,9 @@ export function Footer() {
             <p>
               Sky Glass IPTV is an independent IPTV service and is not
               affiliated with, endorsed by, sponsored by or officially connected
-              to Sky UK Limited, Sky Group, Sky Glass or any of their parent
-              companies, subsidiaries, broadcasters or associated brands.
+              to Sky UK Limited, Sky Group, the official Sky Glass product or
+              any of their parent companies, subsidiaries, broadcasters or
+              associated brands.
             </p>
             <p>
               Any third-party names, trademarks, product names or device names
@@ -123,7 +124,8 @@ export function Footer() {
           <p className="max-w-2xl text-center text-[12px] leading-relaxed text-[#5C607A] sm:text-right">
             Sky Glass IPTV is an independent service and is not affiliated with,
             endorsed by or connected to Sky UK Limited, Sky Group or the
-            official Sky Glass product.
+            official Sky Glass product. All third-party trademarks belong to
+            their respective owners.
           </p>
         </div>
       </Container>

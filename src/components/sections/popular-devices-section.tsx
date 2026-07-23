@@ -21,6 +21,7 @@ type DeviceCard = {
   badge: "Official App" | "Alternative Player";
   listIntro?: string;
   list?: readonly string[];
+  footer?: string;
   featured?: boolean;
 };
 
@@ -28,17 +29,17 @@ const DEVICES: DeviceCard[] = [
   {
     icon: Tv,
     color: "#FF6B2C",
-    title: "Firestick and Fire TV Devices",
+    title: "Firestick and Fire TV",
     description:
-      "Install the official application on compatible Amazon Firestick and Fire TV devices using the supplied installation method.",
+      "Compatible Firestick and Fire TV devices can use the official application through the approved installation route supplied after activation.",
     badge: "Official App",
-    listIntro: "Firestick provides:",
+    listIntro: "Firestick offers:",
     list: [
-      "A simple television interface",
-      "Remote-control navigation",
+      "Television-based navigation",
+      "Remote-control access",
       "Support for compatible streaming applications",
-      "Straightforward installation",
-      "Convenient access from a television",
+      "Straightforward setup",
+      "A compact streaming solution",
     ],
     featured: true,
   },
@@ -47,25 +48,25 @@ const DEVICES: DeviceCard[] = [
     color: "#E91E8C",
     title: "Android TV and Google TV",
     description:
-      "The official application is available for supported Android TV, Google TV and Android streaming boxes.",
+      "The official application can be used on compatible Android TV, Google TV and Android streaming devices.",
     badge: "Official App",
-    listIntro: "Compatible platforms may include:",
+    listIntro: "Supported hardware may include:",
     list: [
-      "Selected Android televisions",
+      "Android Smart TVs",
       "Google TV devices",
-      "Android streaming boxes",
+      "Android boxes",
       "NVIDIA Shield",
       "Chromecast with Google TV",
-      "Compatible Formuler devices",
+      "Compatible Formuler models",
     ],
     featured: true,
   },
   {
     icon: Smartphone,
     color: "#7B2FFF",
-    title: "Android Smartphones and Tablets",
+    title: "Android Phones and Tablets",
     description:
-      "Install the official Sky Glass IPTV application on compatible Android phones and tablets using the approved download information supplied after activation.",
+      "The official app can be installed on compatible Android smartphones and tablets using the approved download information provided after activation.",
     badge: "Official App",
   },
   {
@@ -73,37 +74,31 @@ const DEVICES: DeviceCard[] = [
     color: "#2563EB",
     title: "Samsung and LG Smart TVs",
     description:
-      "Samsung and LG televisions normally use an alternative IPTV player downloaded from the television’s application store.",
+      "Samsung and LG televisions normally use a third-party IPTV player from the television's application store. Player availability depends on the television model, software version and region.",
     badge: "Alternative Player",
-    listIntro: "Player availability depends on:",
-    list: [
-      "Television model",
-      "Operating system",
-      "Application store",
-      "Country or region",
-    ],
   },
   {
     icon: Apple,
     color: "#E91E8C",
     title: "Apple TV, iPhone and iPad",
     description:
-      "Apple devices can access the service through a compatible IPTV application available from the Apple App Store.",
+      "Apple devices can access the service through a compatible IPTV application available from the Apple App Store. The official Android application cannot be installed directly on Apple TV or iOS.",
     badge: "Alternative Player",
   },
   {
     icon: Laptop,
     color: "#FF6B2C",
     title: "Windows and Mac",
-    description: "Use a compatible IPTV player on:",
+    description: "Compatible IPTV applications are available for:",
     badge: "Alternative Player",
     list: [
       "Windows PCs",
       "Windows laptops",
       "Mac computers",
       "MacBook devices",
-      "Compatible desktop systems",
     ],
+    footer:
+      "Use a trusted application source and avoid downloading unknown software.",
   },
 ];
 
@@ -125,9 +120,7 @@ export function PopularDevicesSection() {
               entertainment on different internet-connected devices.
             </p>
             <p>
-              The official Sky Glass IPTV application is available for
-              compatible Firestick and Android platforms. Other supported
-              devices can use alternative IPTV player applications.
+              The installation method depends on the operating system.
             </p>
           </div>
         </div>
@@ -141,7 +134,7 @@ export function PopularDevicesSection() {
               <article
                 key={device.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   device.featured && "ring-1 ring-inset ring-[#E91E8C]/20"
                 )}
                 style={{
@@ -212,6 +205,12 @@ export function PopularDevicesSection() {
                           </li>
                         ))}
                       </ul>
+                    )}
+
+                    {device.footer && (
+                      <p className="mt-2.5 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:text-[15px] sm:leading-[1.75]">
+                        {device.footer}
+                      </p>
                     )}
                   </div>
                 </div>

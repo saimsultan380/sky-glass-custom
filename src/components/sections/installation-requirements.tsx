@@ -28,11 +28,11 @@ export function InstallationRequirements() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Before You Begin the{" "}
-            <span className="text-gradient-brand">Installation</span>
+            Before You{" "}
+            <span className="text-gradient-brand">Begin</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            Make sure you have the following before setting up Sky Glass IPTV:
+            Make sure you have the following before starting the setup:
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export function InstallationRequirements() {
               </h3>
             </div>
             <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:text-[13px]">
-              Your info may include:
+              Your activation information may include:
             </p>
             <ul className="mt-2.5 space-y-1.5 sm:mt-4 sm:space-y-2.5">
               {ACTIVATION_DATA.map((item) => (
@@ -91,9 +91,8 @@ export function InstallationRequirements() {
               </p>
               <p className="mt-1 text-[14px] leading-[1.55] text-[#5C607A] sm:text-[14px] sm:leading-[1.7]">
                 Keep your login details private and enter them only into the
-                official Sky Glass IPTV application or a compatible IPTV player
-                you trust. The exact information depends on the application being
-                used.
+                official application or a compatible IPTV player you trust. The
+                exact information depends on the application being used.
               </p>
             </div>
           </div>

@@ -130,7 +130,7 @@ export function ComparisonSection() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Sky Glass IPTV Compared with{" "}
+            IPTV Compared with{" "}
             <span className="text-gradient-brand">Traditional Television</span>
           </h2>
         </div>
@@ -192,8 +192,8 @@ export function ComparisonSection() {
         </div>
 
         <p className="mx-auto mt-4 max-w-2xl text-center text-[14px] leading-[1.55] text-[#5C607A] sm:mt-10 sm:text-[15px] sm:leading-[1.75]">
-          The right option depends on your viewing preferences, device
-          requirements, budget and internet connection.
+          The right option depends on your devices, budget, internet connection
+          and viewing preferences.
         </p>
       </Container>
     </section>

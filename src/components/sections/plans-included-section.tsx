@@ -99,8 +99,8 @@ export function PlansIncludedSection() {
             <span className="text-gradient-brand">Sky Glass IPTV?</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            A Sky Glass IPTV subscription brings different types of available
-            entertainment together through one compatible IPTV application.
+            A subscription brings different types of available entertainment
+            together through one compatible IPTV application.
           </p>
         </div>
 
@@ -110,7 +110,7 @@ export function PlansIncludedSection() {
             return (
               <article
                 key={item.title}
-                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${item.color}1A`,

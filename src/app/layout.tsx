@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   ...siteMetadataBase,
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    shortcut: "/icon.png",
-    apple: "/apple-icon.png",
+    icon: [{ url: "/logo.PNG", type: "image/png" }],
+    shortcut: "/logo.PNG",
+    apple: "/logo.PNG",
   },
 };
 

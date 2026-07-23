@@ -17,11 +17,12 @@ import type { LucideIcon } from "lucide-react";
 const EVALUATE_ITEMS: { label: string; icon: LucideIcon; color: string }[] = [
   { label: "Device compatibility", icon: Smartphone, color: "#FF6B2C" },
   { label: "Application performance", icon: AppWindow, color: "#E91E8C" },
-  { label: "Channel and category navigation", icon: LayoutGrid, color: "#7B2FFF" },
-  { label: "Streaming stability", icon: Wifi, color: "#2563EB" },
-  { label: "Available picture quality", icon: MonitorPlay, color: "#FF6B2C" },
-  { label: "Electronic Programme Guide functionality", icon: CalendarDays, color: "#E91E8C" },
-  { label: "General ease of use", icon: Hand, color: "#7B2FFF" },
+  { label: "Channel navigation", icon: LayoutGrid, color: "#7B2FFF" },
+  { label: "Category organisation", icon: LayoutGrid, color: "#2563EB" },
+  { label: "Streaming stability", icon: Wifi, color: "#FF6B2C" },
+  { label: "Available picture quality", icon: MonitorPlay, color: "#E91E8C" },
+  { label: "Electronic Programme Guide functionality", icon: CalendarDays, color: "#7B2FFF" },
+  { label: "Ease of use", icon: Hand, color: "#2563EB" },
 ];
 
 export function FreeTrialSection() {
@@ -40,17 +41,16 @@ export function FreeTrialSection() {
 
             <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
               <p>
-                A trial helps you understand how the service performs on your
-                own device and internet connection before selecting a longer
-                subscription.
+                A trial gives you an opportunity to test the service using your
+                own device and internet connection.
               </p>
               <p>
-                For a more accurate test, use the same device, application and
-                internet connection you intend to use after subscribing.
+                For a useful test, use the same device, application and network
+                you plan to use after subscribing.
               </p>
               <p>
-                Trial access, content categories and functionality may differ
-                from those included with a full subscription.
+                Trial access may not include every category or feature available
+                with a complete paid plan.
               </p>
             </div>
 
@@ -83,7 +83,7 @@ export function FreeTrialSection() {
 
           <div className="rounded-[1px] bg-white p-5 sm:p-8">
             <p className="text-[12px] font-semibold text-[#0B0E2C] sm:text-sm">
-              During the Sky Glass IPTV 24-hour trial, you can evaluate:
+              During the 24-hour trial, you can check:
             </p>
 
             <ul className="mt-3 space-y-1.5 sm:mt-5 sm:space-y-3">

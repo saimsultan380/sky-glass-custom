@@ -47,8 +47,7 @@ export function PlansComparisonSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Compare{" "}
-            <span className="text-gradient-brand">Standard and Premium</span>{" "}
-            Plans
+            <span className="text-gradient-brand">Standard and Premium</span>
           </h2>
         </div>
 

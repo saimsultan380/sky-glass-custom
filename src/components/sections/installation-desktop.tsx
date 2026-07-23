@@ -46,10 +46,12 @@ export function DesktopContent() {
                 Setup:
               </p>
               {[
-                "Download player from Store or official site.",
-                "Install and open the application.",
-                "Choose login method and enter details.",
-                "Save account and load categories.",
+                "Open the Microsoft Store or the official website of your selected application.",
+                "Download and install the player.",
+                "Open the application.",
+                "Choose the login method and enter your details.",
+                "Save the account.",
+                "Allow the application to load.",
               ].map((step, i) => (
                 <div key={i} className="flex gap-2 sm:gap-3">
                   <span className="text-[12px] font-bold text-[#2563EB] sm:text-[13px]">
@@ -71,6 +73,10 @@ export function DesktopContent() {
               Mac Setup
             </h3>
           </div>
+          <p className="mt-2.5 text-[13px] leading-snug text-[#5C607A] sm:mt-3 sm:text-[13px] sm:leading-relaxed">
+            Mac and MacBook users can install a compatible IPTV player from the
+            Mac App Store or the application developer&apos;s official source.
+          </p>
           <div className="mt-2.5 space-y-2.5 sm:mt-5 sm:space-y-4">
             <p className="text-[12px] font-semibold text-[#5C607A] sm:text-[14px]">
               Recommended Players:
@@ -95,10 +101,12 @@ export function DesktopContent() {
                 Setup:
               </p>
               {[
-                "Install player from App Store or official source.",
-                "Open application and select login method.",
-                "Enter Sky Glass subscription info.",
-                "Save and allow content to load.",
+                "Open the Mac App Store or the trusted official application source.",
+                "Install the selected IPTV player.",
+                "Open the application and select the login method.",
+                "Enter the subscription information supplied after activation.",
+                "Save the account.",
+                "Allow the available categories to load.",
               ].map((step, i) => (
                 <div key={i} className="flex gap-2 sm:gap-3">
                   <span className="text-[12px] font-bold text-[#7B2FFF] sm:text-[13px]">
@@ -119,7 +127,7 @@ export function DesktopContent() {
         <p className="text-[14px] leading-[1.55] text-[#5C607A] sm:text-[13px] sm:leading-relaxed">
           <strong>Security Tip:</strong> Only install IPTV software from
           official app stores or verified developer websites. Avoid installing
-          unknown software from unverified sources.
+          unknown software from unverified websites.
         </p>
       </div>
     </div>

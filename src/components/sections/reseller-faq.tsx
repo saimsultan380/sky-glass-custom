@@ -4,16 +4,16 @@ const RESELLER_FAQS = [
   {
     id: "what-is-panel",
     q: "What is the Sky Glass IPTV Reseller Panel?",
-    a: "It is an online dashboard that allows authorised resellers to create and manage eligible customer subscriptions using reseller credits.",
+    a: "It is an online dashboard that allows authorised resellers to create and manage eligible customer subscriptions using credits.",
   },
   {
     id: "previous-experience",
-    q: "Do I need previous reseller experience?",
-    a: "No. Previous experience is helpful, but new resellers can learn the panel through the supplied guidance and reseller assistance.",
+    q: "Do I need previous experience?",
+    a: "No. Previous experience is helpful, but new resellers can learn the panel through the supplied guidance and assistance.",
   },
   {
     id: "how-credits-work",
-    q: "How do reseller credits work?",
+    q: "How do credits work?",
     a: "Credits are deducted from your balance when you create or renew an eligible customer subscription. The required amount may vary according to the selected duration.",
   },
   {
@@ -39,7 +39,7 @@ const RESELLER_FAQS = [
   {
     id: "receive-dashboard",
     q: "Do I receive my own dashboard?",
-    a: "Yes. After activation, you receive private access information for your reseller account.",
+    a: "Yes. After activation, you receive private access information for your account.",
   },
   {
     id: "technical-support",
@@ -49,7 +49,7 @@ const RESELLER_FAQS = [
   {
     id: "begin-selling",
     q: "How quickly can I begin selling?",
-    a: "You can begin after your reseller account has been confirmed, panel access has been supplied and your credits are available.",
+    a: "You can begin after your account has been confirmed, panel access has been supplied and your credits are available.",
   },
 ];
 
@@ -58,10 +58,11 @@ export function ResellerFaq() {
     <FaqAccordionSection
       title={
         <>
-          Frequently Asked Questions About{" "}
-          <span className="text-gradient-brand">IPTV Reselling</span>
+          Reseller{" "}
+          <span className="text-gradient-brand">FAQs</span>
         </>
       }
+      description=""
       faqs={RESELLER_FAQS}
     />
   );

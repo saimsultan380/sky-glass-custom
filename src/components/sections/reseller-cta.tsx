@@ -25,11 +25,11 @@ export function ResellerCta() {
           <div className="mx-auto mt-3 max-w-3xl space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
             <p>
               The Sky Glass IPTV Reseller Panel gives you a practical way to
-              manage customer subscriptions, reseller credits and account
+              manage customer subscriptions, credits and account
               renewals through one professional dashboard.
             </p>
             <p>
-              Choose a reseller package that matches your goals, receive panel
+              Choose a package that matches your goals, receive panel
               access and begin building your own customer-facing business.
             </p>
           </div>

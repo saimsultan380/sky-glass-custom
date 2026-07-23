@@ -30,8 +30,7 @@ export function PlansCtaSection() {
             </p>
             <p>
               Start with a 24-hour trial, compare the available packages and
-              select the Sky Glass IPTV plan that best matches your viewing
-              preferences.
+              select the plan that best matches your viewing preferences.
             </p>
           </div>
 

@@ -17,36 +17,38 @@ const ANDROID_TV_DEVICES = [
 ];
 
 const ANDROID_TV_STEPS = [
-  "Open Google Play Store or application section.",
-  "Check for the official application availability.",
-  "Install Downloader if required by instructions.",
-  "Enter code 2245820 in Downloader.",
-  "Download and install the app.",
-  "Enter your subscription details.",
+  "Open Google Play Store or the application section on your device.",
+  "Check whether the supplied official application or installation utility is available.",
+  "Install Downloader only when required by the supplied setup instructions.",
+  "Allow the selected installation application to install external files if prompted.",
+  "Enter the official download address or Downloader code 2245820.",
+  "Download and install the application.",
+  "Open the application.",
+  "Enter your subscription information.",
 ];
 
 const PHONE_STEPS = [
   {
     title: "Download File",
-    body: "Download the official APK file using your unique activation link.",
+    body: "Download the official application file using the link supplied with your subscription. Only use the official installation source supplied by Sky Glass IPTV.",
     icon: Download,
     color: "#FF6B2C",
   },
   {
     title: "Allow Install",
-    body: "Open file and allow installation from browser/file manager if prompted.",
+    body: "Open the downloaded file and allow installation from the browser or file manager if prompted. If Android blocks the installation, open your device security settings and temporarily allow installations from the browser or file manager used to download the application.",
     icon: BadgeCheck,
     color: "#E91E8C",
   },
   {
     title: "Run Setup",
-    body: "Select Install and then Open the Sky Glass IPTV application.",
+    body: "Select Install, then Open the Sky Glass IPTV application.",
     icon: MonitorSmartphone,
     color: "#7B2FFF",
   },
   {
     title: "Sign In",
-    body: "Enter your login info and allow available content categories to load.",
+    body: "Enter your login information and allow the available content categories to load.",
     icon: Smartphone,
     color: "#2563EB",
   },
@@ -59,6 +61,10 @@ export function AndroidContent() {
         Install on{" "}
         <span className="text-gradient-brand">Android & Google TV</span>
       </h2>
+      <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
+        The official app is compatible with supported Android TV and Google TV
+        devices.
+      </p>
 
       <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(37,99,235,0.08)] sm:p-6">
@@ -85,7 +91,7 @@ export function AndroidContent() {
           </ul>
         </div>
 
-        <div className="rounded-[1px] bg-white p-5 sm:p-6">
+        <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(233,30,140,0.08)] sm:p-6">
           <div className="flex items-center gap-2.5">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-[#E91E8C]/10 text-[#E91E8C] sm:h-10 sm:w-10">
               <Download className="h-3.5 w-3.5 sm:h-5 sm:w-5" strokeWidth={1.75} />
@@ -108,8 +114,10 @@ export function AndroidContent() {
           </div>
           <p className="mt-3 flex items-start gap-2 rounded-[1px] bg-[#0B0E2C]/5 p-3.5 text-[13px] text-[#5C607A] sm:mt-5 sm:p-4 sm:text-[13px]">
             <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2563EB] sm:h-4 sm:w-4" />
-            Menu names may differ by manufacturer. Some devices allow direct
-            installation using the official application file.
+            The exact menu names may differ according to the television
+            manufacturer and Android version. Some Android devices may allow
+            direct installation using the official application file supplied
+            after activation.
           </p>
         </div>
       </div>
@@ -123,13 +131,18 @@ export function AndroidContent() {
           Android phones and tablets.
         </p>
 
-        <div className="mt-3 grid gap-2 sm:mt-6 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+        <div className="mt-3 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-4">
           {PHONE_STEPS.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.title}
-                className="rounded-[1px] bg-white p-5 sm:p-5"
+                className="rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] sm:p-6"
+                style={
+                  {
+                    "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${step.color}1A`,
+                  } as React.CSSProperties
+                }
               >
                 <div className="flex items-center gap-2.5">
                   <span

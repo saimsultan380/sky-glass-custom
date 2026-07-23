@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "Sky Glass",
   tagline: "Live TV, Sports, Movies & Series in One Place",
   description:
-    "Discover Sky Glass IPTV UK for live TV, sports, movies and popular series. Request a 24-hour trial, compare flexible plans and receive setup support.",
+    "Discover Sky Glass IPTV for live TV, sports, movies and popular series in the UK. Request a 24-hour trial, compare plans and receive setup support.",
   /** Production domain */
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
@@ -23,8 +23,8 @@ export const pageTitles = {
   home: "Sky Glass IPTV UK – Live TV, Sports, Movies & Series",
   subscriptionPlans: "Sky Glass IPTV Subscription Plans UK – Flexible Packages",
   installationGuide: "Sky Glass IPTV Installation Guide – Firestick, Android & TV",
-  resellerPanel: "Sky Glass IPTV Reseller Panel UK – Start Your Own IPTV Business",
-  contactUs: "IPTV Free Trial UK – Test Sky Glass Free for 24 Hours",
+  resellerPanel: "Sky Glass IPTV Reseller UK – Panel, Credits & Packages",
+  contactUs: "Contact Sky Glass IPTV – UK Trial & Setup Support",
 } as const;
 
 export const pageDescriptions = {
@@ -34,9 +34,9 @@ export const pageDescriptions = {
   installationGuide:
     "Install Sky Glass IPTV on Firestick, Android, Smart TVs, Apple devices, Windows and Mac using clear setup steps and compatible application guidance.",
   resellerPanel:
-    "Become an IPTV reseller in the UK with Sky Glass. White label branding, flexible credits, sub-reseller tools, instant activation and dedicated support.",
+    "Join the Sky Glass IPTV Reseller UK programme. Manage customer subscriptions and credits through one panel with flexible packages and reseller support.",
   contactUs:
-    "Claim a free IPTV trial UK with Sky Glass — 24 hours of access to live TV, sports, movies and series. Contact us for trials, setup and support.",
+    "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
 } as const;
 
 export const siteMetadataBase = {
@@ -60,11 +60,20 @@ export const siteMetadataBase = {
     title: pageTitles.home,
     description: siteConfig.description,
     url: siteConfig.siteUrl,
+    images: [
+      {
+        url: "/logo.PNG",
+        width: 845,
+        height: 295,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image" as const,
     title: pageTitles.home,
     description: siteConfig.description,
+    images: ["/logo.PNG"],
   },
   robots: {
     index: true,

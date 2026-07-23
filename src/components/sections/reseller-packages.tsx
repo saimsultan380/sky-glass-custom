@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const packages = [
   {
-    name: "Starter Reseller Package",
+    name: "Starter Package",
     description:
       "Suitable for individuals testing the reseller business model or working with a smaller number of customers.",
     recommendedFor: [
@@ -14,16 +14,16 @@ const packages = [
       "Part-time online businesses",
       "Testing local demand",
     ],
-    price: "Contact Us",
-    credits: "Flexible allocation",
-    expiry: "No expiry on active credits",
-    trials: "Included",
+    price: "TBC",
+    credits: "TBC",
+    expiry: "TBC",
+    trials: "TBC",
     ctaText: "Choose Starter Package",
     ctaLink: "/contact-us",
     popular: false,
   },
   {
-    name: "Professional Reseller Package",
+    name: "Professional Package",
     description:
       "Designed for active resellers who expect regular customer registrations and renewals.",
     recommendedFor: [
@@ -32,16 +32,16 @@ const packages = [
       "Online service providers",
       "Existing customer communities",
     ],
-    price: "Contact Us",
-    credits: "Volume allocation",
-    expiry: "No expiry on active credits",
-    trials: "Included",
+    price: "TBC",
+    credits: "TBC",
+    expiry: "TBC",
+    trials: "TBC",
     ctaText: "Choose Professional Package",
     ctaLink: "/contact-us",
     popular: true,
   },
   {
-    name: "Enterprise Reseller Package",
+    name: "Enterprise Package",
     description:
       "Suitable for experienced resellers and larger operations requiring a higher credit balance.",
     recommendedFor: [
@@ -50,9 +50,9 @@ const packages = [
       "High-volume customer management",
       "Businesses with multiple sales channels",
     ],
-    price: "Contact Team",
-    credits: "Custom allocation",
-    support: "Priority or dedicated support",
+    price: "Contact the Reseller Team",
+    credits: "TBC",
+    support: "Priority or dedicated support, where offered",
     ctaText: "Discuss Enterprise Options",
     ctaLink: "/contact-us",
     popular: false,
@@ -84,7 +84,7 @@ export function ResellerPackages() {
             <div
               key={pkg.name}
               className={cn(
-                "relative flex flex-col rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,14,44,0.08)] sm:p-8",
+                "relative flex flex-col rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] card-hover-lift hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,14,44,0.08)] sm:p-8",
                 pkg.popular
                   ? "border-2 border-[#7B2FFF]"
                   : "border border-transparent"
@@ -109,7 +109,7 @@ export function ResellerPackages() {
 
               <div className="mb-3 flex items-baseline gap-2 sm:mb-8">
                 <span className="text-[20px] font-bold tracking-tight text-[#0B0E2C] sm:text-3xl">
-                  {pkg.price}
+                  {pkg.price === "TBC" ? "TBC" : pkg.price}
                 </span>
               </div>
 

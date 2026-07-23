@@ -3,8 +3,8 @@ import { FaqAccordionSection, type FaqItem } from "@/components/sections/faq-sec
 const INSTALL_FAQS: FaqItem[] = [
   {
     id: "firestick-app",
-    q: "Is the official app available on Firestick?",
-    a: "Yes. The official Sky Glass IPTV application can be installed on compatible Firestick and Fire TV devices using the supplied installation method.",
+    q: "Is the official Sky Glass IPTV app available on Firestick?",
+    a: "Yes. The official application can be installed on compatible Firestick and Fire TV devices using the supplied installation method.",
   },
   {
     id: "android-tv-app",
@@ -28,13 +28,13 @@ const INSTALL_FAQS: FaqItem[] = [
   },
   {
     id: "desktop-app",
-    q: "Can I use Sky Glass IPTV on Windows or Mac?",
+    q: "Can I use the service on Windows or Mac?",
     a: "Yes. Install a compatible IPTV player and enter the subscription information supplied after activation.",
   },
   {
     id: "player-cost",
     q: "Do alternative IPTV applications cost extra?",
-    a: "Some third-party IPTV players charge a one-time fee or recurring subscription. Those charges are set by the application developer and are separate from your Sky Glass IPTV plan.",
+    a: "Some third-party IPTV players charge a one-time fee or recurring subscription. Those charges are set by the application developer and are separate from your plan.",
   },
   {
     id: "multiple-devices",
@@ -44,7 +44,7 @@ const INSTALL_FAQS: FaqItem[] = [
   {
     id: "login-details",
     q: "Where do I receive my login details?",
-    a: "Your installation and login information is supplied after your Sky Glass IPTV trial or subscription has been activated.",
+    a: "Your installation and login information is supplied after your trial or subscription has been activated.",
   },
   {
     id: "install-support",
@@ -60,13 +60,10 @@ export function InstallationFaq() {
       defaultOpenId="firestick-app"
       title={
         <>
-          Frequently Asked Questions About{" "}
-          <span className="text-gradient-brand">
-            Sky Glass IPTV Installation
-          </span>
+          Installation{" "}
+          <span className="text-gradient-brand">FAQs</span>
         </>
       }
-      description="Clear answers about device setup, official apps, third-party players, and mult-device configuration."
       id="installation-faq"
     />
   );

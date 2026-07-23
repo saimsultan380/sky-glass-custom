@@ -12,64 +12,75 @@ import { Container } from "@/components/layout/container";
 
 const PROBLEMS = [
   {
-    title: "Application Won't Install",
+    title: "The Application Will Not Install",
     icon: XCircle,
     color: "#FF6B2C",
     items: [
       "Check available device storage.",
       "Enable installation permissions.",
-      "Verify application file compatibility.",
-      "Ensure download is complete.",
+      "You are using the correct application file.",
+      "Ensure the download is complete.",
+      "The application is compatible with your operating system.",
     ],
   },
   {
-    title: "Login Not Working",
+    title: "Login Details Are Not Working",
     icon: Key,
     color: "#E91E8C",
     items: [
-      "Enter details exactly as supplied.",
-      "Check for accidental spaces.",
-      "Verify capital letters and symbols.",
+      "Enter the username, password and server information exactly as supplied.",
+      "Avoid adding spaces before or after the details.",
+      "Check whether capital letters and special characters have been entered correctly.",
     ],
   },
   {
-    title: "Content Not Loading",
+    title: "Content Is Not Loading",
     icon: RotateCcw,
     color: "#7B2FFF",
     items: [
       "Restart the IPTV application.",
       "Check your internet connection.",
-      "Restart device and router.",
-      "Verify subscription remains active.",
+      "Restart your device and router.",
+      "Verify your subscription remains active.",
+      "Allow additional time for the available categories to load.",
     ],
   },
   {
-    title: "Buffering Issues",
+    title: "The Stream Keeps Buffering",
     icon: WifiOff,
     color: "#2563EB",
     items: [
-      "Use Ethernet or strong Wi-Fi.",
-      "Close background applications.",
-      "Try another stream channel.",
+      "Test your internet connection and close unnecessary applications.",
+      "Use Ethernet or stronger Wi-Fi where possible.",
+      "If the problem affects only one stream, try another available stream before changing your device settings.",
     ],
   },
   {
-    title: "App Has Disappeared",
+    title: "The Application Has Disappeared",
     icon: EyeOff,
     color: "#FF6B2C",
     items: [
-      "Reinstall official application.",
-      "Check OS restrictions/updates.",
-      "Contact support for help.",
+      "Some devices may remove or restrict applications after an operating-system update.",
+      "Reinstall the official application using the current approved installation method or contact support.",
     ],
   },
   {
-    title: "Player Activation",
+    title: "The EPG Is Not Displaying",
+    icon: AlertTriangle,
+    color: "#7B2FFF",
+    items: [
+      "Allow the application enough time to download programme information.",
+      "You may also refresh the playlist or EPG through the application settings.",
+      "Not every channel provides complete EPG information.",
+    ],
+  },
+  {
+    title: "A Smart TV Player Requests Activation",
     icon: CreditCard,
     color: "#E91E8C",
     items: [
-      "Third-party players may charge fees.",
-      "These are separate from Sky Glass plans.",
+      "Some third-party Smart TV players require separate activation through the player developer.",
+      "This charge is not included with your IPTV subscription.",
     ],
   },
 ];
@@ -94,7 +105,7 @@ export function InstallationTroubleshooting() {
             return (
               <div
                 key={problem.title}
-                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6"
+                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${problem.color}08`,
@@ -138,14 +149,6 @@ export function InstallationTroubleshooting() {
               </div>
             );
           })}
-        </div>
-
-        <div className="mx-auto mt-4 flex max-w-xl items-center gap-2.5 rounded-[1px] bg-[#E91E8C]/5 p-4 text-[14px] text-[#0B0E2C] sm:mt-12 sm:gap-3 sm:p-4 sm:text-[13px]">
-          <AlertTriangle className="h-4 w-4 shrink-0 text-[#E91E8C] sm:h-5 sm:w-5" />
-          <p>
-            <strong>EPG Not Displaying?</strong> Allow the app time to download
-            program info. Refresh the playlist or EPG in settings.
-          </p>
         </div>
       </Container>
     </section>

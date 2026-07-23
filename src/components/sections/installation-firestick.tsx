@@ -19,9 +19,11 @@ const STEPS = [
     color: "#FF6B2C",
     items: [
       "Open Find or Search from the home screen.",
-      "Search for 'Downloader'.",
-      "Select and install the Downloader app.",
-      "Open the application and allow requested permissions.",
+      "Search for Downloader.",
+      "Select the Downloader application.",
+      "Download and install it.",
+      "Open the application.",
+      "Downloader may request permission to access files on your device. Allow the permissions required to download and install the application.",
     ],
   },
   {
@@ -29,12 +31,12 @@ const STEPS = [
     icon: Settings2,
     color: "#E91E8C",
     items: [
-      "Open Firestick Settings > My Fire TV.",
-      "Open Developer Options.",
-      "Select 'Install Unknown Apps'.",
+      "Depending on your Fire TV software version:",
+      "Open Settings > My Fire TV > Developer Options.",
+      "Select Install Unknown Apps.",
       "Enable permission for Downloader.",
     ],
-    note: "Developer Options hidden? Go to Settings > My Fire TV > About. Highlight device name and press select button 7 times.",
+    note: "Developer Options hidden? Go to Settings > My Fire TV > About. Highlight the device name and press the select button several times until developer settings become available.",
   },
   {
     title: "Download Official App",
@@ -42,9 +44,11 @@ const STEPS = [
     color: "#7B2FFF",
     items: [
       "Open Downloader.",
-      "Enter the official download address or code: 2245820",
+      "Enter the official download address or Downloader code supplied with your activation information.",
+      "Downloader Code: 2245820",
     ],
-    warning: "Only use official links. Do not download from unknown sites.",
+    warning:
+      "Only use the installation link or code supplied through the approved Sky Glass IPTV support channel. Do not download the application from unknown websites.",
   },
   {
     title: "Install the Application",
@@ -54,7 +58,7 @@ const STEPS = [
       "Once downloaded, select Install.",
       "Wait for the process to finish.",
       "Select Done or Open.",
-      "Delete the setup file to save space.",
+      "Delete the installation file if you want to save storage space.",
     ],
   },
   {
@@ -62,9 +66,8 @@ const STEPS = [
     icon: LogIn,
     color: "#FF6B2C",
     items: [
-      "Open Sky Glass IPTV app.",
-      "Enter your supplied login details.",
-      "Allow time for categories to load.",
+      "Open the app and enter the login information supplied after activation.",
+      "Allow the application enough time to load the available categories before closing it or changing screens.",
     ],
   },
 ];
@@ -88,7 +91,7 @@ export function FirestickContent() {
             <div
               key={step.title}
               className={cn(
-                "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6",
+                "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6",
                 idx === STEPS.length - 1 && "md:col-span-2"
               )}
               style={

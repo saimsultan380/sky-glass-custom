@@ -23,9 +23,9 @@ const helpOptions = [
       "Choose the support category that best matches your enquiry and provide all relevant information in your message.",
   },
   {
-    title: "Request a 24-Hour IPTV Trial",
+    title: "Request a 24-Hour Trial",
     description:
-      "A 24-hour trial allows you to evaluate Sky Glass IPTV using your normal device and internet connection before choosing a longer subscription.",
+      "A 24-hour trial allows you to evaluate the service using your normal device and internet connection before choosing a longer subscription.",
     icon: Clock,
     color: "#FF6B2C",
     listTitle: "During the trial, you can check:",
@@ -39,7 +39,8 @@ const helpOptions = [
       "Ease of use",
     ],
     footerText:
-      "For a more accurate test, use the same device, IPTV application and internet connection you plan to use after subscribing.",
+      "For a more accurate test, use the same device, IPTV application and internet connection you plan to use after subscribing. Trial content and functionality may differ from a complete paid subscription.",
+    link: { text: "Request Your 24-Hour Trial", url: "#contact-form" },
   },
   {
     title: "Subscription Assistance",
@@ -58,7 +59,7 @@ const helpOptions = [
       "Subscription renewals",
       "Upgrading an existing plan",
     ],
-    link: { text: "Compare Sky Glass IPTV Plans →", url: "/subscription-plans" },
+    link: { text: "Compare Subscription Plans", url: "/subscription-plans" },
   },
   {
     title: "Installation and Device Support",
@@ -69,13 +70,20 @@ const helpOptions = [
     listTitle: "Setup assistance is available for:",
     list: [
       "Amazon Fire TV Stick",
-      "Android TV & Google TV",
+      "Fire TV devices",
+      "Android TV",
+      "Google TV",
+      "Android boxes",
       "Android smartphones and tablets",
-      "Samsung & LG Smart TVs",
-      "Apple TV, iPhone and iPad",
-      "Windows PCs & Mac devices",
+      "Samsung Smart TVs",
+      "LG Smart TVs",
+      "Other supported Smart TVs",
+      "Apple TV",
+      "iPhone and iPad",
+      "Windows computers",
+      "Mac and MacBook devices",
     ],
-    link: { text: "Follow the Installation Guide →", url: "/installation-guide" },
+    link: { text: "View the Installation Guide", url: "/installation-guide" },
   },
   {
     title: "Technical Support",
@@ -96,7 +104,7 @@ const helpOptions = [
       "General playback problems",
     ],
     footerText:
-      "Note: Before contacting support, restart your device, IPTV application and internet router. This can resolve many temporary connection or application issues.",
+      "Before contacting support, restart your device, IPTV application and internet router. This can resolve many temporary connection or application issues.",
     className: "md:col-span-2 lg:col-span-2",
   },
 ];
@@ -140,7 +148,7 @@ export function ContactHelpOptions() {
               <article
                 key={option.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   option.className
                 )}
                 style={

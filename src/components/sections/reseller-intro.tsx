@@ -29,7 +29,7 @@ export function ResellerIntro() {
           {/* Left Column */}
           <div>
             <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-              Build Your IPTV Reseller{" "}
+              Build Your Reseller{" "}
               <span className="text-gradient-brand">Business in the UK</span>
             </h2>
             <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
@@ -39,9 +39,9 @@ export function ResellerIntro() {
               subscriptions.
             </p>
             <p className="mt-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
-              Instead of processing every account manually, the reseller panel
+              Instead of processing every account manually, the panel
               brings the main management tools together in one central
-              dashboard. Depending on the available panel features, you can:
+              dashboard. Depending on the available features, you can:
             </p>
 
             <ul className="mt-3 space-y-2.5 sm:mt-8 sm:space-y-4">
@@ -61,7 +61,7 @@ export function ResellerIntro() {
               The programme allows you to set your own retail prices and develop
               a business model suited to your audience. You remain responsible
               for customer acquisition, customer payments and day-to-day
-              customer relationships, while the reseller panel helps simplify
+              customer relationships,               while the panel helps simplify
               account management.
             </p>
           </div>
@@ -70,10 +70,10 @@ export function ResellerIntro() {
           <div>
             <div className="rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-10">
               <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-2xl">
-                Who Can Become a Sky Glass IPTV Reseller?
+                Who Can Become a Reseller?
               </h3>
               <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-relaxed">
-                The reseller programme can support different types of
+                The Sky Glass IPTV Reseller programme can support different types of
                 entrepreneurs and digital businesses. It may be suitable for:
               </p>
 

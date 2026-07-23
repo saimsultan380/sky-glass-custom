@@ -7,7 +7,7 @@ const steps = [
     number: "01",
     title: "Select a Reseller Package",
     description:
-      "Choose a reseller package based on starting budget, expected customer volume, required credit balance and business goals.",
+      "Choose a package based on starting budget, expected customer volume, required credit balance and business goals.",
     icon: Package,
     color: "#FF6B2C",
   },
@@ -15,7 +15,7 @@ const steps = [
     number: "02",
     title: "Receive Panel Access",
     description:
-      "After your reseller account has been activated, you receive the information required to access your private dashboard.",
+      "After your account has been activated, you receive the information required to access your private dashboard.",
     icon: KeyRound,
     color: "#E91E8C",
   },
@@ -23,7 +23,7 @@ const steps = [
     number: "03",
     title: "Create Customer Subscriptions",
     description:
-      "Use your reseller credits to create customer accounts and select the appropriate subscription duration.",
+      "Use your credits to create customer accounts and select the appropriate subscription duration.",
     icon: UserPlus,
     color: "#7B2FFF",
   },
@@ -43,7 +43,7 @@ export function ResellerSteps() {
       <Container>
         <div className="text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            How the Sky Glass IPTV{" "}
+            How the{" "}
             <span className="text-gradient-brand">Reseller Programme Works</span>
           </h2>
         </div>

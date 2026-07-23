@@ -120,7 +120,7 @@ export function InstallationDeviceGuide() {
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
       <Container className="py-10 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-xl lg:text-left">
+        <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Supported Devices for{" "}
             <span className="text-gradient-brand">Sky Glass IPTV</span>
@@ -131,7 +131,7 @@ export function InstallationDeviceGuide() {
           </p>
         </div>
 
-        <div className="mt-5 grid gap-4 lg:mt-10 lg:grid-cols-[minmax(260px,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-8 xl:gap-10">
+        <div className="mt-5 grid gap-4 lg:mt-10 lg:grid-cols-[minmax(200px,260px)_minmax(0,1fr)] lg:items-start lg:gap-6 xl:gap-8">
           {/* Device navigation */}
           <nav
             aria-label="Device installation guides"

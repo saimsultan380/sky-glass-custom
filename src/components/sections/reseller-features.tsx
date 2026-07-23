@@ -14,7 +14,7 @@ const features = [
   {
     title: "Customer Account Creation",
     description:
-      "Create new customer accounts and select the required subscription duration through the reseller dashboard.",
+      "Create new customer accounts and select the required subscription duration through the dashboard.",
     icon: UserPlus,
     color: "#7B2FFF",
   },
@@ -28,7 +28,7 @@ const features = [
   {
     title: "Credit Balance",
     description:
-      "View your available reseller credit balance and plan future activations before your credits run low.",
+      "View your available credit balance and plan future activations before your credits run low.",
     icon: Wallet,
     color: "#FF6B2C",
   },
@@ -42,14 +42,14 @@ const features = [
   {
     title: "Account Renewal",
     description:
-      "Renew eligible customer subscriptions through the panel using your available reseller credits.",
+      "Renew eligible customer subscriptions through the panel using your available credits.",
     icon: RefreshCw,
     color: "#7B2FFF",
   },
   {
-    title: "Secure Panel Access",
+    title: "Secure Access",
     description:
-      "Access your reseller dashboard using private login information supplied after activation.",
+      "Access your dashboard using private login information supplied after activation.",
     icon: ShieldCheck,
     color: "#E91E8C",
   },
@@ -73,7 +73,7 @@ export function ResellerFeatures() {
             <span className="text-gradient-brand">Reseller Panel Features</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
-            The Sky Glass IPTV Reseller Panel provides the essential tools
+            The panel provides the essential tools
             needed to manage a customer base.
           </p>
         </div>
@@ -89,7 +89,7 @@ export function ResellerFeatures() {
               <article
                 key={feature.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
                   feature.className
                 )}
                 style={

@@ -7,6 +7,7 @@ import {
   Sparkles,
   AppWindow,
   Gauge,
+  MonitorUp,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import type { LucideIcon } from "lucide-react";
@@ -15,7 +16,7 @@ const TIPS: { icon: LucideIcon; color: string; title: string }[] = [
   {
     icon: Wifi,
     color: "#FF6B2C",
-    title: "Use a reliable broadband connection.",
+    title: "Use a stable broadband connection.",
   },
   {
     icon: Cable,
@@ -33,24 +34,29 @@ const TIPS: { icon: LucideIcon; color: string; title: string }[] = [
     title: "Avoid large downloads while watching.",
   },
   {
-    icon: RefreshCw,
-    color: "#FF6B2C",
-    title: "Restart the application and router if performance becomes unstable.",
-  },
-  {
-    icon: Sparkles,
-    color: "#E91E8C",
-    title: "Keep your device and IPTV application updated.",
-  },
-  {
     icon: AppWindow,
-    color: "#7B2FFF",
+    color: "#FF6B2C",
     title: "Close unnecessary background applications.",
   },
   {
-    icon: Gauge,
+    icon: RefreshCw,
+    color: "#E91E8C",
+    title: "Restart the router if the connection becomes unstable.",
+  },
+  {
+    icon: MonitorUp,
+    color: "#7B2FFF",
+    title: "Keep the device software updated.",
+  },
+  {
+    icon: Sparkles,
     color: "#2563EB",
-    title: "Select a suitable stream quality for your connection.",
+    title: "Keep the IPTV application updated.",
+  },
+  {
+    icon: Gauge,
+    color: "#FF6B2C",
+    title: "Choose a stream quality suitable for your connection.",
   },
 ];
 
@@ -63,13 +69,16 @@ export function StreamingTipsSection() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Tips for a Better{" "}
-            <span className="text-gradient-brand">Streaming Experience</span>
+            Tips for{" "}
+            <span className="text-gradient-brand">Better Streaming</span>
           </h2>
-          <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            Playback quality depends on several factors, including your
-            broadband connection, home network, device and selected stream.
-          </p>
+          <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
+            <p>Playback quality depends on more than the subscription alone.</p>
+            <p>
+              Your broadband connection, home network, device and selected
+              stream all affect performance.
+            </p>
+          </div>
         </div>
 
         <div className="mt-5 sm:mt-12">
@@ -85,7 +94,7 @@ export function StreamingTipsSection() {
               return (
                 <li
                   key={tip.title}
-                  className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                  className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                   style={{
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${tip.color}1A`,
                     "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${tip.color}33`,
@@ -119,8 +128,8 @@ export function StreamingTipsSection() {
         </div>
 
         <p className="mx-auto mt-4 max-w-2xl text-center text-[14px] leading-[1.55] text-[#5C607A] sm:mt-10 sm:text-[15px] sm:leading-[1.75]">
-          Higher-resolution content generally requires a faster and more stable
-          connection than standard-definition streams.
+          Higher-resolution streams generally require stronger and more stable
+          internet performance.
         </p>
       </Container>
     </section>

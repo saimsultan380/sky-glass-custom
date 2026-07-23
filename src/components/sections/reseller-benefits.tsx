@@ -12,7 +12,7 @@ const benefits = [
   {
     title: "Flexible Credit System",
     description:
-      "Purchase reseller credits according to your business requirements and use them when activating or renewing eligible customer subscriptions.",
+      "Purchase credits according to your business requirements and use them when activating or renewing eligible customer subscriptions.",
     icon: CreditCard,
     color: "#E91E8C",
   },
@@ -26,19 +26,19 @@ const benefits = [
   {
     title: "Quick Subscription Activation",
     description:
-      "Activate available subscriptions directly from the reseller dashboard without waiting for every request to be processed manually.",
+      "Activate available subscriptions directly from the dashboard without waiting for every request to be processed manually.",
     icon: Zap,
     color: "#2563EB",
   },
   {
     title: "Business Growth Potential",
     description:
-      "Start with a smaller reseller package and purchase additional credits as your customer base expands.",
+      "Start with a smaller package and purchase additional credits as your customer base expands.",
     icon: TrendingUp,
     color: "#7B2FFF",
   },
   {
-    title: "Dedicated Reseller Assistance",
+    title: "Dedicated Assistance",
     description:
       "Receive guidance for panel access, credit usage, customer-account creation, subscription durations, eligible renewals and common panel questions.",
     icon: HeadphonesIcon,
@@ -68,7 +68,7 @@ export function ResellerBenefits() {
             return (
               <article
                 key={benefit.title}
-                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                className="group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${benefit.color}1A`,

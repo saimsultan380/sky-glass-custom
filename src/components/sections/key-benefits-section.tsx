@@ -95,7 +95,7 @@ export function KeyBenefitsSection() {
               return (
                 <li
                   key={benefit.label}
-                  className="group relative flex items-center gap-3 overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:gap-4 sm:p-6"
+                  className="group relative flex items-center gap-3 overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:gap-4 sm:p-6"
                   style={{
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${benefit.color}1A`,
                     "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${benefit.color}33`,

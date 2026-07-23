@@ -52,15 +52,15 @@ export function Header() {
           <div className="relative z-[80]">
             <div
               className={cn(
-                "relative border border-[#0B0E2C]/10 bg-[#ffffff]",
+                "relative border border-[#0B0E2C]/10 transition-[background-color,backdrop-filter,border-radius] duration-300",
                 mobileMenuOpen
-                  ? "rounded-t-[1px] border-b-transparent lg:rounded-[1px] lg:border-b-[#0B0E2C]/10"
-                  : "rounded-[1px]",
+                  ? "rounded-t-[1px] border-b-transparent bg-white lg:rounded-[1px] lg:border-b-[#0B0E2C]/10 lg:bg-white/65 lg:backdrop-blur-xl lg:backdrop-saturate-150"
+                  : "rounded-[1px] bg-white/65 backdrop-blur-xl backdrop-saturate-150",
               )}
             >
               <nav
                 aria-label="Main navigation"
-                className="relative flex h-[60px] w-full items-center justify-between gap-4 bg-[#ffffff] px-5 sm:h-[72px] sm:px-8"
+                className="relative flex h-[60px] w-full items-center justify-between gap-4 px-5 sm:h-[72px] sm:px-8"
               >
                 <Link
                   href="/"
@@ -68,7 +68,7 @@ export function Header() {
                   className="relative z-[1] flex shrink-0 items-center no-underline"
                   onClick={closeMenu}
                 >
-                  <BrandLogo priority heightClassName="h-11 sm:h-[52px]" />
+                  <BrandLogo priority heightClassName="h-8 sm:h-10" />
                 </Link>
 
                 <div className="hidden items-center gap-8 lg:flex">
