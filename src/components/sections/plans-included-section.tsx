@@ -92,28 +92,28 @@ export function PlansIncludedSection() {
       id="whats-included"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
+      <Container className="py-6 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
             What You Get
           </p>
-          <h2 className="mt-3 text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
             What Is Included with{" "}
             <span className="text-gradient-brand">Sky Glass IPTV?</span>
           </h2>
-          <p className="mt-5 text-[15px] leading-[1.75] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
+          <p className="mt-3 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
             A Sky Glass IPTV subscription brings different types of available
             entertainment together through one compatible IPTV application.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2">
+        <div className="mt-5 grid gap-2.5 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {ITEMS.map((item) => {
             const Icon = item.icon;
             return (
               <article
                 key={item.title}
-                className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-6 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${item.color}1A`,
@@ -122,22 +122,22 @@ export function PlansIncludedSection() {
                 }
               >
                 <div className="relative z-10 flex h-full flex-col">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2.5 sm:gap-4">
                     <span
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[8px] border border-[#0B0E2C]/5"
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12 sm:rounded-[8px]"
                       style={{
                         color: item.color,
                         backgroundColor: `${item.color}15`,
                       }}
                     >
-                      <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                      <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                     </span>
-                    <h3 className="text-xl font-bold tracking-tight text-[#0B0E2C]">
+                    <h3 className="text-[15px] font-bold tracking-tight text-[#0B0E2C] sm:text-xl">
                       {item.title}
                     </h3>
                   </div>
 
-                  <div className="mt-4 space-y-3 text-[14px] leading-[1.7] text-[#5C607A] sm:text-[15px] sm:leading-[1.75]">
+                  <div className="mt-2.5 space-y-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-4 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
                     {item.body.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
@@ -149,19 +149,19 @@ export function PlansIncludedSection() {
                     )}
 
                     {item.list && (
-                      <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 pt-1">
+                      <ul className="grid grid-cols-2 gap-x-2.5 gap-y-1.5 pt-0.5 sm:gap-x-4 sm:gap-y-2.5 sm:pt-1">
                         {item.list.map((entry) => (
                           <li
                             key={entry}
-                            className="flex items-start gap-2.5 text-[13px] leading-snug text-[#0B0E2C] sm:text-[14px]"
+                            className="flex items-start gap-2 text-[12px] leading-snug text-[#0B0E2C] sm:gap-2.5 sm:text-[14px]"
                           >
                             <span
-                              className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full"
+                              className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full sm:h-4 sm:w-4"
                               style={{ backgroundColor: `${item.color}1A` }}
                               aria-hidden
                             >
                               <Check
-                                className="h-2.5 w-2.5"
+                                className="h-2 w-2 sm:h-2.5 sm:w-2.5"
                                 style={{ color: item.color }}
                                 strokeWidth={3}
                               />

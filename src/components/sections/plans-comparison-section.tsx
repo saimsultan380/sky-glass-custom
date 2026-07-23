@@ -25,7 +25,7 @@ const ROWS: ComparisonRow[] = [
 
 function CellValue({ value, color }: { value: string; color: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold leading-snug text-[#0B0E2C] sm:text-[14px]">
+    <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold leading-snug text-[#0B0E2C] sm:text-[14px]">
       <Check
         className="h-3.5 w-3.5 shrink-0"
         style={{ color }}
@@ -43,41 +43,41 @@ export function PlansComparisonSection() {
       id="compare-plans"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
+      <Container className="py-6 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
             Side by Side
           </p>
-          <h2 className="mt-3 text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
             Compare{" "}
             <span className="text-gradient-brand">Standard and Premium</span>{" "}
             Plans
           </h2>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 sm:mt-12">
+        <div className="mt-5 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 sm:mt-12">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[640px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-[#0B0E2C]/10">
-                  <th className="bg-white px-4 py-4 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#5C607A] sm:px-6 sm:py-5 sm:text-[14px]">
+                  <th className="bg-white px-3 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#5C607A] sm:px-6 sm:py-5 sm:text-[14px]">
                     Feature
                   </th>
-                  <th className="relative bg-white px-4 py-4 sm:px-6 sm:py-5">
+                  <th className="relative bg-white px-3 py-2.5 sm:px-6 sm:py-5">
                     <div
                       className="absolute inset-x-0 top-0 h-[3px] bg-[#7B2FFF]"
                       aria-hidden
                     />
-                    <span className="text-[13px] font-bold text-[#0B0E2C] sm:text-[15px]">
+                    <span className="text-[12px] font-bold text-[#0B0E2C] sm:text-[15px]">
                       Standard Plan
                     </span>
                   </th>
-                  <th className="relative bg-white px-4 py-4 sm:px-6 sm:py-5">
+                  <th className="relative bg-white px-3 py-2.5 sm:px-6 sm:py-5">
                     <div
                       className="absolute inset-x-0 top-0 h-[3px] bg-gradient-brand"
                       aria-hidden
                     />
-                    <span className="text-[13px] font-bold text-[#0B0E2C] sm:text-[15px]">
+                    <span className="text-[12px] font-bold text-[#0B0E2C] sm:text-[15px]">
                       Premium Plan
                     </span>
                   </th>
@@ -94,14 +94,14 @@ export function PlansComparisonSection() {
                   >
                     <th
                       scope="row"
-                      className="px-4 py-3.5 text-[13px] font-semibold text-[#0B0E2C] sm:px-6 sm:py-4 sm:text-[14px]"
+                      className="px-3 py-2.5 text-[12px] font-semibold text-[#0B0E2C] sm:px-6 sm:py-4 sm:text-[14px]"
                     >
                       {row.feature}
                     </th>
-                    <td className="px-4 py-3.5 sm:px-6 sm:py-4">
+                    <td className="px-3 py-2.5 sm:px-6 sm:py-4">
                       <CellValue value={row.standard} color="#7B2FFF" />
                     </td>
-                    <td className="px-4 py-3.5 sm:px-6 sm:py-4">
+                    <td className="px-3 py-2.5 sm:px-6 sm:py-4">
                       <CellValue value={row.premium} color="#E91E8C" />
                     </td>
                   </tr>
@@ -111,7 +111,7 @@ export function PlansComparisonSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 max-w-2xl space-y-2 text-center text-[14px] leading-[1.7] text-[#5C607A] sm:mt-10 sm:text-[15px] sm:leading-[1.75]">
+        <div className="mx-auto mt-4 max-w-2xl space-y-1.5 text-center text-[12px] leading-[1.5] text-[#5C607A] sm:mt-10 sm:space-y-2 sm:text-[15px] sm:leading-[1.75]">
           <p>
             The best plan depends on the type of content you watch, your
             preferred devices, required connections and the features you need.

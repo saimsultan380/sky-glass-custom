@@ -5,11 +5,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { InstallationHero } from "@/components/sections/installation-hero";
 import { InstallationOverview } from "@/components/sections/installation-overview";
 import { InstallationRequirements } from "@/components/sections/installation-requirements";
-import { InstallationFirestick } from "@/components/sections/installation-firestick";
-import { InstallationAndroid } from "@/components/sections/installation-android";
-import { InstallationSmartTv } from "@/components/sections/installation-smart-tv";
-import { InstallationApple } from "@/components/sections/installation-apple";
-import { InstallationDesktop } from "@/components/sections/installation-desktop";
+import { InstallationDeviceGuide } from "@/components/sections/installation-device-guide";
 import { InstallationNetwork } from "@/components/sections/installation-network";
 import { InstallationTroubleshooting } from "@/components/sections/installation-troubleshooting";
 import { InstallationFaq } from "@/components/sections/installation-faq";
@@ -45,11 +41,7 @@ export default function InstallationGuidePage() {
       <InstallationHero />
       <InstallationOverview />
       <InstallationRequirements />
-      <InstallationFirestick />
-      <InstallationAndroid />
-      <InstallationSmartTv />
-      <InstallationApple />
-      <InstallationDesktop />
+      <InstallationDeviceGuide />
       <InstallationNetwork />
       <InstallationTroubleshooting />
       <InstallationFaq />

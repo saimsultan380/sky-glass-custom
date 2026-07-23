@@ -99,17 +99,17 @@ export function EntertainmentCategoriesSection() {
       id="entertainment-categories"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-10 sm:py-16 lg:py-24">
-        <div className="grid items-start gap-6 sm:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
+      <Container className="py-6 sm:py-16 lg:py-24">
+        <div className="grid items-start gap-4 sm:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
           <div className="lg:sticky lg:top-28">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
               What’s Included
             </p>
-            <h2 className="mt-2 max-w-md text-[22px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            <h2 className="mt-1.5 max-w-md text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
               Entertainment for Every Type of{" "}
               <span className="text-gradient-brand">Viewer</span>
             </h2>
-            <div className="mt-4 space-y-3 text-[14px] leading-[1.7] text-[#5C607A] sm:mt-5 sm:space-y-4 sm:text-base sm:leading-[1.8]">
+            <div className="mt-3 space-y-1.5 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-5 sm:space-y-4 sm:text-base sm:leading-[1.8]">
               <p>Different viewers have different entertainment preferences.</p>
               <p>
                 Some follow live sports throughout the week, while others prefer
@@ -131,50 +131,50 @@ export function EntertainmentCategoriesSection() {
             </Link>
           </div>
 
-          <div className="grid gap-3 sm:gap-6">
+          <div className="grid gap-2.5 sm:gap-6">
             {CATEGORIES.map((category) => {
               const Icon = category.icon;
               return (
                 <article
                   key={category.title}
-                  className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-4 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                  className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                   style={{
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${category.color}1A`,
                     "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${category.color}33`,
                   } as React.CSSProperties}
                 >
-                  <div className="relative z-10 flex gap-3 sm:gap-4">
-                    <span className="accent-line-brand" aria-hidden />
+                  <div className="relative z-10 flex gap-2.5 sm:gap-4">
+                    <span className="accent-line-brand hidden sm:block" aria-hidden />
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="flex items-center gap-2.5 sm:gap-4">
                         <span
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12"
+                          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12 sm:rounded-[12px]"
                           style={{ color: category.color, backgroundColor: `${category.color}15` }}
                         >
-                          <Icon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
+                          <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                         </span>
-                        <h3 className="text-lg font-bold tracking-tight text-[#0B0E2C] sm:text-xl">
+                        <h3 className="text-[15px] font-bold tracking-tight text-[#0B0E2C] sm:text-xl">
                           {category.title}
                         </h3>
                       </div>
 
-                      <div className="mt-4 space-y-2.5 text-[13px] leading-[1.65] text-[#5C607A] sm:mt-5 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
+                      <div className="mt-2.5 space-y-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-5 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
                         {category.tagsIntro && <p>{category.tagsIntro}</p>}
 
                         {category.tags && (
-                          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2.5 sm:mt-4 sm:gap-x-4 sm:gap-y-3 sm:grid-cols-3">
+                          <ul className="mt-2 grid grid-cols-2 gap-x-2.5 gap-y-1.5 sm:mt-4 sm:gap-x-4 sm:gap-y-3 sm:grid-cols-3">
                             {category.tags.map((tag) => (
                               <li
                                 key={tag}
-                                className="flex items-start gap-2.5 text-[13px] leading-snug text-[#0B0E2C] sm:text-[14px]"
+                                className="flex items-start gap-2 text-[12px] leading-snug text-[#0B0E2C] sm:gap-2.5 sm:text-[14px]"
                               >
                                 <span
-                                  className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full"
+                                  className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full sm:mt-1 sm:h-4 sm:w-4"
                                   style={{ backgroundColor: `${category.color}1A` }}
                                   aria-hidden
                                 >
                                   <Check
-                                    className="h-2.5 w-2.5"
+                                    className="h-2 w-2 sm:h-2.5 sm:w-2.5"
                                     style={{ color: category.color }}
                                     strokeWidth={3}
                                   />
@@ -186,7 +186,7 @@ export function EntertainmentCategoriesSection() {
                         )}
 
                         {category.body.length > 0 && (
-                          <div className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
+                          <div className="mt-2 space-y-1.5 sm:mt-4 sm:space-y-3">
                             {category.body.map((paragraph) => (
                               <p key={paragraph}>{paragraph}</p>
                             ))}
@@ -202,7 +202,7 @@ export function EntertainmentCategoriesSection() {
 
           <Link
             href="/subscription-plans"
-            className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-6 py-3 text-[14px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:hidden"
+            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:hidden"
           >
             Explore Sky Glass IPTV Entertainment
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />

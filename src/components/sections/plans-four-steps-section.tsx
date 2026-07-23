@@ -50,12 +50,12 @@ export function PlansFourStepsSection() {
       id="subscription-steps"
       className="relative border-t border-[#0B0E2C]/10 bg-white"
     >
-      <Container className="py-16 sm:py-20 lg:py-24">
+      <Container className="py-6 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E91E8C] sm:text-[12px]">
             How It Works
           </p>
-          <h2 className="mt-3 text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+          <h2 className="mt-1.5 text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
             Start Your Subscription in{" "}
             <span className="text-gradient-brand">Four Steps</span>
           </h2>
@@ -101,13 +101,13 @@ export function PlansFourStepsSection() {
         </div>
 
         {/* Mobile / tablet: stacked cards */}
-        <ol className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 lg:hidden">
+        <ol className="mt-5 grid gap-2.5 sm:mt-12 sm:gap-5 lg:hidden">
           {STEPS.map((item) => {
             const Icon = item.icon;
             return (
               <li
                 key={item.step}
-                className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-6 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
+                className="group relative flex flex-col overflow-hidden rounded-[8px] border border-[#0B0E2C]/10 bg-white p-3 shadow-[var(--card-shadow)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B0E2C]/20 hover:shadow-[var(--card-shadow-hover)] sm:p-8"
                 style={
                   {
                     "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${item.color}1A`,
@@ -115,26 +115,26 @@ export function PlansFourStepsSection() {
                   } as React.CSSProperties
                 }
               >
-                <div className="relative z-10 flex gap-4">
-                  <span className="accent-line-brand" aria-hidden />
-                  <div className="flex min-w-0 flex-1 items-start gap-5">
+                <div className="relative z-10 flex gap-2.5 sm:gap-4">
+                  <span className="accent-line-brand hidden sm:block" aria-hidden />
+                  <div className="flex min-w-0 flex-1 items-start gap-2.5 sm:gap-5">
                     <span
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[8px] border border-[#0B0E2C]/5"
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#0B0E2C]/5 sm:h-12 sm:w-12 sm:rounded-[8px]"
                       style={{
                         color: item.color,
                         backgroundColor: `${item.color}15`,
                       }}
                     >
-                      <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                      <Icon className="h-4 w-4 sm:h-6 sm:w-6" strokeWidth={1.75} aria-hidden />
                     </span>
                     <div className="min-w-0 flex-1">
-                      <span className="text-[12px] font-bold tracking-[0.14em] text-gradient-brand">
+                      <span className="text-[11px] font-bold tracking-[0.14em] text-gradient-brand sm:text-[12px]">
                         STEP {item.step}
                       </span>
-                      <h3 className="mt-1.5 text-xl font-bold tracking-tight text-[#0B0E2C]">
+                      <h3 className="mt-0.5 text-[15px] font-bold tracking-tight text-[#0B0E2C] sm:mt-1.5 sm:text-xl">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-[14px] leading-[1.7] text-[#5C607A] sm:text-[15px] sm:leading-[1.75]">
+                      <p className="mt-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-3 sm:text-[15px] sm:leading-[1.75]">
                         {item.body}
                       </p>
                     </div>

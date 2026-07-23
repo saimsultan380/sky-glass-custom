@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 const packages = [
   {
     name: "Starter Reseller Package",
-    description: "Suitable for individuals testing the reseller business model or working with a smaller number of customers.",
+    description:
+      "Suitable for individuals testing the reseller business model or working with a smaller number of customers.",
     recommendedFor: [
       "New resellers",
       "Small customer bases",
@@ -23,7 +24,8 @@ const packages = [
   },
   {
     name: "Professional Reseller Package",
-    description: "Designed for active resellers who expect regular customer registrations and renewals.",
+    description:
+      "Designed for active resellers who expect regular customer registrations and renewals.",
     recommendedFor: [
       "Growing reseller businesses",
       "Digital marketers",
@@ -40,7 +42,8 @@ const packages = [
   },
   {
     name: "Enterprise Reseller Package",
-    description: "Suitable for experienced resellers and larger operations requiring a higher credit balance.",
+    description:
+      "Suitable for experienced resellers and larger operations requiring a higher credit balance.",
     recommendedFor: [
       "Established resellers",
       "Agencies",
@@ -58,73 +61,88 @@ const packages = [
 
 export function ResellerPackages() {
   return (
-    <section id="packages" className="bg-white py-16 sm:py-24 lg:py-32 border-b border-[#0B0E2C]/10">
+    <section
+      id="packages"
+      className="border-b border-[#0B0E2C]/10 bg-white py-6 sm:py-24 lg:py-32"
+    >
       <Container>
         <div className="text-center">
-          <h2 className="text-[28px] font-bold leading-[1.15] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
-            Flexible Sky Glass IPTV <span className="text-gradient-brand">Reseller Packages</span>
+          <h2 className="text-[20px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] lg:text-[42px]">
+            Flexible Sky Glass IPTV{" "}
+            <span className="text-gradient-brand">Reseller Packages</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.75] text-[#5C607A] sm:text-base">
-            Different businesses require different starting points. The Sky Glass IPTV Reseller programme can be organised into packages based on credit quantity, support requirements and expected customer volume.
+          <p className="mx-auto mt-3 max-w-2xl text-[13px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
+            Different businesses require different starting points. The Sky
+            Glass IPTV Reseller programme can be organised into packages based
+            on credit quantity, support requirements and expected customer
+            volume.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <div className="mt-5 grid gap-3 sm:mt-16 sm:gap-8 lg:grid-cols-3">
           {packages.map((pkg) => (
             <div
               key={pkg.name}
               className={cn(
-                "relative flex flex-col rounded-[8px] bg-white p-8 shadow-[0_8px_30px_rgba(11,14,44,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,14,44,0.08)]",
-                pkg.popular ? "border-2 border-[#7B2FFF]" : "border border-[#0B0E2C]/10"
+                "relative flex flex-col rounded-[8px] bg-white p-3 shadow-[0_8px_30px_rgba(11,14,44,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(11,14,44,0.08)] sm:p-8",
+                pkg.popular
+                  ? "border-2 border-[#7B2FFF]"
+                  : "border border-[#0B0E2C]/10"
               )}
             >
               {pkg.popular && (
-                <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                  <span className="rounded-full bg-gradient-brand px-4 py-1 text-[13px] font-bold uppercase tracking-wide text-white shadow-sm">
+                <div className="absolute -top-3 left-0 right-0 flex justify-center sm:-top-4">
+                  <span className="rounded-full bg-gradient-brand px-3 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm sm:px-4 sm:py-1 sm:text-[13px]">
                     Most Popular
                   </span>
                 </div>
               )}
 
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-[#0B0E2C]">{pkg.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#5C607A]">
+              <div className="mb-3 sm:mb-6">
+                <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-2xl">
+                  {pkg.name}
+                </h3>
+                <p className="mt-1.5 text-[12px] leading-[1.5] text-[#5C607A] sm:mt-3 sm:text-sm sm:leading-relaxed">
                   {pkg.description}
                 </p>
               </div>
 
-              <div className="mb-8 flex items-baseline gap-2">
-                <span className="text-3xl font-bold tracking-tight text-[#0B0E2C]">
+              <div className="mb-3 flex items-baseline gap-2 sm:mb-8">
+                <span className="text-[20px] font-bold tracking-tight text-[#0B0E2C] sm:text-3xl">
                   {pkg.price}
                 </span>
               </div>
 
-              <div className="mb-8 flex-1 space-y-6">
+              <div className="mb-4 flex-1 space-y-3 sm:mb-8 sm:space-y-6">
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#0B0E2C]">Recommended For:</h4>
-                  <ul className="mt-4 space-y-3">
+                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#0B0E2C] sm:text-sm">
+                    Recommended For:
+                  </h4>
+                  <ul className="mt-2 space-y-1.5 sm:mt-4 sm:space-y-3">
                     {pkg.recommendedFor.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#7B2FFF]" />
-                        <span className="text-sm text-[#5C607A]">{item}</span>
+                      <li key={item} className="flex items-start gap-2 sm:gap-3">
+                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-4 sm:w-4" />
+                        <span className="text-[12px] text-[#5C607A] sm:text-sm">
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="space-y-3 rounded-xl bg-[#F5F5F7] p-4 text-sm text-[#0B0E2C]">
-                  <div className="flex justify-between border-b border-[#0B0E2C]/10 pb-2">
+                <div className="space-y-2 rounded-[8px] bg-[#F5F5F7] p-3 text-[12px] text-[#0B0E2C] sm:space-y-3 sm:rounded-xl sm:p-4 sm:text-sm">
+                  <div className="flex justify-between border-b border-[#0B0E2C]/10 pb-1.5 sm:pb-2">
                     <span className="text-[#5C607A]">Credits:</span>
                     <span className="font-medium">{pkg.credits}</span>
                   </div>
                   {pkg.expiry && (
-                    <div className="flex justify-between border-b border-[#0B0E2C]/10 pb-2">
+                    <div className="flex justify-between border-b border-[#0B0E2C]/10 pb-1.5 sm:pb-2">
                       <span className="text-[#5C607A]">Credit Expiry:</span>
                       <span className="font-medium">{pkg.expiry}</span>
                     </div>
                   )}
                   {pkg.trials && (
-                    <div className="flex justify-between border-b border-[#0B0E2C]/10 pb-2">
+                    <div className="flex justify-between border-b border-[#0B0E2C]/10 pb-1.5 sm:pb-2">
                       <span className="text-[#5C607A]">Trial Accounts:</span>
                       <span className="font-medium">{pkg.trials}</span>
                     </div>
@@ -141,7 +159,7 @@ export function ResellerPackages() {
               <Link
                 href={pkg.ctaLink}
                 className={cn(
-                  "mt-auto flex min-h-[48px] items-center justify-center rounded-[10px] px-4 py-2.5 text-[14px] font-bold transition-all sm:min-h-[56px] sm:text-[15px]",
+                  "mt-auto flex min-h-[40px] items-center justify-center rounded-[10px] px-4 py-2 text-[13px] font-bold transition-all sm:min-h-[56px] sm:py-2.5 sm:text-[15px]",
                   pkg.popular
                     ? "bg-gradient-brand text-white hover:opacity-90"
                     : "bg-[#F5F5F7] text-[#0B0E2C] hover:bg-[#0B0E2C]/5"
