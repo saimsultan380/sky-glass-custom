@@ -9,12 +9,13 @@ interface FadeInProps {
   className?: string;
   delay?: number;
   duration?: number;
-  /** Stagger children by this interval in seconds */
+  /** Stagger children by this interval in seconds (~0.08–0.12) */
   staggerChildren?: number;
 }
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
-const OFFSET_Y = 20;
+const OFFSET_Y = 14;
+const VIEWPORT = { once: true, margin: "-40px", amount: 0.2 } as const;
 
 const containerVariants = (stagger: number): Variants => ({
   hidden: {},
@@ -42,7 +43,7 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  duration = 0.45,
+  duration = 0.35,
   staggerChildren,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
@@ -57,7 +58,7 @@ export function FadeIn({
         className={cn(className)}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "0px 0px -60px 0px", amount: 0 }}
+        viewport={VIEWPORT}
         variants={containerVariants(staggerChildren)}
       >
         {React.Children.map(children, (child) => (
@@ -72,7 +73,7 @@ export function FadeIn({
       className={cn(className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "0px 0px -60px 0px", amount: 0 }}
+      viewport={VIEWPORT}
       variants={itemVariants(duration, delay)}
     >
       {children}

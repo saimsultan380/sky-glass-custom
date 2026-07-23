@@ -4,7 +4,13 @@ import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;
+  /** Soft scroll reveal for below-fold section content (default true) */
   animate?: boolean;
+  /**
+   * Light stagger between top-level Container children (~0.08–0.12).
+   * Pass `0` to reveal the whole block as one unit.
+   */
+  staggerChildren?: number;
 }
 
 export function Container({
@@ -12,10 +18,11 @@ export function Container({
   className,
   as: Component = "div",
   animate = true,
+  staggerChildren = 0.1,
   ...props
 }: ContainerProps) {
   const content = animate ? (
-    <ScrollReveal>{children}</ScrollReveal>
+    <ScrollReveal staggerChildren={staggerChildren}>{children}</ScrollReveal>
   ) : (
     children
   );

@@ -174,15 +174,15 @@
   }
 }
 
-/* Primary CTA white shine — ~1s sweep every 3s */
+/* Primary CTA white shine — soft sweep every ~2.5s */
 @keyframes cta-shine-sweep {
   0% {
     transform: translateX(-130%) skewX(-18deg);
   }
-  33% {
+  40% {
     transform: translateX(230%) skewX(-18deg);
   }
-  33.01%,
+  40.01%,
   100% {
     transform: translateX(230%) skewX(-18deg);
   }
@@ -190,9 +190,28 @@
 
 @layer utilities {
   a.bg-gradient-brand,
-  button.bg-gradient-brand {
+  button.bg-gradient-brand,
+  a.border-gradient-brand,
+  button.border-gradient-brand {
     position: relative;
     overflow: hidden;
+    transition:
+      transform 0.2s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+      opacity 0.15s ease;
+  }
+
+  a.bg-gradient-brand:hover,
+  button.bg-gradient-brand:hover,
+  a.border-gradient-brand:hover,
+  button.border-gradient-brand:hover {
+    transform: scale(1.04);
+  }
+
+  a.bg-gradient-brand:active,
+  button.bg-gradient-brand:active,
+  a.border-gradient-brand:active,
+  button.border-gradient-brand:active {
+    transform: scale(0.96);
   }
 
   a.bg-gradient-brand::after,
@@ -213,7 +232,7 @@
       transparent 100%
     );
     pointer-events: none;
-    animation: cta-shine-sweep 3s ease-in-out infinite;
+    animation: cta-shine-sweep 2.5s ease-in-out infinite;
   }
 
   a.bg-gradient-brand > *,
@@ -228,6 +247,17 @@
   button.bg-gradient-brand::after {
     display: none;
     animation: none;
+  }
+
+  a.bg-gradient-brand:hover,
+  button.bg-gradient-brand:hover,
+  a.border-gradient-brand:hover,
+  button.border-gradient-brand:hover,
+  a.bg-gradient-brand:active,
+  button.bg-gradient-brand:active,
+  a.border-gradient-brand:active,
+  button.border-gradient-brand:active {
+    transform: none;
   }
 }
 

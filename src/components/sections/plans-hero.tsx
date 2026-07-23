@@ -10,8 +10,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { FadeIn } from "@/components/animation/fade-in";
 import { MaskReveal } from "@/components/animation/mask-reveal";
-import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 const TRUST_ITEMS = [
   { label: "Quick Activation", icon: Zap, color: "#FF6B2C" },
@@ -35,7 +35,7 @@ export function PlansHero() {
               for UK Viewers
             </MaskReveal>
 
-            <ScrollReveal delay={0.28}>
+            <FadeIn delay={0.2}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
                   Choose a flexible Sky Glass IPTV subscription designed around
@@ -52,12 +52,14 @@ export function PlansHero() {
                   begin with a 24-hour trial before committing to a longer plan.
                 </p>
               </div>
+            </FadeIn>
 
+            <FadeIn delay={0.28}>
               <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
                     href="/contact-us"
-                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                     Start Your 24-Hour Free Trial
@@ -78,7 +80,7 @@ export function PlansHero() {
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
                     href="#compare-plans"
-                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <CalendarDays
                       className="h-4 w-4 shrink-0 text-[#E91E8C]"
@@ -100,10 +102,10 @@ export function PlansHero() {
                   </Link>
                 </div>
               </div>
-            </ScrollReveal>
+            </FadeIn>
           </div>
 
-          <ScrollReveal delay={0.2} className="order-2 flex justify-center lg:justify-end">
+          <FadeIn delay={0.08} className="order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[560px] lg:max-w-none">
               <Image
                 src="/hero.PNG"
@@ -115,10 +117,10 @@ export function PlansHero() {
                 className="mx-auto h-auto max-h-[260px] w-full object-contain object-center sm:max-h-none"
               />
             </div>
-          </ScrollReveal>
+          </FadeIn>
         </div>
 
-        <ScrollReveal delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
+        <FadeIn delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
           <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
@@ -140,7 +142,7 @@ export function PlansHero() {
               );
             })}
           </ul>
-        </ScrollReveal>
+        </FadeIn>
       </Container>
     </section>
   );

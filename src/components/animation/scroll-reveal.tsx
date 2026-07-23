@@ -16,6 +16,7 @@ interface ScrollRevealProps {
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 const OFFSET = 20;
+const VIEWPORT = { once: true, margin: "-50px", amount: 0.15 } as const;
 
 function makeItemVariants(
   duration: number,
@@ -48,7 +49,7 @@ export function ScrollReveal({
   children,
   className,
   delay = 0,
-  duration = 0.45,
+  duration = 0.4,
   direction = "up",
   staggerChildren,
 }: ScrollRevealProps) {
@@ -66,7 +67,7 @@ export function ScrollReveal({
         className={cn(className)}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "0px 0px -60px 0px", amount: 0 }}
+        viewport={VIEWPORT}
         variants={{
           hidden: {},
           visible: {
@@ -88,7 +89,7 @@ export function ScrollReveal({
       className={cn(className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "0px 0px -60px 0px", amount: 0 }}
+      viewport={VIEWPORT}
       variants={item}
     >
       {children}

@@ -8,8 +8,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { FadeIn } from "@/components/animation/fade-in";
 import { MaskReveal } from "@/components/animation/mask-reveal";
-import { ScrollReveal } from "@/components/animation/scroll-reveal";
 
 const TRUST_ITEMS = [
   { label: "Quick Responses", icon: Zap, color: "#FF6B2C" },
@@ -32,7 +32,7 @@ export function ContactHero() {
               <span className="text-gradient-brand">Request a Trial or Get Support</span>
             </MaskReveal>
 
-            <ScrollReveal delay={0.28}>
+            <FadeIn delay={0.2}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
                   Contact Sky Glass IPTV to request a 24-hour IPTV trial in the UK, compare subscription options or receive help setting up your device.
@@ -41,12 +41,14 @@ export function ContactHero() {
                   Tell us what you need assistance with and include your device and application details so the support team can provide relevant guidance.
                 </p>
               </div>
+            </FadeIn>
 
+            <FadeIn delay={0.28}>
               <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
                     href="#contact-form"
-                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                     Request Your 24-Hour Trial
@@ -56,17 +58,17 @@ export function ContactHero() {
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
                     href="#contact-form"
-                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
+                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[8px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Headphones className="h-4 w-4 shrink-0 text-[#E91E8C]" strokeWidth={2} aria-hidden />
                     Contact Customer Support
                   </Link>
                 </div>
               </div>
-            </ScrollReveal>
+            </FadeIn>
           </div>
 
-          <ScrollReveal delay={0.2} className="order-2 flex justify-center lg:justify-end">
+          <FadeIn delay={0.08} className="order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[560px] lg:max-w-none">
               <Image
                 src="/hero.PNG"
@@ -78,10 +80,10 @@ export function ContactHero() {
                 className="mx-auto h-auto max-h-[260px] w-full object-contain object-center sm:max-h-none"
               />
             </div>
-          </ScrollReveal>
+          </FadeIn>
         </div>
 
-        <ScrollReveal delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
+        <FadeIn delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
           <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[8px] border border-[#0B0E2C]/10">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
@@ -103,7 +105,7 @@ export function ContactHero() {
               );
             })}
           </ul>
-        </ScrollReveal>
+        </FadeIn>
       </Container>
     </section>
   );

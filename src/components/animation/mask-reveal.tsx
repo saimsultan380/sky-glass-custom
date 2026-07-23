@@ -66,15 +66,16 @@ function tokenize(
 }
 
 const EASE = [0.16, 1, 0.3, 1] as const;
+const VIEWPORT = { once: true, amount: 0.2, margin: "-40px" } as const;
 
 const wordVariants = {
-  hidden: { y: "115%", skewY: 8, opacity: 0 },
+  hidden: { y: "100%", skewY: 8, opacity: 0 },
   visible: {
     y: "0%",
     skewY: 0,
     opacity: 1,
     transition: {
-      duration: 0.95,
+      duration: 0.85,
       ease: EASE,
     },
   },
@@ -88,7 +89,7 @@ export function MaskReveal({
   children,
   className,
   style,
-  delay = 0.12,
+  delay = 0.18,
   as: Tag = "h1",
   align = "center",
 }: MaskRevealProps) {
@@ -126,12 +127,12 @@ export function MaskReveal({
         className={rowClass}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.4, margin: "0px 0px -40px 0px" }}
+        viewport={VIEWPORT}
         variants={{
           hidden: {},
           visible: {
             transition: {
-              staggerChildren: 0.045,
+              staggerChildren: 0.05,
               delayChildren: delay,
             },
           },
