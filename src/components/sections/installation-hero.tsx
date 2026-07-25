@@ -40,7 +40,7 @@ export function InstallationHero() {
                 </p>
                 <p>
                   The official Sky Glass IPTV application is available for
-                  compatible Firestick and Android devices. Supported alternative
+                  compatible Firestick and Android devices. Supported alternatives
                   IPTV players can be used on Samsung and LG Smart TVs, Apple
                   devices, Windows PCs and Mac computers.
                 </p>
