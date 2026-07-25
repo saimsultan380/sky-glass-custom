@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, pageTitles, pageDescriptions } from "@/lib/site";
 import { ContactHero } from "@/components/sections/contact-hero";
 import { ContactHelpOptions } from "@/components/sections/contact-help-options";
 import { ContactFormSection } from "@/components/sections/contact-form-section";
@@ -11,8 +11,8 @@ import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 
 export const metadata: Metadata = {
-  title: "Contact Sky Glass IPTV – UK Trial & Setup Support",
-  description: "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
+  title: pageTitles.contactUs,
+  description: pageDescriptions.contactUs,
   keywords: [
     "Contact Sky Glass IPTV",
     "IPTV free trial UK",
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.siteUrl}/contact-us`,
   },
   openGraph: {
-    title: "Contact Sky Glass IPTV – UK Trial & Setup Support",
-    description: "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
+    title: pageTitles.contactUs,
+    description: pageDescriptions.contactUs,
     url: `${siteConfig.siteUrl}/contact-us`,
     type: "website",
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Sky Glass IPTV – UK Trial & Setup Support",
-    description: "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
+    title: pageTitles.contactUs,
+    description: pageDescriptions.contactUs,
   },
 };
 

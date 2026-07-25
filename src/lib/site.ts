@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "Sky Glass",
   tagline: "Live TV, Sports, Movies & Series in One Place",
   description:
-    "Discover Sky Glass IPTV for live TV, sports, movies and popular series in the UK. Request a 24-hour trial, compare plans and receive setup support.",
+    "Explore Sky Glass IPTV for live TV, sports, movies and popular series in the UK. Compare flexible plans, request a 24-hour trial and get setup support.",
   /** Production domain */
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
@@ -20,23 +20,23 @@ export const siteConfig = {
 
 /** Exact SERP titles (shown in Google + browser tab) */
 export const pageTitles = {
-  home: "Sky Glass IPTV UK – Live TV, Sports, Movies & Series",
-  subscriptionPlans: "Sky Glass IPTV Subscription Plans UK – Flexible Packages",
-  installationGuide: "Sky Glass IPTV Installation Guide – Firestick, Android & TV",
-  resellerPanel: "Sky Glass IPTV Reseller UK – Panel, Credits & Packages",
-  contactUs: "Contact Sky Glass IPTV – UK Trial & Setup Support",
+  home: "Sky Glass IPTV - Live TV, Sports, Movies & Series UK",
+  subscriptionPlans: "Sky Glass IPTV - Subscription Plans & 24-Hour Trial UK",
+  installationGuide: "Sky Glass IPTV - Installation Guide for Firestick & TV",
+  resellerPanel: "Sky Glass IPTV - Reseller Panel, Credits & UK Packages",
+  contactUs: "Sky Glass IPTV - Free Trial, Setup Help & Support UK",
 } as const;
 
 export const pageDescriptions = {
   home: siteConfig.description,
   subscriptionPlans:
-    "Compare Sky Glass IPTV subscription plans for UK viewers. Choose Standard or Premium, select a duration and request a 24-hour trial before subscribing.",
+    "Compare Sky Glass IPTV subscription plans for UK viewers. Check durations, connection options and features, then request a 24-hour trial before subscribing.",
   installationGuide:
-    "Install Sky Glass IPTV on Firestick, Android, Smart TVs, Apple devices, Windows and Mac using clear setup steps and compatible application guidance.",
+    "Follow the Sky Glass IPTV installation guide for Firestick, Android, Smart TVs, Apple devices, Windows and Mac, with clear device-specific setup help.",
   resellerPanel:
-    "Join the Sky Glass IPTV Reseller UK programme. Manage customer subscriptions and credits through one panel with flexible packages and reseller support.",
+    "Join the Sky Glass IPTV reseller programme in the UK. Manage customers, subscriptions and credits through one panel with flexible reseller package options.",
   contactUs:
-    "Contact Sky Glass IPTV for a 24-hour UK trial, subscription assistance, device setup guidance, renewals and technical support on popular devices.",
+    "Contact Sky Glass IPTV for a 24-hour UK trial, subscription guidance, device setup help, renewals and technical support across popular streaming devices.",
 } as const;
 
 export const siteMetadataBase = {
@@ -53,6 +53,9 @@ export const siteMetadataBase = {
     "IPTV service UK",
     "IPTV subscription UK",
   ],
+  verification: {
+    google: "IDq3qEilNHxsdwGR-sehnbYmYBXmqeelPC32VHOIZ4g",
+  },
   openGraph: {
     type: "website" as const,
     locale: siteConfig.locale,

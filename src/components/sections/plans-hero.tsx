@@ -30,9 +30,9 @@ export function PlansHero() {
               align="left"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV{" "}
-              <span className="text-gradient-brand">Subscription Plans</span>{" "}
-              for UK Viewers
+              Sky Glass IPTV –{" "}
+              <span className="text-gradient-brand">Subscription Plans</span> for
+              UK Viewers
             </MaskReveal>
 
             <FadeIn delay={0.2}>
