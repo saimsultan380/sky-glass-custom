@@ -12,7 +12,7 @@ type PageShellProps = {
 };
 
 /**
- * Shared page chrome — Header, BreadcrumbList JSON-LD (+ trail), Footer.
+ * Shared page chrome — Header, BreadcrumbList JSON-LD (SEO only), Footer.
  * Use on every indexable page so schema cannot be skipped.
  */
 export function PageShell({
