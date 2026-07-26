@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { siteConfig, siteMetadataBase } from "@/lib/site";
+import { canonicalUrl, siteConfig, siteMetadataBase } from "@/lib/site";
 import { AutoScrollReveal } from "@/components/animation/auto-scroll-reveal";
 
 const geistSans = Geist({
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.siteUrl),
+  metadataBase: new URL(`${siteConfig.siteUrl}/`),
   ...siteMetadataBase,
   icons: {
     icon: [{ url: "/logo.PNG", type: "image/png" }],
@@ -30,7 +30,7 @@ const jsonLd = [
     "@type": "WebSite",
     name: siteConfig.name,
     alternateName: [siteConfig.shortName, "Sky Glass IPTV UK", "IPTV UK"],
-    url: siteConfig.siteUrl,
+    url: canonicalUrl("/"),
     description: siteConfig.description,
     inLanguage: "en-GB",
   },
@@ -38,7 +38,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
-    url: siteConfig.siteUrl,
+    url: canonicalUrl("/"),
     logo: `${siteConfig.siteUrl}/logo.PNG`,
     contactPoint: {
       "@type": "ContactPoint",

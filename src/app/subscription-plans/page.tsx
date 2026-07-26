@@ -13,7 +13,7 @@ import { PlansTrialSection } from "@/components/sections/plans-trial-section";
 import { PlansBenefitsSection } from "@/components/sections/plans-benefits-section";
 import { PlansFaqSection } from "@/components/sections/plans-faq-section";
 import { PlansCtaSection } from "@/components/sections/plans-cta-section";
-import { pageDescriptions, pageTitles } from "@/lib/site";
+import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -26,9 +26,13 @@ export const metadata: Metadata = {
     "IPTV plans UK",
     "IPTV packages UK",
   ],
+  alternates: {
+    canonical: canonicalUrl("/subscription-plans/"),
+  },
   openGraph: {
     title: pageTitles.subscriptionPlans,
     description: pageDescriptions.subscriptionPlans,
+    url: canonicalUrl("/subscription-plans/"),
   },
   twitter: {
     title: pageTitles.subscriptionPlans,

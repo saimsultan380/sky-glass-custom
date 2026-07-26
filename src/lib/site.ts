@@ -2,6 +2,7 @@
  * Site-wide brand & SEO defaults for Sky Glass IPTV.
  * Update `siteUrl` (and email) when the final domain is ready.
  *
+ * Canonical policy: always non-www HTTPS with a trailing slash.
  * `pageTitles` are the exact SERP / browser <title> strings — keep them in sync
  * with each page's metadata.title.absolute.
  */
@@ -11,12 +12,47 @@ export const siteConfig = {
   tagline: "Live TV, Sports, Movies & Series in One Place",
   description:
     "Explore Sky Glass IPTV for live TV, sports, movies and popular series in the UK. Compare flexible plans, request a 24-hour trial and get setup support.",
-  /** Production domain */
+  /** Production origin — always non-www, no trailing slash */
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
   locale: "en_GB",
   twitterHandle: "@skyglassiptv",
 } as const;
+
+/** Indexable app routes (pathname without domain; always trailing-slash). */
+export const sitePages = [
+  { path: "/", priority: 1, changeFrequency: "weekly" as const },
+  {
+    path: "/subscription-plans/",
+    priority: 0.9,
+    changeFrequency: "weekly" as const,
+  },
+  {
+    path: "/installation-guide/",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/reseller-panel/",
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  },
+  { path: "/contact-us/", priority: 0.8, changeFrequency: "monthly" as const },
+] as const;
+
+/**
+ * Build a canonical absolute URL: non-www + HTTPS + trailing slash.
+ * Accepts `/about`, `/about/`, or `about` — always returns one canonical form.
+ */
+export function canonicalUrl(path: string = "/"): string {
+  const origin = siteConfig.siteUrl.replace(/\/+$/, "");
+  const trimmed = path.trim();
+  if (!trimmed || trimmed === "/") return `${origin}/`;
+
+  const withLeading = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  const withoutTrailing = withLeading.replace(/\/+$/, "");
+  return `${origin}${withoutTrailing}/`;
+}
 
 /** Exact SERP titles (shown in Google + browser tab) */
 export const pageTitles = {
@@ -62,7 +98,6 @@ export const siteMetadataBase = {
     siteName: siteConfig.name,
     title: pageTitles.home,
     description: siteConfig.description,
-    url: siteConfig.siteUrl,
     images: [
       {
         url: "/logo.PNG",

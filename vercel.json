@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.skyglass-iptv.co" }],
+      "destination": "https://skyglass-iptv.co/:path*",
+      "permanent": true
+    }
+  ]
+}

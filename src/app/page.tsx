@@ -16,7 +16,7 @@ import { HomepageCtaSection } from "@/components/sections/homepage-cta-section";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
-import { pageDescriptions, pageTitles } from "@/lib/site";
+import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -30,9 +30,13 @@ export const metadata: Metadata = {
     "IPTV service UK",
     "IPTV subscription UK",
   ],
+  alternates: {
+    canonical: canonicalUrl("/"),
+  },
   openGraph: {
     title: pageTitles.home,
     description: pageDescriptions.home,
+    url: canonicalUrl("/"),
   },
   twitter: {
     title: pageTitles.home,

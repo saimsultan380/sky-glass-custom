@@ -10,7 +10,7 @@ import { InstallationNetwork } from "@/components/sections/installation-network"
 import { InstallationTroubleshooting } from "@/components/sections/installation-troubleshooting";
 import { InstallationFaq } from "@/components/sections/installation-faq";
 import { InstallationFinalCta } from "@/components/sections/installation-final-cta";
-import { pageDescriptions, pageTitles } from "@/lib/site";
+import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -24,9 +24,13 @@ export const metadata: Metadata = {
     "install IPTV on Firestick",
     "IPTV Smart TV setup",
   ],
+  alternates: {
+    canonical: canonicalUrl("/installation-guide/"),
+  },
   openGraph: {
     title: pageTitles.installationGuide,
     description: pageDescriptions.installationGuide,
+    url: canonicalUrl("/installation-guide/"),
   },
   twitter: {
     title: pageTitles.installationGuide,

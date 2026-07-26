@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { siteConfig, pageTitles, pageDescriptions } from "@/lib/site";
+import {
+  siteConfig,
+  pageTitles,
+  pageDescriptions,
+  canonicalUrl,
+} from "@/lib/site";
 import { ResellerHero } from "@/components/sections/reseller-hero";
 import { ResellerIntro } from "@/components/sections/reseller-intro";
 import { ResellerBenefits } from "@/components/sections/reseller-benefits";
@@ -16,7 +21,9 @@ import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 
 export const metadata: Metadata = {
-  title: pageTitles.resellerPanel,
+  title: {
+    absolute: pageTitles.resellerPanel,
+  },
   description: pageDescriptions.resellerPanel,
   keywords: [
     "Sky Glass IPTV Reseller UK",
@@ -25,12 +32,12 @@ export const metadata: Metadata = {
     "IPTV reseller programme",
   ],
   alternates: {
-    canonical: `${siteConfig.siteUrl}/reseller-panel`,
+    canonical: canonicalUrl("/reseller-panel/"),
   },
   openGraph: {
     title: pageTitles.resellerPanel,
     description: pageDescriptions.resellerPanel,
-    url: `${siteConfig.siteUrl}/reseller-panel`,
+    url: canonicalUrl("/reseller-panel/"),
     type: "website",
     siteName: siteConfig.name,
   },

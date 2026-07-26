@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { siteConfig, pageTitles, pageDescriptions } from "@/lib/site";
+import {
+  siteConfig,
+  pageTitles,
+  pageDescriptions,
+  canonicalUrl,
+} from "@/lib/site";
 import { ContactHero } from "@/components/sections/contact-hero";
 import { ContactHelpOptions } from "@/components/sections/contact-help-options";
 import { ContactFormSection } from "@/components/sections/contact-form-section";
@@ -11,7 +16,9 @@ import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 
 export const metadata: Metadata = {
-  title: pageTitles.contactUs,
+  title: {
+    absolute: pageTitles.contactUs,
+  },
   description: pageDescriptions.contactUs,
   keywords: [
     "Contact Sky Glass IPTV",
@@ -20,12 +27,12 @@ export const metadata: Metadata = {
     "IPTV setup support UK",
   ],
   alternates: {
-    canonical: `${siteConfig.siteUrl}/contact-us`,
+    canonical: canonicalUrl("/contact-us/"),
   },
   openGraph: {
     title: pageTitles.contactUs,
     description: pageDescriptions.contactUs,
-    url: `${siteConfig.siteUrl}/contact-us`,
+    url: canonicalUrl("/contact-us/"),
     type: "website",
     siteName: siteConfig.name,
   },
