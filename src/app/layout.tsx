@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { canonicalUrl, siteConfig, siteMetadataBase } from "@/lib/site";
+import { JsonLd } from "@/components/seo/json-ld";
 import { AutoScrollReveal } from "@/components/animation/auto-scroll-reveal";
 
 const geistSans = Geist({
@@ -61,12 +62,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+        <JsonLd data={jsonLd} />
       </head>
       <body className="relative flex min-h-full flex-col bg-white text-[#0B0E2C]">
         <AutoScrollReveal />

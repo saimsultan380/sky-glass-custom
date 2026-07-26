@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import { PageShell } from "@/components/layout/page-shell";
 import { InstallationHero } from "@/components/sections/installation-hero";
 import { InstallationOverview } from "@/components/sections/installation-overview";
 import { InstallationRequirements } from "@/components/sections/installation-requirements";
@@ -40,8 +38,7 @@ export const metadata: Metadata = {
 
 export default function InstallationGuidePage() {
   return (
-    <main className="relative flex flex-col">
-      <Header />
+    <PageShell path="/installation-guide/">
       <InstallationHero />
       <InstallationOverview />
       <InstallationRequirements />
@@ -50,8 +47,6 @@ export default function InstallationGuidePage() {
       <InstallationTroubleshooting />
       <InstallationFaq />
       <InstallationFinalCta />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+    </PageShell>
   );
 }

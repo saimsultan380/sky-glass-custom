@@ -19,7 +19,7 @@ const packages = [
     expiry: "TBC",
     trials: "TBC",
     ctaText: "Choose Starter Package",
-    ctaLink: "/contact-us",
+    ctaLink: "/contact-us/",
     popular: false,
   },
   {
@@ -37,7 +37,7 @@ const packages = [
     expiry: "TBC",
     trials: "TBC",
     ctaText: "Choose Professional Package",
-    ctaLink: "/contact-us",
+    ctaLink: "/contact-us/",
     popular: true,
   },
   {
@@ -54,7 +54,7 @@ const packages = [
     credits: "TBC",
     support: "Priority or dedicated support, where offered",
     ctaText: "Discuss Enterprise Options",
-    ctaLink: "/contact-us",
+    ctaLink: "/contact-us/",
     popular: false,
   },
 ];

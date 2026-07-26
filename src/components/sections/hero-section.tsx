@@ -62,14 +62,14 @@ export function HeroSection() {
               <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
-                    href="/contact-us"
+                    href="/contact-us/"
                     className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                     Start Your 24-Hour Free Trial
                   </Link>
                   <Link
-                    href="/contact-us"
+                    href="/contact-us/"
                     className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#E91E8C] transition-opacity hover:opacity-75 sm:text-sm"
                   >
                     <Headphones className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
@@ -79,7 +79,7 @@ export function HeroSection() {
 
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
                   <Link
-                    href="/subscription-plans"
+                    href="/subscription-plans/"
                     className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <CalendarDays
@@ -90,7 +90,7 @@ export function HeroSection() {
                     View Sky Glass IPTV Plans
                   </Link>
                   <Link
-                    href="/subscription-plans"
+                    href="/subscription-plans/"
                     className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#7B2FFF] transition-opacity hover:opacity-75 sm:text-sm"
                   >
                     <CreditCard className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />

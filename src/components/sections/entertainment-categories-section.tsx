@@ -141,7 +141,7 @@ export function EntertainmentCategoriesSection() {
             </div>
 
             <Link
-              href="/subscription-plans"
+              href="/subscription-plans/"
               className="mt-8 hidden min-h-[48px] items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-3 text-[14px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:inline-flex"
             >
               Explore Available Entertainment
@@ -260,7 +260,7 @@ export function EntertainmentCategoriesSection() {
           </div>
 
           <Link
-            href="/subscription-plans"
+            href="/subscription-plans/"
             className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:hidden"
           >
             Explore Available Entertainment

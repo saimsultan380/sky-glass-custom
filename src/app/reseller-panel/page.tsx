@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  siteConfig,
-  pageTitles,
-  pageDescriptions,
-  canonicalUrl,
-} from "@/lib/site";
+import { PageShell } from "@/components/layout/page-shell";
 import { ResellerHero } from "@/components/sections/reseller-hero";
 import { ResellerIntro } from "@/components/sections/reseller-intro";
 import { ResellerBenefits } from "@/components/sections/reseller-benefits";
@@ -16,9 +11,12 @@ import { ResellerGrowth } from "@/components/sections/reseller-growth";
 import { ResellerResponsibilities } from "@/components/sections/reseller-responsibilities";
 import { ResellerFaq } from "@/components/sections/reseller-faq";
 import { ResellerCta } from "@/components/sections/reseller-cta";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import {
+  siteConfig,
+  pageTitles,
+  pageDescriptions,
+  canonicalUrl,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -50,8 +48,7 @@ export const metadata: Metadata = {
 
 export default function ResellerPanelPage() {
   return (
-    <main className="flex flex-col">
-      <Header />
+    <PageShell path="/reseller-panel/" className="flex flex-col">
       <ResellerHero />
       <ResellerIntro />
       <ResellerBenefits />
@@ -63,8 +60,6 @@ export default function ResellerPanelPage() {
       <ResellerResponsibilities />
       <ResellerFaq />
       <ResellerCta />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+    </PageShell>
   );
 }

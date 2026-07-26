@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Subscription Plan", href: "/subscription-plans" },
-  { label: "Installation Guide", href: "/installation-guide" },
-  { label: "Reseller Plan", href: "/reseller-panel" },
-  { label: "Contact", href: "/contact-us" },
+  { label: "Subscription Plan", href: "/subscription-plans/" },
+  { label: "Installation Guide", href: "/installation-guide/" },
+  { label: "Reseller Plan", href: "/reseller-panel/" },
+  { label: "Contact", href: "/contact-us/" },
 ];
 
 const MENU_EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -94,7 +94,7 @@ export function Header() {
 
                 <div className="relative z-[1] flex items-center gap-3">
                   <Link
-                    href="/contact-us"
+                    href="/contact-us/"
                     id="hero-get-started"
                     className="hidden rounded-[1px] bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90 lg:inline-flex"
                   >
@@ -194,7 +194,7 @@ export function Header() {
                       }}
                     >
                       <Link
-                        href="/contact-us"
+                        href="/contact-us/"
                         className="mt-2 flex w-full items-center justify-center rounded-[1px] bg-gradient-brand px-5 py-3.5 text-[15px] font-semibold text-white"
                         onClick={closeMenu}
                       >

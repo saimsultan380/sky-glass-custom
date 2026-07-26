@@ -59,7 +59,7 @@ const helpOptions = [
       "Subscription renewals",
       "Upgrading an existing plan",
     ],
-    link: { text: "Compare Subscription Plans", url: "/subscription-plans" },
+    link: { text: "Compare Subscription Plans", url: "/subscription-plans/" },
   },
   {
     title: "Installation and Device Support",
@@ -83,7 +83,7 @@ const helpOptions = [
       "Windows computers",
       "Mac and MacBook devices",
     ],
-    link: { text: "View the Installation Guide", url: "/installation-guide" },
+    link: { text: "View the Installation Guide", url: "/installation-guide/" },
   },
   {
     title: "Technical Support",

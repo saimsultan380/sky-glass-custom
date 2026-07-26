@@ -121,7 +121,7 @@ export function ResellerSteps() {
 
         <div className="mt-5 text-center sm:mt-16">
           <Link
-            href="/contact-us"
+            href="/contact-us/"
             className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[1px] bg-gradient-brand px-8 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:w-auto sm:py-3 sm:text-[16px]"
           >
             Start Your Reseller Application

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import { PageShell } from "@/components/layout/page-shell";
 import { PlansHero } from "@/components/sections/plans-hero";
 import { PlansChoiceSection } from "@/components/sections/plans-choice-section";
 import { PlansPricingSection } from "@/components/sections/plans-pricing-section";
@@ -42,8 +40,7 @@ export const metadata: Metadata = {
 
 export default function SubscriptionPlansPage() {
   return (
-    <main className="relative flex flex-col">
-      <Header />
+    <PageShell path="/subscription-plans/">
       <PlansHero />
       <PlansChoiceSection />
       <PlansPricingSection variant="plans" />
@@ -55,8 +52,6 @@ export default function SubscriptionPlansPage() {
       <PlansBenefitsSection />
       <PlansFaqSection />
       <PlansCtaSection />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+    </PageShell>
   );
 }

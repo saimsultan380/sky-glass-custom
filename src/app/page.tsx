@@ -13,9 +13,7 @@ import { ComparisonSection } from "@/components/sections/comparison-section";
 import { KeyBenefitsSection } from "@/components/sections/key-benefits-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { HomepageCtaSection } from "@/components/sections/homepage-cta-section";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import { PageShell } from "@/components/layout/page-shell";
 import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -46,8 +44,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col">
-      <Header />
+    <PageShell path="/">
       <HeroSection />
       <SmarterIptvExperienceSection />
       <WhyChooseSkyGlassSection />
@@ -62,8 +59,6 @@ export default function Home() {
       <KeyBenefitsSection />
       <FaqSection />
       <HomepageCtaSection />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+    </PageShell>
   );
 }

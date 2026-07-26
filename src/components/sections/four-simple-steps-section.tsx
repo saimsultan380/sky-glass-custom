@@ -153,7 +153,7 @@ export function FourSimpleStepsSection() {
 
         <div className="mt-6 flex justify-center sm:mt-12">
           <Link
-            href="/contact-us"
+            href="/contact-us/"
             className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
           >
             Start Your 24-Hour Trial

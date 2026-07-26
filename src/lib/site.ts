@@ -21,24 +21,39 @@ export const siteConfig = {
 
 /** Indexable app routes (pathname without domain; always trailing-slash). */
 export const sitePages = [
-  { path: "/", priority: 1, changeFrequency: "weekly" as const },
+  {
+    path: "/",
+    name: "Home",
+    priority: 1,
+    changeFrequency: "weekly" as const,
+  },
   {
     path: "/subscription-plans/",
+    name: "Subscription Plans",
     priority: 0.9,
     changeFrequency: "weekly" as const,
   },
   {
     path: "/installation-guide/",
+    name: "Installation Guide",
     priority: 0.8,
     changeFrequency: "monthly" as const,
   },
   {
     path: "/reseller-panel/",
+    name: "Reseller Panel",
     priority: 0.7,
     changeFrequency: "monthly" as const,
   },
-  { path: "/contact-us/", priority: 0.8, changeFrequency: "monthly" as const },
+  {
+    path: "/contact-us/",
+    name: "Contact Us",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
 ] as const;
+
+export type SitePagePath = (typeof sitePages)[number]["path"];
 
 /**
  * Build a canonical absolute URL: non-www + HTTPS + trailing slash.
@@ -52,6 +67,52 @@ export function canonicalUrl(path: string = "/"): string {
   const withLeading = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
   const withoutTrailing = withLeading.replace(/\/+$/, "");
   return `${origin}${withoutTrailing}/`;
+}
+
+/** Ensure an internal path uses a trailing slash (except bare `/`). */
+export function trailingPath(path: string): string {
+  if (!path || path === "/") return "/";
+  const [pathname, hash = ""] = path.split("#");
+  const [base, query = ""] = pathname.split("?");
+  if (!base || base === "/") {
+    return `/${query ? `?${query}` : ""}${hash ? `#${hash}` : ""}`;
+  }
+  const withSlash = base.endsWith("/") ? base : `${base}/`;
+  return `${withSlash}${query ? `?${query}` : ""}${hash ? `#${hash}` : ""}`;
+}
+
+export type BreadcrumbCrumb = {
+  name: string;
+  path: string;
+};
+
+/**
+ * Breadcrumb trail for a page. Homepage is a single Home crumb;
+ * inner pages are Home › Page.
+ */
+export function pageBreadcrumbs(path: SitePagePath): BreadcrumbCrumb[] {
+  const page = sitePages.find((entry) => entry.path === path);
+  if (!page || path === "/") {
+    return [{ name: "Home", path: "/" }];
+  }
+  return [
+    { name: "Home", path: "/" },
+    { name: page.name, path: page.path },
+  ];
+}
+
+/** schema.org/BreadcrumbList JSON-LD for Google sitelink breadcrumbs. */
+export function breadcrumbJsonLd(crumbs: BreadcrumbCrumb[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: canonicalUrl(crumb.path),
+    })),
+  };
 }
 
 /** Exact SERP titles (shown in Google + browser tab) */

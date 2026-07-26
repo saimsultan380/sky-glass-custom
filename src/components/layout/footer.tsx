@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/site";
 const FOOTER_LINKS = {
   service: [
     { label: "Home", href: "/" },
-    { label: "Plans", href: "/subscription-plans" },
-    { label: "Installation Guide", href: "/installation-guide" },
-    { label: "Reseller", href: "/reseller-panel" },
-    { label: "Contact", href: "/contact-us" },
+    { label: "Plans", href: "/subscription-plans/" },
+    { label: "Installation Guide", href: "/installation-guide/" },
+    { label: "Reseller", href: "/reseller-panel/" },
+    { label: "Contact", href: "/contact-us/" },
   ],
   support: [
-    { label: "Subscription Plans", href: "/subscription-plans" },
-    { label: "Free Trial", href: "/contact-us" },
+    { label: "Subscription Plans", href: "/subscription-plans/" },
+    { label: "Free Trial", href: "/contact-us/" },
     { label: "Device Compatibility", href: "/#popular-devices" },
     { label: "FAQ", href: "/#faq" },
   ],
@@ -44,7 +44,7 @@ export function Footer() {
 
             <div className="mt-8 space-y-4">
               <Link
-                href="/contact-us"
+                href="/contact-us/"
                 className="inline-flex items-center gap-2.5 text-[15px] font-medium text-[#0B0E2C] transition-colors hover:text-[#E91E8C]"
               >
                 <MessageCircle className="h-5 w-5 text-[#E91E8C]" />

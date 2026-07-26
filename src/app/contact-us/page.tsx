@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import {
-  siteConfig,
-  pageTitles,
-  pageDescriptions,
-  canonicalUrl,
-} from "@/lib/site";
+import { PageShell } from "@/components/layout/page-shell";
 import { ContactHero } from "@/components/sections/contact-hero";
 import { ContactHelpOptions } from "@/components/sections/contact-help-options";
 import { ContactFormSection } from "@/components/sections/contact-form-section";
 import { ContactSupportProcess } from "@/components/sections/contact-support-process";
 import { ContactFaq } from "@/components/sections/contact-faq";
 import { ContactCta } from "@/components/sections/contact-cta";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import {
+  siteConfig,
+  pageTitles,
+  pageDescriptions,
+  canonicalUrl,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -45,16 +43,13 @@ export const metadata: Metadata = {
 
 export default function ContactUsPage() {
   return (
-    <main className="flex flex-col">
-      <Header />
+    <PageShell path="/contact-us/" className="flex flex-col">
       <ContactHero />
       <ContactFormSection />
       <ContactHelpOptions />
       <ContactSupportProcess />
       <ContactFaq />
       <ContactCta />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+    </PageShell>
   );
 }
