@@ -44,6 +44,7 @@ const jsonLd = [
     contactPoint: {
       "@type": "ContactPoint",
       email: siteConfig.email,
+      telephone: siteConfig.phone,
       contactType: "customer support",
       availableLanguage: ["English"],
     },

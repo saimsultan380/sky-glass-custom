@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { BrandLogo } from "@/components/brand-logo";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, whatsappUrl } from "@/lib/site";
 
 const FOOTER_LINKS = {
   service: [
@@ -43,13 +43,23 @@ export function Footer() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <Link
-                href="/contact-us/"
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 text-[15px] font-medium text-[#0B0E2C] transition-colors hover:text-[#E91E8C]"
               >
                 <MessageCircle className="h-5 w-5 text-[#E91E8C]" />
-                Contact Support
-              </Link>
+                WhatsApp Support
+              </a>
+              <br />
+              <a
+                href={`tel:+${siteConfig.phoneDigits}`}
+                className="inline-flex items-center gap-2.5 text-[15px] font-medium text-[#0B0E2C] transition-colors hover:text-[#E91E8C]"
+              >
+                <Phone className="h-5 w-5 text-[#E91E8C]" />
+                {siteConfig.phone}
+              </a>
               <br />
               <a
                 href={`mailto:${siteConfig.email}`}

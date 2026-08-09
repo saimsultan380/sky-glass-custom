@@ -15,9 +15,19 @@ export const siteConfig = {
   /** Production origin — always non-www, no trailing slash */
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
+  /** E.164 display + digits-only for wa.me / tel links */
+  phone: "+447782265496",
+  phoneDigits: "447782265496",
   locale: "en_GB",
   twitterHandle: "@skyglassiptv",
 } as const;
+
+/** WhatsApp chat URL (optional prefilled message). */
+export function whatsappUrl(message?: string): string {
+  const base = `https://wa.me/${siteConfig.phoneDigits}`;
+  if (!message) return base;
+  return `${base}?text=${encodeURIComponent(message)}`;
+}
 
 /** Indexable app routes (pathname without domain; always trailing-slash). */
 export const sitePages = [
