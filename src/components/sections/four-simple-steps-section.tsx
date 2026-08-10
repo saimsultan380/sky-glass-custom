@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowRight,
   ClipboardList,
@@ -8,6 +7,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import type { LucideIcon } from "lucide-react";
+import { whatsappFreeTrialUrl } from "@/lib/site";
 
 const STEPS: {
   step: string;
@@ -152,13 +152,15 @@ export function FourSimpleStepsSection() {
         </ol>
 
         <div className="mt-6 flex justify-center sm:mt-12">
-          <Link
-            href="/contact-us/"
+          <a
+            href={whatsappFreeTrialUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
           >
             Start Your 24-Hour Trial
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
-          </Link>
+          </a>
         </div>
       </Container>
     </section>

@@ -22,11 +22,25 @@ export const siteConfig = {
   twitterHandle: "@skyglassiptv",
 } as const;
 
+/** Prefill texts used on free-trial vs subscription CTAs. */
+export const whatsappMessages = {
+  freeTrial: "Sky glass iptv free trial",
+  subscription: "Sky glass iptv subscription",
+} as const;
+
 /** WhatsApp chat URL (optional prefilled message). */
 export function whatsappUrl(message?: string): string {
   const base = `https://wa.me/${siteConfig.phoneDigits}`;
   if (!message) return base;
   return `${base}?text=${encodeURIComponent(message)}`;
+}
+
+export function whatsappFreeTrialUrl(): string {
+  return whatsappUrl(whatsappMessages.freeTrial);
+}
+
+export function whatsappSubscriptionUrl(): string {
+  return whatsappUrl(whatsappMessages.subscription);
 }
 
 /** Indexable app routes (pathname without domain; always trailing-slash). */

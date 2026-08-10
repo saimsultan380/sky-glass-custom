@@ -1,6 +1,6 @@
 import { Container } from "@/components/layout/container";
-import Link from "next/link";
 import { Package, KeyRound, UserPlus, Rocket, ArrowRight } from "lucide-react";
+import { whatsappUrl } from "@/lib/site";
 
 const steps = [
   {
@@ -120,13 +120,15 @@ export function ResellerSteps() {
         </div>
 
         <div className="mt-5 text-center sm:mt-16">
-          <Link
-            href="/contact-us/"
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[1px] bg-gradient-brand px-8 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:w-auto sm:py-3 sm:text-[16px]"
           >
             Start Your Reseller Application
             <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-          </Link>
+          </a>
         </div>
       </Container>
     </section>

@@ -1,6 +1,9 @@
-import Link from "next/link";
 import { Clock, CalendarDays, Wrench, Zap, Monitor } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import {
+  whatsappFreeTrialUrl,
+  whatsappSubscriptionUrl,
+} from "@/lib/site";
 
 const TRUST_ITEMS = [
   { label: "Simple Setup", icon: Wrench, color: "#FF6B2C" },
@@ -35,15 +38,19 @@ export function PlansCtaSection() {
           </div>
 
           <div className="mt-4 flex flex-col items-stretch justify-center gap-2.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
-            <Link
-              href="/contact-us/"
+            <a
+              href={whatsappFreeTrialUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
               Start Your 24-Hour Free Trial
-            </Link>
-            <Link
-              href="#plans"
+            </a>
+            <a
+              href={whatsappSubscriptionUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-gradient-brand inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[1px] bg-white px-6 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <CalendarDays
@@ -52,7 +59,7 @@ export function PlansCtaSection() {
                 aria-hidden
               />
               Choose Your Subscription Plan
-            </Link>
+            </a>
           </div>
 
           <div className="mx-auto mt-5 max-w-3xl sm:mt-12">

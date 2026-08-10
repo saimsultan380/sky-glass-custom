@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   Headphones,
   Zap,
@@ -9,6 +8,7 @@ import {
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/animation/fade-in";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { whatsappUrl } from "@/lib/site";
 
 const TRUST_ITEMS = [
   { label: "Simple Installation", icon: Zap, color: "#FF6B2C" },
@@ -50,18 +50,22 @@ export function InstallationHero() {
             <FadeIn delay={0.28}>
               <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <Link
-                    href="/contact-us/"
+                  <a
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Zap className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                     Install the App
-                  </Link>
+                  </a>
                 </div>
 
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <Link
-                    href="/contact-us/"
+                  <a
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Headphones
@@ -70,7 +74,7 @@ export function InstallationHero() {
                       aria-hidden
                     />
                     Get Setup Assistance
-                  </Link>
+                  </a>
                 </div>
               </div>
             </FadeIn>

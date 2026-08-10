@@ -1,7 +1,7 @@
 import { Container } from "@/components/layout/container";
-import Link from "next/link";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { whatsappUrl } from "@/lib/site";
 
 const packages = [
   {
@@ -19,7 +19,6 @@ const packages = [
     expiry: "TBC",
     trials: "TBC",
     ctaText: "Choose Starter Package",
-    ctaLink: "/contact-us/",
     popular: false,
   },
   {
@@ -37,7 +36,6 @@ const packages = [
     expiry: "TBC",
     trials: "TBC",
     ctaText: "Choose Professional Package",
-    ctaLink: "/contact-us/",
     popular: true,
   },
   {
@@ -54,7 +52,6 @@ const packages = [
     credits: "TBC",
     support: "Priority or dedicated support, where offered",
     ctaText: "Discuss Enterprise Options",
-    ctaLink: "/contact-us/",
     popular: false,
   },
 ];
@@ -156,8 +153,10 @@ export function ResellerPackages() {
                 </div>
               </div>
 
-              <Link
-                href={pkg.ctaLink}
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   "mt-auto flex min-h-[40px] items-center justify-center rounded-[1px] px-4 py-2 text-[13px] font-bold transition-all sm:min-h-[56px] sm:py-2.5 sm:text-[15px]",
                   pkg.popular
@@ -166,7 +165,7 @@ export function ResellerPackages() {
                 )}
               >
                 {pkg.ctaText}
-              </Link>
+              </a>
             </div>
           ))}
         </div>

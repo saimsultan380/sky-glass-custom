@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import { whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -59,12 +60,14 @@ export default function NotFound() {
             >
               Back to Home
             </Link>
-            <Link
-              href="/contact-us/"
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex rounded-[1px] border border-[#0B0E2C]/15 bg-white px-6 py-3 text-sm font-semibold text-[#0B0E2C] transition-colors duration-150 hover:border-[#0B0E2C]/30 hover:bg-[#0B0E2C]/[0.02]"
             >
               Contact Support
-            </Link>
+            </a>
           </div>
 
           <nav

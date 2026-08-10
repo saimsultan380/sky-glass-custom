@@ -4,6 +4,7 @@ import { ArrowRight, LayoutDashboard, CreditCard, HeadphonesIcon } from "lucide-
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/animation/fade-in";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { whatsappUrl } from "@/lib/site";
 
 const TRUST_ITEMS = [
   { label: "Professional Dashboard", icon: LayoutDashboard, color: "#FF6B2C" },
@@ -47,13 +48,15 @@ export function ResellerHero() {
             <FadeIn delay={0.28}>
               <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <Link
-                    href="/contact-us/"
+                  <a
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     Become a Sky Glass IPTV Reseller
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </div>
 
                 <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">

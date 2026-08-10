@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Zap, Headphones, Monitor, Smartphone, LayoutGrid } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { whatsappUrl } from "@/lib/site";
 
 const TRUST_ITEMS = [
   { label: "Official Android App", icon: LayoutGrid, color: "#FF6B2C" },
@@ -38,15 +38,19 @@ export function InstallationFinalCta() {
           </div>
 
           <div className="mt-4 flex flex-col items-stretch justify-center gap-2.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
-            <Link
-              href="/contact-us/"
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <Zap className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
               Install the App
-            </Link>
-            <Link
-              href="/contact-us/"
+            </a>
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-gradient-brand inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[1px] bg-white px-6 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <Headphones
@@ -55,7 +59,7 @@ export function InstallationFinalCta() {
                 aria-hidden
               />
               Contact Setup Support
-            </Link>
+            </a>
           </div>
 
           <div className="mx-auto mt-5 max-w-3xl sm:mt-12">

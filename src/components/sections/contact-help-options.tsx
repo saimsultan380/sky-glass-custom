@@ -2,6 +2,26 @@ import { Container } from "@/components/layout/container";
 import { HelpCircle, Clock, MessageCircle, Monitor, Wrench, Check } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import {
+  whatsappFreeTrialUrl,
+  whatsappSubscriptionUrl,
+} from "@/lib/site";
+
+function resolveHelpLink(url: string) {
+  if (url === "free-trial") {
+    return {
+      href: whatsappFreeTrialUrl(),
+      external: true as const,
+    };
+  }
+  if (url === "subscription") {
+    return {
+      href: whatsappSubscriptionUrl(),
+      external: true as const,
+    };
+  }
+  return { href: url, external: false as const };
+}
 
 const helpOptions = [
   {
@@ -40,7 +60,7 @@ const helpOptions = [
     ],
     footerText:
       "For a more accurate test, use the same device, IPTV application and internet connection you plan to use after subscribing. Trial content and functionality may differ from a complete paid subscription.",
-    link: { text: "Request Your 24-Hour Trial", url: "#contact-form" },
+    link: { text: "Request Your 24-Hour Trial", url: "free-trial" },
   },
   {
     title: "Subscription Assistance",
@@ -59,7 +79,7 @@ const helpOptions = [
       "Subscription renewals",
       "Upgrading an existing plan",
     ],
-    link: { text: "Compare Subscription Plans", url: "/subscription-plans/" },
+    link: { text: "WhatsApp Subscription Help", url: "subscription" },
   },
   {
     title: "Installation and Device Support",
@@ -210,16 +230,33 @@ export function ContactHelpOptions() {
                     </div>
                   )}
 
-                  {option.link && (
-                    <div className="mt-auto pt-3 sm:pt-6">
-                      <Link
-                        href={option.link.url}
-                        className="inline-flex text-[13px] font-bold text-[#7B2FFF] hover:underline sm:text-base"
-                      >
-                        {option.link.text}
-                      </Link>
-                    </div>
-                  )}
+                  {option.link && (() => {
+                    const resolved = resolveHelpLink(option.link.url);
+                    if (resolved.external) {
+                      return (
+                        <div className="mt-auto pt-3 sm:pt-6">
+                          <a
+                            href={resolved.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex text-[13px] font-bold text-[#7B2FFF] hover:underline sm:text-base"
+                          >
+                            {option.link.text}
+                          </a>
+                        </div>
+                      );
+                    }
+                    return (
+                      <div className="mt-auto pt-3 sm:pt-6">
+                        <Link
+                          href={resolved.href}
+                          className="inline-flex text-[13px] font-bold text-[#7B2FFF] hover:underline sm:text-base"
+                        >
+                          {option.link.text}
+                        </Link>
+                      </div>
+                    );
+                  })()}
                 </div>
               </article>
             );

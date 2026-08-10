@@ -7,6 +7,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
+import { whatsappFreeTrialUrl } from "@/lib/site";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -93,13 +94,15 @@ export function Header() {
                 </div>
 
                 <div className="relative z-[1] flex items-center gap-3">
-                  <Link
-                    href="/contact-us/"
+                  <a
+                    href={whatsappFreeTrialUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     id="hero-get-started"
                     className="hidden rounded-[1px] bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90 lg:inline-flex"
                   >
                     Get Started
-                  </Link>
+                  </a>
 
                   <button
                     type="button"
@@ -193,13 +196,15 @@ export function Header() {
                         ease: MENU_EASE,
                       }}
                     >
-                      <Link
-                        href="/contact-us/"
+                      <a
+                        href={whatsappFreeTrialUrl()}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="mt-2 flex w-full items-center justify-center rounded-[1px] bg-gradient-brand px-5 py-3.5 text-[15px] font-semibold text-white"
                         onClick={closeMenu}
                       >
                         Get Started
-                      </Link>
+                      </a>
                     </motion.div>
                   </div>
                 </motion.div>

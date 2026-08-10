@@ -2,7 +2,11 @@ import Link from "next/link";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { BrandLogo } from "@/components/brand-logo";
-import { siteConfig, whatsappUrl } from "@/lib/site";
+import {
+  siteConfig,
+  whatsappFreeTrialUrl,
+  whatsappUrl,
+} from "@/lib/site";
 
 const FOOTER_LINKS = {
   service: [
@@ -14,7 +18,7 @@ const FOOTER_LINKS = {
   ],
   support: [
     { label: "Subscription Plans", href: "/subscription-plans/" },
-    { label: "Free Trial", href: "/contact-us/" },
+    { label: "Free Trial", href: whatsappFreeTrialUrl() },
     { label: "Device Compatibility", href: "/#popular-devices" },
     { label: "FAQ", href: "/#faq" },
   ],
@@ -83,16 +87,33 @@ export function Footer() {
                       : "Legal"}
                 </h3>
                 <ul className="mt-6 space-y-4">
-                  {links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-[15px] text-[#5C607A] transition-colors hover:text-[#E91E8C]"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {links.map((link) => {
+                    const isExternal = link.href.startsWith("http");
+                    if (isExternal) {
+                      return (
+                        <li key={link.label}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[15px] text-[#5C607A] transition-colors hover:text-[#E91E8C]"
+                          >
+                            {link.label}
+                          </a>
+                        </li>
+                      );
+                    }
+                    return (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="text-[15px] text-[#5C607A] transition-colors hover:text-[#E91E8C]"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

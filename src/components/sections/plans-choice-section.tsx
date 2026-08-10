@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   CalendarRange,
   Link2,
@@ -11,6 +10,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import type { LucideIcon } from "lucide-react";
+import { whatsappFreeTrialUrl } from "@/lib/site";
 
 const FACTORS: { label: string; icon: LucideIcon; color: string }[] = [
   { label: "Preferred duration", icon: CalendarRange, color: "#FF6B2C" },
@@ -54,13 +54,15 @@ export function PlansChoiceSection() {
               </p>
             </div>
 
-            <Link
-              href="/contact-us/"
+            <a
+              href={whatsappFreeTrialUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:mt-8 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
             >
               <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
               Request a 24-Hour Trial
-            </Link>
+            </a>
           </div>
 
           <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(123,47,255,0.10)] sm:p-8">

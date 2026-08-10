@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   Clock,
   Headphones,
@@ -13,6 +12,10 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import type { LucideIcon } from "lucide-react";
+import {
+  whatsappFreeTrialUrl,
+  whatsappUrl,
+} from "@/lib/site";
 
 const EVALUATE_ITEMS: { label: string; icon: LucideIcon; color: string }[] = [
   { label: "Device compatibility", icon: Smartphone, color: "#FF6B2C" },
@@ -56,18 +59,22 @@ export function FreeTrialSection() {
 
             <div className="mt-4 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
               <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto">
-                <Link
-                  href="/contact-us/"
+                <a
+                  href={whatsappFreeTrialUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-5 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
                 >
                   <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
                   Request Your 24-Hour Trial
-                </Link>
+                </a>
               </div>
 
               <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto">
-                <Link
-                  href="/contact-us/"
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="border-gradient-brand inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] px-5 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
                 >
                   <Headphones
@@ -76,7 +83,7 @@ export function FreeTrialSection() {
                     aria-hidden
                   />
                   Contact Setup Support
-                </Link>
+                </a>
               </div>
             </div>
           </div>

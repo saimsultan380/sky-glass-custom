@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
+import { whatsappSubscriptionUrl } from "@/lib/site";
 
 type DurationPlan = {
   name: string;
@@ -335,12 +335,14 @@ export function PlansPricingSection({
                   ))}
                 </ul>
 
-                <Link
-                  href="/contact-us/"
+                <a
+                  href={whatsappSubscriptionUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-5 inline-flex min-h-[44px] w-full items-center justify-center whitespace-nowrap rounded-[1px] bg-gradient-brand px-3 py-2.5 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:mt-6 sm:min-h-[48px] sm:text-[13px]"
                 >
                   {copy.ctaLabel(planType)}
-                </Link>
+                </a>
               </article>
             );
           })}
