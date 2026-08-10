@@ -68,7 +68,7 @@ export function PlansHero() {
                     className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
                   >
                     <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-                    Start Your 24-Hour Free Trial
+                    Get Subscription Now
                   </a>
                   <a
                     href={whatsappUrl()}
