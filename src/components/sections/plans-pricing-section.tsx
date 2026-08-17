@@ -112,9 +112,9 @@ const PLANS_PAGE_COPY: PricingCopy = {
 };
 
 const STANDARD_PRICES = [
-  { name: "3 MONTHS PLAN", price: "15", suffix: "/3 months" },
-  { name: "6 MONTHS PLAN", price: "25", suffix: "/6 months" },
-  { name: "12 MONTHS PLAN", price: "40", suffix: "/12 months" },
+  { name: "3 MONTHS PLAN", price: "20", suffix: "/3 months" },
+  { name: "6 MONTHS PLAN", price: "30", suffix: "/6 months" },
+  { name: "12 MONTHS PLAN", price: "45", suffix: "/12 months" },
   {
     name: "24 MONTHS PLAN",
     price: "70",
@@ -124,7 +124,7 @@ const STANDARD_PRICES = [
 ] as const;
 
 const PREMIUM_PRICES = [
-  { name: "3 MONTHS PLAN", price: "20", suffix: "/3 months" },
+  { name: "3 MONTHS PLAN", price: "25", suffix: "/3 months" },
   { name: "6 MONTHS PLAN", price: "35", suffix: "/6 months" },
   { name: "12 MONTHS PLAN", price: "55", suffix: "/12 months" },
   {

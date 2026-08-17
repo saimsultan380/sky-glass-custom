@@ -16,8 +16,8 @@ export const siteConfig = {
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
   /** E.164 display + digits-only for wa.me / tel links */
-  phone: "+447782265496",
-  phoneDigits: "447782265496",
+  phone: "+447532818129",
+  phoneDigits: "447532818129",
   locale: "en_GB",
   twitterHandle: "@skyglassiptv",
 } as const;
