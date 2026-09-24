@@ -334,15 +334,4 @@
   }
 }
 
-/* Bidirectional scroll reveal (boxes + text). Hero sections excluded in JS. */
-@media (prefers-reduced-motion: no-preference) {
-  .scroll-reveal-hidden {
-    opacity: 0;
-    transform: translate3d(0, 22px, 0);
-  }
-
-  .scroll-reveal-visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
+/* Scroll blur-reveal is handled by Motion (AutoBlurReveal / BlurReveal). */

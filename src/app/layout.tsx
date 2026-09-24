@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { canonicalUrl, siteConfig, siteMetadataBase } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
-import { AutoScrollReveal } from "@/components/animation/auto-scroll-reveal";
+import { AutoBlurReveal } from "@/components/animation/auto-blur-reveal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,7 +73,7 @@ export default function RootLayout({
         <JsonLd data={jsonLd} />
       </head>
       <body className="relative flex min-h-full flex-col bg-transparent text-[#0B0E2C]">
-        <AutoScrollReveal />
+        <AutoBlurReveal />
         <div className="relative z-10 flex min-h-full flex-1 flex-col bg-transparent">
           {children}
         </div>

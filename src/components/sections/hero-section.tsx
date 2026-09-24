@@ -7,8 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { FadeIn } from "@/components/animation/fade-in";
-import { MaskReveal } from "@/components/animation/mask-reveal";
+import { BlurReveal } from "@/components/animation/blur-reveal";
 import { HeroMedia } from "@/components/hero-media";
 import { whatsappFreeTrialUrl } from "@/lib/site";
 import { siteRoutes } from "@/lib/routes";
@@ -25,16 +24,16 @@ export function HeroSection() {
       <Container className="pb-5 pt-2 sm:pb-12 sm:pt-8 lg:pb-16 lg:pt-12" animate={false}>
         <div className="grid items-center gap-4 sm:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 xl:gap-14">
           <div className="order-1 min-w-0">
-            <MaskReveal
+            <BlurReveal
               as="h1"
-              align="left"
+              variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
               Sky Glass IPTV UK — Choose Your Entertainment, Screen and{" "}
               <span className="text-gradient-brand">Plan</span>
-            </MaskReveal>
+            </BlurReveal>
 
-            <FadeIn delay={0.2}>
+            <BlurReveal variant="text" delay={0.1}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
                   Find your next film, follow available live television or settle
@@ -47,9 +46,9 @@ export function HeroSection() {
                   device and choose your plan when you are ready.
                 </p>
               </div>
-            </FadeIn>
+            </BlurReveal>
 
-            <FadeIn delay={0.28}>
+            <BlurReveal variant="cta" delay={0.18}>
               <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-row sm:items-start sm:gap-4">
                 <a
                   href={whatsappFreeTrialUrl()}
@@ -73,17 +72,21 @@ export function HeroSection() {
                   <span>View Sky Glass IPTV Plans</span>
                 </Link>
               </div>
-            </FadeIn>
+            </BlurReveal>
           </div>
 
-          <FadeIn delay={0.08} className="order-2 flex justify-center lg:justify-end">
+          <BlurReveal
+            variant="media"
+            delay={0.06}
+            className="order-2 flex justify-center lg:justify-end"
+          >
             <div className="relative w-full max-w-[560px] lg:max-w-none">
               <HeroMedia alt="Sky Glass IPTV shown on a television, streaming box and mobile screen" />
             </div>
-          </FadeIn>
+          </BlurReveal>
         </div>
 
-        <FadeIn delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
+        <BlurReveal variant="card" delay={0.24} className="mt-4 sm:mt-10 lg:mt-14">
           <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[20px]">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
@@ -105,7 +108,7 @@ export function HeroSection() {
               );
             })}
           </ul>
-        </FadeIn>
+        </BlurReveal>
       </Container>
     </section>
   );
