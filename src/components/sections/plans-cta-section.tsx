@@ -22,28 +22,28 @@ export function PlansCtaSection() {
             </p>
           </div>
 
-          <div className="mt-4 flex flex-col items-stretch justify-center gap-2.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
+          <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-10 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-4">
             <a
               href={whatsappSubscriptionUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
+              className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px] sm:leading-normal"
             >
-              <CalendarDays className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-              Choose Your Subscription Plan
+              <CalendarDays className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
+              <span>Choose Your Subscription Plan</span>
             </a>
             <a
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-gradient-brand inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[20px] px-6 py-2.5 text-[13px] font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
+              className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px] sm:leading-normal"
             >
               <Headphones
-                className="h-4 w-4 shrink-0 text-[#E91E8C]"
+                className="h-3.5 w-3.5 shrink-0 text-white sm:h-4 sm:w-4"
                 strokeWidth={2}
                 aria-hidden
               />
-              Contact Support
+              <span>Contact Support</span>
             </a>
           </div>
         </div>

@@ -186,10 +186,11 @@ export const siteMetadataBase = {
     description: siteConfig.description,
     images: [
       {
-        url: "/logo.PNG",
-        width: 845,
-        height: 295,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: siteConfig.name,
+        type: "image/png",
       },
     ],
   },
@@ -197,7 +198,7 @@ export const siteMetadataBase = {
     card: "summary_large_image" as const,
     title: pageTitles.home,
     description: siteConfig.description,
-    images: ["/logo.PNG"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

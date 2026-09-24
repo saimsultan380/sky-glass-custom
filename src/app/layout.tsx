@@ -19,9 +19,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(`${siteConfig.siteUrl}/`),
   ...siteMetadataBase,
   icons: {
-    icon: [{ url: "/logo.PNG", type: "image/png" }],
-    shortcut: "/logo.PNG",
-    apple: "/logo.PNG",
+    icon: [
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon-48.png",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
@@ -40,7 +47,7 @@ const jsonLd = [
     "@type": "Organization",
     name: siteConfig.name,
     url: canonicalUrl("/sky-glass-iptv/"),
-    logo: `${siteConfig.siteUrl}/logo.PNG`,
+    logo: `${siteConfig.siteUrl}/favicon-512.png`,
     contactPoint: {
       "@type": "ContactPoint",
       email: siteConfig.email,

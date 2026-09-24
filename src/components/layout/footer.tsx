@@ -24,11 +24,6 @@ const FOOTER_LINKS = {
     { label: "FAQ", href: `${siteRoutes.home}#faq` },
     { label: "WhatsApp Support", href: whatsappUrl() },
   ],
-  legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Refund Policy", href: "#" },
-  ],
 } as const;
 
 export function Footer() {
@@ -74,15 +69,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7 lg:pl-10">
+          <div className="grid grid-cols-2 gap-8 lg:col-span-7 lg:pl-10">
             {Object.entries(FOOTER_LINKS).map(([group, links]) => (
               <div key={group}>
                 <h3 className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#0B0E2C]">
-                  {group === "service"
-                    ? "Service"
-                    : group === "support"
-                      ? "Support"
-                      : "Legal"}
+                  {group === "service" ? "Service" : "Support"}
                 </h3>
                 <ul className="mt-6 space-y-4">
                   {links.map((link) => {

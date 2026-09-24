@@ -49,30 +49,30 @@ export function ContactHero() {
             </FadeIn>
 
             <FadeIn delay={0.28}>
-              <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
-                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <a
-                    href={whatsappFreeTrialUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                  >
-                    <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-                    Request Your 24-Hour Trial
-                  </a>
-                </div>
+              <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-row sm:items-start sm:gap-4">
+                <a
+                  href={whatsappFreeTrialUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                >
+                  <Clock className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
+                  <span>Request Your 24-Hour Trial</span>
+                </a>
 
-                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <a
-                    href={whatsappUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[20px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                  >
-                    <Headphones className="h-4 w-4 shrink-0 text-[#E91E8C]" strokeWidth={2} aria-hidden />
-                    Contact Customer Support
-                  </a>
-                </div>
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                >
+                  <Headphones
+                    className="h-3.5 w-3.5 shrink-0 text-white sm:h-4 sm:w-4"
+                    strokeWidth={2}
+                    aria-hidden
+                  />
+                  <span>Contact Customer Support</span>
+                </a>
               </div>
             </FadeIn>
           </div>
