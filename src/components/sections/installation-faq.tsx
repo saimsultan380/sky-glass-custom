@@ -2,54 +2,24 @@ import { FaqAccordionSection, type FaqItem } from "@/components/sections/faq-sec
 
 const INSTALL_FAQS: FaqItem[] = [
   {
-    id: "firestick-app",
-    q: "Is the official Sky Glass IPTV app available on Firestick?",
-    a: "Yes. The official application can be installed on compatible Firestick and Fire TV devices using the supplied installation method.",
+    id: "account-details",
+    q: "Do I need account details before watching?",
+    a: "Yes. Installing a player alone does not provide access to your trial or subscription.",
   },
   {
-    id: "android-tv-app",
-    q: "Can I install it on Android TV?",
-    a: "Yes. The official application supports compatible Android TV, Google TV and Android streaming devices.",
+    id: "official-app-every-device",
+    q: "Can I use the official app on every device?",
+    a: "No. It is intended for compatible Firestick and Android devices. Other platforms require supported alternatives.",
   },
   {
-    id: "android-phones-app",
-    q: "Does it work on Android phones?",
-    a: "Yes. The official application can be installed on compatible Android smartphones and tablets.",
+    id: "more-than-one-device",
+    q: "Can I configure more than one device?",
+    a: "You may configure compatible devices. Simultaneous viewing remains subject to your plan’s connection allowance.",
   },
   {
-    id: "smart-tv-app",
-    q: "Can I install the official app on Samsung or LG televisions?",
-    a: "Samsung and LG televisions normally use compatible IPTV player applications rather than the official Android app.",
-  },
-  {
-    id: "apple-tv-app",
-    q: "Which application should I use on Apple TV?",
-    a: "You can use a compatible Apple TV IPTV player such as IBO Player Pro, iPlayTV or another supported application.",
-  },
-  {
-    id: "desktop-app",
-    q: "Can I use the service on Windows or Mac?",
-    a: "Yes. Install a compatible IPTV player and enter the subscription information supplied after activation.",
-  },
-  {
-    id: "player-cost",
-    q: "Do alternative IPTV applications cost extra?",
-    a: "Some third-party IPTV players charge a one-time fee or recurring subscription. Those charges are set by the application developer and are separate from your plan.",
-  },
-  {
-    id: "multiple-devices",
-    q: "Can I configure my subscription on multiple devices?",
-    a: "You may configure the service on compatible devices. Simultaneous viewing depends on the number of connections included with your subscription.",
-  },
-  {
-    id: "login-details",
-    q: "Where do I receive my login details?",
-    a: "Your installation and login information is supplied after your trial or subscription has been activated.",
-  },
-  {
-    id: "install-support",
-    q: "Is installation support available?",
-    a: "Yes. Setup assistance is available for the official application and supported alternative IPTV players.",
+    id: "what-to-send",
+    q: "What should I send when requesting help?",
+    a: "Include your device model, application name, error message and the steps you have already tried. Avoid sending unnecessary personal or payment information.",
   },
 ];
 
@@ -57,13 +27,14 @@ export function InstallationFaq() {
   return (
     <FaqAccordionSection
       faqs={INSTALL_FAQS}
-      defaultOpenId="firestick-app"
+      defaultOpenId="account-details"
       title={
         <>
           Installation{" "}
           <span className="text-gradient-brand">FAQs</span>
         </>
       }
+      description=""
       id="installation-faq"
     />
   );

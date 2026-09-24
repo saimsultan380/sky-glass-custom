@@ -1,135 +1,82 @@
 import { Container } from "@/components/layout/container";
 import {
+  KeyRound,
   UserPlus,
-  Settings2,
   Wallet,
   CalendarClock,
-  RefreshCw,
-  ShieldCheck,
-  LayoutDashboard,
+  HeadphonesIcon,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const features = [
   {
-    title: "Customer Account Creation",
+    title: "Panel Access",
     description:
-      "Create new customer accounts and select the required subscription duration through the dashboard.",
-    icon: UserPlus,
+      "Receive the login information for your reseller account after activation.",
+    icon: KeyRound,
     color: "#7B2FFF",
   },
   {
-    title: "Subscription Management",
+    title: "Customer Account Tools",
     description:
-      "Review active subscriptions, monitor expiry information and organise customer renewals more effectively.",
-    icon: Settings2,
+      "Create available subscription types and select the appropriate duration for each customer.",
+    icon: UserPlus,
     color: "#E91E8C",
   },
   {
-    title: "Credit Balance",
+    title: "Credit Information",
     description:
-      "View your available credit balance and plan future activations before your credits run low.",
+      "Review your available balance and check the credits required for eligible activations or renewals.",
     icon: Wallet,
     color: "#FF6B2C",
   },
   {
-    title: "Multiple Subscription Durations",
+    title: "Subscription Records",
     description:
-      "Offer different subscription periods based on the available reseller options. This allows customers to choose a duration that matches their requirements.",
+      "Monitor account status and expiry information so you can organise renewal conversations.",
     icon: CalendarClock,
     color: "#2563EB",
   },
   {
-    title: "Account Renewal",
+    title: "Reseller Assistance",
     description:
-      "Renew eligible customer subscriptions through the panel using your available credits.",
-    icon: RefreshCw,
+      "Ask for help with panel access, account creation, credit usage and common management questions.",
+    icon: HeadphonesIcon,
     color: "#7B2FFF",
-  },
-  {
-    title: "Secure Access",
-    description:
-      "Access your dashboard using private login information supplied after activation.",
-    icon: ShieldCheck,
-    color: "#E91E8C",
-  },
-  {
-    title: "Organised Dashboard",
-    description:
-      "The panel presents customer, subscription and credit information in a clear format, helping you complete routine tasks more efficiently.",
-    icon: LayoutDashboard,
-    color: "#FF6B2C",
-    className: "md:col-span-2 lg:col-span-3",
   },
 ];
 
 export function ResellerFeatures() {
   return (
-    <section className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24">
+    <section className="border-b border-[#0B0E2C]/10 bg-transparent py-10 sm:py-16 lg:py-24">
       <Container>
         <div className="text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Sky Glass IPTV{" "}
-            <span className="text-gradient-brand">Reseller Panel Features</span>
+            What You{" "}
+            <span className="text-gradient-brand">Receive</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
-            The panel provides the essential tools
-            needed to manage a customer base.
-          </p>
         </div>
 
         <div className="mt-6 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
-            const isWide =
-              feature.className?.includes("col-span-2") ||
-              feature.className?.includes("col-span-3");
 
             return (
               <article
                 key={feature.title}
-                className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
-                  feature.className
-                )}
-                style={
-                  {
-                    "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${feature.color}1A`,
-                    "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${feature.color}33`,
-                  } as React.CSSProperties
-                }
-              >
-                <div
-                  className={cn(
-                    "relative z-10 flex h-full flex-1 flex-col",
-                    isWide && "md:flex-row md:items-center md:gap-8"
-                  )}
-                >
+                className="group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-8">
+                <div className="relative z-10 flex h-full flex-1 flex-col">
                   <div className="flex items-center gap-2.5 sm:gap-4">
                     <div
-                      className={cn(
-                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-white shadow-sm sm:h-14 sm:w-14 sm:rounded-[1px]",
-                        isWide && "md:h-16 md:w-16"
-                      )}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] glass-card sm:h-14 sm:w-14"
                       style={{ color: feature.color }}
                     >
-                      <Icon
-                        className={cn(
-                          "h-4 w-4 sm:h-7 sm:w-7",
-                          isWide && "md:h-8 md:w-8"
-                        )}
-                      />
+                      <Icon className="h-4 w-4 sm:h-7 sm:w-7" />
                     </div>
                     <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
                       {feature.title}
                     </h3>
                   </div>
-                  <p
-                    className={cn(
-                      "mt-2.5 flex-1 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed",
-                      isWide && "md:mt-0"
-                    )}
-                  >
+                  <p className="mt-2.5 flex-1 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

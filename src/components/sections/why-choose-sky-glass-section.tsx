@@ -1,118 +1,70 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Zap,
-  CalendarRange,
-  Monitor,
   Clapperboard,
-  Download,
+  CalendarRange,
+  KeyRound,
   LifeBuoy,
-  Check,
+  Clock,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const DEVICES = [
-  "Firestick and Fire TV",
-  "Android TV and Google TV",
-  "Android smartphones and tablets",
-  "Samsung Smart TVs",
-  "LG Smart TVs",
-  "Apple TV",
-  "iPhone and iPad",
-  "Windows PCs and laptops",
-  "Mac and MacBook devices",
-] as const;
-
-const ACTIVATION_INFO = [
-  "Username and password",
-  "Server information",
-  "Playlist details",
-  "Application instructions",
-  "Device activation guidance",
-] as const;
-
-const SETUP_HELP = [
-  "Choosing a suitable application",
-  "Installing the official app",
-  "Entering subscription details",
-  "Activating a third-party player",
-  "Resolving login problems",
-  "Checking device compatibility",
-] as const;
+import { siteRoutes } from "@/lib/routes";
 
 type Feature = {
   icon: LucideIcon;
   color: string;
   title: string;
   body: string[];
-  list?: readonly string[];
   className?: string;
 };
 
 const FEATURES: Feature[] = [
   {
-    icon: Zap,
-    color: "#FF6B2C",
-    title: "Quick Activation",
+    icon: Clapperboard,
+    color: "#2563EB",
+    title: "Live and On-Demand Entertainment",
     body: [
-      "Once your trial or subscription has been confirmed, you receive the information needed to configure your selected device.",
-      "This may include:",
-      "Activation times can vary according to the selected package, order details and support availability.",
+      "Your selected package provides access to available entertainment categories, including live television, sports, movies and series. You can move between live programming and on-demand viewing within a supported player.",
     ],
-    list: ACTIVATION_INFO,
     className: "md:col-span-2 lg:col-span-2",
   },
   {
     icon: CalendarRange,
     color: "#E91E8C",
-    title: "Flexible Subscription Options",
+    title: "A Choice of Subscription Lengths",
     body: [
-      "Different viewers need different levels of commitment.",
-      "A shorter subscription may suit someone who wants flexibility, while a longer plan may provide better overall value for regular viewing.",
-      "Available durations should be displayed clearly on the Subscription Plans page, together with prices in GBP, connection limits and included features.",
+      "Choose a 3, 6, 12 or 24-month subscription. Compare Standard and Premium before deciding which package and duration meet your needs.",
     ],
     className: "md:col-span-1 lg:col-span-1",
   },
   {
-    icon: Monitor,
-    color: "#7B2FFF",
-    title: "Support for Popular Devices",
+    icon: KeyRound,
+    color: "#FF6B2C",
+    title: "Account Details for Your Application",
     body: [
-      "The service can be configured on many commonly used streaming platforms, including:",
-      "Application availability depends on the device model, operating system and region.",
-    ],
-    list: DEVICES,
-    className: "md:col-span-2 lg:col-span-2",
-  },
-  {
-    icon: Clapperboard,
-    color: "#2563EB",
-    title: "Live and On-Demand Viewing",
-    body: [
-      "Available live television can be accessed alongside movies, television series and other on-demand categories through one compatible application.",
-      "The exact content available depends on the selected package, source and broadcasting schedule.",
-    ],
-    className: "md:col-span-1 lg:col-span-1",
-  },
-  {
-    icon: Download,
-    color: "#E91E8C",
-    title: "Straightforward Installation",
-    body: [
-      "The official Sky Glass IPTV application is available for compatible Firestick and Android devices.",
-      "Other supported platforms normally use an alternative IPTV player downloaded from the relevant application store.",
+      "Once your trial or order is confirmed, you receive the relevant login or configuration information. The details supplied depend on the application and device you use.",
     ],
     className: "md:col-span-1 lg:col-span-1",
   },
   {
     icon: LifeBuoy,
+    color: "#7B2FFF",
+    title: "Guidance for Getting Started",
+    body: [
+      "Installation assistance is available if you need help choosing a player, entering your account details or checking device compatibility.",
+    ],
+    className: "md:col-span-1 lg:col-span-1",
+  },
+  {
+    icon: Clock,
     color: "#FF6B2C",
-    title: "Setup Assistance",
-    body: ["Support is available for viewers who need help with:"],
-    list: SETUP_HELP,
-    className: "md:col-span-2 lg:col-span-2",
+    title: "An Opportunity to Test Before Choosing",
+    body: [
+      "The 24-hour trial lets you assess the service using your normal screen and internet connection. Check the categories, navigation and playback that matter to you.",
+    ],
+    className: "md:col-span-1 lg:col-span-1",
   },
 ];
 
@@ -120,59 +72,28 @@ export function WhyChooseSkyGlassSection() {
   return (
     <section
       id="why-choose-sky-glass"
-      className="relative border-t border-[#0B0E2C]/10 bg-white"
+      className="relative border-t border-[#0B0E2C]/10 bg-transparent"
     >
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Why Viewers Choose{" "}
-            <span className="text-gradient-brand">Sky Glass IPTV</span>
+            What We Provide — and What{" "}
+            <span className="text-gradient-brand">You Receive</span>
           </h2>
-          <div className="mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.8]">
-            <p>
-              Choosing an IPTV service involves more than checking how many
-              channels or titles are advertised. A good experience also depends
-              on device support, plan clarity, easy navigation, reliable account
-              access and useful customer assistance.
-            </p>
-            <p>
-              Sky Glass IPTV focuses on the practical parts of everyday viewing.
-            </p>
-          </div>
         </div>
 
         <div className="mt-6 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6">
           {FEATURES.map((feature) => {
             const Icon = feature.icon;
             const isWide = feature.className?.includes("col-span-2");
-            const listIntroIndex = feature.list
-              ? feature.body.findIndex((p) => p.endsWith(":"))
-              : -1;
-            const listIntro =
-              listIntroIndex >= 0 ? feature.body[listIntroIndex] : undefined;
-            const bodyBefore =
-              listIntroIndex >= 0
-                ? feature.body.slice(0, listIntroIndex)
-                : feature.body;
-            const bodyAfter =
-              listIntroIndex >= 0
-                ? feature.body.slice(listIntroIndex + 1)
-                : [];
 
             return (
               <article
                 key={feature.title}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-8",
+                  "group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-8",
                   feature.className
-                )}
-                style={
-                  {
-                    "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${feature.color}1A`,
-                    "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${feature.color}33`,
-                  } as React.CSSProperties
-                }
-              >
+                )}>
                 <div className="relative z-10 flex">
                   <div
                     className={cn(
@@ -181,15 +102,10 @@ export function WhyChooseSkyGlassSection() {
                         "md:flex-row md:items-start md:justify-between md:gap-10"
                     )}
                   >
-                    <div
-                      className={cn(
-                        "flex flex-col",
-                        isWide && "md:w-[45%] lg:w-[50%]"
-                      )}
-                    >
+                    <div className="flex flex-col">
                       <div className="flex items-center gap-2.5 sm:block">
                         <span
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-12 sm:w-12 sm:rounded-[1px]"
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] sm:h-12 sm:w-12 sm:rounded-[20px]"
                           style={{
                             color: feature.color,
                             backgroundColor: `${feature.color}15`,
@@ -206,63 +122,11 @@ export function WhyChooseSkyGlassSection() {
                         </h3>
                       </div>
                       <div className="mt-2.5 space-y-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
-                        {bodyBefore.map((paragraph) => (
+                        {feature.body.map((paragraph) => (
                           <p key={paragraph}>{paragraph}</p>
                         ))}
-                        {listIntro && (
-                          <p className="font-semibold text-[#0B0E2C]">
-                            {listIntro}
-                          </p>
-                        )}
                       </div>
                     </div>
-
-                    {feature.list && (
-                      <div
-                        className={cn(
-                          "flex flex-col",
-                          isWide && "md:w-[55%] lg:w-[50%]"
-                        )}
-                      >
-                        <ul
-                          className={cn(
-                            "grid gap-x-4 gap-y-2.5 sm:gap-x-5 sm:gap-y-3",
-                            isWide
-                              ? "grid-cols-1 sm:grid-cols-2"
-                              : "grid-cols-1"
-                          )}
-                        >
-                          {feature.list.map((item) => (
-                            <li
-                              key={item}
-                              className="flex items-start gap-2.5 text-[13px] leading-snug text-[#0B0E2C] sm:gap-3 sm:text-[14px]"
-                            >
-                              <span
-                                className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full sm:mt-1"
-                                style={{
-                                  backgroundColor: `${feature.color}1A`,
-                                }}
-                                aria-hidden
-                              >
-                                <Check
-                                  className="h-2.5 w-2.5"
-                                  style={{ color: feature.color }}
-                                  strokeWidth={3}
-                                />
-                              </span>
-                              <span className="min-w-0">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {bodyAfter.length > 0 && (
-                          <div className="mt-3 space-y-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:space-y-3 sm:text-[15px] sm:leading-[1.75]">
-                            {bodyAfter.map((paragraph) => (
-                              <p key={paragraph}>{paragraph}</p>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )}
                   </div>
                 </div>
               </article>
@@ -272,10 +136,10 @@ export function WhyChooseSkyGlassSection() {
 
         <div className="mt-6 flex justify-center sm:mt-12">
           <Link
-            href="/installation-guide/"
-            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-8 py-2.5 text-[14px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[15px]"
+            href={siteRoutes.plans}
+            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-8 py-2.5 text-[14px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[15px]"
           >
-            View the Installation Guide
+            Explore Available Plans
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
           </Link>
         </div>

@@ -2,42 +2,41 @@ import { Check, ShieldAlert, KeyRound } from "lucide-react";
 import { Container } from "@/components/layout/container";
 
 const REQUIREMENTS = [
-  "An active Sky Glass IPTV subscription or trial",
-  "A compatible internet-connected device",
-  "A stable broadband connection",
-  "Your subscription login information",
-  "Access to your device’s application store or installation settings",
-  "Enough storage space for the selected application",
+  "An active trial or subscription.",
+  "Your supported device and its remote or controls.",
+  "A working internet connection.",
+  "The account details supplied after activation.",
+  "Access to the appropriate application store or installation settings.",
+  "Enough storage for the application.",
 ];
 
 const ACTIVATION_DATA = [
   "Username",
   "Password",
   "Server address",
-  "Portal address",
   "Playlist link",
-  "Device activation information",
+  "Portal information",
 ];
 
 export function InstallationRequirements() {
   return (
     <section
       id="before-start"
-      className="relative border-t border-[#0B0E2C]/10 bg-white"
+      className="relative border-t border-[#0B0E2C]/10 bg-transparent"
     >
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Before You{" "}
-            <span className="text-gradient-brand">Begin</span>
+            What You Need Before{" "}
+            <span className="text-gradient-brand">Starting</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            Make sure you have the following before starting the setup:
+            Have the following ready:
           </p>
         </div>
 
         <div className="mt-6 grid gap-4 sm:mt-12 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(123,47,255,0.08)] sm:p-8 md:col-span-2 lg:col-span-2">
+          <div className="glass-card p-5 sm:p-8 md:col-span-2 lg:col-span-2">
             <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-lg">
               Checklist for Setup
             </h3>
@@ -56,15 +55,16 @@ export function InstallationRequirements() {
             </ul>
           </div>
 
-          <div className="rounded-[1px] bg-white p-5 shadow-[0_4px_20px_rgba(11,14,44,0.04),0_8px_24px_rgba(233,30,140,0.08)] sm:p-8">
+          <div className="glass-card p-5 sm:p-8">
             <div className="flex items-center gap-2 sm:gap-3">
               <KeyRound className="h-4 w-4 text-[#E91E8C] sm:h-5 sm:w-5" strokeWidth={2} />
               <h3 className="text-[15px] font-bold text-[#0B0E2C] sm:text-lg">
-                Activation Info
+                Account Details
               </h3>
             </div>
             <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:text-[13px]">
-              Your activation information may include:
+              Depending on the player, your details may include a username,
+              password, server address, playlist link or portal information.
             </p>
             <ul className="mt-2.5 space-y-1.5 sm:mt-4 sm:space-y-2.5">
               {ACTIVATION_DATA.map((item) => (
@@ -80,19 +80,15 @@ export function InstallationRequirements() {
           </div>
         </div>
 
-        <div className="mx-auto mt-4 max-w-3xl rounded-[1px] border border-[#FF6B2C]/20 bg-[#FF6B2C]/5 p-5 sm:mt-12 sm:p-6">
+        <div className="mx-auto mt-4 max-w-3xl glass-card p-5 ring-1 ring-[#FF6B2C]/25 sm:mt-12 sm:p-6">
           <div className="flex items-start gap-2.5 sm:gap-4">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FF6B2C] text-white sm:h-10 sm:w-10">
               <ShieldAlert className="h-4 w-4 sm:h-5 sm:w-5" />
             </span>
             <div>
-              <p className="text-[13px] font-bold text-[#0B0E2C] sm:text-base">
-                Security Warning
-              </p>
               <p className="mt-1 text-[14px] leading-[1.55] text-[#5C607A] sm:text-[14px] sm:leading-[1.7]">
-                Keep your login details private and enter them only into the
-                official application or a compatible IPTV player you trust. The
-                exact information depends on the application being used.
+                Enter these details only in the application intended for your
+                setup.
               </p>
             </div>
           </div>

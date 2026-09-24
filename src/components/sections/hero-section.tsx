@@ -1,31 +1,27 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   Clock,
   CalendarDays,
-  Headphones,
-  CreditCard,
-  Zap,
+  Layers,
   Monitor,
   ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/animation/fade-in";
 import { MaskReveal } from "@/components/animation/mask-reveal";
-import {
-  whatsappFreeTrialUrl,
-  whatsappUrl,
-} from "@/lib/site";
+import { HeroMedia } from "@/components/hero-media";
+import { whatsappFreeTrialUrl } from "@/lib/site";
+import { siteRoutes } from "@/lib/routes";
 
 const TRUST_ITEMS = [
-  { label: "Quick Activation", icon: Zap, color: "#FF6B2C" },
-  { label: "Popular Devices Supported", icon: Monitor, color: "#7B2FFF" },
-  { label: "Setup Assistance Available", icon: ShieldCheck, color: "#2563EB" },
+  { label: "Standard and Premium options", icon: Layers, color: "#FF6B2C" },
+  { label: "Supported streaming devices", icon: Monitor, color: "#7B2FFF" },
+  { label: "Setup assistance", icon: ShieldCheck, color: "#2563EB" },
 ] as const;
 
 export function HeroSection() {
   return (
-    <section data-hero className="relative bg-white pt-4 sm:pt-6">
+    <section data-hero className="relative bg-transparent pt-4 sm:pt-6">
       <Container className="pb-5 pt-2 sm:pb-12 sm:pt-8 lg:pb-16 lg:pt-12" animate={false}>
         <div className="grid items-center gap-4 sm:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 xl:gap-14">
           <div className="order-1 min-w-0">
@@ -34,98 +30,61 @@ export function HeroSection() {
               align="left"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass{" "}
-              <span className="text-gradient-brand">IPTV UK</span>
-              {" "}
-              – Live TV, Sports, Movies & Series in One Place
+              Sky Glass IPTV UK — Choose Your Entertainment, Screen and{" "}
+              <span className="text-gradient-brand">Plan</span>
             </MaskReveal>
 
             <FadeIn delay={0.2}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Enjoy a simpler way to access live television and on-demand
-                  entertainment with Sky Glass IPTV, a flexible service created
-                  for viewers across the UK.
+                  Find your next film, follow available live television or settle
+                  into a series with Sky Glass IPTV. Browse live and on-demand
+                  entertainment through a compatible application, with
+                  subscription options to suit different viewing habits.
                 </p>
                 <p>
-                  Browse available live channels, sports, movies, television
-                  series, news, documentaries and family entertainment through
-                  one organised platform. The service works with popular devices
-                  including Firestick, Android TV, Smart TVs, Apple TV,
-                  smartphones, tablets, Windows computers and Mac devices.
-                </p>
-                <p>
-                  Choose a subscription that suits your viewing habits, receive
-                  the information needed to complete setup and test the service
-                  with a 24-hour trial before selecting a longer plan.
+                  Start with a 24-hour trial, check how the service works on your
+                  device and choose your plan when you are ready.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.28}>
-              <div className="mt-4 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-start sm:gap-4">
-                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <a
-                    href={whatsappFreeTrialUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                  >
-                    <Clock className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-                    Start Your 24-Hour Free Trial
-                  </a>
-                  <a
-                    href={whatsappUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#E91E8C] transition-opacity hover:opacity-75 sm:text-sm"
-                  >
-                    <Headphones className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
-                    Contact Us
-                  </a>
-                </div>
+              <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-row sm:items-start sm:gap-4">
+                <a
+                  href={whatsappFreeTrialUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                >
+                  <Clock className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
+                  <span>Start Your 24-Hour Free Trial</span>
+                </a>
 
-                <div className="flex w-full flex-col items-stretch gap-1.5 sm:w-auto sm:gap-2.5">
-                  <Link
-                    href="/subscription-plans/"
-                    className="border-gradient-brand inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[1px] px-4 py-2.5 text-[13px] font-semibold text-[#0B0E2C] sm:min-h-[48px] sm:px-6 sm:py-3 sm:text-[14px]"
-                  >
-                    <CalendarDays
-                      className="h-4 w-4 shrink-0 text-[#E91E8C]"
-                      strokeWidth={2}
-                      aria-hidden
-                    />
-                    View Sky Glass IPTV Plans
-                  </Link>
-                  <Link
-                    href="/subscription-plans/"
-                    className="inline-flex items-center justify-center gap-1.5 text-[13px] font-medium text-[#7B2FFF] transition-opacity hover:opacity-75 sm:text-sm"
-                  >
-                    <CreditCard className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.75} aria-hidden />
-                    Subscription Plans
-                  </Link>
-                </div>
+                <Link
+                  href={siteRoutes.plans}
+                  className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                >
+                  <CalendarDays
+                    className="h-3.5 w-3.5 shrink-0 text-white sm:h-4 sm:w-4"
+                    strokeWidth={2}
+                    aria-hidden
+                  />
+                  <span>View Sky Glass IPTV Plans</span>
+                </Link>
               </div>
             </FadeIn>
           </div>
 
           <FadeIn delay={0.08} className="order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[560px] lg:max-w-none">
-              <Image
-                src="/hero.PNG"
-                alt="Sky Glass IPTV on multiple screens"
-                width={1200}
-                height={900}
-                priority
-                unoptimized
-                className="mx-auto h-auto max-h-[260px] w-full object-contain object-center sm:max-h-none"
-              />
+              <HeroMedia alt="Sky Glass IPTV shown on a television, streaming box and mobile screen" />
             </div>
           </FadeIn>
         </div>
 
         <FadeIn delay={0.36} className="mt-4 sm:mt-10 lg:mt-14">
-          <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[1px]">
+          <ul className="grid grid-cols-3 divide-x divide-[#0B0E2C]/10 overflow-hidden rounded-[20px]">
             {TRUST_ITEMS.map((item) => {
               const Icon = item.icon;
               return (

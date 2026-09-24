@@ -1,73 +1,54 @@
 import {
   Download,
   Settings2,
-  CloudDownload,
   Package,
   LogIn,
   Headphones,
   ArrowRight,
-  MonitorCheck,
-  AlertCircle,
+  CloudDownload,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { whatsappUrl } from "@/lib/site";
 
 const STEPS = [
   {
-    title: "Install Downloader",
+    title: "Obtain the Current Installation Instructions",
     icon: Download,
     color: "#FF6B2C",
     items: [
-      "Open Find or Search from the home screen.",
-      "Search for Downloader.",
-      "Select the Downloader application.",
-      "Download and install it.",
-      "Open the application.",
-      "Downloader may request permission to access files on your device. Allow the permissions required to download and install the application.",
+      "Use the download information supplied through the service’s support channel. Check that the instructions apply to your Fire TV model.",
     ],
   },
   {
-    title: "Enable Permissions",
+    title: "Prepare the Device",
     icon: Settings2,
     color: "#E91E8C",
     items: [
-      "Depending on your Fire TV software version:",
-      "Open Settings > My Fire TV > Developer Options.",
-      "Select Install Unknown Apps.",
-      "Enable permission for Downloader.",
+      "Follow the supplied steps for obtaining the required installer and granting any necessary installation permission. Menu names can differ between Fire TV versions.",
     ],
-    note: "Developer Options hidden? Go to Settings > My Fire TV > About. Highlight the device name and press the select button several times until developer settings become available.",
-  },
-  {
-    title: "Download Official App",
-    icon: CloudDownload,
-    color: "#7B2FFF",
-    items: [
-      "Open Downloader.",
-      "Enter the official download address or Downloader code supplied with your activation information.",
-      "Downloader Code: 2245820",
-    ],
-    warning:
-      "Only use the installation link or code supplied through the approved Sky Glass IPTV support channel. Do not download the application from unknown websites.",
   },
   {
     title: "Install the Application",
     icon: Package,
-    color: "#2563EB",
+    color: "#7B2FFF",
     items: [
-      "Once downloaded, select Install.",
-      "Wait for the process to finish.",
-      "Select Done or Open.",
-      "Delete the installation file if you want to save storage space.",
+      "Use the supplied download address or code, complete installation and open the app.",
     ],
   },
   {
-    title: "Sign In",
+    title: "Enter Your Account Details",
     icon: LogIn,
+    color: "#2563EB",
+    items: [
+      "Type the supplied information carefully. Check punctuation and remove accidental spaces.",
+    ],
+  },
+  {
+    title: "Allow the Categories to Load",
+    icon: CloudDownload,
     color: "#FF6B2C",
     items: [
-      "Open the app and enter the login information supplied after activation.",
-      "Allow the application enough time to load the available categories before closing it or changing screens.",
+      "Wait for loading to finish before testing a stream. If the app reports an error, note the exact message before contacting support.",
     ],
   },
 ];
@@ -75,14 +56,10 @@ const STEPS = [
 export function FirestickContent() {
   return (
     <div>
-      <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[38px]">
-        Install Sky Glass IPTV on{" "}
+      <h3 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[38px]">
+        Set Up Sky Glass IPTV on{" "}
         <span className="text-gradient-brand">Firestick</span>
-      </h2>
-      <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
-        The official Sky Glass IPTV app can be installed on Amazon Fire TV Stick
-        and other compatible Fire TV devices.
-      </p>
+      </h3>
 
       <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2">
         {STEPS.map((step, idx) => {
@@ -91,20 +68,13 @@ export function FirestickContent() {
             <div
               key={step.title}
               className={cn(
-                "group relative flex flex-col overflow-hidden rounded-[1px] bg-white p-5 shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:p-6",
+                "group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-6",
                 idx === STEPS.length - 1 && "md:col-span-2"
-              )}
-              style={
-                {
-                  "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${step.color}10`,
-                  "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${step.color}20`,
-                } as React.CSSProperties
-              }
-            >
+              )}>
               <div className="relative z-10 flex h-full flex-col">
                 <div className="flex items-center gap-2.5 sm:gap-3">
                   <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] sm:h-11 sm:w-11"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] sm:h-11 sm:w-11"
                     style={{
                       color: step.color,
                       backgroundColor: `${step.color}15`,
@@ -134,20 +104,6 @@ export function FirestickContent() {
                     </li>
                   ))}
                 </ul>
-
-                {step.note && (
-                  <div className="mt-3 flex items-start gap-2 rounded-[1px] bg-[#E91E8C]/5 p-3.5 text-[13px] text-[#0B0E2C] sm:mt-4 sm:p-3 sm:text-[12px]">
-                    <MonitorCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#E91E8C] sm:h-4 sm:w-4" />
-                    <p>{step.note}</p>
-                  </div>
-                )}
-
-                {step.warning && (
-                  <div className="mt-3 flex items-start gap-2 rounded-[1px] bg-[#FF6B2C]/5 p-3.5 text-[13px] text-[#0B0E2C] sm:mt-4 sm:p-3 sm:text-[12px]">
-                    <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#FF6B2C] sm:h-4 sm:w-4" />
-                    <p>{step.warning}</p>
-                  </div>
-                )}
               </div>
             </div>
           );
@@ -159,7 +115,7 @@ export function FirestickContent() {
           href={whatsappUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
+          className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
         >
           <Headphones className="h-4 w-4 shrink-0" strokeWidth={2} />
           Get Firestick Setup Help

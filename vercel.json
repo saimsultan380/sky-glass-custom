@@ -5,6 +5,51 @@
       "has": [{ "type": "host", "value": "www.skyglass-iptv.co" }],
       "destination": "https://skyglass-iptv.co/:path*",
       "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "/sky-glass-iptv/",
+      "permanent": true
+    },
+    {
+      "source": "/subscription-plans",
+      "destination": "/iptv-plans/",
+      "permanent": true
+    },
+    {
+      "source": "/subscription-plans/",
+      "destination": "/iptv-plans/",
+      "permanent": true
+    },
+    {
+      "source": "/installation-guide",
+      "destination": "/iptv-installation/",
+      "permanent": true
+    },
+    {
+      "source": "/installation-guide/",
+      "destination": "/iptv-installation/",
+      "permanent": true
+    },
+    {
+      "source": "/reseller-panel",
+      "destination": "/iptv-reseller/",
+      "permanent": true
+    },
+    {
+      "source": "/reseller-panel/",
+      "destination": "/iptv-reseller/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/iptv-support/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/iptv-support/",
+      "permanent": true
     }
   ]
 }

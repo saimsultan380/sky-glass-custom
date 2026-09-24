@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { whatsappUrl } from "@/lib/site";
+import { siteRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: {
@@ -24,18 +25,18 @@ export const metadata: Metadata = {
 };
 
 const helpfulLinks = [
-  { href: "/", label: "Home" },
-  { href: "/subscription-plans/", label: "Subscription Plans" },
-  { href: "/installation-guide/", label: "Installation Guide" },
-  { href: "/reseller-panel/", label: "Reseller Panel" },
-  { href: "/contact-us/", label: "Contact & Free Trial" },
+  { href: siteRoutes.home, label: "Home" },
+  { href: siteRoutes.plans, label: "Subscription Plans" },
+  { href: siteRoutes.installation, label: "Installation Guide" },
+  { href: siteRoutes.reseller, label: "Reseller" },
+  { href: siteRoutes.contact, label: "Contact" },
 ] as const;
 
 export default function NotFound() {
   return (
     <main className="relative flex min-h-full flex-col">
       <Header />
-      <section className="relative flex flex-1 items-center bg-white py-16 sm:py-24">
+      <section className="relative flex flex-1 items-center bg-transparent py-16 sm:py-24">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(123,47,255,0.08),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(37,99,235,0.06),_transparent_50%)]"
@@ -55,8 +56,8 @@ export default function NotFound() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/"
-              className="inline-flex rounded-[1px] bg-gradient-brand px-6 py-3 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90"
+              href={siteRoutes.home}
+              className="inline-flex rounded-[20px] bg-gradient-brand px-6 py-3 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90"
             >
               Back to Home
             </Link>
@@ -64,7 +65,7 @@ export default function NotFound() {
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-[1px] border border-[#0B0E2C]/15 bg-white px-6 py-3 text-sm font-semibold text-[#0B0E2C] transition-colors duration-150 hover:border-[#0B0E2C]/30 hover:bg-[#0B0E2C]/[0.02]"
+              className="inline-flex rounded-[20px] border-0 glass-card px-6 py-3 text-sm font-semibold text-[#0B0E2C] transition-opacity duration-150 hover:opacity-80"
             >
               Contact Support
             </a>

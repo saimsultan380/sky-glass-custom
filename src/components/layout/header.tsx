@@ -4,20 +4,53 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
 import { whatsappFreeTrialUrl } from "@/lib/site";
+import { siteRoutes } from "@/lib/routes";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Subscription Plan", href: "/subscription-plans/" },
-  { label: "Installation Guide", href: "/installation-guide/" },
-  { label: "Reseller Plan", href: "/reseller-panel/" },
-  { label: "Contact", href: "/contact-us/" },
+  { label: "Home", href: siteRoutes.home },
+  { label: "Subscription Plans", href: siteRoutes.plans },
+  { label: "Installation Guide", href: siteRoutes.installation },
+  { label: "Reseller", href: siteRoutes.reseller },
+  { label: "Contact", href: siteRoutes.contact },
 ];
 
-const MENU_EASE = [0.21, 0.47, 0.32, 0.98] as const;
+const MENU_EASE = [0.16, 1, 0.3, 1] as const;
+
+/** Two staggered pill lines — matches mobile menu design. */
+function MobileMenuIcon({ open }: { open: boolean }) {
+  if (open) {
+    return <X className="h-6 w-6" strokeWidth={1.75} />;
+  }
+
+  return (
+    <svg
+      width="28"
+      height="16"
+      viewBox="0 0 28 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      className="text-[#0B0E2C]"
+    >
+      <path
+        d="M1.25 1.25h17.5"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M9.25 14.75h17.5"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 function isActivePath(pathname: string, href: string) {
   const path = pathname.replace(/\/$/, "") || "/";
@@ -49,22 +82,15 @@ export function Header() {
     <>
       <header className="sticky top-0 z-[80] w-full">
         <div className="relative mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          {/* Nav stays fixed height; menu overlays page content */}
           <div className="relative z-[80]">
-            <div
-              className={cn(
-                "relative border border-[#0B0E2C]/10 transition-[background-color,backdrop-filter,border-radius] duration-300",
-                mobileMenuOpen
-                  ? "rounded-t-[1px] border-b-transparent bg-white lg:rounded-[1px] lg:border-b-[#0B0E2C]/10 lg:bg-white/65 lg:backdrop-blur-xl lg:backdrop-saturate-150"
-                  : "rounded-[1px] bg-white/65 backdrop-blur-xl backdrop-saturate-150",
-              )}
-            >
+            {/* Top bar — always a light glass pill */}
+            <div className="relative glass-card bg-white/80">
               <nav
                 aria-label="Main navigation"
                 className="relative flex h-[60px] w-full items-center justify-between gap-4 px-5 sm:h-[72px] sm:px-8"
               >
                 <Link
-                  href="/"
+                  href={siteRoutes.home}
                   id="hero-logo"
                   className="relative z-[1] flex shrink-0 items-center no-underline"
                   onClick={closeMenu}
@@ -99,28 +125,25 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     id="hero-get-started"
-                    className="hidden rounded-[1px] bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90 lg:inline-flex"
+                    className="hidden rounded-[20px] bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white transition-opacity duration-150 hover:opacity-90 lg:inline-flex"
                   >
                     Get Started
                   </a>
 
                   <button
                     type="button"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-[1px] text-[#0B0E2C] transition-opacity hover:opacity-70 lg:hidden"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-[20px] text-[#0B0E2C] transition-opacity hover:opacity-70 lg:hidden"
                     aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={mobileMenuOpen}
                     onClick={() => setMobileMenuOpen((open) => !open)}
                   >
-                    {mobileMenuOpen ? (
-                      <X className="h-6 w-6" strokeWidth={1.75} />
-                    ) : (
-                      <Menu className="h-6 w-6" strokeWidth={1.75} />
-                    )}
+                    <MobileMenuIcon open={mobileMenuOpen} />
                   </button>
                 </div>
               </nav>
             </div>
 
+            {/* Mobile menu panel — separate light glass card */}
             <AnimatePresence initial={false}>
               {mobileMenuOpen && (
                 <motion.div
@@ -129,78 +152,78 @@ export function Header() {
                   role="navigation"
                   initial={
                     reduceMotion
-                      ? { height: "auto", opacity: 1 }
-                      : { height: 0, opacity: 0 }
+                      ? { opacity: 1, y: 0, scale: 1 }
+                      : { opacity: 0, y: -14, scale: 0.96 }
                   }
-                  animate={{ height: "auto", opacity: 1 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={
                     reduceMotion
-                      ? { height: 0, opacity: 0 }
-                      : { height: 0, opacity: 0 }
+                      ? { opacity: 0 }
+                      : { opacity: 0, y: -10, scale: 0.97 }
                   }
                   transition={{
-                    height: {
-                      duration: reduceMotion ? 0.15 : 0.36,
-                      ease: MENU_EASE,
-                    },
-                    opacity: {
-                      duration: reduceMotion ? 0.1 : 0.22,
-                      ease: MENU_EASE,
-                    },
+                    duration: reduceMotion ? 0.12 : 0.48,
+                    ease: MENU_EASE,
                   }}
-                  className="absolute inset-x-0 top-full z-[85] overflow-hidden rounded-none border border-t-0 border-[#0B0E2C]/10 bg-[#ffffff] lg:hidden"
+                  className="absolute inset-x-0 top-[calc(100%+10px)] z-[85] origin-top overflow-hidden rounded-[28px] border border-white/70 bg-white/75 p-3 shadow-[0_16px_40px_rgba(11,14,44,0.12)] backdrop-blur-[14px] [-webkit-backdrop-filter:blur(14px)] lg:hidden"
                 >
-                  <div className="flex flex-col gap-1 px-3 pb-4 pt-2 sm:px-4">
+                  <div className="flex flex-col gap-1.5">
                     {NAV_LINKS.map((link, index) => {
                       const active = isActivePath(pathname, link.href);
                       return (
                         <motion.div
                           key={link.label}
                           initial={
-                            reduceMotion ? false : { opacity: 0, y: 10 }
+                            reduceMotion ? false : { opacity: 0, y: 12 }
                           }
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
-                            duration: 0.28,
-                            delay: reduceMotion ? 0 : 0.06 + index * 0.04,
+                            duration: reduceMotion ? 0 : 0.4,
+                            delay: reduceMotion ? 0 : 0.1 + index * 0.05,
                             ease: MENU_EASE,
                           }}
                         >
                           <Link
                             href={link.href}
-                            className="block rounded-[1px] px-4 py-3.5 text-[16px] font-medium text-[#0B0E2C] transition-colors hover:bg-[#0B0E2C]/5"
                             onClick={closeMenu}
+                            className={cn(
+                              "flex items-center justify-between gap-3 rounded-[18px] px-4 py-3.5 text-[16px] font-semibold transition-colors",
+                              active
+                                ? "bg-[#E8EEFF] text-[#3B5BDB]"
+                                : "bg-transparent text-[#0B0E2C] hover:bg-[#0B0E2C]/[0.04]",
+                            )}
                           >
-                            <span className="relative inline-block pb-0.5">
-                              {link.label}
-                              {active && (
-                                <span
-                                  aria-hidden
-                                  className="absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-gradient-brand"
-                                />
+                            <span>{link.label}</span>
+                            <ArrowUpRight
+                              className={cn(
+                                "h-4 w-4 shrink-0",
+                                active ? "text-[#3B5BDB]" : "text-[#0B0E2C]/55",
                               )}
-                            </span>
+                              strokeWidth={2}
+                              aria-hidden
+                            />
                           </Link>
                         </motion.div>
                       );
                     })}
 
                     <motion.div
-                      initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                      initial={reduceMotion ? false : { opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        duration: 0.28,
+                        duration: reduceMotion ? 0 : 0.4,
                         delay: reduceMotion
                           ? 0
-                          : 0.06 + NAV_LINKS.length * 0.04,
+                          : 0.1 + NAV_LINKS.length * 0.05,
                         ease: MENU_EASE,
                       }}
+                      className="pt-2"
                     >
                       <a
                         href={whatsappFreeTrialUrl()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-2 flex w-full items-center justify-center rounded-[1px] bg-gradient-brand px-5 py-3.5 text-[15px] font-semibold text-white"
+                        className="flex w-full items-center justify-center rounded-[20px] bg-gradient-brand px-5 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_rgba(123,47,255,0.25)]"
                         onClick={closeMenu}
                       >
                         Get Started
@@ -224,10 +247,10 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{
-              duration: reduceMotion ? 0.1 : 0.28,
+              duration: reduceMotion ? 0.1 : 0.4,
               ease: MENU_EASE,
             }}
-            className="fixed inset-0 z-[70] bg-[#0B0E2C]/20 backdrop-blur-[1px] lg:hidden"
+            className="fixed inset-0 z-[70] bg-[#0B0E2C]/15 backdrop-blur-[1px] lg:hidden"
             onClick={closeMenu}
           />
         )}

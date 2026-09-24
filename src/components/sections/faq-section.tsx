@@ -13,54 +13,34 @@ export type FaqItem = {
 
 const HOMEPAGE_FAQS: FaqItem[] = [
   {
-    id: "what-is-sky-glass",
-    q: "What is Sky Glass IPTV?",
-    a: "Sky Glass IPTV is an internet-based service that provides access to available live television and on-demand entertainment through compatible devices and IPTV applications.",
-  },
-  {
-    id: "supported-devices",
-    q: "Which devices are supported?",
-    a: "Supported platforms include Firestick, Fire TV, Android TV, Google TV, Android phones and tablets, selected Smart TVs, Apple devices, Windows PCs and Mac computers.",
-  },
-  {
-    id: "official-app",
-    q: "Is there an official app?",
-    a: "Yes. The official application is available for compatible Android and Firestick devices. Other platforms use supported alternative players.",
-  },
-  {
-    id: "free-trial",
-    q: "Can I try the service before subscribing?",
-    a: "Yes. A 24-hour trial is available so you can check compatibility, navigation and general playback performance.",
-  },
-  {
-    id: "live-sports",
-    q: "Does the service include live sports?",
-    a: "Available packages may include football, cricket, motorsport, combat sports and other sporting categories. Availability depends on the package and broadcasting schedule.",
-  },
-  {
-    id: "hd-4k",
-    q: "Does it support HD and 4K?",
-    a: "Selected content may be available in HD, Full HD or 4K where supported. Actual quality depends on the source, application, device and internet connection.",
+    id: "satellite-dish",
+    q: "Do I need a satellite dish?",
+    a: "No. The service uses an internet connection and a compatible application.",
   },
   {
     id: "multiple-devices",
-    q: "Can I use the service on several devices?",
-    a: "You may configure the account on compatible devices. Simultaneous viewing depends on the number of connections included with your selected plan.",
+    q: "Can I install the service on more than one device?",
+    a: "You can configure compatible devices, but simultaneous viewing depends on the connection allowance in your plan.",
   },
   {
-    id: "satellite-dish",
-    q: "Is a satellite dish required?",
-    a: "No. The service uses an internet connection and compatible application.",
+    id: "same-content",
+    q: "Does every subscription include the same content?",
+    a: "Standard and Premium offer different levels of access. Confirm specific channels, titles and features before purchasing.",
+  },
+  {
+    id: "every-stream-4k",
+    q: "Is every stream available in 4K?",
+    a: "No. Resolution varies by stream, and your equipment and connection also affect playback quality.",
   },
   {
     id: "installation-support",
-    q: "Is installation assistance available?",
-    a: "Yes. Setup support is available for the official app and supported third-party players.",
+    q: "Can I get help with installation?",
+    a: "Yes. Assistance is available for the service’s application and supported alternative players.",
   },
   {
-    id: "internet-connection",
-    q: "Which internet connection is recommended?",
-    a: "A reliable broadband connection is recommended. Ethernet or strong Wi-Fi generally provides better stability.",
+    id: "official-sky",
+    q: "Is this an official Sky service?",
+    a: "No. Sky Glass IPTV is an independent service and is not affiliated with Sky UK Limited, Sky Group or the official Sky Glass product.",
   },
 ];
 
@@ -78,8 +58,8 @@ function AccordionItem({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-[1px] border transition-colors duration-200",
-        isOpen ? "border-[#E91E8C]/40" : "border-transparent"
+        "glass-card overflow-hidden transition-[box-shadow] duration-200",
+        isOpen && "ring-1 ring-[#E91E8C]/35"
       )}
     >
       <button
@@ -181,13 +161,13 @@ export function FaqAccordionSection({
   faqs,
   defaultOpenId,
   title,
-  description = "Clear answers about setup, devices, streaming quality, activation, and your subscription.",
+  description = "",
   id = "faq",
 }: FaqSectionProps) {
   return (
     <section
       id={id}
-      className="relative border-t border-[#0B0E2C]/10 bg-white"
+      className="relative border-t border-[#0B0E2C]/10 bg-transparent"
     >
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="grid gap-4 sm:gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
@@ -216,14 +196,14 @@ export function FaqSection() {
   return (
     <FaqAccordionSection
       faqs={HOMEPAGE_FAQS}
-      defaultOpenId="what-is-sky-glass"
+      defaultOpenId="satellite-dish"
       title={
         <>
           Frequently Asked{" "}
           <span className="text-gradient-brand">Questions</span>
         </>
       }
-      description="Clear answers about setup, devices, streaming quality, activation and your subscription."
+      description=""
     />
   );
 }

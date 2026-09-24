@@ -1,52 +1,15 @@
 import type { Metadata } from "next";
-import { PageShell } from "@/components/layout/page-shell";
-import { InstallationHero } from "@/components/sections/installation-hero";
-import { InstallationOverview } from "@/components/sections/installation-overview";
-import { InstallationRequirements } from "@/components/sections/installation-requirements";
-import { InstallationDeviceGuide } from "@/components/sections/installation-device-guide";
-import { InstallationNetwork } from "@/components/sections/installation-network";
-import { InstallationTroubleshooting } from "@/components/sections/installation-troubleshooting";
-import { InstallationFaq } from "@/components/sections/installation-faq";
-import { InstallationFinalCta } from "@/components/sections/installation-final-cta";
-import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
+import { LegacyRedirect } from "@/components/legacy-redirect";
+import { canonicalUrl } from "@/lib/site";
+import { siteRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: pageTitles.installationGuide,
-  },
-  description: pageDescriptions.installationGuide,
-  keywords: [
-    "Sky Glass IPTV Installation Guide",
-    "IPTV installation guide",
-    "IPTV setup guide",
-    "install IPTV on Firestick",
-    "IPTV Smart TV setup",
-  ],
+  robots: { index: false, follow: true },
   alternates: {
-    canonical: canonicalUrl("/installation-guide/"),
-  },
-  openGraph: {
-    title: pageTitles.installationGuide,
-    description: pageDescriptions.installationGuide,
-    url: canonicalUrl("/installation-guide/"),
-  },
-  twitter: {
-    title: pageTitles.installationGuide,
-    description: pageDescriptions.installationGuide,
+    canonical: canonicalUrl(siteRoutes.installation),
   },
 };
 
-export default function InstallationGuidePage() {
-  return (
-    <PageShell path="/installation-guide/">
-      <InstallationHero />
-      <InstallationOverview />
-      <InstallationRequirements />
-      <InstallationDeviceGuide />
-      <InstallationNetwork />
-      <InstallationTroubleshooting />
-      <InstallationFaq />
-      <InstallationFinalCta />
-    </PageShell>
-  );
+export default function InstallationGuideRedirect() {
+  return <LegacyRedirect href={siteRoutes.installation} />;
 }

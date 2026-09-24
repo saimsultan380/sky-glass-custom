@@ -5,19 +5,17 @@ import { useState, FormEvent } from "react";
 import { Info, Check } from "lucide-react";
 
 const MESSAGE_INCLUDES = [
-  "Your name",
-  "Email address or preferred contact method",
-  "Device type",
-  "Device model where possible",
-  "IPTV application name",
-  "Whether you are using a trial or full subscription",
-  "A clear description of the issue",
-  "Any error message displayed",
-  "Troubleshooting steps already attempted",
+  "Your device type and model.",
+  "The IPTV application name.",
+  "Whether you use a trial or paid subscription.",
+  "The exact error message, if one appears.",
+  "Whether the problem affects one stream or several.",
+  "Whether you use Wi-Fi or Ethernet.",
+  "Any troubleshooting already attempted.",
 ];
 
 const fieldClassName =
-  "w-full rounded-[1px] border border-[#0B0E2C]/10 bg-[#F5F5F7] px-3.5 py-3 text-[14px] outline-none transition-colors focus:border-[#7B2FFF] focus:bg-white focus:ring-1 focus:ring-[#7B2FFF] sm:px-4 sm:py-3 sm:text-[15px]";
+  "w-full rounded-[20px] border-0 glass-card px-3.5 py-3 text-[14px] outline-none transition-[box-shadow] focus:ring-1 focus:ring-[#7B2FFF] sm:px-4 sm:py-3 sm:text-[15px]";
 
 export function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -31,42 +29,38 @@ export function ContactFormSection() {
   return (
     <section
       id="contact-form"
-      className="border-b border-[#0B0E2C]/10 bg-white py-10 sm:py-16 lg:py-24"
+      className="border-b border-[#0B0E2C]/10 bg-transparent py-10 sm:py-16 lg:py-24"
     >
       <Container>
         <div className="grid gap-4 sm:gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left Column: Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-10">
+            <div className="glass-card p-5 sm:p-10">
               <h2 className="text-[26px] font-bold text-[#0B0E2C] sm:text-[32px]">
-                Send an <span className="text-gradient-brand">Enquiry</span>
+                Send Your{" "}
+                <span className="text-gradient-brand">Enquiry</span>
               </h2>
-              <p className="mt-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-2 sm:text-base">
-                Please check that your contact information is correct before
-                submitting the form.
-              </p>
 
               <form className="mt-5 space-y-4 sm:mt-8 sm:space-y-6" onSubmit={handleSubmit}>
                 <div className="grid gap-3.5 sm:gap-6 sm:grid-cols-2">
                   <div>
                     <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
-                      Full Name
+                      Full name
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Enter the name you want the support team to use when responding."
+                      placeholder="Enter the name you would like us to use."
                       className={fieldClassName}
                     />
                   </div>
                   <div>
                     <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
-                      Email Address
+                      Email address
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="Provide an active email address where you can receive activation information or support instructions."
+                      placeholder="Provide an address where you can receive a reply."
                       className={fieldClassName}
                     />
                   </div>
@@ -75,43 +69,41 @@ export function ContactFormSection() {
                 <div className="grid gap-3.5 sm:gap-6 sm:grid-cols-2">
                   <div>
                     <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
-                      Contact Number
+                      Contact number
                     </label>
                     <input
                       type="tel"
-                      placeholder="Add your contact number when you prefer assistance through a supported messaging service."
+                      placeholder="Add your preferred contact number where relevant."
                       className={fieldClassName}
                     />
                   </div>
                   <div>
                     <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
-                      Enquiry Type
+                      Enquiry type
                     </label>
                     <select required className={fieldClassName}>
                       <option value="">Select an option</option>
-                      <option value="trial">Request a 24-Hour Trial</option>
-                      <option value="subscription">Subscription Question</option>
-                      <option value="installation">Installation Support</option>
-                      <option value="technical">Technical Support</option>
-                      <option value="renewal">Renewal or Upgrade</option>
-                      <option value="reseller">Reseller Enquiry</option>
-                      <option value="general">General Question</option>
+                      <option value="trial">Trial</option>
+                      <option value="subscription">Subscription</option>
+                      <option value="installation">Installation</option>
+                      <option value="technical">Technical support</option>
+                      <option value="renewal">Renewal</option>
+                      <option value="reseller">Reseller enquiry</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
-                    Device Type
+                    Device type
                   </label>
                   <select required className={fieldClassName}>
-                    <option value="">Select your main device</option>
+                    <option value="">Tell us which device you use.</option>
                     <option value="firestick">Firestick or Fire TV</option>
                     <option value="android_tv">Android TV or Google TV</option>
                     <option value="android_mobile">Android Phone or Tablet</option>
                     <option value="samsung_tv">Samsung Smart TV</option>
                     <option value="lg_tv">LG Smart TV</option>
-                    <option value="other_smart_tv">Other Smart TV</option>
                     <option value="apple_tv">Apple TV</option>
                     <option value="ios">iPhone or iPad</option>
                     <option value="windows">Windows PC</option>
@@ -127,14 +119,14 @@ export function ContactFormSection() {
                   <textarea
                     rows={4}
                     required
-                    placeholder="Explain what you need help with. Include any relevant application name, error message or setup information."
+                    placeholder="Explain your question and include any relevant device or application details."
                     className={`${fieldClassName} resize-none`}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="flex min-h-[44px] w-full items-center justify-center rounded-[1px] bg-gradient-brand px-6 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:px-8 sm:py-4 sm:text-[16px]"
+                  className="flex min-h-[44px] w-full items-center justify-center rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:px-8 sm:py-4 sm:text-[16px]"
                 >
                   {submitted ? "Message Sent Successfully!" : "Send Your Enquiry"}
                 </button>
@@ -142,24 +134,21 @@ export function ContactFormSection() {
             </div>
           </div>
 
-          {/* Right Column: Info */}
           <div className="lg:col-span-5">
             <div className="sticky top-24">
-              <div className="rounded-[1px] bg-white p-5 shadow-[0_8px_30px_rgba(11,14,44,0.04)] sm:p-8">
+              <div className="glass-card p-5 sm:p-8">
                 <div className="flex items-center gap-2.5 sm:gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[1px] bg-[#FF6B2C]/10 sm:h-12 sm:w-12">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] bg-[#FF6B2C]/10 sm:h-12 sm:w-12">
                     <Info className="h-4 w-4 text-[#FF6B2C] sm:h-6 sm:w-6" />
                   </div>
                   <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
-                    What to Include in Your{" "}
-                    <span className="text-gradient-brand">Message</span>
+                    What to Include for{" "}
+                    <span className="text-gradient-brand">Technical Support</span>
                   </h3>
                 </div>
 
                 <p className="mt-3 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:text-[15px] sm:leading-relaxed">
-                  Providing complete information helps the support team
-                  understand the problem and respond with the correct
-                  instructions. Please include:
+                  A useful support message includes:
                 </p>
 
                 <svg width="0" height="0" className="absolute" aria-hidden>
@@ -195,10 +184,9 @@ export function ContactFormSection() {
                   ))}
                 </ul>
 
-                <div className="mt-3 rounded-[1px] bg-[#F5F5F7] p-4 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:p-5 sm:text-sm sm:leading-relaxed">
-                  <strong className="text-[#0B0E2C]">Security Note:</strong> Do
-                  not send payment-card information, passwords for unrelated
-                  accounts or unnecessary sensitive personal details.
+                <div className="mt-3 glass-card p-4 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:p-5 sm:text-sm sm:leading-relaxed">
+                  Avoid including payment-card details, unrelated passwords or
+                  unnecessary personal information.
                 </div>
               </div>
             </div>

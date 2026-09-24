@@ -34,14 +34,14 @@ const HOME_COPY: PricingCopy = {
   titleBefore: "Sky Glass IPTV",
   titleHighlight: "Subscription Plans",
   intro: [
-    "Sky Glass IPTV offers a choice of subscription options for viewers who want to select a plan based on duration, required features and number of connections.",
+    "Choose your subscription duration and compare the Standard and Premium options below.",
   ],
   standardLabel: "Standard",
   premiumLabel: "Premium",
   standardDescription:
-    "The Standard plan is intended for viewers who want straightforward access to available live television and on-demand categories.",
+    "Access available live television and on-demand entertainment with setup guidance and customer assistance.",
   premiumDescription:
-    "The Premium plan is intended for viewers who want broader entertainment access and additional viewing features.",
+    "Explore a broader entertainment selection, with expanded live television access and a larger movies and series library.",
   standardFeatures: [
     "Available live television",
     "Sports channels where included",
@@ -49,46 +49,6 @@ const HOME_COPY: PricingCopy = {
     "Electronic Programme Guide support",
     "Popular device compatibility",
     "Installation instructions",
-    "Customer assistance",
-    "Quick activation",
-  ],
-  premiumFeatures: [
-    "Expanded live television access",
-    "Broader sports availability",
-    "A larger movie and series library",
-    "Electronic Programme Guide support",
-    "Catch-Up functionality where available",
-    "HD, Full HD and 4K options where supported",
-    "Popular device compatibility",
-    "Setup assistance",
-    "Quick activation",
-  ],
-  includesLabel: (planType) => `The ${planType} Plan Includes:`,
-  ctaLabel: (planType) => `Choose ${planType} Plan`,
-};
-
-/** Subscription plans page pricing copy. */
-const PLANS_PAGE_COPY: PricingCopy = {
-  titleBefore: "Available",
-  titleHighlight: "Subscription Plans",
-  intro: [
-    "Choose between Standard and Premium options.",
-    "Package availability, content categories and supported features may vary according to the selected plan.",
-  ],
-  standardLabel: "Standard",
-  premiumLabel: "Premium",
-  standardDescription:
-    "The Standard plan is suitable for viewers who want a straightforward way to access available live television and on-demand entertainment.",
-  premiumDescription:
-    "The Premium plan is designed for viewers who want broader entertainment access and enhanced viewing options.",
-  standardFeatures: [
-    "Available live television categories",
-    "Sports channels where included",
-    "Movies and television series",
-    "Electronic Programme Guide support",
-    "Compatible IPTV applications",
-    "Popular device support",
-    "Setup instructions",
     "Customer assistance",
     "Quick activation",
   ],
@@ -103,18 +63,52 @@ const PLANS_PAGE_COPY: PricingCopy = {
     "Setup assistance",
     "Quick activation",
   ],
-  includesLabel: (planType) =>
-    planType === "Standard"
-      ? "The Standard Plan Includes:"
-      : "The Premium Plan Includes:",
-  ctaLabel: (planType) =>
-    planType === "Standard" ? "Choose Standard Plan" : "Choose Premium Plan",
+  includesLabel: (planType) => `The ${planType} Plan Includes:`,
+  ctaLabel: (planType) => `Choose ${planType} Plan`,
+};
+
+/** Subscription plans page pricing copy. */
+const PLANS_PAGE_COPY: PricingCopy = {
+  titleBefore: "Sky Glass IPTV",
+  titleHighlight: "Subscription Plans",
+  intro: [
+    "Choose your subscription duration and compare the Standard and Premium options below.",
+  ],
+  standardLabel: "Standard",
+  premiumLabel: "Premium",
+  standardDescription:
+    "Access available live television and on-demand entertainment with setup guidance and customer assistance.",
+  premiumDescription:
+    "Explore a broader entertainment selection, with expanded live television access and a larger movies and series library.",
+  standardFeatures: [
+    "Available live television",
+    "Sports channels where included",
+    "Movies and series",
+    "Electronic Programme Guide support",
+    "Popular device compatibility",
+    "Installation instructions",
+    "Customer assistance",
+    "Quick activation",
+  ],
+  premiumFeatures: [
+    "Expanded live television access",
+    "Available sports and event coverage",
+    "A larger movies and series library",
+    "Electronic Programme Guide support",
+    "Catch-Up functionality where available",
+    "HD, Full HD and 4K options where supported",
+    "Popular device compatibility",
+    "Setup assistance",
+    "Quick activation",
+  ],
+  includesLabel: (planType) => `The ${planType} Plan Includes:`,
+  ctaLabel: (planType) => `Choose ${planType} Plan`,
 };
 
 const STANDARD_PRICES = [
   { name: "3 MONTHS PLAN", price: "20", suffix: "/3 months" },
   { name: "6 MONTHS PLAN", price: "30", suffix: "/6 months" },
-  { name: "12 MONTHS PLAN", price: "45", suffix: "/12 months" },
+  { name: "12 MONTHS PLAN", price: "40", suffix: "/12 months" },
   {
     name: "24 MONTHS PLAN",
     price: "70",
@@ -174,7 +168,7 @@ export function PlansPricingSection({
   return (
     <section
       id="plans"
-      className="relative border-t border-[#0B0E2C]/10 bg-white"
+      className="relative border-t border-[#0B0E2C]/10 bg-transparent"
     >
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
@@ -191,7 +185,7 @@ export function PlansPricingSection({
 
         <div className="mt-4 flex justify-center sm:mt-10">
           <div
-            className="relative inline-flex items-center rounded-[1px] bg-[#0B0E2C]/[0.04] p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] backdrop-blur-xl backdrop-saturate-150 sm:p-2"
+            className="relative inline-flex items-center glass-card p-1.5 sm:p-2"
             role="tablist"
             aria-label="Plan type"
           >
@@ -205,7 +199,7 @@ export function PlansPricingSection({
                   aria-selected={active}
                   onClick={() => setPlanType(type)}
                   className={cn(
-                    "relative z-[1] min-w-[120px] rounded-[1px] px-6 py-3 text-[14px] font-bold transition-colors duration-300 sm:min-w-[150px] sm:px-10 sm:py-3.5 sm:text-[16px]",
+                    "relative z-[1] min-w-[120px] rounded-[20px] px-6 py-3 text-[14px] font-bold transition-colors duration-300 sm:min-w-[150px] sm:px-10 sm:py-3.5 sm:text-[16px]",
                     active
                       ? "text-white"
                       : "text-[#5C607A] hover:text-[#0B0E2C]",
@@ -218,7 +212,7 @@ export function PlansPricingSection({
                           ? undefined
                           : `plan-type-pill-${variant}`
                       }
-                      className="absolute inset-0 -z-[1] rounded-[1px] bg-gradient-brand shadow-[0_4px_14px_rgba(123,47,255,0.28)]"
+                      className="absolute inset-0 -z-[1] rounded-[20px] bg-gradient-brand shadow-[0_4px_14px_rgba(123,47,255,0.28)]"
                       transition={
                         reduceMotion
                           ? { duration: 0 }
@@ -266,31 +260,17 @@ export function PlansPricingSection({
           }}
           className="mx-auto mt-6 grid max-w-[360px] gap-4 sm:mt-12 sm:max-w-[760px] sm:grid-cols-2 sm:gap-5 lg:max-w-[1200px] lg:grid-cols-4 lg:gap-5"
         >
-          {plans.map((plan, index) => {
-            const accent = plan.popular
-              ? "#E91E8C"
-              : (["#FF6B2C", "#7B2FFF", "#2563EB", "#FF6B2C"] as const)[
-                  index % 4
-                ];
-
+          {plans.map((plan) => {
             return (
               <article
                 key={`${planType}-${plan.name}`}
                 className={cn(
-                  "group relative mx-auto flex w-full max-w-[320px] flex-col items-center overflow-hidden rounded-[1px] border bg-white px-5 py-6 text-center shadow-[var(--card-shadow)] card-hover-lift hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)] sm:max-w-[340px] sm:px-5 sm:py-7 lg:max-w-[290px] lg:px-5 lg:py-7",
-                  plan.popular
-                    ? "border-[#E91E8C]/40 ring-1 ring-[#E91E8C]/20"
-                    : "border-transparent",
+                  "group relative mx-auto flex w-full max-w-[320px] flex-col items-center overflow-hidden glass-card card-hover-lift px-5 py-6 text-center hover:-translate-y-1 sm:max-w-[340px] sm:px-5 sm:py-7 lg:max-w-[290px] lg:px-5 lg:py-7",
+                  plan.popular && "ring-1 ring-[#E91E8C]/25",
                 )}
-                style={
-                  {
-                    "--card-shadow": `0 4px 20px rgba(11, 14, 44, 0.04), 0 8px 24px ${accent}1A`,
-                    "--card-shadow-hover": `0 8px 30px rgba(11, 14, 44, 0.08), 0 12px 40px ${accent}33`,
-                  } as React.CSSProperties
-                }
               >
                 {plan.popular && (
-                  <span className="absolute right-2 top-2 rounded-[1px] bg-gradient-brand px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white sm:right-2.5 sm:top-2.5 sm:text-[11px]">
+                  <span className="absolute right-2 top-2 rounded-[20px] bg-gradient-brand px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white sm:right-2.5 sm:top-2.5 sm:text-[11px]">
                     Recommended
                   </span>
                 )}
@@ -339,7 +319,7 @@ export function PlansPricingSection({
                   href={whatsappSubscriptionUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex min-h-[44px] w-full items-center justify-center whitespace-nowrap rounded-[1px] bg-gradient-brand px-3 py-2.5 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:mt-6 sm:min-h-[48px] sm:text-[13px]"
+                  className="mt-5 inline-flex min-h-[44px] w-full items-center justify-center whitespace-nowrap rounded-[20px] bg-gradient-brand px-3 py-2.5 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:mt-6 sm:min-h-[48px] sm:text-[13px]"
                 >
                   {copy.ctaLabel(planType)}
                 </a>

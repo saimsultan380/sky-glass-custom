@@ -7,20 +7,22 @@ import {
   whatsappFreeTrialUrl,
   whatsappUrl,
 } from "@/lib/site";
+import { siteRoutes } from "@/lib/routes";
 
 const FOOTER_LINKS = {
   service: [
-    { label: "Home", href: "/" },
-    { label: "Plans", href: "/subscription-plans/" },
-    { label: "Installation Guide", href: "/installation-guide/" },
-    { label: "Reseller", href: "/reseller-panel/" },
-    { label: "Contact", href: "/contact-us/" },
+    { label: "Home", href: siteRoutes.home },
+    { label: "Plans", href: siteRoutes.plans },
+    { label: "Installation Guide", href: siteRoutes.installation },
+    { label: "Reseller", href: siteRoutes.reseller },
+    { label: "Contact", href: siteRoutes.contact },
   ],
   support: [
-    { label: "Subscription Plans", href: "/subscription-plans/" },
+    { label: "Subscription Plans", href: siteRoutes.plans },
     { label: "Free Trial", href: whatsappFreeTrialUrl() },
-    { label: "Device Compatibility", href: "/#popular-devices" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "Device Compatibility", href: `${siteRoutes.home}#popular-devices` },
+    { label: "FAQ", href: `${siteRoutes.home}#faq` },
+    { label: "WhatsApp Support", href: whatsappUrl() },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },
@@ -30,20 +32,17 @@ const FOOTER_LINKS = {
 } as const;
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="border-t border-[#0B0E2C]/10 bg-white pb-8 pt-16 sm:pt-20 lg:pt-24">
+    <footer className="border-t border-[#0B0E2C]/10 bg-transparent pb-8 pt-16 sm:pt-20 lg:pt-24">
       <Container animate={false}>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Brand Col */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-flex items-center">
+            <Link href={siteRoutes.home} className="inline-flex items-center">
               <BrandLogo heightClassName="h-9 sm:h-11" />
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-[1.7] text-[#5C607A]">
-              Flexible IPTV for UK viewers — live television, sports, movies and
-              series on Firestick, Android, Smart TVs, Apple devices and more.
+              Explore available entertainment, compare subscription options and
+              find assistance for your viewing device.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -75,7 +74,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Links Cols */}
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7 lg:pl-10">
             {Object.entries(FOOTER_LINKS).map(([group, links]) => (
               <div key={group}>
@@ -120,43 +118,27 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Notice */}
         <div className="mt-16 border-t border-[#0B0E2C]/10 pt-10 sm:mt-20">
           <h3 className="text-[14px] font-bold text-[#0B0E2C]">
             Independent Service Notice
           </h3>
-          <div className="mt-4 grid gap-5 text-[13px] leading-[1.7] text-[#5C607A] sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="mt-4 grid gap-5 text-[13px] leading-[1.7] text-[#5C607A] sm:grid-cols-2 lg:gap-8">
             <p>
-              Sky Glass IPTV is an independent IPTV service and is not
-              affiliated with, endorsed by, sponsored by or officially connected
-              to Sky UK Limited, Sky Group, the official Sky Glass product or
-              any of their parent companies, subsidiaries, broadcasters or
-              associated brands.
+              Sky Glass IPTV operates independently and has no affiliation,
+              sponsorship or endorsement relationship with Sky UK Limited, Sky
+              Group or the official Sky Glass product.
             </p>
             <p>
-              Any third-party names, trademarks, product names or device names
-              mentioned on this website are used only for identification and
-              compatibility information. All trademarks remain the property of
-              their respective owners.
-            </p>
-            <p className="sm:col-span-2 lg:col-span-1">
-              Sky Glass IPTV is the name of our independent service and should
-              not be interpreted as representing Sky or an official Sky
-              television product.
+              Other companies’ names and products are referenced to explain
+              identification or compatibility. Their trademarks remain the
+              property of their respective owners.
             </p>
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#0B0E2C]/10 pt-8 sm:flex-row">
           <p className="text-[13px] text-[#5C607A]">
-            © {year} {siteConfig.name}. All rights reserved.
-          </p>
-          <p className="max-w-2xl text-center text-[12px] leading-relaxed text-[#5C607A] sm:text-right">
-            Sky Glass IPTV is an independent service and is not affiliated with,
-            endorsed by or connected to Sky UK Limited, Sky Group or the
-            official Sky Glass product. All third-party trademarks belong to
-            their respective owners.
+            © 2026 {siteConfig.name}. All rights reserved.
           </p>
         </div>
       </Container>

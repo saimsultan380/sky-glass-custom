@@ -11,12 +11,12 @@ export const siteConfig = {
   shortName: "Sky Glass",
   tagline: "Live TV, Sports, Movies & Series in One Place",
   description:
-    "Explore Sky Glass IPTV for live TV, sports, movies and popular series in the UK. Compare flexible plans, request a 24-hour trial and get setup support.",
+    "Explore Sky Glass IPTV for live TV, sports, movies and series. Compare Standard and Premium prices, check your device and request a 24-hour trial.",
   /** Production origin — always non-www, no trailing slash */
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
-  /** E.164 display + digits-only for wa.me / tel links */
-  phone: "+447532818129",
+  /** Display format used on-page; digits-only for wa.me / tel links */
+  phone: "+44 7532 818129",
   phoneDigits: "447532818129",
   locale: "en_GB",
   twitterHandle: "@skyglassiptv",
@@ -46,32 +46,32 @@ export function whatsappSubscriptionUrl(): string {
 /** Indexable app routes (pathname without domain; always trailing-slash). */
 export const sitePages = [
   {
-    path: "/",
+    path: "/sky-glass-iptv/",
     name: "Home",
     priority: 1,
     changeFrequency: "weekly" as const,
   },
   {
-    path: "/subscription-plans/",
+    path: "/iptv-plans/",
     name: "Subscription Plans",
     priority: 0.9,
     changeFrequency: "weekly" as const,
   },
   {
-    path: "/installation-guide/",
+    path: "/iptv-installation/",
     name: "Installation Guide",
     priority: 0.8,
     changeFrequency: "monthly" as const,
   },
   {
-    path: "/reseller-panel/",
-    name: "Reseller Panel",
+    path: "/iptv-reseller/",
+    name: "Reseller",
     priority: 0.7,
     changeFrequency: "monthly" as const,
   },
   {
-    path: "/contact-us/",
-    name: "Contact Us",
+    path: "/iptv-support/",
+    name: "Contact",
     priority: 0.8,
     changeFrequency: "monthly" as const,
   },
@@ -116,11 +116,12 @@ export type BreadcrumbCrumb = {
  */
 export function pageBreadcrumbs(path: SitePagePath): BreadcrumbCrumb[] {
   const page = sitePages.find((entry) => entry.path === path);
-  if (!page || path === "/") {
-    return [{ name: "Home", path: "/" }];
+  const homePath = sitePages[0].path;
+  if (!page || path === homePath) {
+    return [{ name: "Home", path: homePath }];
   }
   return [
-    { name: "Home", path: "/" },
+    { name: "Home", path: homePath },
     { name: page.name, path: page.path },
   ];
 }
@@ -141,23 +142,23 @@ export function breadcrumbJsonLd(crumbs: BreadcrumbCrumb[]) {
 
 /** Exact SERP titles (shown in Google + browser tab) */
 export const pageTitles = {
-  home: "Sky Glass IPTV - Live TV, Sports, Movies & Series UK",
-  subscriptionPlans: "Sky Glass IPTV - Subscription Plans & 24-Hour Trial UK",
-  installationGuide: "Sky Glass IPTV - Installation Guide for Firestick & TV",
-  resellerPanel: "Sky Glass IPTV - Reseller Panel, Credits & UK Packages",
-  contactUs: "Sky Glass IPTV - Free Trial, Setup Help & Support UK",
+  home: "Sky Glass IPTV UK | Plans, Devices & 24-Hour Trial",
+  subscriptionPlans: "Sky Glass IPTV Subscription | Standard & Premium Plans",
+  installationGuide: "Sky Glass IPTV Installation | Device Setup Guide",
+  resellerPanel: "Sky Glass IPTV Reseller | Panel, Credits & Packages",
+  contactUs: "Contact Sky Glass IPTV | Trials, Setup & Account Help",
 } as const;
 
 export const pageDescriptions = {
   home: siteConfig.description,
   subscriptionPlans:
-    "Compare Sky Glass IPTV subscription plans for UK viewers. Check durations, connection options and features, then request a 24-hour trial before subscribing.",
+    "Compare Sky Glass IPTV subscriptions for 3, 6, 12 or 24 months. View Standard and Premium prices, check plan differences and request a 24-hour trial.",
   installationGuide:
-    "Follow the Sky Glass IPTV installation guide for Firestick, Android, Smart TVs, Apple devices, Windows and Mac, with clear device-specific setup help.",
+    "Set up Sky Glass IPTV on compatible Firestick, Android, Smart TV, Apple and desktop devices. Follow setup guidance and resolve common login issues.",
   resellerPanel:
-    "Join the Sky Glass IPTV reseller programme in the UK. Manage customers, subscriptions and credits through one panel with flexible reseller package options.",
+    "Explore Sky Glass IPTV reseller options. Learn how the panel handles customer accounts, credits and renewals, and enquire about available packages.",
   contactUs:
-    "Contact Sky Glass IPTV for a 24-hour UK trial, subscription guidance, device setup help, renewals and technical support across popular streaming devices.",
+    "Contact Sky Glass IPTV for a 24-hour trial, subscription questions, installation assistance or renewal help. Share your device details for useful guidance.",
 } as const;
 
 export const siteMetadataBase = {

@@ -32,8 +32,8 @@ type DeviceNavItem = {
 const DEVICES: DeviceNavItem[] = [
   {
     id: "firestick",
-    label: "Amazon Firestick & Fire TV",
-    description: "Official app via Downloader",
+    label: "Firestick & Fire TV",
+    description: "Service’s official app",
     icon: Tv,
     color: "#FF6B2C",
     content: <FirestickContent />,
@@ -41,7 +41,7 @@ const DEVICES: DeviceNavItem[] = [
   {
     id: "android",
     label: "Android TV & Android Devices",
-    description: "Official app for TV, phone & tablet",
+    description: "Service’s official Android app",
     icon: MonitorSmartphone,
     color: "#2563EB",
     content: <AndroidContent />,
@@ -49,7 +49,7 @@ const DEVICES: DeviceNavItem[] = [
   {
     id: "smart-tv",
     label: "Samsung & LG Smart TVs",
-    description: "Compatible IPTV players",
+    description: "Supported Smart TV players",
     icon: MonitorPlay,
     color: "#7B2FFF",
     content: <SmartTvContent />,
@@ -57,7 +57,7 @@ const DEVICES: DeviceNavItem[] = [
   {
     id: "apple",
     label: "Apple TV, iPhone & iPad",
-    description: "App Store IPTV players",
+    description: "Compatible Apple-platform player",
     icon: Smartphone,
     color: "#E91E8C",
     content: <AppleContent />,
@@ -65,7 +65,7 @@ const DEVICES: DeviceNavItem[] = [
   {
     id: "desktop",
     label: "Windows PCs & Mac",
-    description: "Compatible desktop players",
+    description: "Supported desktop players",
     icon: Laptop,
     color: "#0B0E2C",
     content: <DesktopContent />,
@@ -117,17 +117,16 @@ export function InstallationDeviceGuide() {
   return (
     <section
       id="device-guides"
-      className="relative border-t border-[#0B0E2C]/10 bg-white"
+      className="relative border-t border-[#0B0E2C]/10 bg-transparent"
     >
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Supported Devices for{" "}
+            <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
+            Device Setup for{" "}
             <span className="text-gradient-brand">Sky Glass IPTV</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.8]">
-            Select your device to view the matching installation steps, player
-            options and setup tips.
+            Select your device to view the matching setup steps.
           </p>
         </div>
 
@@ -147,16 +146,16 @@ export function InstallationDeviceGuide() {
                       type="button"
                       onClick={() => selectDevice(device.id)}
                       className={cn(
-                        "group flex h-full w-full items-start gap-2 rounded-[1px] border px-2.5 py-2.5 text-left transition-all duration-200 sm:gap-3 sm:px-3.5 sm:py-3.5 lg:items-center",
+                        "group flex h-full w-full items-start gap-2 rounded-[20px] border px-2.5 py-2.5 text-left transition-all duration-200 sm:gap-3 sm:px-3.5 sm:py-3.5 lg:items-center",
                         isActive
                           ? "border-transparent bg-gradient-brand text-white shadow-[0_8px_24px_rgba(233,30,140,0.22)]"
-                          : "border-transparent bg-white shadow-[0_2px_10px_rgba(11,14,44,0.03)] hover:bg-[#0B0E2C]/[0.02]"
+                          : "border-transparent glass-card hover:opacity-90"
                       )}
                       aria-pressed={isActive}
                     >
                       <span
                         className={cn(
-                          "flex h-8 w-8 shrink-0 items-center justify-center rounded-[1px] sm:h-10 sm:w-10",
+                          "flex h-8 w-8 shrink-0 items-center justify-center rounded-[20px] sm:h-10 sm:w-10",
                           isActive ? "bg-white/15 text-white" : ""
                         )}
                         style={
@@ -208,7 +207,7 @@ export function InstallationDeviceGuide() {
           <div
             ref={contentRef}
             id={`install-${activeDevice.id}`}
-            className="min-w-0 rounded-[1px] bg-white p-5 sm:p-6 lg:p-8"
+            className="min-w-0 glass-card p-5 sm:p-6 lg:p-8"
           >
             {activeDevice.content}
           </div>

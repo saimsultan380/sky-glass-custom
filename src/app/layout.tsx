@@ -31,7 +31,7 @@ const jsonLd = [
     "@type": "WebSite",
     name: siteConfig.name,
     alternateName: [siteConfig.shortName, "Sky Glass IPTV UK", "IPTV UK"],
-    url: canonicalUrl("/"),
+    url: canonicalUrl("/sky-glass-iptv/"),
     description: siteConfig.description,
     inLanguage: "en-GB",
   },
@@ -39,12 +39,12 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
-    url: canonicalUrl("/"),
+    url: canonicalUrl("/sky-glass-iptv/"),
     logo: `${siteConfig.siteUrl}/logo.PNG`,
     contactPoint: {
       "@type": "ContactPoint",
       email: siteConfig.email,
-      telephone: siteConfig.phone,
+      telephone: `+${siteConfig.phoneDigits}`,
       contactType: "customer support",
       availableLanguage: ["English"],
     },
@@ -65,9 +65,9 @@ export default function RootLayout({
       <head>
         <JsonLd data={jsonLd} />
       </head>
-      <body className="relative flex min-h-full flex-col bg-white text-[#0B0E2C]">
+      <body className="relative flex min-h-full flex-col bg-transparent text-[#0B0E2C]">
         <AutoScrollReveal />
-        <div className="relative z-10 flex min-h-full flex-1 flex-col bg-white">
+        <div className="relative z-10 flex min-h-full flex-1 flex-col bg-transparent">
           {children}
         </div>
       </body>
