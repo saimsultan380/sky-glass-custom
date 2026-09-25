@@ -1,169 +1,47 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
-import { whatsappSubscriptionUrl } from "@/lib/site";
+import { whatsappPlanEnquiryUrl } from "@/lib/site";
+import { siteRoutes } from "@/lib/routes";
+import {
+  DEVICE_COUNTS,
+  DURATION_LABELS,
+  PLAN_DURATIONS,
+  PREMIUM_MATRIX,
+  STANDARD_MATRIX,
+  type DeviceCount,
+  type PlanDurationMonths,
+} from "@/lib/pricing";
 
-type DurationPlan = {
-  name: string;
-  price: string;
-  suffix: string;
-  features: readonly string[];
-  popular?: boolean;
-};
+function accountLabel(count: DeviceCount, short = false): string {
+  if (short) return count === 1 ? "1 Account" : `${count} Accounts`;
+  return count === 1 ? "1 Account" : `${count} Accounts`;
+}
 
-type PricingCopy = {
-  titleBefore: string;
-  titleHighlight: string;
-  intro: readonly string[];
-  standardLabel: string;
-  premiumLabel: string;
-  standardDescription: string;
-  premiumDescription: string;
-  standardFeatures: readonly string[];
-  premiumFeatures: readonly string[];
-  includesLabel: (planType: "Standard" | "Premium") => string;
-  ctaLabel: (planType: "Standard" | "Premium") => string;
-};
+function streamLabel(count: DeviceCount): string {
+  if (count === 1) {
+    return "1 account — 1 simultaneous stream";
+  }
+  return `${count} accounts — ${count} simultaneous streams`;
+}
 
-/** Homepage pricing copy — keep separate from the plans page. */
-const HOME_COPY: PricingCopy = {
-  titleBefore: "Sky Glass IPTV",
-  titleHighlight: "Subscription Plans",
-  intro: [
-    "Choose your subscription duration and compare the Standard and Premium options below.",
-  ],
-  standardLabel: "Standard",
-  premiumLabel: "Premium",
-  standardDescription:
-    "Access available live television and on-demand entertainment with setup guidance and customer assistance.",
-  premiumDescription:
-    "Explore a broader entertainment selection, with expanded live television access and a larger movies and series library.",
-  standardFeatures: [
-    "Available live television",
-    "Sports channels where included",
-    "Movies and series",
-    "Electronic Programme Guide support",
-    "Popular device compatibility",
-    "Installation instructions",
-    "Customer assistance",
-    "Quick activation",
-  ],
-  premiumFeatures: [
-    "Expanded live television access",
-    "Available sports and event coverage",
-    "A larger movies and series library",
-    "Electronic Programme Guide support",
-    "Catch-Up functionality where available",
-    "HD, Full HD and 4K options where supported",
-    "Popular device compatibility",
-    "Setup assistance",
-    "Quick activation",
-  ],
-  includesLabel: (planType) => `The ${planType} Plan Includes:`,
-  ctaLabel: (planType) => `Choose ${planType} Plan`,
-};
-
-/** Subscription plans page pricing copy. */
-const PLANS_PAGE_COPY: PricingCopy = {
-  titleBefore: "Sky Glass IPTV",
-  titleHighlight: "Subscription Plans",
-  intro: [
-    "Choose your subscription duration and compare the Standard and Premium options below.",
-  ],
-  standardLabel: "Standard",
-  premiumLabel: "Premium",
-  standardDescription:
-    "Access available live television and on-demand entertainment with setup guidance and customer assistance.",
-  premiumDescription:
-    "Explore a broader entertainment selection, with expanded live television access and a larger movies and series library.",
-  standardFeatures: [
-    "Available live television",
-    "Sports channels where included",
-    "Movies and series",
-    "Electronic Programme Guide support",
-    "Popular device compatibility",
-    "Installation instructions",
-    "Customer assistance",
-    "Quick activation",
-  ],
-  premiumFeatures: [
-    "Expanded live television access",
-    "Available sports and event coverage",
-    "A larger movies and series library",
-    "Electronic Programme Guide support",
-    "Catch-Up functionality where available",
-    "HD, Full HD and 4K options where supported",
-    "Popular device compatibility",
-    "Setup assistance",
-    "Quick activation",
-  ],
-  includesLabel: (planType) => `The ${planType} Plan Includes:`,
-  ctaLabel: (planType) => `Choose ${planType} Plan`,
-};
-
-const STANDARD_PRICES = [
-  { name: "3 MONTHS PLAN", price: "20", suffix: "/3 months" },
-  { name: "6 MONTHS PLAN", price: "30", suffix: "/6 months" },
-  { name: "12 MONTHS PLAN", price: "40", suffix: "/12 months" },
-  {
-    name: "24 MONTHS PLAN",
-    price: "70",
-    suffix: "/24 months",
-    popular: true,
-  },
+const SHARED_FEATURES = [
+  "Available live TV and sports where included",
+  "Movies and series library",
+  "EPG support where available",
+  "Compatible devices with setup guidance",
 ] as const;
 
-const PREMIUM_PRICES = [
-  { name: "3 MONTHS PLAN", price: "25", suffix: "/3 months" },
-  { name: "6 MONTHS PLAN", price: "35", suffix: "/6 months" },
-  { name: "12 MONTHS PLAN", price: "55", suffix: "/12 months" },
-  {
-    name: "24 MONTHS PLAN",
-    price: "90",
-    suffix: "/24 months",
-    popular: true,
-  },
-] as const;
-
-type PlansPricingSectionProps = {
-  /** `home` = homepage copy; `plans` = subscription plans page copy. */
-  variant?: "home" | "plans";
-};
-
-export function PlansPricingSection({
-  variant = "home",
-}: PlansPricingSectionProps) {
-  const [planType, setPlanType] = useState<"Standard" | "Premium">("Standard");
+export function PlansPricingSection() {
+  const [accounts, setAccounts] = useState<DeviceCount>(1);
   const reduceMotion = useReducedMotion();
-  const copy = variant === "plans" ? PLANS_PAGE_COPY : HOME_COPY;
 
-  const plans: DurationPlan[] = (
-    planType === "Standard" ? STANDARD_PRICES : PREMIUM_PRICES
-  ).map((plan) => ({
-    ...plan,
-    features:
-      planType === "Standard"
-        ? copy.standardFeatures
-        : copy.premiumFeatures,
-  }));
-
-  const planHeading =
-    planType === "Standard"
-      ? variant === "plans"
-        ? "Standard Sky Glass IPTV Plan"
-        : "Standard Plan"
-      : variant === "plans"
-        ? "Premium Sky Glass IPTV Plan"
-        : "Premium Plan";
-
-  const description =
-    planType === "Standard"
-      ? copy.standardDescription
-      : copy.premiumDescription;
+  const features = [streamLabel(accounts), ...SHARED_FEATURES];
 
   return (
     <section
@@ -173,33 +51,34 @@ export function PlansPricingSection({
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[50px]">
-            {copy.titleBefore}{" "}
-            <span className="text-gradient-brand">{copy.titleHighlight}</span>
+            Sky Glass IPTV{" "}
+            <span className="text-gradient-brand">Subscription Plans</span>
           </h2>
-          <div className="mx-auto mt-4 space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:max-w-3xl sm:space-y-3 sm:text-base sm:leading-[1.8]">
-            {copy.intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <p className="mx-auto mt-4 max-w-3xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
+            Choose how many screens can stream at the same time, then compare
+            Standard and Premium prices by subscription length. View the full
+            Pricing page for the complete device table.
+          </p>
         </div>
 
-        <div className="mt-4 flex justify-center sm:mt-10">
+        {/* Account tabs — 1 to 4 */}
+        <div className="mt-5 flex justify-center sm:mt-10">
           <div
-            className="relative inline-flex items-center glass-card p-1.5 sm:p-2"
+            className="inline-flex max-w-full flex-wrap items-center justify-center gap-1 glass-card p-1.5 sm:gap-0 sm:p-2"
             role="tablist"
-            aria-label="Plan type"
+            aria-label="Simultaneous accounts"
           >
-            {(["Standard", "Premium"] as const).map((type) => {
-              const active = planType === type;
+            {DEVICE_COUNTS.map((count) => {
+              const active = accounts === count;
               return (
                 <button
-                  key={type}
+                  key={count}
                   type="button"
                   role="tab"
                   aria-selected={active}
-                  onClick={() => setPlanType(type)}
+                  onClick={() => setAccounts(count)}
                   className={cn(
-                    "relative z-[1] min-w-[120px] rounded-[20px] px-6 py-3 text-[14px] font-bold transition-colors duration-300 sm:min-w-[150px] sm:px-10 sm:py-3.5 sm:text-[16px]",
+                    "relative z-[1] rounded-[20px] px-3 py-2.5 text-[12px] font-bold transition-colors duration-300 sm:min-w-[110px] sm:px-5 sm:py-3 sm:text-[14px]",
                     active
                       ? "text-white"
                       : "text-[#5C607A] hover:text-[#0B0E2C]",
@@ -208,9 +87,7 @@ export function PlansPricingSection({
                   {active && (
                     <motion.span
                       layoutId={
-                        reduceMotion
-                          ? undefined
-                          : `plan-type-pill-${variant}`
+                        reduceMotion ? undefined : "home-account-tab-pill"
                       }
                       className="absolute inset-0 -z-[1] rounded-[20px] bg-gradient-brand shadow-[0_4px_14px_rgba(123,47,255,0.28)]"
                       transition={
@@ -220,9 +97,7 @@ export function PlansPricingSection({
                       }
                     />
                   )}
-                  {type === "Standard"
-                    ? copy.standardLabel
-                    : copy.premiumLabel}
+                  {accountLabel(count, true)}
                 </button>
               );
             })}
@@ -230,81 +105,117 @@ export function PlansPricingSection({
         </div>
 
         <motion.div
-          key={`${variant}-${planType}-intro`}
+          key={`heading-${accounts}`}
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: reduceMotion ? 0 : 0.28,
             ease: [0.21, 0.47, 0.32, 0.98],
           }}
-          className="mx-auto mt-3 max-w-3xl text-center sm:mt-8"
+          className="mx-auto mt-5 max-w-3xl text-center sm:mt-8"
         >
-          <h3 className="text-[16px] font-bold tracking-tight text-[#0B0E2C] sm:text-[20px]">
-            {planHeading}
+          <h3 className="text-[22px] font-bold tracking-tight text-[#0B0E2C] sm:text-[28px]">
+            {accountLabel(accounts)}
           </h3>
-          <p className="mt-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-3 sm:text-base sm:leading-[1.8]">
-            {description}
-          </p>
-          <p className="mt-3 text-[12px] font-semibold uppercase tracking-wider text-[#0B0E2C] sm:mt-4 sm:text-[13px]">
-            Available Durations
+          <p className="mt-2 text-[13px] leading-[1.6] text-[#5C607A] sm:text-[15px]">
+            Full amount payable for the selected term. Prices below show
+            Standard and Premium for this account count.
           </p>
         </motion.div>
 
+        {/* Month cards */}
         <motion.div
-          key={`${variant}-plans-${planType}`}
+          key={`cards-${accounts}`}
           initial={reduceMotion ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: reduceMotion ? 0 : 0.32,
             ease: [0.21, 0.47, 0.32, 0.98],
           }}
-          className="mx-auto mt-6 grid max-w-[360px] gap-4 sm:mt-12 sm:max-w-[760px] sm:grid-cols-2 sm:gap-5 lg:max-w-[1200px] lg:grid-cols-4 lg:gap-5"
+          className="mx-auto mt-6 grid max-w-[360px] gap-4 sm:mt-10 sm:max-w-[760px] sm:grid-cols-2 sm:gap-5 lg:max-w-[1200px] lg:grid-cols-4 lg:gap-5"
         >
-          {plans.map((plan) => {
+          {PLAN_DURATIONS.map((months: PlanDurationMonths) => {
+            const standardPrice = STANDARD_MATRIX[accounts][months];
+            const premiumPrice = PREMIUM_MATRIX[accounts][months];
+            const duration = DURATION_LABELS[months];
+            const isBest = months === 12;
+
             return (
               <article
-                key={`${planType}-${plan.name}`}
+                key={`${accounts}-${months}`}
                 className={cn(
-                  "group relative mx-auto flex w-full max-w-[320px] flex-col items-center overflow-hidden glass-card card-hover-lift px-5 py-6 text-center hover:-translate-y-1 sm:max-w-[340px] sm:px-5 sm:py-7 lg:max-w-[290px] lg:px-5 lg:py-7",
-                  plan.popular && "ring-1 ring-[#E91E8C]/25",
+                  "group relative mx-auto flex w-full max-w-[320px] flex-col overflow-hidden glass-card card-hover-lift px-5 py-6 hover:-translate-y-1 sm:max-w-none sm:px-5 sm:py-7",
+                  isBest && "ring-1 ring-[#E91E8C]/25",
                 )}
               >
-                {plan.popular && (
+                {isBest && (
                   <span className="absolute right-2 top-2 rounded-[20px] bg-gradient-brand px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white sm:right-2.5 sm:top-2.5 sm:text-[11px]">
-                    Recommended
+                    Best value
                   </span>
                 )}
 
-                <h3 className="text-[15px] font-bold tracking-tight text-gradient-brand sm:text-[16px]">
-                  {plan.name}
-                </h3>
-                <div className="mt-2 h-[2px] w-10 rounded-full bg-gradient-brand sm:mt-2.5 sm:w-12" />
+                <div className="text-center">
+                  <h4 className="text-[15px] font-bold uppercase tracking-tight text-gradient-brand sm:text-[16px]">
+                    {months === 1 ? "1 Month" : `${months} Months`}
+                  </h4>
+                  <p className="mt-1 text-[12px] font-medium text-[#5C607A]">
+                    Full amount payable
+                  </p>
+                </div>
 
-                <div className="mt-4 flex flex-col items-center sm:mt-5">
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-[#0B0E2C] sm:text-[13px]">
-                    Price
-                  </span>
-                  <div className="mt-1.5 flex items-baseline justify-center sm:mt-2">
-                    <span className="text-[34px] font-bold leading-none tracking-tight text-gradient-brand sm:text-[38px]">
-                      £{plan.price}
+                <div className="mt-5 space-y-3 border-t border-[#0B0E2C]/10 pt-5">
+                  <div className="text-center">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#5C607A]">
+                      Standard
                     </span>
+                    <div className="mt-1 text-[32px] font-bold leading-none tracking-tight text-gradient-brand sm:text-[36px]">
+                      £{standardPrice}
+                    </div>
+                    <a
+                      href={whatsappPlanEnquiryUrl({
+                        tier: "Standard",
+                        devices: accounts,
+                        duration,
+                        price: `£${standardPrice}`,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex min-h-[42px] w-full items-center justify-center rounded-[20px] bg-gradient-brand px-3 py-2 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[44px] sm:text-[13px]"
+                    >
+                      Choose Standard
+                    </a>
                   </div>
-                  <span className="mt-1.5 text-[13px] font-bold text-[#0B0E2C] sm:text-[14px]">
-                    {plan.suffix}
-                  </span>
+
+                  <div className="text-center border-t border-[#0B0E2C]/08 pt-3">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#5C607A]">
+                      Premium
+                    </span>
+                    <div className="mt-1 text-[24px] font-bold leading-none tracking-tight text-[#0B0E2C] sm:text-[26px]">
+                      £{premiumPrice}
+                    </div>
+                    <a
+                      href={whatsappPlanEnquiryUrl({
+                        tier: "Premium",
+                        devices: accounts,
+                        duration,
+                        price: `£${premiumPrice}`,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex min-h-[42px] w-full items-center justify-center rounded-[20px] border-gradient-brand px-3 py-2 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[44px] sm:text-[13px]"
+                    >
+                      Choose Premium
+                    </a>
+                  </div>
                 </div>
 
-                <hr className="my-4 w-full border-[#0B0E2C]/10 sm:my-5" />
+                <hr className="my-4 w-full border-[#0B0E2C]/10" />
 
-                <div className="mb-3 w-full text-left text-[14px] font-bold text-[#0B0E2C] sm:mb-3.5 sm:text-[15px]">
-                  {copy.includesLabel(planType)}
-                </div>
-
-                <ul className="flex w-full flex-1 flex-col items-start gap-2 text-left sm:gap-2.5">
-                  {plan.features.map((feature) => (
+                <ul className="flex w-full flex-1 flex-col items-start gap-2 text-left">
+                  {features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-2 text-[13px] font-medium leading-snug text-[#0B0E2C] sm:text-[14px]"
+                      className="flex items-start gap-2 text-[12px] font-medium leading-snug text-[#0B0E2C] sm:text-[13px]"
                     >
                       <Check
                         className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2563EB]"
@@ -314,19 +225,24 @@ export function PlansPricingSection({
                     </li>
                   ))}
                 </ul>
-
-                <a
-                  href={whatsappSubscriptionUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex min-h-[44px] w-full items-center justify-center whitespace-nowrap rounded-[20px] bg-gradient-brand px-3 py-2.5 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:mt-6 sm:min-h-[48px] sm:text-[13px]"
-                >
-                  {copy.ctaLabel(planType)}
-                </a>
               </article>
             );
           })}
         </motion.div>
+
+        <div className="mt-6 flex flex-col items-center gap-3 sm:mt-10">
+          <p className="max-w-2xl text-center text-[13px] leading-[1.55] text-[#5C607A] sm:text-[14px]">
+            Prefer a table view of every device and term? Open the full Pricing
+            page.
+          </p>
+          <Link
+            href={siteRoutes.plans}
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[20px] border-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:text-[14px]"
+          >
+            View full Pricing
+            <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
+          </Link>
+        </div>
       </Container>
     </section>
   );

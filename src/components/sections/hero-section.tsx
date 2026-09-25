@@ -29,8 +29,8 @@ export function HeroSection() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV for{" "}
-              <span className="text-gradient-brand">UK Viewers</span>
+              Sky Glass IPTV: Live TV &{" "}
+              <span className="text-gradient-brand">Subscription Options</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>

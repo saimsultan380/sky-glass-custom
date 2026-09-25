@@ -154,11 +154,11 @@ export function breadcrumbJsonLd(crumbs: BreadcrumbCrumb[]) {
 
 /** Exact SERP titles (shown in Google + browser tab) */
 export const pageTitles = {
-  home: "Sky Glass IPTV UK | Live TV, Movies & Device Setup",
-  subscriptionPlans: "Sky Glass IPTV Pricing | 1–4 Device Plans",
-  installationGuide: "Sky Glass IPTV Installation Guide | Set Up Your Device",
-  resellerPanel: "Sky Glass IPTV Reseller Programme | Panel & Credits",
-  contactUs: "Contact Sky Glass IPTV | Trials & Account Support",
+  home: "Sky Glass IPTV UK | Live TV & Subscription Options",
+  subscriptionPlans: "Sky Glass IPTV Pricing UK | 1–4 Device Plans",
+  installationGuide: "Sky Glass IPTV Setup Guide | Firestick, Smart TV & More",
+  resellerPanel: "Sky Glass IPTV Reseller Panel | Credits & Accounts",
+  contactUs: "Contact Sky Glass IPTV | Trial & Setup Support",
 } as const;
 
 export const pageDescriptions = {

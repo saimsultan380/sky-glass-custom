@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/hero-section";
 import { SmarterIptvExperienceSection } from "@/components/sections/smarter-iptv-experience-section";
-import { WhyChooseSkyGlassSection } from "@/components/sections/why-choose-sky-glass-section";
+import { PlansPricingSection } from "@/components/sections/plans-pricing-section";
 import { EntertainmentCategoriesSection } from "@/components/sections/entertainment-categories-section";
+import { WhyChooseSkyGlassSection } from "@/components/sections/why-choose-sky-glass-section";
 import { PopularDevicesSection } from "@/components/sections/popular-devices-section";
 import { FreeTrialSection } from "@/components/sections/free-trial-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -42,8 +43,9 @@ export default function Home() {
     <PageShell path={siteRoutes.home}>
       <HeroSection />
       <SmarterIptvExperienceSection />
-      <WhyChooseSkyGlassSection />
+      <PlansPricingSection />
       <EntertainmentCategoriesSection />
+      <WhyChooseSkyGlassSection />
       <PopularDevicesSection />
       <FreeTrialSection />
       <FaqSection />
