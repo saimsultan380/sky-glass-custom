@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { LegacyRedirect } from "@/components/legacy-redirect";
-import { canonicalUrl } from "@/lib/site";
+import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
 import { siteRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Sky Glass IPTV UK | Plans, Devices & 24-Hour Trial",
+    absolute: pageTitles.home,
   },
-  description:
-    "Explore Sky Glass IPTV for live TV, sports, movies and series. Compare Standard and Premium prices, check your device and request a 24-hour trial.",
+  description: pageDescriptions.home,
   robots: {
     index: false,
     follow: true,

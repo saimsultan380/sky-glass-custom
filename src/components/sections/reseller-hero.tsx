@@ -14,8 +14,8 @@ export function ResellerHero() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV Reseller — Manage Accounts, Credits and{" "}
-              <span className="text-gradient-brand">Renewals</span>
+              Sky Glass IPTV Reseller{" "}
+              <span className="text-gradient-brand">Programme</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>

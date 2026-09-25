@@ -15,7 +15,7 @@ export function InstallationHero() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV Installation — Set Up the Right App for Your{" "}
+              How to Set Up Sky Glass IPTV on Your{" "}
               <span className="text-gradient-brand">Device</span>
             </BlurReveal>
 

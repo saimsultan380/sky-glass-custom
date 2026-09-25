@@ -12,13 +12,13 @@ import { siteRoutes } from "@/lib/routes";
 const FOOTER_LINKS = {
   service: [
     { label: "Home", href: siteRoutes.home },
-    { label: "Plans", href: siteRoutes.plans },
+    { label: "Pricing", href: siteRoutes.plans },
     { label: "Installation Guide", href: siteRoutes.installation },
     { label: "Reseller", href: siteRoutes.reseller },
     { label: "Contact", href: siteRoutes.contact },
   ],
   support: [
-    { label: "Subscription Plans", href: siteRoutes.plans },
+    { label: "Pricing", href: siteRoutes.plans },
     { label: "Free Trial", href: whatsappFreeTrialUrl() },
     { label: "Device Compatibility", href: `${siteRoutes.home}#popular-devices` },
     { label: "FAQ", href: `${siteRoutes.home}#faq` },

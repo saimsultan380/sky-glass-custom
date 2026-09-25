@@ -24,8 +24,8 @@ export function ContactHero() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Contact Sky Glass IPTV — Get Help with Trials, Plans and{" "}
-              <span className="text-gradient-brand">Setup</span>
+              Contact Sky Glass IPTV{" "}
+              <span className="text-gradient-brand">Support</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>

@@ -12,7 +12,7 @@ import { siteRoutes } from "@/lib/routes";
 
 const NAV_LINKS = [
   { label: "Home", href: siteRoutes.home },
-  { label: "Subscription Plans", href: siteRoutes.plans },
+  { label: "Pricing", href: siteRoutes.plans },
   { label: "Installation Guide", href: siteRoutes.installation },
   { label: "Reseller", href: siteRoutes.reseller },
   { label: "Contact", href: siteRoutes.contact },

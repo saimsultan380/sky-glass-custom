@@ -10,7 +10,7 @@ const helpOptions = [
     color: "#FF6B2C",
   },
   {
-    title: "Ask About Subscription Plans",
+    title: "Ask About Pricing",
     description:
       "Get help comparing Standard and Premium, subscription lengths and connection requirements.",
     icon: MessageCircle,

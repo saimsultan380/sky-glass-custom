@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
 import { PlansHero } from "@/components/sections/plans-hero";
-import { PlansComparisonSection } from "@/components/sections/plans-comparison-section";
-import { PlansIncludedSection } from "@/components/sections/plans-included-section";
-import { PlansChoiceSection } from "@/components/sections/plans-choice-section";
-import { PlansDevicesSection } from "@/components/sections/plans-devices-section";
-import { PlansFourStepsSection } from "@/components/sections/plans-four-steps-section";
-import { PlansFaqSection } from "@/components/sections/plans-faq-section";
+import { PricingTablesSection } from "@/components/sections/pricing-tables-section";
+import { PricingIncludesSection } from "@/components/sections/pricing-includes-section";
+import { PricingBeforeChooseSection } from "@/components/sections/pricing-before-choose-section";
 import { PlansCtaSection } from "@/components/sections/plans-cta-section";
 import { canonicalUrl, pageDescriptions, pageTitles } from "@/lib/site";
 import { siteRoutes } from "@/lib/routes";
@@ -17,10 +14,10 @@ export const metadata: Metadata = {
   },
   description: pageDescriptions.subscriptionPlans,
   keywords: [
-    "Sky Glass IPTV Subscription Plans",
-    "IPTV subscription UK",
+    "Sky Glass IPTV Pricing",
+    "IPTV prices UK",
     "IPTV plans UK",
-    "IPTV packages UK",
+    "1–4 device IPTV",
   ],
   alternates: {
     canonical: canonicalUrl(siteRoutes.plans),
@@ -40,12 +37,9 @@ export default function SubscriptionPlansPage() {
   return (
     <PageShell path={siteRoutes.plans}>
       <PlansHero />
-      <PlansComparisonSection />
-      <PlansIncludedSection />
-      <PlansChoiceSection />
-      <PlansDevicesSection />
-      <PlansFourStepsSection />
-      <PlansFaqSection />
+      <PricingTablesSection />
+      <PricingIncludesSection />
+      <PricingBeforeChooseSection />
       <PlansCtaSection />
     </PageShell>
   );

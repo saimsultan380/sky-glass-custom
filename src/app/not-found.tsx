@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const helpfulLinks = [
   { href: siteRoutes.home, label: "Home" },
-  { href: siteRoutes.plans, label: "Subscription Plans" },
+  { href: siteRoutes.plans, label: "Pricing" },
   { href: siteRoutes.installation, label: "Installation Guide" },
   { href: siteRoutes.reseller, label: "Reseller" },
   { href: siteRoutes.contact, label: "Contact" },
