@@ -2,6 +2,10 @@ import {
   MonitorSmartphone,
   Check,
 } from "lucide-react";
+import {
+  DOWNLOADER_CODE,
+  DownloaderCodeCard,
+} from "@/components/sections/downloader-code-card";
 
 const AFTER_INSTALL = [
   "Open the application.",
@@ -19,9 +23,14 @@ export function AndroidContent() {
         <span className="text-gradient-brand">Android Device</span>
       </h3>
       <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-[15px] sm:leading-[1.75]">
-        Confirm that your model supports the service’s application, then use the
-        installation instructions provided for that device.
+        Confirm that your model supports the service’s application. Install
+        Downloader by AFTVnews, enter code {DOWNLOADER_CODE}, then follow the
+        steps below.
       </p>
+
+      <div className="mt-5 sm:mt-6">
+        <DownloaderCodeCard deviceLabel="Android TV & Android Devices" />
+      </div>
 
       <div className="mt-6 glass-card p-5 sm:mt-8 sm:p-6">
         <div className="flex items-center gap-2.5">

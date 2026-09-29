@@ -39,14 +39,14 @@ export function ContactCta() {
               href={whatsappFreeTrialUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px] sm:leading-normal"
+              className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px] sm:leading-normal"
             >
               <Clock
-                className="h-3.5 w-3.5 shrink-0 text-white sm:h-4 sm:w-4"
+                className="h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-4 sm:w-4"
                 strokeWidth={2}
                 aria-hidden
               />
-              <span>Request Your 24-Hour Free Trial</span>
+              <span className="text-gradient-brand">Request Your 24-Hour Free Trial</span>
             </a>
           </div>
         </div>

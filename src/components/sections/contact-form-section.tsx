@@ -3,6 +3,7 @@
 import { Container } from "@/components/layout/container";
 import { useState, FormEvent } from "react";
 import { Info, Check } from "lucide-react";
+import { whatsappUrl } from "@/lib/site";
 
 const MESSAGE_INCLUDES = [
   "Your device type and model.",
@@ -14,15 +15,79 @@ const MESSAGE_INCLUDES = [
   "Any troubleshooting already attempted.",
 ];
 
+const ENQUIRY_LABELS: Record<string, string> = {
+  trial: "Trial",
+  subscription: "Subscription",
+  installation: "Installation",
+  technical: "Technical support",
+  renewal: "Renewal",
+  reseller: "Reseller enquiry",
+};
+
+const DEVICE_LABELS: Record<string, string> = {
+  firestick: "Firestick or Fire TV",
+  android_tv: "Android TV or Google TV",
+  android_mobile: "Android Phone or Tablet",
+  samsung_tv: "Samsung Smart TV",
+  lg_tv: "LG Smart TV",
+  apple_tv: "Apple TV",
+  ios: "iPhone or iPad",
+  windows: "Windows PC",
+  mac: "Mac or MacBook",
+  other: "Other Device",
+};
+
 const fieldClassName =
   "w-full rounded-[20px] border-0 glass-card px-3.5 py-3 text-[14px] outline-none transition-[box-shadow] focus:ring-1 focus:ring-[#7B2FFF] sm:px-4 sm:py-3 sm:text-[15px]";
+
+function buildWhatsAppMessage(data: {
+  name: string;
+  email: string;
+  phone: string;
+  enquiry: string;
+  device: string;
+  message: string;
+}) {
+  const lines = [
+    "Sky Glass IPTV enquiry",
+    "",
+    `Name: ${data.name}`,
+    `Email: ${data.email}`,
+    `Phone: ${data.phone || "Not provided"}`,
+    `Enquiry type: ${ENQUIRY_LABELS[data.enquiry] ?? data.enquiry}`,
+    `Device: ${DEVICE_LABELS[data.device] ?? data.device}`,
+    "",
+    "Message:",
+    data.message,
+  ];
+  return lines.join("\n");
+}
 
 export function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const enquiry = String(formData.get("enquiry") ?? "").trim();
+    const device = String(formData.get("device") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    window.open(
+      whatsappUrl(
+        buildWhatsAppMessage({ name, email, phone, enquiry, device, message }),
+      ),
+      "_blank",
+      "noopener,noreferrer",
+    );
+
     setSubmitted(true);
+    form.reset();
     setTimeout(() => setSubmitted(false), 5000);
   };
 
@@ -43,23 +108,35 @@ export function ContactFormSection() {
               <form className="mt-5 space-y-4 sm:mt-8 sm:space-y-6" onSubmit={handleSubmit}>
                 <div className="grid gap-3.5 sm:gap-6 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
+                    <label
+                      htmlFor="contact-name"
+                      className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm"
+                    >
                       Full name
                     </label>
                     <input
+                      id="contact-name"
+                      name="name"
                       type="text"
                       required
+                      autoComplete="name"
                       placeholder="Enter the name you would like us to use."
                       className={fieldClassName}
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
+                    <label
+                      htmlFor="contact-email"
+                      className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm"
+                    >
                       Email address
                     </label>
                     <input
+                      id="contact-email"
+                      name="email"
                       type="email"
                       required
+                      autoComplete="email"
                       placeholder="Provide an address where you can receive a reply."
                       className={fieldClassName}
                     />
@@ -68,20 +145,34 @@ export function ContactFormSection() {
 
                 <div className="grid gap-3.5 sm:gap-6 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
+                    <label
+                      htmlFor="contact-phone"
+                      className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm"
+                    >
                       Contact number
                     </label>
                     <input
+                      id="contact-phone"
+                      name="phone"
                       type="tel"
+                      autoComplete="tel"
                       placeholder="Add your preferred contact number where relevant."
                       className={fieldClassName}
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
+                    <label
+                      htmlFor="contact-enquiry"
+                      className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm"
+                    >
                       Enquiry type
                     </label>
-                    <select required className={fieldClassName}>
+                    <select
+                      id="contact-enquiry"
+                      name="enquiry"
+                      required
+                      className={fieldClassName}
+                    >
                       <option value="">Select an option</option>
                       <option value="trial">Trial</option>
                       <option value="subscription">Subscription</option>
@@ -94,10 +185,18 @@ export function ContactFormSection() {
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
+                  <label
+                    htmlFor="contact-device"
+                    className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm"
+                  >
                     Device type
                   </label>
-                  <select required className={fieldClassName}>
+                  <select
+                    id="contact-device"
+                    name="device"
+                    required
+                    className={fieldClassName}
+                  >
                     <option value="">Tell us which device you use.</option>
                     <option value="firestick">Firestick or Fire TV</option>
                     <option value="android_tv">Android TV or Google TV</option>
@@ -113,10 +212,15 @@ export function ContactFormSection() {
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm">
+                  <label
+                    htmlFor="contact-message"
+                    className="mb-1.5 block text-[12px] font-bold text-[#0B0E2C] sm:mb-2 sm:text-sm"
+                  >
                     Message
                   </label>
                   <textarea
+                    id="contact-message"
+                    name="message"
                     rows={4}
                     required
                     placeholder="Explain your question and include any relevant device or application details."
@@ -128,7 +232,7 @@ export function ContactFormSection() {
                   type="submit"
                   className="flex min-h-[44px] w-full items-center justify-center rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 sm:min-h-[56px] sm:px-8 sm:py-4 sm:text-[16px]"
                 >
-                  {submitted ? "Message Sent Successfully!" : "Send Your Enquiry"}
+                  {submitted ? "Opening WhatsApp…" : "Send Your Enquiry"}
                 </button>
               </form>
             </div>

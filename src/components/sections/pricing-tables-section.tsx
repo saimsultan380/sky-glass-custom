@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Check } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
 import { whatsappPlanEnquiryUrl } from "@/lib/site";
@@ -8,126 +10,160 @@ import {
   DEVICE_COUNTS,
   DURATION_LABELS,
   PLAN_DURATIONS,
-  deviceRowLabel,
-  formatGbp,
-  priceMatrix,
+  PREMIUM_MATRIX,
+  STANDARD_MATRIX,
+  type DeviceCount,
+  type PlanDurationMonths,
   type PlanTier,
 } from "@/lib/pricing";
 
-function PricingTable({ tier }: { tier: PlanTier }) {
-  const matrix = priceMatrix(tier);
-  const accent = tier === "Standard" ? "#7B2FFF" : undefined;
+function accountLabel(count: DeviceCount): string {
+  return count === 1 ? "1 Account" : `${count} Accounts`;
+}
+
+function streamLabel(count: DeviceCount): string {
+  if (count === 1) {
+    return "1 account — 1 simultaneous stream";
+  }
+  return `${count} accounts — ${count} simultaneous streams`;
+}
+
+const SHARED_FEATURES = [
+  "Available live TV and sports where included",
+  "Movies and series library",
+  "EPG support where available",
+  "Compatible devices with setup guidance",
+] as const;
+
+function DurationPriceCard({
+  accounts,
+  months,
+  features,
+}: {
+  accounts: DeviceCount;
+  months: PlanDurationMonths;
+  features: readonly string[];
+}) {
+  const [tier, setTier] = useState<PlanTier>("Standard");
+  const reduceMotion = useReducedMotion();
+  const matrix = tier === "Standard" ? STANDARD_MATRIX : PREMIUM_MATRIX;
+  const price = matrix[accounts][months];
+  const duration = DURATION_LABELS[months];
+  const isBest = months === 12;
 
   return (
-    <div className="overflow-hidden glass-card">
-      <div className="flex items-center justify-between gap-3 border-b border-[#0B0E2C]/10 px-4 py-3 sm:px-6 sm:py-4">
-        <div>
-          <h3 className="text-[16px] font-bold text-[#0B0E2C] sm:text-[18px]">
-            {tier} pricing
-          </h3>
-          <p className="mt-0.5 text-[12px] text-[#5C607A] sm:text-[13px]">
-            Total price for the full selected term
-          </p>
-        </div>
-        <div
-          className={cn(
-            "h-1.5 w-16 rounded-full sm:w-20",
-            tier === "Premium" && "bg-gradient-brand",
-          )}
-          style={accent ? { backgroundColor: accent } : undefined}
-          aria-hidden
-        />
-      </div>
+    <article
+      className={cn(
+        "group relative mx-auto flex w-full max-w-[320px] flex-col overflow-hidden glass-card card-hover-lift px-5 py-6 hover:-translate-y-1 sm:max-w-none sm:px-5 sm:py-7",
+        isBest && "ring-1 ring-[#E91E8C]/25",
+      )}
+    >
+      {isBest && (
+        <span className="absolute right-2 top-2 rounded-[20px] bg-gradient-brand px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white sm:right-2.5 sm:top-2.5 sm:text-[11px]">
+          Best value
+        </span>
+      )}
 
-      <div className="relative">
-        <p className="border-b border-[#0B0E2C]/8 px-4 py-2 text-[11px] text-[#5C607A] sm:hidden">
-          Swipe sideways to see every duration →
+      <div className="text-center">
+        <h4 className="text-[15px] font-bold uppercase tracking-tight text-gradient-brand sm:text-[16px]">
+          {months === 1 ? "1 Month" : `${months} Months`}
+        </h4>
+        <p className="mt-1 text-[12px] font-medium text-[#5C607A]">
+          Full amount payable
         </p>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] border-collapse text-left">
-            <thead>
-              <tr className="border-b border-[#0B0E2C]/10">
-                <th className="px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#5C607A] sm:px-6 sm:py-4 sm:text-[12px]">
-                  Simultaneous devices
-                </th>
-                {PLAN_DURATIONS.map((months) => (
-                  <th
-                    key={months}
-                    className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.06em] text-[#5C607A] sm:px-4 sm:py-4 sm:text-[12px]"
-                  >
-                    {DURATION_LABELS[months]}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {DEVICE_COUNTS.map((devices, rowIndex) => (
-                <tr
-                  key={devices}
-                  className={cn(
-                    "border-b border-[#0B0E2C]/8 last:border-b-0",
-                    rowIndex % 2 === 1 && "bg-[rgba(11,14,44,0.02)]",
-                  )}
-                >
-                  <th
-                    scope="row"
-                    className="whitespace-nowrap px-4 py-3 text-[13px] font-semibold text-[#0B0E2C] sm:px-6 sm:py-3.5 sm:text-[14px]"
-                  >
-                    {deviceRowLabel(devices)}
-                    {devices === 4 ? (
-                      <span className="ml-1 text-[11px] font-medium text-[#5C607A]">
-                        *
-                      </span>
-                    ) : null}
-                  </th>
-                  {PLAN_DURATIONS.map((months) => {
-                    const amount = matrix[devices][months];
-                    const price = formatGbp(amount);
-                    return (
-                      <td
-                        key={months}
-                        className="px-2 py-2.5 text-center sm:px-3 sm:py-3"
-                      >
-                        <a
-                          href={whatsappPlanEnquiryUrl({
-                            tier,
-                            devices,
-                            duration: DURATION_LABELS[months],
-                            price,
-                          })}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex min-w-[4.5rem] flex-col items-center justify-center rounded-[14px] px-2 py-2 text-[#0B0E2C] transition-colors hover:bg-[rgba(123,47,255,0.08)] sm:min-w-[5.5rem]"
-                        >
-                          <span className="text-[14px] font-bold sm:text-[15px]">
-                            {price}
-                          </span>
-                          <span className="mt-0.5 text-[10px] font-medium text-[#5C607A] sm:text-[11px]">
-                            Select
-                          </span>
-                        </a>
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      </div>
+
+      <div
+        className="relative mx-auto mt-4 inline-flex w-full max-w-[240px] items-center justify-center glass-card p-1"
+        role="tablist"
+        aria-label={`${duration} plan tier`}
+      >
+        {(["Standard", "Premium"] as const).map((type) => {
+          const active = tier === type;
+          return (
+            <button
+              key={type}
+              type="button"
+              role="tab"
+              aria-selected={active}
+              onClick={() => setTier(type)}
+              className={cn(
+                "relative z-[1] flex-1 rounded-[16px] px-2.5 py-2 text-[11px] font-bold transition-colors duration-300 sm:px-3 sm:text-[12px]",
+                active
+                  ? "text-white"
+                  : "text-[#5C607A] hover:text-[#0B0E2C]",
+              )}
+            >
+              {active && (
+                <motion.span
+                  layoutId={
+                    reduceMotion
+                      ? undefined
+                      : `plans-card-tier-${months}`
+                  }
+                  className="absolute inset-0 -z-[1] rounded-[16px] bg-gradient-brand shadow-[0_3px_10px_rgba(123,47,255,0.25)]"
+                  transition={
+                    reduceMotion
+                      ? { duration: 0 }
+                      : { type: "spring", stiffness: 380, damping: 32 }
+                  }
+                />
+              )}
+              {type}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mt-5 border-t border-[#0B0E2C]/10 pt-5 text-center">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-[#5C607A]">
+          {tier}
+        </span>
+        <div className="mt-1 text-[32px] font-bold leading-none tracking-tight text-gradient-brand sm:text-[36px]">
+          £{price}
         </div>
       </div>
 
-      <p className="border-t border-[#0B0E2C]/10 px-4 py-3 text-[12px] leading-[1.55] text-[#5C607A] sm:px-6 sm:py-4 sm:text-[13px]">
-        Prices are for the full selected term. Confirm availability, renewal
-        terms and any separate player charge before payment. *4-device totals
-        include the additional-connection rate used in the published matrix;
-        confirm this option when ordering.
-      </p>
-    </div>
+      <hr className="my-4 w-full border-[#0B0E2C]/10" />
+
+      <ul className="flex w-full flex-1 flex-col items-start gap-2 text-left">
+        {features.map((feature) => (
+          <li
+            key={feature}
+            className="flex items-start gap-2 text-[12px] font-medium leading-snug text-[#0B0E2C] sm:text-[13px]"
+          >
+            <Check
+              className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#2563EB]"
+              strokeWidth={3}
+            />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-5 flex justify-center">
+        <a
+          href={whatsappPlanEnquiryUrl({
+            tier,
+            devices: accounts,
+            duration,
+            price: `£${price}`,
+          })}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-[42px] w-auto items-center justify-center rounded-[20px] bg-gradient-brand px-5 py-2 text-[12px] font-bold uppercase tracking-wide text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[44px] sm:px-6 sm:text-[13px]"
+        >
+          Choose {tier}
+        </a>
+      </div>
+    </article>
   );
 }
 
 export function PricingTablesSection() {
-  const [tier, setTier] = useState<PlanTier>("Standard");
+  const [accounts, setAccounts] = useState<DeviceCount>(1);
+  const reduceMotion = useReducedMotion();
+  const features = [streamLabel(accounts), ...SHARED_FEATURES];
 
   return (
     <section
@@ -141,43 +177,99 @@ export function PricingTablesSection() {
             <span className="text-gradient-brand">Duration</span>
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-5 sm:text-base sm:leading-[1.75]">
-            Choose Standard or Premium, then compare total prices for 1–4
-            simultaneous devices across 1, 3, 6 and 12 months.
+            Choose how many screens can stream at the same time, then switch
+            Standard or Premium inside each card to compare total prices across
+            1, 3, 6 and 12 months.
           </p>
         </div>
 
-        <div className="mt-5 flex justify-center sm:mt-8">
+        <div className="mt-5 flex justify-center sm:mt-10">
           <div
-            className="relative inline-flex items-center glass-card p-1.5 sm:p-2"
+            className="inline-flex max-w-full flex-wrap items-center justify-center gap-1 glass-card p-1.5 sm:gap-0 sm:p-2"
             role="tablist"
-            aria-label="Plan tier"
+            aria-label="Simultaneous accounts"
           >
-            {(["Standard", "Premium"] as const).map((type) => {
-              const active = tier === type;
+            {DEVICE_COUNTS.map((count) => {
+              const active = accounts === count;
               return (
                 <button
-                  key={type}
+                  key={count}
                   type="button"
                   role="tab"
                   aria-selected={active}
-                  onClick={() => setTier(type)}
+                  onClick={() => setAccounts(count)}
                   className={cn(
-                    "relative z-[1] min-w-[120px] rounded-[20px] px-6 py-3 text-[14px] font-bold transition-colors duration-300 sm:min-w-[150px] sm:px-10 sm:py-3.5 sm:text-[16px]",
+                    "relative z-[1] rounded-[20px] px-3 py-2.5 text-[12px] font-bold transition-colors duration-300 sm:min-w-[110px] sm:px-5 sm:py-3 sm:text-[14px]",
                     active
-                      ? "bg-gradient-brand text-white"
+                      ? "text-white"
                       : "text-[#5C607A] hover:text-[#0B0E2C]",
                   )}
                 >
-                  {type}
+                  {active && (
+                    <motion.span
+                      layoutId={
+                        reduceMotion ? undefined : "plans-account-tab-pill"
+                      }
+                      className="absolute inset-0 -z-[1] rounded-[20px] bg-gradient-brand shadow-[0_4px_14px_rgba(123,47,255,0.28)]"
+                      transition={
+                        reduceMotion
+                          ? { duration: 0 }
+                          : { type: "spring", stiffness: 380, damping: 32 }
+                      }
+                    />
+                  )}
+                  {accountLabel(count)}
                 </button>
               );
             })}
           </div>
         </div>
 
-        <div className="mt-5 sm:mt-8">
-          <PricingTable tier={tier} />
-        </div>
+        <motion.div
+          key={`heading-${accounts}`}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: reduceMotion ? 0 : 0.28,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          }}
+          className="mx-auto mt-5 max-w-3xl text-center sm:mt-8"
+        >
+          <h3 className="text-[22px] font-bold tracking-tight text-[#0B0E2C] sm:text-[28px]">
+            {accountLabel(accounts)}
+          </h3>
+          <p className="mt-2 text-[13px] leading-[1.6] text-[#5C607A] sm:text-[15px]">
+            Full amount payable for the selected term. Use the Standard or
+            Premium toggle on each card to update its price.
+          </p>
+        </motion.div>
+
+        <motion.div
+          key={`cards-${accounts}`}
+          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: reduceMotion ? 0 : 0.32,
+            ease: [0.21, 0.47, 0.32, 0.98],
+          }}
+          className="mx-auto mt-6 grid max-w-[360px] gap-4 sm:mt-10 sm:max-w-[760px] sm:grid-cols-2 sm:gap-5 lg:max-w-[1200px] lg:grid-cols-4 lg:gap-5"
+        >
+          {PLAN_DURATIONS.map((months) => (
+            <DurationPriceCard
+              key={`${accounts}-${months}`}
+              accounts={accounts}
+              months={months}
+              features={features}
+            />
+          ))}
+        </motion.div>
+
+        <p className="mx-auto mt-6 max-w-3xl text-center text-[12px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:text-[13px]">
+          Prices are for the full selected term. Confirm availability, renewal
+          terms and any separate player charge before payment. 4-account totals
+          include the additional-connection rate used in the published matrix;
+          confirm this option when ordering.
+        </p>
       </Container>
     </section>
   );

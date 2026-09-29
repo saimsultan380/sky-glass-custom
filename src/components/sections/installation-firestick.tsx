@@ -9,6 +9,10 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { whatsappUrl } from "@/lib/site";
+import {
+  DOWNLOADER_CODE,
+  DownloaderCodeCard,
+} from "@/components/sections/downloader-code-card";
 
 const STEPS = [
   {
@@ -32,7 +36,7 @@ const STEPS = [
     icon: Package,
     color: "#7B2FFF",
     items: [
-      "Use the supplied download address or code, complete installation and open the app.",
+      `Open Downloader, enter code ${DOWNLOADER_CODE}, complete installation and open the app.`,
     ],
   },
   {
@@ -60,6 +64,10 @@ export function FirestickContent() {
         Set Up Sky Glass IPTV on{" "}
         <span className="text-gradient-brand">Firestick</span>
       </h3>
+
+      <div className="mt-5 sm:mt-6">
+        <DownloaderCodeCard deviceLabel="Firestick & Fire TV" />
+      </div>
 
       <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2">
         {STEPS.map((step, idx) => {
