@@ -8,15 +8,38 @@ type OverviewRow = {
 };
 
 const OVERVIEW_ROWS: OverviewRow[] = [
-  { device: "Compatible Firestick and Fire TV", method: "Service’s official app" },
-  { device: "Compatible Android TV and Google TV", method: "Service’s official Android app" },
-  { device: "Compatible Android phones and tablets", method: "Service’s official Android app" },
-  { device: "Samsung Smart TV", method: "Supported Samsung-platform player" },
-  { device: "LG Smart TV", method: "Supported LG-platform player" },
-  { device: "Apple TV", method: "Compatible tvOS player" },
-  { device: "iPhone and iPad", method: "Compatible iOS player" },
-  { device: "Windows", method: "Supported Windows player" },
-  { device: "Mac", method: "Supported macOS player" },
+  {
+    device: "Firestick and Fire TV Cube",
+    method: "Sky Glass app through Downloader",
+  },
+  {
+    device: "Android TV, Google TV, Android box, phone or tablet",
+    method: "Android app route",
+  },
+  {
+    device: "Formuler box and MYTVOnline",
+    method: "Android device section below",
+  },
+  {
+    device: "Samsung, LG, Sony, Hisense, TCL and Philips smart TVs",
+    method: "Supported TV player",
+  },
+  {
+    device: "iPhone, iPad and Apple TV",
+    method: "Supported iOS or tvOS player",
+  },
+  {
+    device: "Windows and Mac",
+    method: "Supported desktop player",
+  },
+  {
+    device: "Roku",
+    method: "Supported Roku player, if available for the model",
+  },
+  {
+    device: "MAG box and Enigma2",
+    method: "Model-specific setup from support",
+  },
 ];
 
 export function InstallationOverview() {
@@ -40,10 +63,10 @@ export function InstallationOverview() {
                 <thead>
                   <tr className="border-b border-[#0B0E2C]/10 bg-[rgba(11,14,44,0.02)]">
                     <th className="px-3 py-3 text-[12px] font-bold uppercase tracking-wide text-[#5C607A] sm:px-5 sm:py-4 sm:text-[13px]">
-                      Platform
+                      Device
                     </th>
                     <th className="px-3 py-3 text-[12px] font-bold uppercase tracking-wide text-[#5C607A] sm:px-5 sm:py-4 sm:text-[13px]">
-                      Application approach
+                      Setup route
                     </th>
                   </tr>
                 </thead>

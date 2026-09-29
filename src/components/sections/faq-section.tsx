@@ -15,32 +15,22 @@ const HOMEPAGE_FAQS: FaqItem[] = [
   {
     id: "satellite-dish",
     q: "Do I need a satellite dish?",
-    a: "No. The service uses an internet connection and a compatible application.",
-  },
-  {
-    id: "multiple-devices",
-    q: "Can I install the service on more than one device?",
-    a: "You can configure compatible devices, but simultaneous viewing depends on the connection allowance in your plan.",
-  },
-  {
-    id: "same-content",
-    q: "Does every subscription include the same content?",
-    a: "Standard and Premium offer different levels of access. Confirm specific channels, titles and features before purchasing.",
-  },
-  {
-    id: "every-stream-4k",
-    q: "Is every stream available in 4K?",
-    a: "No. Resolution varies by stream, and your equipment and connection also affect playback quality.",
-  },
-  {
-    id: "installation-support",
-    q: "Can I get help with installation?",
-    a: "Yes. Assistance is available for the service’s application and supported alternative players.",
+    a: "No. You need an internet connection and a compatible app or player.",
   },
   {
     id: "official-sky",
-    q: "Is this an official Sky service?",
-    a: "No. Sky Glass IPTV is an independent service and is not affiliated with Sky UK Limited, Sky Group or the official Sky Glass product.",
+    q: "Is Sky Glass IPTV the official Sky Glass TV service?",
+    a: "No. This is an independent service and is not affiliated with the official Sky Glass product.",
+  },
+  {
+    id: "same-channels",
+    q: "Does every plan contain the same individual channels?",
+    a: "Do not assume that it does. The cards show the same types of catalogue content. Ask support to confirm current individual channels, titles and the differences between Standard and Premium.",
+  },
+  {
+    id: "two-people",
+    q: "Can two people watch at once?",
+    a: "Only if your plan includes the required number of simultaneous connections. Confirm this before ordering.",
   },
 ];
 
@@ -199,11 +189,12 @@ export function FaqSection() {
       defaultOpenId="satellite-dish"
       title={
         <>
-          Frequently Asked{" "}
-          <span className="text-gradient-brand">Questions</span>
+          Homepage{" "}
+          <span className="text-gradient-brand">FAQs</span>
         </>
       }
       description=""
     />
   );
 }
+

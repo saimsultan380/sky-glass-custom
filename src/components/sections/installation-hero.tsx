@@ -15,21 +15,21 @@ export function InstallationHero() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV Installation Guide by{" "}
-              <span className="text-gradient-brand">Device</span>
+              Sky Glass App Download and{" "}
+              <span className="text-gradient-brand">Installation Guide</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Get your device ready for Sky Glass IPTV with an active
-                  account, a compatible player and the setup information
-                  supplied after confirmation.
+                  First identify your device, then follow its section. Have an
+                  active trial or subscription, a working internet connection and
+                  the account details supplied by support.
                 </p>
                 <p>
-                  Start by identifying your device. Firestick and Android
-                  installation differs from setup on Samsung, LG, Apple, Windows
-                  and Mac platforms.
+                  Your player may ask for a username and password, a server
+                  address, a playlist link or portal information. The correct
+                  format depends on the app. Keep those account details private.
                 </p>
               </div>
             </BlurReveal>
@@ -55,7 +55,7 @@ export function InstallationHero() {
             className="order-2 flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[560px] lg:max-w-none">
-              <HeroMedia alt="Sky Glass IPTV installation on a Firestick and Smart TV" />
+              <HeroMedia alt="Sky Glass app download and installation on Firestick and smart TV" />
             </div>
           </BlurReveal>
         </div>

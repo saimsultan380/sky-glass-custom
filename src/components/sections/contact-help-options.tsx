@@ -1,46 +1,45 @@
 import { Container } from "@/components/layout/container";
-import { Clock, MessageCircle, Monitor, RefreshCw, Wrench, Users } from "lucide-react";
+import {
+  MessageCircle,
+  Monitor,
+  PlayCircle,
+  RefreshCw,
+  Users,
+} from "lucide-react";
 
 const helpOptions = [
   {
-    title: "Request a Trial",
+    title: "Trial or subscription",
     description:
-      "Tell us the device you plan to use. A 24-hour trial allows you to assess compatibility, navigation and playback before choosing a subscription.",
-    icon: Clock,
-    color: "#FF6B2C",
-  },
-  {
-    title: "Ask About Pricing",
-    description:
-      "Get help comparing Standard and Premium, subscription lengths and connection requirements.",
+      "Share your device, preferred duration, simultaneous connection needs and any content you want checked.",
     icon: MessageCircle,
     color: "#7B2FFF",
   },
   {
-    title: "Complete Your Installation",
+    title: "Installation",
     description:
-      "Ask about an appropriate player, account configuration or a problem during setup.",
+      "Include your exact device model, player name and the step where you got stuck.",
     icon: Monitor,
     color: "#2563EB",
   },
   {
-    title: "Discuss a Renewal or Upgrade",
+    title: "Login or playback",
     description:
-      "Provide enough information for the team to identify your account and explain the change you want to discuss.",
+      "Provide the error message, whether the problem affects one stream or several, and what you have already tried.",
+    icon: PlayCircle,
+    color: "#FF6B2C",
+  },
+  {
+    title: "Renewal",
+    description:
+      "Give enough information to identify your account and tell us which duration you want to discuss.",
     icon: RefreshCw,
     color: "#E91E8C",
   },
   {
-    title: "Report a Playback Problem",
+    title: "Reseller panel",
     description:
-      "Describe what happens, when it started and whether it affects one stream or the wider application.",
-    icon: Wrench,
-    color: "#FF6B2C",
-  },
-  {
-    title: "Make a Reseller Enquiry",
-    description:
-      "Tell us about your expected customer volume and the package information you need.",
+      "Ask about the current price and terms for the minimum 120-credit starting purchase.",
     icon: Users,
     color: "#7B2FFF",
   },
@@ -52,8 +51,8 @@ export function ContactHelpOptions() {
       <Container>
         <div className="text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            How Can We{" "}
-            <span className="text-gradient-brand">Help?</span>
+            How can we{" "}
+            <span className="text-gradient-brand">help?</span>
           </h2>
         </div>
 
@@ -64,7 +63,8 @@ export function ContactHelpOptions() {
             return (
               <article
                 key={option.title}
-                className="group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-8">
+                className="group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-8"
+              >
                 <div className="relative z-10 flex h-full flex-1 flex-col">
                   <div className="flex items-center gap-2.5 sm:gap-4">
                     <div

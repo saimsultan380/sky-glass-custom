@@ -14,20 +14,20 @@ export function ResellerHero() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV Reseller{" "}
-              <span className="text-gradient-brand">Programme</span>
+              Sky Glass IPTV Reseller Panel for{" "}
+              <span className="text-gradient-brand">UK Customers</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  The Sky Glass IPTV reseller programme provides a panel for
-                  managing customer subscriptions and the credits used to
-                  activate eligible accounts.
+                  Create and manage eligible customer subscriptions through a
+                  reseller panel. The minimum purchase to create a panel is 120
+                  credits.
                 </p>
                 <p>
-                  Explore the package options, understand how credits are
-                  applied and confirm the terms before starting.
+                  Credits have no time limit, so you can use your remaining
+                  balance for eligible future activations and renewals.
                 </p>
               </div>
             </BlurReveal>
@@ -40,7 +40,7 @@ export function ResellerHero() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-4 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:w-auto sm:px-6 sm:py-3 sm:text-[14px]"
                 >
-                  Discuss Reseller Options
+                  Ask About a Reseller Panel
                 </a>
               </div>
             </BlurReveal>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/hero-section";
 import { SmarterIptvExperienceSection } from "@/components/sections/smarter-iptv-experience-section";
-import { PlansPricingSection } from "@/components/sections/plans-pricing-section";
 import { EntertainmentCategoriesSection } from "@/components/sections/entertainment-categories-section";
-import { WhyChooseSkyGlassSection } from "@/components/sections/why-choose-sky-glass-section";
 import { PopularDevicesSection } from "@/components/sections/popular-devices-section";
+import { PlansPricingSection } from "@/components/sections/plans-pricing-section";
+import { WhyChooseSkyGlassSection } from "@/components/sections/why-choose-sky-glass-section";
 import { FreeTrialSection } from "@/components/sections/free-trial-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { HomepageCtaSection } from "@/components/sections/homepage-cta-section";
@@ -19,10 +19,9 @@ export const metadata: Metadata = {
   description: pageDescriptions.home,
   keywords: [
     "Sky Glass IPTV",
-    "Sky Glass IPTV UK",
-    "Skyglass IPTV",
-    "IPTV UK",
-    "IPTV service UK",
+    "IPTV Sky Glass",
+    "SkyGlass IPTV",
+    "IPTV subscription for UK",
   ],
   alternates: {
     canonical: canonicalUrl(siteRoutes.home),
@@ -43,10 +42,10 @@ export default function Home() {
     <PageShell path={siteRoutes.home}>
       <HeroSection />
       <SmarterIptvExperienceSection />
-      <PlansPricingSection />
       <EntertainmentCategoriesSection />
-      <WhyChooseSkyGlassSection />
       <PopularDevicesSection />
+      <PlansPricingSection />
+      <WhyChooseSkyGlassSection />
       <FreeTrialSection />
       <FaqSection />
       <HomepageCtaSection />

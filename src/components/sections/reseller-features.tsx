@@ -1,46 +1,38 @@
 import { Container } from "@/components/layout/container";
 import {
-  KeyRound,
   UserPlus,
   Wallet,
   CalendarClock,
-  HeadphonesIcon,
+  RefreshCw,
 } from "lucide-react";
 
 const features = [
   {
-    title: "Panel Access",
+    title: "Create Customer Accounts",
     description:
-      "Receive the login information for your reseller account after activation.",
-    icon: KeyRound,
-    color: "#7B2FFF",
-  },
-  {
-    title: "Customer Account Tools",
-    description:
-      "Create available subscription types and select the appropriate duration for each customer.",
+      "Use the panel to create eligible customer accounts for the subscription types available to your panel.",
     icon: UserPlus,
     color: "#E91E8C",
   },
   {
-    title: "Credit Information",
+    title: "Check Credit Balance",
     description:
-      "Review your available balance and check the credits required for eligible activations or renewals.",
+      "Review your available credits before activating or renewing customer subscriptions.",
     icon: Wallet,
     color: "#FF6B2C",
   },
   {
-    title: "Subscription Records",
+    title: "Account Status & Expiry",
     description:
-      "Monitor account status and expiry information so you can organise renewal conversations.",
+      "Review account status and expiry dates so you know when renewals may be needed.",
     icon: CalendarClock,
     color: "#2563EB",
   },
   {
-    title: "Reseller Assistance",
+    title: "Organise Renewals",
     description:
-      "Ask for help with panel access, account creation, credit usage and common management questions.",
-    icon: HeadphonesIcon,
+      "Use panel records to help organise renewals as your customer base grows.",
+    icon: RefreshCw,
     color: "#7B2FFF",
   },
 ];
@@ -49,21 +41,33 @@ export function ResellerFeatures() {
   return (
     <section className="border-b border-[#0B0E2C]/10 bg-transparent py-10 sm:py-16 lg:py-24">
       <Container>
-        <div className="text-center">
+        <div className="mx-auto max-w-3xl text-center sm:text-left">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            What You{" "}
-            <span className="text-gradient-brand">Receive</span>
+            What Can I Do in the{" "}
+            <span className="text-gradient-brand">Panel?</span>
           </h2>
+          <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.75]">
+            Use the panel to create eligible customer accounts, check your
+            credit balance and review account status and expiry dates. It can
+            also help you organise renewals as your customer base grows.
+          </p>
+          <p className="mt-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.75]">
+            You handle your customer relationships, retail pricing and
+            payments. Give customers accurate information about their plan,
+            device setup, account duration and simultaneous connection
+            allowance.
+          </p>
         </div>
 
-        <div className="mt-6 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {features.map((feature) => {
             const Icon = feature.icon;
 
             return (
               <article
                 key={feature.title}
-                className="group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-8">
+                className="group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-8"
+              >
                 <div className="relative z-10 flex h-full flex-1 flex-col">
                   <div className="flex items-center gap-2.5 sm:gap-4">
                     <div
@@ -72,7 +76,7 @@ export function ResellerFeatures() {
                     >
                       <Icon className="h-4 w-4 sm:h-7 sm:w-7" />
                     </div>
-                    <h3 className="text-base font-bold text-[#0B0E2C] sm:text-xl">
+                    <h3 className="text-base font-bold text-[#0B0E2C] sm:text-lg">
                       {feature.title}
                     </h3>
                   </div>

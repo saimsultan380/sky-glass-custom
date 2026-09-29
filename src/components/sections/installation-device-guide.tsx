@@ -7,6 +7,7 @@ import {
   MonitorPlay,
   Smartphone,
   Laptop,
+  Box,
   ChevronRight,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -17,8 +18,15 @@ import { AndroidContent } from "@/components/sections/installation-android";
 import { SmartTvContent } from "@/components/sections/installation-smart-tv";
 import { AppleContent } from "@/components/sections/installation-apple";
 import { DesktopContent } from "@/components/sections/installation-desktop";
+import { OtherDevicesContent } from "@/components/sections/installation-other";
 
-type DeviceId = "firestick" | "android" | "smart-tv" | "apple" | "desktop";
+type DeviceId =
+  | "firestick"
+  | "android"
+  | "smart-tv"
+  | "apple"
+  | "desktop"
+  | "other";
 
 type DeviceNavItem = {
   id: DeviceId;
@@ -32,43 +40,51 @@ type DeviceNavItem = {
 const DEVICES: DeviceNavItem[] = [
   {
     id: "firestick",
-    label: "Firestick & Fire TV",
-    description: "Service’s official app",
+    label: "Firestick & Fire TV Cube",
+    description: "Sky Glass app through Downloader",
     icon: Tv,
     color: "#FF6B2C",
     content: <FirestickContent />,
   },
   {
     id: "android",
-    label: "Android TV & Android Devices",
-    description: "Service’s official Android app",
+    label: "Android (+ Formuler)",
+    description: "Android app route & MYTVOnline",
     icon: MonitorSmartphone,
     color: "#2563EB",
     content: <AndroidContent />,
   },
   {
     id: "smart-tv",
-    label: "Samsung & LG Smart TVs",
-    description: "Supported Smart TV players",
+    label: "Smart TV",
+    description: "Samsung, LG, Sony, Hisense, TCL, Philips",
     icon: MonitorPlay,
     color: "#7B2FFF",
     content: <SmartTvContent />,
   },
   {
     id: "apple",
-    label: "Apple TV, iPhone & iPad",
-    description: "Compatible Apple-platform player",
+    label: "Apple",
+    description: "iPhone, iPad & Apple TV",
     icon: Smartphone,
     color: "#E91E8C",
     content: <AppleContent />,
   },
   {
     id: "desktop",
-    label: "Windows PCs & Mac",
-    description: "Supported desktop players",
+    label: "Desktop",
+    description: "Windows & Mac",
     icon: Laptop,
     color: "#0B0E2C",
     content: <DesktopContent />,
+  },
+  {
+    id: "other",
+    label: "Other",
+    description: "Roku, MAG & Enigma2",
+    icon: Box,
+    color: "#FF6B2C",
+    content: <OtherDevicesContent />,
   },
 ];
 
@@ -123,7 +139,7 @@ export function InstallationDeviceGuide() {
         <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
             Device Setup for{" "}
-            <span className="text-gradient-brand">Sky Glass IPTV</span>
+            <span className="text-gradient-brand">Sky Glass</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-4 sm:text-base sm:leading-[1.8]">
             Select your device to view the matching setup steps.
@@ -131,7 +147,6 @@ export function InstallationDeviceGuide() {
         </div>
 
         <div className="mt-5 grid gap-4 lg:mt-10 lg:grid-cols-[minmax(200px,260px)_minmax(0,1fr)] lg:items-start lg:gap-6 xl:gap-8">
-          {/* Device navigation */}
           <nav
             aria-label="Device installation guides"
             className="lg:sticky lg:top-28"
@@ -203,7 +218,6 @@ export function InstallationDeviceGuide() {
             </ul>
           </nav>
 
-          {/* Content panel */}
           <div
             ref={contentRef}
             id={`install-${activeDevice.id}`}

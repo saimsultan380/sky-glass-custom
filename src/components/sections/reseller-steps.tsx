@@ -4,17 +4,17 @@ import { MessageCircle, FileText, KeyRound, UserPlus } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "Explain Your Requirements",
+    title: "Describe Your Plans",
     description:
-      "Tell the reseller team about your expected customer volume and the subscription durations you intend to offer.",
+      "Tell the reseller team about your expected customer volume and subscription durations.",
     icon: MessageCircle,
     color: "#FF6B2C",
   },
   {
     number: "02",
-    title: "Review the Package Terms",
+    title: "Review the Terms",
     description:
-      "Confirm the price, credit allocation, expiry conditions, available account types and support arrangements.",
+      "Confirm the purchase price for at least 120 credits, available account types and support arrangements.",
     icon: FileText,
     color: "#E91E8C",
   },
@@ -22,15 +22,15 @@ const steps = [
     number: "03",
     title: "Receive Panel Access",
     description:
-      "After confirmation and activation, use the supplied details to access your account.",
+      "Once your arrangement is confirmed, use the supplied credentials to sign in.",
     icon: KeyRound,
     color: "#7B2FFF",
   },
   {
     number: "04",
-    title: "Learn the Account Process",
+    title: "Learn the Workflow",
     description:
-      "Review how to create subscriptions, check balances and handle eligible renewals before accepting orders.",
+      "Practise checking the required credits, creating an eligible account and finding its expiry date before accepting customer orders.",
     icon: UserPlus,
     color: "#2563EB",
   },
@@ -42,7 +42,7 @@ export function ResellerSteps() {
       <Container>
         <div className="text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Getting{" "}
+            How to Get{" "}
             <span className="text-gradient-brand">Started</span>
           </h2>
         </div>
@@ -85,7 +85,8 @@ export function ResellerSteps() {
             return (
               <div
                 key={step.number}
-                className="relative flex flex-col gap-3 overflow-hidden glass-card p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8">
+                className="relative flex flex-col gap-3 overflow-hidden glass-card p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8"
+              >
                 <div
                   className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] glass-card sm:h-20 sm:w-20"
                   style={{ color: step.color }}

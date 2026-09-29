@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   },
   description: pageDescriptions.contactUs,
   keywords: [
-    "Contact Sky Glass IPTV",
-    "IPTV free trial UK",
     "Sky Glass IPTV support",
-    "IPTV setup support UK",
+    "IPTV setup help UK",
+    "Sky Glass login help",
+    "IPTV subscription support",
   ],
   alternates: {
     canonical: canonicalUrl(siteRoutes.contact),

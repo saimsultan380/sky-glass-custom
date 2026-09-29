@@ -16,11 +16,12 @@ export const metadata: Metadata = {
   },
   description: pageDescriptions.installationGuide,
   keywords: [
-    "Sky Glass IPTV Installation Guide",
-    "IPTV installation guide",
-    "IPTV setup guide",
-    "install IPTV on Firestick",
-    "IPTV Smart TV setup",
+    "Sky Glass app installation",
+    "Sky Glass app download",
+    "Sky Glass Downloader",
+    "Downloader code for Sky Glass",
+    "Sky Glass username and password",
+    "Sky Glass APK",
   ],
   alternates: {
     canonical: canonicalUrl(siteRoutes.installation),

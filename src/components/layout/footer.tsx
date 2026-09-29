@@ -113,18 +113,13 @@ export function Footer() {
           <h3 className="text-[14px] font-bold text-[#0B0E2C]">
             Independent Service Notice
           </h3>
-          <div className="mt-4 grid gap-5 text-[13px] leading-[1.7] text-[#5C607A] sm:grid-cols-2 lg:gap-8">
-            <p>
-              Sky Glass IPTV operates independently and has no affiliation,
-              sponsorship or endorsement relationship with Sky UK Limited, Sky
-              Group or the official Sky Glass product.
-            </p>
-            <p>
-              Other companies’ names and products are referenced to explain
-              identification or compatibility. Their trademarks remain the
-              property of their respective owners.
-            </p>
-          </div>
+          <p className="mt-4 max-w-4xl text-[13px] leading-[1.7] text-[#5C607A]">
+            Sky Glass IPTV is an independent service and is not affiliated with
+            Sky UK Limited, Sky Group or the official Sky Glass television
+            product. Third-party device and app names are used to explain setup
+            and compatibility; their trademarks belong to their respective
+            owners.
+          </p>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#0B0E2C]/10 pt-8 sm:flex-row">

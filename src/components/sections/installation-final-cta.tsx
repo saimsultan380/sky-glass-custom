@@ -30,7 +30,7 @@ export function InstallationFinalCta() {
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:py-3 sm:text-[14px]"
             >
               <Headphones className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
-              Contact Setup Support
+              Get Device Setup Help
             </a>
           </div>
         </div>

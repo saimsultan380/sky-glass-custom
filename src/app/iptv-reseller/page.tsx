@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/layout/page-shell";
 import { ResellerHero } from "@/components/sections/reseller-hero";
-import { ResellerIntro } from "@/components/sections/reseller-intro";
 import { ResellerFeatures } from "@/components/sections/reseller-features";
 import { ResellerPackages } from "@/components/sections/reseller-packages";
 import { ResellerCredits } from "@/components/sections/reseller-credits";
@@ -23,10 +22,11 @@ export const metadata: Metadata = {
   },
   description: pageDescriptions.resellerPanel,
   keywords: [
-    "Sky Glass IPTV Reseller UK",
-    "IPTV reseller UK",
     "IPTV reseller panel",
-    "IPTV reseller programme",
+    "IPTV reseller UK",
+    "IPTV UK reseller",
+    "IPTV panel",
+    "reseller credits",
   ],
   alternates: {
     canonical: canonicalUrl(siteRoutes.reseller),
@@ -49,10 +49,9 @@ export default function ResellerPanelPage() {
   return (
     <PageShell path={siteRoutes.reseller} className="flex flex-col">
       <ResellerHero />
-      <ResellerIntro />
+      <ResellerCredits />
       <ResellerFeatures />
       <ResellerPackages />
-      <ResellerCredits />
       <ResellerSteps />
       <ResellerResponsibilities />
       <ResellerFaq />

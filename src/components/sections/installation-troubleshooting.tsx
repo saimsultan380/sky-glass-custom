@@ -3,59 +3,51 @@ import {
   Key,
   RotateCcw,
   WifiOff,
-  AlertTriangle,
   CreditCard,
   Check,
+  KeyRound,
 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 
 const PROBLEMS = [
   {
-    title: "The Application Will Not Install",
+    title: "The app will not install",
     icon: XCircle,
     color: "#FF6B2C",
     items: [
-      "Check device compatibility and available storage. Confirm that the download completed and that you are using the installation method intended for your platform.",
+      "Check device compatibility, free storage, the download and any installation permission requested on screen.",
     ],
   },
   {
-    title: "My Login Is Rejected",
+    title: "The login is rejected",
     icon: Key,
     color: "#E91E8C",
     items: [
-      "Compare the details with the original message. Check capital letters, punctuation and extra spaces. Confirm that you selected the correct login method.",
+      "Recheck the details and make sure you chose the correct login method for the player.",
     ],
   },
   {
-    title: "The Categories Do Not Load",
+    title: "The playlist does not load",
     icon: RotateCcw,
     color: "#7B2FFF",
     items: [
-      "Check your internet connection and account status. Close and reopen the application, then allow time for the content to load.",
+      "Confirm that the device is online and the account is active. Close and reopen the player after checking the entered details.",
     ],
   },
   {
-    title: "Playback Keeps Pausing",
+    title: "Playback pauses",
     icon: WifiOff,
     color: "#2563EB",
     items: [
-      "Try another stream and note whether the problem affects one channel or the whole application. Where practical, test a wired connection or stronger Wi-Fi signal.",
+      "Try another stream. If several are affected, test a stronger Wi-Fi connection or Ethernet where practical and report whether the problem affects all streams.",
     ],
   },
   {
-    title: "Programme Information Is Missing",
-    icon: AlertTriangle,
-    color: "#7B2FFF",
-    items: [
-      "Refresh the programme guide if your player supports it. Some channels may not provide complete schedule information.",
-    ],
-  },
-  {
-    title: "The Player Requests Payment",
+    title: "A player requests payment",
     icon: CreditCard,
     color: "#E91E8C",
     items: [
-      "A third-party player may require its own activation. This is separate from the service subscription.",
+      "Check whether this is the player developer's separate activation charge. Paying that charge does not create an IPTV subscription.",
     ],
   },
 ];
@@ -69,8 +61,37 @@ export function InstallationTroubleshooting() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Common{" "}
-            <span className="text-gradient-brand">Setup Problems</span>
+            Sky Glass Username and{" "}
+            <span className="text-gradient-brand">Password Help</span>
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-6 max-w-3xl glass-card p-5 sm:mt-10 sm:p-8">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] bg-[#E91E8C]/10 text-[#E91E8C] sm:h-11 sm:w-11">
+              <KeyRound className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2} />
+            </span>
+            <div className="min-w-0 space-y-3 text-[14px] leading-[1.6] text-[#5C607A] sm:space-y-4 sm:text-[15px] sm:leading-[1.75]">
+              <p>
+                Type your username and password exactly as supplied. Check capital
+                letters, punctuation and spaces at the start or end of a field. If
+                the player also asks for a server address, enter the corresponding
+                address supplied for your account.
+              </p>
+              <p>
+                A playlist link or portal setup uses different fields from a
+                username and password login. If you are unsure which screen to
+                choose, send support the app name and a description of the
+                screen, without posting your password publicly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl text-center sm:mt-16">
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
+            Common Installation{" "}
+            <span className="text-gradient-brand">Problems</span>
           </h2>
         </div>
 

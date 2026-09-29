@@ -3,9 +3,9 @@ import { Container } from "@/components/layout/container";
 
 const REQUIREMENTS = [
   "An active trial or subscription.",
-  "Your supported device and its remote or controls.",
   "A working internet connection.",
-  "The account details supplied after activation.",
+  "The account details supplied by support.",
+  "Your supported device and its remote or controls.",
   "Access to the appropriate application store or installation settings.",
   "Enough storage for the application.",
 ];
@@ -31,7 +31,9 @@ export function InstallationRequirements() {
             <span className="text-gradient-brand">Starting</span>
           </h2>
           <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            Have the following ready:
+            Your player may ask for a username and password, a server address, a
+            playlist link or portal information. The correct format depends on the
+            app.
           </p>
         </div>
 
@@ -63,8 +65,7 @@ export function InstallationRequirements() {
               </h3>
             </div>
             <p className="mt-2 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-3 sm:text-[13px]">
-              Depending on the player, your details may include a username,
-              password, server address, playlist link or portal information.
+              Depending on the player, your details may include:
             </p>
             <ul className="mt-2.5 space-y-1.5 sm:mt-4 sm:space-y-2.5">
               {ACTIVATION_DATA.map((item) => (
@@ -86,9 +87,12 @@ export function InstallationRequirements() {
               <ShieldAlert className="h-4 w-4 sm:h-5 sm:w-5" />
             </span>
             <div>
+              <p className="text-[14px] font-semibold text-[#0B0E2C] sm:text-[15px]">
+                Keep those account details private
+              </p>
               <p className="mt-1 text-[14px] leading-[1.55] text-[#5C607A] sm:text-[14px] sm:leading-[1.7]">
-                Enter these details only in the application intended for your
-                setup.
+                Enter them only in the application intended for your setup. Do not
+                post passwords publicly when asking for help.
               </p>
             </div>
           </div>

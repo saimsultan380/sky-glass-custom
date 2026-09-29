@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { Headphones, Tag } from "lucide-react";
+import { Clock, Headphones } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { siteRoutes } from "@/lib/routes";
+import { whatsappFreeTrialUrl, whatsappUrl } from "@/lib/site";
 
 export function PlansCtaSection() {
   return (
@@ -12,36 +11,31 @@ export function PlansCtaSection() {
       <Container>
         <div className="mx-auto max-w-5xl glass-card px-5 py-8 text-center sm:px-10 sm:py-16">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Ready to Compare a{" "}
-            <span className="text-gradient-brand">Price?</span>
+            Ready to choose a{" "}
+            <span className="text-gradient-brand">plan?</span>
           </h2>
-
-          <div className="mx-auto mt-4 max-w-3xl space-y-2 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:space-y-4 sm:text-base sm:leading-[1.8]">
-            <p>
-              Pick your tier, simultaneous devices and term above, then send
-              the selection to confirm availability before payment.
-            </p>
-          </div>
-
-          <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-10 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+          <p className="mx-auto mt-3 max-w-3xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base">
+            Ask about a package and duration, or request a trial first.
+          </p>
+          <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-10 sm:flex sm:justify-center sm:gap-4">
             <a
-              href="#pricing-tables"
-              className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px] sm:leading-normal"
+              href={whatsappUrl("Ask about a Sky Glass IPTV plan")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[48px] items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-3 py-2.5 text-center text-[11px] font-semibold text-white sm:px-6 sm:text-[14px]"
             >
-              <Tag className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
-              <span>Compare prices</span>
+              <Headphones className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
+              Ask About a Plan
             </a>
-            <Link
-              href={siteRoutes.contact}
-              className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug transition-opacity duration-150 hover:opacity-80 sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px] sm:leading-normal"
+            <a
+              href={whatsappFreeTrialUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-gradient-brand inline-flex min-h-[48px] items-center justify-center gap-1.5 rounded-[20px] px-3 py-2.5 text-center text-[11px] font-semibold sm:px-6 sm:text-[14px]"
             >
-              <Headphones
-                className="h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-4 sm:w-4"
-                strokeWidth={2}
-                aria-hidden
-              />
-              <span className="text-gradient-brand">Ask about a plan</span>
-            </Link>
+              <Clock className="h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
+              <span className="text-gradient-brand">Request a Trial</span>
+            </a>
           </div>
         </div>
       </Container>

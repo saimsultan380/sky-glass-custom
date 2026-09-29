@@ -16,12 +16,11 @@ const MESSAGE_INCLUDES = [
 ];
 
 const ENQUIRY_LABELS: Record<string, string> = {
-  trial: "Trial",
-  subscription: "Subscription",
+  trial_subscription: "Trial or subscription",
   installation: "Installation",
-  technical: "Technical support",
+  login_playback: "Login or playback",
   renewal: "Renewal",
-  reseller: "Reseller enquiry",
+  reseller: "Reseller panel",
 };
 
 const DEVICE_LABELS: Record<string, string> = {
@@ -174,12 +173,13 @@ export function ContactFormSection() {
                       className={fieldClassName}
                     >
                       <option value="">Select an option</option>
-                      <option value="trial">Trial</option>
-                      <option value="subscription">Subscription</option>
+                      <option value="trial_subscription">
+                        Trial or subscription
+                      </option>
                       <option value="installation">Installation</option>
-                      <option value="technical">Technical support</option>
+                      <option value="login_playback">Login or playback</option>
                       <option value="renewal">Renewal</option>
-                      <option value="reseller">Reseller enquiry</option>
+                      <option value="reseller">Reseller panel</option>
                     </select>
                   </div>
                 </div>
@@ -289,8 +289,8 @@ export function ContactFormSection() {
                 </ul>
 
                 <div className="mt-3 glass-card p-4 text-[14px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:p-5 sm:text-sm sm:leading-relaxed">
-                  Avoid including payment-card details, unrelated passwords or
-                  unnecessary personal information.
+                  Keep passwords, playlist links and payment-card information
+                  out of your message.
                 </div>
               </div>
             </div>

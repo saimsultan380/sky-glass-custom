@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   },
   description: pageDescriptions.subscriptionPlans,
   keywords: [
-    "Sky Glass IPTV Pricing",
-    "IPTV prices UK",
-    "IPTV plans UK",
-    "1–4 device IPTV",
+    "Sky Glass subscription",
+    "IPTV subscription UK",
+    "Sky Glass IPTV plans",
+    "Sky Glass IPTV pricing",
   ],
   alternates: {
     canonical: canonicalUrl(siteRoutes.plans),

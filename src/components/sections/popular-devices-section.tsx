@@ -1,41 +1,17 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  Tv,
-  MonitorSmartphone,
-  Monitor,
-} from "lucide-react";
+import { ArrowRight, MonitorSmartphone } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import type { LucideIcon } from "lucide-react";
 import { siteRoutes } from "@/lib/routes";
 
-type DeviceCard = {
-  icon: LucideIcon;
-  color: string;
-  title: string;
-  description: string;
-};
-
-const DEVICES: DeviceCard[] = [
-  {
-    icon: Tv,
-    color: "#FF6B2C",
-    title: "Firestick & Fire TV",
-    description: "Official application on compatible Amazon streaming devices.",
-  },
-  {
-    icon: MonitorSmartphone,
-    color: "#E91E8C",
-    title: "Android & Google TV",
-    description: "Official application on compatible Android streaming platforms.",
-  },
-  {
-    icon: Monitor,
-    color: "#2563EB",
-    title: "Smart TV, Apple & desktop",
-    description: "Supported third-party players where the official app is unavailable.",
-  },
-];
+const DEVICES = [
+  "Firestick and Fire TV Cube.",
+  "Android TV, Google TV, Android TV boxes, Android phones and tablets.",
+  "Formuler boxes and MYTVOnline.",
+  "Samsung, LG, Sony, Hisense, TCL and Philips smart TVs.",
+  "iPhone, iPad and Apple TV.",
+  "Windows and Mac.",
+  "Roku, MAG boxes and Enigma2 devices.",
+] as const;
 
 export function PopularDevicesSection() {
   return (
@@ -45,50 +21,47 @@ export function PopularDevicesSection() {
     >
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:mt-3 sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Watch on a Device That{" "}
-            <span className="text-gradient-brand">Suits You</span>
+          <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
+            Find your{" "}
+            <span className="text-gradient-brand">device</span>
           </h2>
-          <p className="mt-4 text-[14px] leading-[1.6] text-[#5C607A] sm:mt-6 sm:text-base sm:leading-[1.8]">
-            The player you need depends on your device. Use the installation
-            guide for model-specific steps.
+          <p className="mx-auto mt-3 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-5 sm:text-base sm:leading-[1.75]">
+            The{" "}
+            <Link
+              href={siteRoutes.installation}
+              className="font-semibold text-[#0B0E2C] underline-offset-2 hover:underline"
+            >
+              installation guide
+            </Link>{" "}
+            covers:
           </p>
         </div>
 
-        <div className="mt-6 grid gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-5">
-          {DEVICES.map((device) => {
-            const Icon = device.icon;
-            return (
-              <article
-                key={device.title}
-                className="group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-6"
-              >
-                <span
-                  className="flex h-10 w-10 items-center justify-center rounded-[20px] sm:h-12 sm:w-12"
-                  style={{
-                    color: device.color,
-                    backgroundColor: `${device.color}15`,
-                  }}
-                >
-                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.75} aria-hidden />
-                </span>
-                <h3 className="mt-3 text-base font-bold tracking-tight text-[#0B0E2C] sm:mt-4 sm:text-lg">
-                  {device.title}
-                </h3>
-                <p className="mt-2 text-[13px] leading-[1.55] text-[#5C607A] sm:text-[14px]">
-                  {device.description}
-                </p>
-              </article>
-            );
-          })}
-        </div>
+        <ul className="mx-auto mt-6 grid max-w-3xl gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
+          {DEVICES.map((device) => (
+            <li key={device} className="glass-card flex items-start gap-3 p-4 sm:p-5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[20px] bg-[#7B2FFF]/10 text-[#7B2FFF]">
+                <MonitorSmartphone className="h-4 w-4" strokeWidth={1.75} />
+              </span>
+              <span className="text-[14px] font-medium leading-[1.55] text-[#0B0E2C] sm:text-[15px]">
+                {device}
+              </span>
+            </li>
+          ))}
+        </ul>
 
-        <div className="mt-6 flex justify-center sm:mt-10">
+        <p className="mx-auto mt-5 max-w-3xl text-center text-[14px] leading-[1.6] text-[#5C607A] sm:mt-8 sm:text-base">
+          The app you need depends on the exact device model and operating
+          system. If you do not know which route applies, send the model number
+          to support before installing or paying for a player.
+        </p>
+
+        <div className="mt-5 flex justify-center sm:mt-8">
           <Link
             href={siteRoutes.installation}
-            className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white transition-opacity duration-150 hover:opacity-90 sm:min-h-[48px] sm:w-auto sm:py-3 sm:text-[14px]"
+            className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[20px] bg-gradient-brand px-6 py-2.5 text-[13px] font-semibold text-white sm:min-h-[48px] sm:text-[14px]"
           >
-            View the Installation Guide
+            Find Installation Steps for My Device
             <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden />
           </Link>
         </div>

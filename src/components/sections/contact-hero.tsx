@@ -31,10 +31,9 @@ export function ContactHero() {
             <BlurReveal variant="text" delay={0.1}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Tell us what you want to do and which device you use. Whether
-                  you are requesting a trial, choosing a subscription or
-                  resolving a setup issue, the right details help us understand
-                  your enquiry.
+                  Tell us what you are trying to do and which device you have. A
+                  model number, app name and clear description help support
+                  give you the right instructions.
                 </p>
                 <p className="flex items-center gap-2 font-medium text-[#0B0E2C]">
                   <Phone className="h-4 w-4 shrink-0 text-[#E91E8C]" strokeWidth={1.75} />

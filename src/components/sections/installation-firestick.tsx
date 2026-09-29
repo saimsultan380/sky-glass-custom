@@ -1,121 +1,53 @@
-import {
-  Download,
-  Settings2,
-  Package,
-  LogIn,
-  Headphones,
-  ArrowRight,
-  CloudDownload,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Headphones, ArrowRight, Info } from "lucide-react";
 import { whatsappUrl } from "@/lib/site";
-import {
-  DOWNLOADER_CODE,
-  DownloaderCodeCard,
-} from "@/components/sections/downloader-code-card";
+import { DownloaderCodeCard } from "@/components/sections/downloader-code-card";
 
 const STEPS = [
-  {
-    title: "Obtain the Current Installation Instructions",
-    icon: Download,
-    color: "#FF6B2C",
-    items: [
-      "Use the download information supplied through the service’s support channel. Check that the instructions apply to your Fire TV model.",
-    ],
-  },
-  {
-    title: "Prepare the Device",
-    icon: Settings2,
-    color: "#E91E8C",
-    items: [
-      "Follow the supplied steps for obtaining the required installer and granting any necessary installation permission. Menu names can differ between Fire TV versions.",
-    ],
-  },
-  {
-    title: "Install the Application",
-    icon: Package,
-    color: "#7B2FFF",
-    items: [
-      `Open Downloader, enter code ${DOWNLOADER_CODE}, complete installation and open the app.`,
-    ],
-  },
-  {
-    title: "Enter Your Account Details",
-    icon: LogIn,
-    color: "#2563EB",
-    items: [
-      "Type the supplied information carefully. Check punctuation and remove accidental spaces.",
-    ],
-  },
-  {
-    title: "Allow the Categories to Load",
-    icon: CloudDownload,
-    color: "#FF6B2C",
-    items: [
-      "Wait for loading to finish before testing a stream. If the app reports an error, note the exact message before contacting support.",
-    ],
-  },
+  "Open Downloader and allow the permissions it needs. If Fire TV prompts you to permit app installation through Downloader, follow its on-screen settings.",
+  "Enter 9557305 in Downloader.",
+  "Follow the prompts to install the Sky Glass app. If the code opens an unexpected destination, stop and confirm it with support.",
+  "Open the installed app and allow its necessary permissions.",
+  "Choose Add Playlist and enter the details provided by support exactly as supplied.",
+  "Save the playlist, allow it to load and test a stream.",
 ];
 
 export function FirestickContent() {
   return (
     <div>
       <h3 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[32px] sm:leading-[1.15] lg:text-[38px]">
-        Set Up Sky Glass IPTV on{" "}
-        <span className="text-gradient-brand">Firestick</span>
+        Firestick and{" "}
+        <span className="text-gradient-brand">Fire TV Cube</span>
       </h3>
 
       <div className="mt-5 sm:mt-6">
-        <DownloaderCodeCard deviceLabel="Firestick & Fire TV" />
+        <DownloaderCodeCard deviceLabel="Firestick & Fire TV Cube" />
       </div>
 
-      <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2">
-        {STEPS.map((step, idx) => {
-          const Icon = step.icon;
-          return (
-            <div
-              key={step.title}
-              className={cn(
-                "group relative flex flex-col overflow-hidden glass-card card-hover-lift p-5 hover:-translate-y-1 sm:p-6",
-                idx === STEPS.length - 1 && "md:col-span-2"
-              )}>
-              <div className="relative z-10 flex h-full flex-col">
-                <div className="flex items-center gap-2.5 sm:gap-3">
-                  <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] sm:h-11 sm:w-11"
-                    style={{
-                      color: step.color,
-                      backgroundColor: `${step.color}15`,
-                    }}
-                  >
-                    <Icon className="h-3.5 w-3.5 sm:h-5 sm:w-5" strokeWidth={1.75} />
-                  </span>
-                  <h3 className="min-w-0 flex-1 text-[14px] font-bold leading-snug text-[#0B0E2C] sm:text-lg">
-                    {step.title}
-                  </h3>
-                  <span className="shrink-0 text-[10px] font-bold tracking-wider text-[#5C607A] sm:text-[12px]">
-                    STEP {String(idx + 1).padStart(2, "0")}
-                  </span>
-                </div>
+      <ol className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
+        {STEPS.map((step, idx) => (
+          <li
+            key={idx}
+            className="flex items-start gap-3 glass-card p-4 sm:gap-4 sm:p-5"
+          >
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FF6B2C]/10 text-[12px] font-bold text-[#FF6B2C] sm:h-9 sm:w-9 sm:text-[13px]">
+              {idx + 1}
+            </span>
+            <p className="min-w-0 flex-1 text-[14px] leading-[1.6] text-[#5C607A] sm:text-[15px] sm:leading-[1.75]">
+              {step}
+            </p>
+          </li>
+        ))}
+      </ol>
 
-                <ul className="mt-2.5 flex-1 space-y-1.5 sm:mt-4 sm:space-y-2.5">
-                  {step.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-[13px] leading-snug text-[#5C607A] sm:gap-2.5 sm:text-[14px] sm:leading-relaxed"
-                    >
-                      <span
-                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
-                        style={{ backgroundColor: step.color }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          );
-        })}
+      <div className="mt-5 flex items-start gap-2.5 glass-card p-5 sm:mt-6 sm:gap-3 sm:p-6">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[20px] bg-[#2563EB]/10 text-[#2563EB]">
+          <Info className="h-3.5 w-3.5 sm:h-5 sm:w-5" strokeWidth={1.75} />
+        </span>
+        <p className="text-[14px] leading-[1.55] text-[#5C607A] sm:text-[14px] sm:leading-relaxed">
+          <span className="font-semibold text-[#0B0E2C]">9557305</span> is the
+          Sky Glass Downloader code for the app. It is not your account password
+          or subscription activation code.
+        </p>
       </div>
 
       <div className="mt-5 sm:mt-8">

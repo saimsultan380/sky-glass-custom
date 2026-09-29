@@ -9,9 +9,9 @@
 export const siteConfig = {
   name: "Sky Glass IPTV",
   shortName: "Sky Glass",
-  tagline: "Live TV, Sports, Movies & Series in One Place",
+  tagline: "IPTV Subscription For UK",
   description:
-    "Explore Sky Glass IPTV, an independent internet-based TV service for UK viewers. See available entertainment, check supported devices and find pricing or setup help.",
+    "Explore Sky Glass IPTV subscriptions for UK viewers. Compare plans, check supported devices, request a 24-hour trial and get help with installation.",
   /** Production origin — always non-www, no trailing slash */
   siteUrl: "https://skyglass-iptv.co",
   email: "support@skyglass-iptv.co",
@@ -154,23 +154,23 @@ export function breadcrumbJsonLd(crumbs: BreadcrumbCrumb[]) {
 
 /** Exact SERP titles (shown in Google + browser tab) */
 export const pageTitles = {
-  home: "Sky Glass IPTV UK | Live TV & Subscription Options",
-  subscriptionPlans: "Sky Glass IPTV Pricing UK | 1–4 Device Plans",
-  installationGuide: "Sky Glass IPTV Setup Guide | Firestick, Smart TV & More",
-  resellerPanel: "Sky Glass IPTV Reseller Panel | Credits & Accounts",
-  contactUs: "Contact Sky Glass IPTV | Trial & Setup Support",
+  home: "Sky Glass IPTV | IPTV Subscription For UK",
+  subscriptionPlans: "Sky Glass Subscription UK | IPTV Plans & Pricing",
+  installationGuide: "Sky Glass App Download & Installation Guide UK",
+  resellerPanel: "IPTV Reseller Panel UK | Credits & Account Management",
+  contactUs: "Sky Glass IPTV Support UK | Setup & Account Help",
 } as const;
 
 export const pageDescriptions = {
   home: siteConfig.description,
   subscriptionPlans:
-    "Compare Sky Glass IPTV prices by subscription length, Standard or Premium access, and 1–4 simultaneous devices. Check the full term cost and what each option includes.",
+    "Compare Sky Glass IPTV subscription plans in the UK. See Standard and Premium prices, including 12 months of Standard for £42, and check what your plan includes.",
   installationGuide:
-    "Find setup steps for compatible Fire TV, Android, Smart TV and Apple devices, plus help with login, app and playback problems.",
+    "Install the Sky Glass app on Firestick and Android with Downloader code 9557305. Find player guidance for smart TVs, iOS, Windows, Mac, Roku and more.",
   resellerPanel:
-    "Learn how the Sky Glass IPTV reseller panel handles customer accounts, credits and renewals. Review package questions and contact the reseller team.",
+    "Learn about the Sky Glass IPTV reseller panel for UK customers. Start with 120 credits, manage subscriptions and renewals, and use credits with no time limit.",
   contactUs:
-    "Request a trial or get help with device setup, playback, renewals and your account. Send your device details to help the support team respond.",
+    "Contact Sky Glass IPTV support for UK subscription questions, app installation, account details, playback, renewals and reseller enquiries.",
 } as const;
 
 export const siteMetadataBase = {
@@ -182,9 +182,9 @@ export const siteMetadataBase = {
   publisher: siteConfig.name,
   keywords: [
     "Sky Glass IPTV",
-    "Sky Glass IPTV UK",
-    "IPTV UK",
-    "IPTV service UK",
+    "IPTV Sky Glass",
+    "SkyGlass IPTV",
+    "IPTV subscription for UK",
     "IPTV subscription UK",
   ],
   verification: {

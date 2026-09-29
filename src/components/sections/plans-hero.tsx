@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { BlurReveal } from "@/components/animation/blur-reveal";
 import { HeroMedia } from "@/components/hero-media";
 import { siteRoutes } from "@/lib/routes";
+import { whatsappUrl } from "@/lib/site";
 
 export function PlansHero() {
   return (
@@ -16,16 +17,16 @@ export function PlansHero() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV Pricing for{" "}
-              <span className="text-gradient-brand">1–4 Devices</span>
+              Sky Glass IPTV Subscription Plans and{" "}
+              <span className="text-gradient-brand">UK Pricing</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Compare the full price for your subscription length, viewing
-                  tier and number of simultaneous screens. Choose Standard or
-                  Premium, then check the details before ordering.
+                  This page helps you choose a package and duration. Check the
+                  full-period price, the current content you want, your device
+                  and the number of people who need to watch at once.
                 </p>
               </div>
             </BlurReveal>
@@ -34,31 +35,38 @@ export function PlansHero() {
               <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-row sm:items-start sm:gap-4">
                 <a
                   href="#pricing-tables"
-                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px]"
                 >
                   <Tag className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
                   <span>Compare prices</span>
                 </a>
 
-                <Link
-                  href={siteRoutes.contact}
-                  className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                <a
+                  href={whatsappUrl("Ask about a Sky Glass IPTV plan")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-[14px]"
                 >
                   <Headphones
                     className="h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-4 sm:w-4"
                     strokeWidth={2}
                     aria-hidden
                   />
-                  <span className="text-gradient-brand">Ask about a plan</span>
-                </Link>
+                  <span className="text-gradient-brand">Ask About a Plan</span>
+                </a>
               </div>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.24}>
-              <p className="mt-3 max-w-[560px] text-[12px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-[13px] sm:leading-[1.65]">
-                A device can have the app installed without being an additional
-                simultaneous connection. The device number below means screens
-                that can stream at the same time.
+              <p className="mt-3 max-w-[560px] text-[12px] leading-[1.55] text-[#5C607A] sm:mt-4 sm:text-[13px]">
+                Need device steps after ordering? Open the{" "}
+                <Link
+                  href={siteRoutes.installation}
+                  className="font-semibold text-[#0B0E2C] underline-offset-2 hover:underline"
+                >
+                  installation guide
+                </Link>
+                .
               </p>
             </BlurReveal>
           </div>

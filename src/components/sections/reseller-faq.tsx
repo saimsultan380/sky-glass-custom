@@ -2,29 +2,29 @@ import { FaqAccordionSection } from "./faq-section";
 
 const RESELLER_FAQS = [
   {
-    id: "previous-experience",
-    q: "Do I need previous experience?",
-    a: "Previous experience can help, but new resellers can use the supplied guidance to learn the panel. You should be comfortable handling customer questions and basic setup enquiries.",
+    id: "minimum-panel",
+    q: "What is the minimum to open a panel?",
+    a: "You need to purchase at least 120 credits.",
   },
   {
-    id: "set-own-prices",
-    q: "Can I set my own retail prices?",
-    a: "Retail pricing is generally controlled by the reseller, subject to the terms of the arrangement.",
+    id: "credits-expire",
+    q: "Do unused credits expire?",
+    a: "No. Credits have no time limit. A customer subscription still has its own duration and expiry date after activation.",
+  },
+  {
+    id: "twelve-month-credits",
+    q: "How many credits does a 12-month account use?",
+    a: "A 12-month subscription uses 12 credits under the stated one-credit-per-month rule. Confirm the eligible account type in the panel before activation.",
   },
   {
     id: "add-more-credits",
-    q: "Can I purchase more credits?",
-    a: "Additional credits can normally be purchased as your balance runs low or your requirements increase.",
-  },
-  {
-    id: "renew-accounts",
-    q: "Can I renew customer accounts?",
-    a: "Eligible subscriptions can be renewed through the panel using the required credits.",
+    q: "Can I add more credits later?",
+    a: "Ask the reseller team for the current top-up price and purchase process.",
   },
   {
     id: "earnings-guaranteed",
-    q: "Are earnings guaranteed?",
-    a: "No. Results depend on customer demand, pricing, operating costs and how you manage the business.",
+    q: "Are reseller earnings guaranteed?",
+    a: "No. Results depend on demand, your costs, retail pricing and customer support.",
   },
 ];
 

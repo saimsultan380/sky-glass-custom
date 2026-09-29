@@ -28,50 +28,49 @@ export function HeroSection() {
               variant="hero"
               className="max-w-[640px] text-[24px] font-bold leading-[1.18] tracking-tight text-[#0B0E2C] sm:text-4xl sm:leading-[1.12] md:text-[42px] lg:text-[46px]"
             >
-              Sky Glass IPTV: Live TV &{" "}
-              <span className="text-gradient-brand">Subscription Options</span>
+              Sky Glass IPTV | IPTV Subscription For{" "}
+              <span className="text-gradient-brand">UK</span>
             </BlurReveal>
 
             <BlurReveal variant="text" delay={0.1}>
               <div className="mt-3 max-w-[560px] space-y-2 text-[13px] leading-[1.55] text-[#5C607A] sm:mt-6 sm:space-y-3 sm:text-base sm:leading-[1.75]">
                 <p>
-                  Sky Glass IPTV is an independent internet-based television
-                  service for UK viewers. Browse available live television,
-                  sports, movies and series through a compatible application on
-                  a supported screen.
+                  Choose a subscription that fits how you watch. Sky Glass IPTV
+                  provides access to the live TV and on-demand categories
+                  available in your selected package through a compatible device
+                  and player.
                 </p>
                 <p>
-                  Check pricing by simultaneous devices, review setup guidance
-                  for your equipment, or request a trial before choosing a
-                  subscription. Some customers also search for Skyglass IPTV
-                  when looking for this service.
+                  If you are new to the service, start with your device. Check
+                  the content you want, compare the subscription periods and
+                  request a 24-hour trial before choosing a longer plan.
                 </p>
               </div>
             </BlurReveal>
 
             <BlurReveal variant="cta" delay={0.18}>
               <div className="mt-4 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-row sm:items-start sm:gap-4">
+                <Link
+                  href="#plans"
+                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
+                >
+                  <Tag className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
+                  <span>View Subscription Plans</span>
+                </Link>
+
                 <a
                   href={whatsappFreeTrialUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] bg-gradient-brand px-2 py-2.5 text-center text-[11px] font-semibold leading-snug text-white sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
-                >
-                  <Clock className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" strokeWidth={2} aria-hidden />
-                  <span>Start Your 24-Hour Trial</span>
-                </a>
-
-                <Link
-                  href="#plans"
                   className="border-gradient-brand inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-[20px] px-2 py-2.5 text-center text-[11px] font-semibold leading-snug sm:min-h-[48px] sm:w-auto sm:gap-2 sm:px-6 sm:py-3 sm:text-left sm:text-[14px] sm:leading-normal"
                 >
-                  <Tag
+                  <Clock
                     className="h-3.5 w-3.5 shrink-0 text-[#7B2FFF] sm:h-4 sm:w-4"
                     strokeWidth={2}
                     aria-hidden
                   />
-                  <span className="text-gradient-brand">View pricing</span>
-                </Link>
+                  <span className="text-gradient-brand">Request a 24-Hour Trial</span>
+                </a>
               </div>
             </BlurReveal>
           </div>

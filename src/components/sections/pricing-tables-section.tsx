@@ -7,33 +7,17 @@ import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
 import { whatsappPlanEnquiryUrl } from "@/lib/site";
 import {
+  CATALOGUE_CATEGORIES,
   DEVICE_COUNTS,
-  DURATION_LABELS,
-  PLAN_DURATIONS,
-  PREMIUM_MATRIX,
-  STANDARD_MATRIX,
+  PRICING_TABLE_ROWS,
+  accountLabel,
+  formatGbp,
+  publishedPlanAmount,
+  streamLabel,
   type DeviceCount,
   type PlanDurationMonths,
   type PlanTier,
 } from "@/lib/pricing";
-
-function accountLabel(count: DeviceCount): string {
-  return count === 1 ? "1 Account" : `${count} Accounts`;
-}
-
-function streamLabel(count: DeviceCount): string {
-  if (count === 1) {
-    return "1 account — 1 simultaneous stream";
-  }
-  return `${count} accounts — ${count} simultaneous streams`;
-}
-
-const SHARED_FEATURES = [
-  "Available live TV and sports where included",
-  "Movies and series library",
-  "EPG support where available",
-  "Compatible devices with setup guidance",
-] as const;
 
 function DurationPriceCard({
   accounts,
@@ -46,10 +30,11 @@ function DurationPriceCard({
 }) {
   const [tier, setTier] = useState<PlanTier>("Standard");
   const reduceMotion = useReducedMotion();
-  const matrix = tier === "Standard" ? STANDARD_MATRIX : PREMIUM_MATRIX;
-  const price = matrix[accounts][months];
-  const duration = DURATION_LABELS[months];
+  const row = PRICING_TABLE_ROWS.find((item) => item.months === months)!;
+  const amount = publishedPlanAmount(accounts, months, tier);
+  const duration = row.label;
   const isBest = months === 12;
+  const display = formatGbp(amount);
 
   return (
     <article
@@ -58,11 +43,11 @@ function DurationPriceCard({
         isBest && "ring-1 ring-[#E91E8C]/25",
       )}
     >
-      {isBest && (
+      {isBest ? (
         <span className="absolute right-2 top-2 rounded-[20px] bg-gradient-brand px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white sm:right-2.5 sm:top-2.5 sm:text-[11px]">
           Best value
         </span>
-      )}
+      ) : null}
 
       <div className="text-center">
         <h4 className="text-[15px] font-bold uppercase tracking-tight text-gradient-brand sm:text-[16px]">
@@ -97,9 +82,7 @@ function DurationPriceCard({
               {active && (
                 <motion.span
                   layoutId={
-                    reduceMotion
-                      ? undefined
-                      : `plans-card-tier-${months}`
+                    reduceMotion ? undefined : `plans-card-tier-${months}`
                   }
                   className="absolute inset-0 -z-[1] rounded-[16px] bg-gradient-brand shadow-[0_3px_10px_rgba(123,47,255,0.25)]"
                   transition={
@@ -120,7 +103,7 @@ function DurationPriceCard({
           {tier}
         </span>
         <div className="mt-1 text-[32px] font-bold leading-none tracking-tight text-gradient-brand sm:text-[36px]">
-          £{price}
+          {formatGbp(amount)}
         </div>
       </div>
 
@@ -147,7 +130,7 @@ function DurationPriceCard({
             tier,
             devices: accounts,
             duration,
-            price: `£${price}`,
+            price: display,
           })}
           target="_blank"
           rel="noopener noreferrer"
@@ -163,7 +146,7 @@ function DurationPriceCard({
 export function PricingTablesSection() {
   const [accounts, setAccounts] = useState<DeviceCount>(1);
   const reduceMotion = useReducedMotion();
-  const features = [streamLabel(accounts), ...SHARED_FEATURES];
+  const features = [streamLabel(accounts), ...CATALOGUE_CATEGORIES];
 
   return (
     <section
@@ -173,13 +156,13 @@ export function PricingTablesSection() {
       <Container className="py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-[26px] font-bold leading-[1.2] tracking-tight text-[#0B0E2C] sm:text-[38px] sm:leading-[1.12] lg:text-[44px]">
-            Prices by Device Count and{" "}
-            <span className="text-gradient-brand">Duration</span>
+            Compare subscription{" "}
+            <span className="text-gradient-brand">prices</span>
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-[14px] leading-[1.6] text-[#5C607A] sm:mt-5 sm:text-base sm:leading-[1.75]">
-            Choose how many screens can stream at the same time, then switch
-            Standard or Premium inside each card to compare total prices across
-            1, 3, 6 and 12 months.
+            The listed amounts are for the entire stated subscription period,
+            not monthly instalments. Ask support for the current one-month
+            prices before ordering.
           </p>
         </div>
 
@@ -241,6 +224,9 @@ export function PricingTablesSection() {
           <p className="mt-2 text-[13px] leading-[1.6] text-[#5C607A] sm:text-[15px]">
             Full amount payable for the selected term. Use the Standard or
             Premium toggle on each card to update its price.
+            {accounts === 4
+              ? " The 4-account total includes the additional-connection rate."
+              : ""}
           </p>
         </motion.div>
 
@@ -254,22 +240,15 @@ export function PricingTablesSection() {
           }}
           className="mx-auto mt-6 grid max-w-[360px] gap-4 sm:mt-10 sm:max-w-[760px] sm:grid-cols-2 sm:gap-5 lg:max-w-[1200px] lg:grid-cols-4 lg:gap-5"
         >
-          {PLAN_DURATIONS.map((months) => (
+          {PRICING_TABLE_ROWS.map((row) => (
             <DurationPriceCard
-              key={`${accounts}-${months}`}
+              key={`${accounts}-${row.months}`}
               accounts={accounts}
-              months={months}
+              months={row.months}
               features={features}
             />
           ))}
         </motion.div>
-
-        <p className="mx-auto mt-6 max-w-3xl text-center text-[12px] leading-[1.55] text-[#5C607A] sm:mt-8 sm:text-[13px]">
-          Prices are for the full selected term. Confirm availability, renewal
-          terms and any separate player charge before payment. 4-account totals
-          include the additional-connection rate used in the published matrix;
-          confirm this option when ordering.
-        </p>
       </Container>
     </section>
   );
