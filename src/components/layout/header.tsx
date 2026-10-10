@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { label: "Pricing", href: siteRoutes.plans },
   { label: "Installation Guide", href: siteRoutes.installation },
   { label: "Reseller", href: siteRoutes.reseller },
+  { label: "Blog", href: siteRoutes.blog },
   { label: "Contact", href: siteRoutes.contact },
 ];
 

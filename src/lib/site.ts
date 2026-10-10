@@ -1,3 +1,5 @@
+import { getBlogPostByPath } from "@/lib/blog";
+
 /**
  * Site-wide brand & SEO defaults for Sky Glass IPTV.
  * Update `siteUrl` (and email) when the final domain is ready.
@@ -82,9 +84,45 @@ export const sitePages = [
     changeFrequency: "monthly" as const,
   },
   {
+    path: "/blog/",
+    name: "Blog",
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  },
+  {
     path: "/iptv-support/",
     name: "Contact",
     priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/how-to-install-sky-glass-on-firestick/",
+    name: "Firestick Install Guide",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/how-to-install-sky-glass-iptv-on-iphone/",
+    name: "iPhone Install Guide",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/sky-glass-iptv-keeps-buffering/",
+    name: "Buffering Fixes",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/sky-glass-iptv-vs-tivimate/",
+    name: "vs TiviMate",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/sky-glass-iptv-subscription-expired/",
+    name: "Subscription Expired",
+    priority: 0.65,
     changeFrequency: "monthly" as const,
   },
 ] as const;
@@ -132,6 +170,16 @@ export function pageBreadcrumbs(path: SitePagePath): BreadcrumbCrumb[] {
   if (!page || path === homePath) {
     return [{ name: "Home", path: homePath }];
   }
+
+  const blogPost = getBlogPostByPath(path);
+  if (blogPost) {
+    return [
+      { name: "Home", path: homePath },
+      { name: "Blog", path: "/blog/" },
+      { name: blogPost.shortTitle, path: blogPost.path },
+    ];
+  }
+
   return [
     { name: "Home", path: homePath },
     { name: page.name, path: page.path },
@@ -158,6 +206,7 @@ export const pageTitles = {
   subscriptionPlans: "Sky Glass Subscription UK | IPTV Plans & Pricing",
   installationGuide: "Sky Glass App Download & Installation Guide UK",
   resellerPanel: "IPTV Reseller Panel UK | Credits & Account Management",
+  blog: "Sky Glass IPTV Blog | Guides & Updates",
   contactUs: "Sky Glass IPTV Support UK | Setup & Account Help",
 } as const;
 
@@ -169,6 +218,7 @@ export const pageDescriptions = {
     "Install the Sky Glass app on Firestick and Android with Downloader code 9557305. Find player guidance for smart TVs, iOS, Windows, Mac, Roku and more.",
   resellerPanel:
     "Learn about the Sky Glass IPTV reseller panel for UK customers. Start with 120 credits, manage subscriptions and renewals, and use credits with no time limit.",
+  blog: "Read Sky Glass IPTV guides and updates for UK viewers, including setup tips, plan advice and device help.",
   contactUs:
     "Contact Sky Glass IPTV support for UK subscription questions, app installation, account details, playback, renewals and reseller enquiries.",
 } as const;

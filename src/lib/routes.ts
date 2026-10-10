@@ -4,6 +4,7 @@ export const siteRoutes = {
   plans: "/iptv-plans/",
   installation: "/iptv-installation/",
   reseller: "/iptv-reseller/",
+  blog: "/blog/",
   contact: "/iptv-support/",
 } as const;
 

@@ -15,10 +15,12 @@ const FOOTER_LINKS = {
     { label: "Pricing", href: siteRoutes.plans },
     { label: "Installation Guide", href: siteRoutes.installation },
     { label: "Reseller", href: siteRoutes.reseller },
+    { label: "Blog", href: siteRoutes.blog },
     { label: "Contact", href: siteRoutes.contact },
   ],
   support: [
     { label: "Pricing", href: siteRoutes.plans },
+    { label: "Blog", href: siteRoutes.blog },
     { label: "Free Trial", href: whatsappFreeTrialUrl() },
     { label: "Device Compatibility", href: `${siteRoutes.home}#popular-devices` },
     { label: "FAQ", href: `${siteRoutes.home}#faq` },
