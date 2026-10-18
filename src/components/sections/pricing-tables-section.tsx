@@ -224,9 +224,6 @@ export function PricingTablesSection() {
           <p className="mt-2 text-[13px] leading-[1.6] text-[#5C607A] sm:text-[15px]">
             Full amount payable for the selected term. Use the Standard or
             Premium toggle on each card to update its price.
-            {accounts === 4
-              ? " The 4-account total includes the additional-connection rate."
-              : ""}
           </p>
         </motion.div>
 

@@ -1,18 +1,17 @@
 /**
  * Approved subscription prices — total GBP for the full selected term.
- * 4-device row includes the +£3/month additional-connection rate
- * (reference publishes 1–3 devices, then +£3 per extra connection).
+ * Available for 1–3 simultaneous accounts.
  */
 
 export type PlanTier = "Standard" | "Premium";
 export type PlanDurationMonths = 1 | 3 | 6 | 12;
-export type DeviceCount = 1 | 2 | 3 | 4;
+export type DeviceCount = 1 | 2 | 3;
 
 export const PLAN_DURATIONS: readonly PlanDurationMonths[] = [
   1, 3, 6, 12,
 ] as const;
 
-export const DEVICE_COUNTS: readonly DeviceCount[] = [1, 2, 3, 4] as const;
+export const DEVICE_COUNTS: readonly DeviceCount[] = [1, 2, 3] as const;
 
 export const DURATION_LABELS: Record<PlanDurationMonths, string> = {
   1: "1 month",
@@ -38,7 +37,6 @@ export const STANDARD_MATRIX: Record<
   1: { 1: 12, 3: 20, 6: 30, 12: 45 },
   2: { 1: 18, 3: 33, 6: 42, 12: 72 },
   3: { 1: 23, 3: 43, 6: 67, 12: 107 },
-  4: { 1: 26, 3: 52, 6: 85, 12: 143 },
 };
 
 /** Premium — devices × duration → total £ */
@@ -49,7 +47,6 @@ export const PREMIUM_MATRIX: Record<
   1: { 1: 15, 3: 25, 6: 40, 12: 60 },
   2: { 1: 23, 3: 38, 6: 67, 12: 97 },
   3: { 1: 33, 3: 58, 6: 87, 12: 137 },
-  4: { 1: 36, 3: 67, 6: 105, 12: 173 },
 };
 
 export type SubscriptionTerm = {
