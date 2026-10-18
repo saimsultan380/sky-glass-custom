@@ -28,8 +28,8 @@ const CHECKS = [
 
 const FAQS = [
   {
-    q: "Is 12 months of Standard £42?",
-    a: "Yes. The full 12-month Standard subscription price for 1 account is £42.",
+    q: "Is 12 months of Standard £45?",
+    a: "Yes. The full 12-month Standard subscription price for 1 account is £45.",
   },
   {
     q: "Does installing a player give me access?",

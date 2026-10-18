@@ -35,7 +35,7 @@ export const STANDARD_MATRIX: Record<
   DeviceCount,
   Record<PlanDurationMonths, number>
 > = {
-  1: { 1: 10, 3: 20, 6: 27, 12: 42 },
+  1: { 1: 12, 3: 20, 6: 30, 12: 45 },
   2: { 1: 18, 3: 33, 6: 42, 12: 72 },
   3: { 1: 23, 3: 43, 6: 67, 12: 107 },
   4: { 1: 26, 3: 52, 6: 85, 12: 143 },
@@ -46,7 +46,7 @@ export const PREMIUM_MATRIX: Record<
   DeviceCount,
   Record<PlanDurationMonths, number>
 > = {
-  1: { 1: 13, 3: 23, 6: 37, 12: 57 },
+  1: { 1: 15, 3: 25, 6: 40, 12: 60 },
   2: { 1: 23, 3: 38, 6: 67, 12: 97 },
   3: { 1: 33, 3: 58, 6: 87, 12: 137 },
   4: { 1: 36, 3: 67, 6: 105, 12: 173 },

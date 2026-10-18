@@ -8,10 +8,10 @@ type ComparisonRow = {
 };
 
 const ROWS: ComparisonRow[] = [
+  { duration: "1 month", standard: "£12", premium: "£15" },
   { duration: "3 months", standard: "£20", premium: "£25" },
-  { duration: "6 months", standard: "£30", premium: "£35" },
-  { duration: "12 months", standard: "£45", premium: "£55" },
-  { duration: "24 months", standard: "£70", premium: "£90" },
+  { duration: "6 months", standard: "£30", premium: "£40" },
+  { duration: "12 months", standard: "£45", premium: "£60" },
 ];
 
 export function PlansComparisonSection() {

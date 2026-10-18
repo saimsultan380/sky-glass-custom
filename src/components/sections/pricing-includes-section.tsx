@@ -24,7 +24,7 @@ const DURATIONS = [
   },
   {
     title: "Twelve months",
-    body: "Standard costs £42 for the full year on 1 account; Premium costs £57. Check that the service and package meet your needs before choosing a year.",
+    body: "Standard costs £45 for the full year on 1 account; Premium costs £60. Check that the service and package meet your needs before choosing a year.",
   },
 ] as const;
 

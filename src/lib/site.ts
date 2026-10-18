@@ -213,7 +213,7 @@ export const pageTitles = {
 export const pageDescriptions = {
   home: siteConfig.description,
   subscriptionPlans:
-    "Compare Sky Glass IPTV subscription plans in the UK. See Standard and Premium prices, including 12 months of Standard for £42, and check what your plan includes.",
+    "Compare Sky Glass IPTV subscription plans in the UK. See Standard and Premium prices, including 12 months of Standard for £45, and check what your plan includes.",
   installationGuide:
     "Install the Sky Glass app on Firestick and Android with Downloader code 9557305. Find player guidance for smart TVs, iOS, Windows, Mac, Roku and more.",
   resellerPanel:

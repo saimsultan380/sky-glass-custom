@@ -69,17 +69,17 @@ const RENEW_STEPS = [
 ] as const;
 
 const PRICE_ROWS = [
+  { duration: "1 month", standard: "£12", premium: "£15" },
   { duration: "3 months", standard: "£20", premium: "£25" },
-  { duration: "6 months", standard: "£30", premium: "£35" },
-  { duration: "12 months", standard: "£45", premium: "£55" },
-  { duration: "24 months", standard: "£70", premium: "£90" },
+  { duration: "6 months", standard: "£30", premium: "£40" },
+  { duration: "12 months", standard: "£45", premium: "£60" },
 ] as const;
 
 const YEARLY_REASONS = [
   "Fewer renewal reminders: You do not need to repeat the renewal process every three or six months.",
   "Predictable overall cost: You know the total price for the selected subscription term before paying.",
   "Convenience for regular viewers: A yearly plan can suit households that expect to continue using the service.",
-  "A lower monthly equivalent: Based on the listed prices, Standard at £45 works out to £3.75 per month, while Premium at £55 works out to approximately £4.58 per month.",
+  "A lower monthly equivalent: Based on the listed prices, Standard at £45 works out to £3.75 per month, while Premium at £60 works out to £5 per month.",
   "A choice of packages: You can select Standard for your essential viewing needs or consider Premium if its additional features matter to you.",
   "Less frequent account administration: With a longer subscription period, you can spend less time managing renewals.",
 ] as const;
@@ -205,7 +205,7 @@ const FAQS: FaqItem[] = [
   {
     id: "yearly-cheaper",
     q: "Is the 12-month Sky Glass IPTV subscription cheaper?",
-    a: "The listed plans show Standard at £45 and Premium at £55 for 12 months. These equal £3.75 and approximately £4.58 per month, respectively, when averaged over the full term. Confirm current pricing before ordering.",
+    a: "The listed plans show Standard at £45 and Premium at £60 for 12 months. These equal £3.75 and £5 per month, respectively, when averaged over the full term. Confirm current pricing before ordering.",
   },
   {
     id: "standard-premium",
@@ -218,9 +218,9 @@ const FAQS: FaqItem[] = [
     a: "Keep your payment confirmation and contact support. Ask them to verify the transaction and account status before making another payment.",
   },
   {
-    id: "24-month",
-    q: "Can I renew for 24 months instead of 12 months?",
-    a: "The plans page lists 24-month Standard and Premium options. A longer term may reduce the average monthly cost, but it requires a larger upfront commitment. Check current prices and terms first.",
+    id: "durations",
+    q: "What subscription durations are available?",
+    a: "Plans are listed for 1, 3, 6 and 12 months on both Standard and Premium. Confirm current prices and terms before ordering.",
   },
 ];
 
