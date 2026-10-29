@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { canonicalUrl, siteConfig, siteMetadataBase } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
 import { AutoBlurReveal } from "@/components/animation/auto-blur-reveal";
+
+const GA_MEASUREMENT_ID = "G-1JRQYQ7F3R";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,6 +76,18 @@ export default function RootLayout({
         <JsonLd data={jsonLd} />
       </head>
       <body className="relative flex min-h-full flex-col bg-transparent text-[#0B0E2C]">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <AutoBlurReveal />
         <div className="relative z-10 flex min-h-full flex-1 flex-col bg-transparent">
           {children}
