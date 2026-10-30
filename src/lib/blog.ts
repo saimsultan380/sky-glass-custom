@@ -114,6 +114,46 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       "Sky Glass IPTV plans",
     ],
   },
+  {
+    slug: "iptv-playlist-not-loading",
+    path: "/iptv-playlist-not-loading/",
+    title: "IPTV Playlist Not Loading? Fix M3U & Xtream Codes Errors",
+    shortTitle: "Playlist Not Loading",
+    excerpt:
+      "Fix M3U URL errors, Xtream Codes login issues, expired subscriptions, and connection problems when your IPTV playlist will not load.",
+    description:
+      "IPTV playlist not loading? Fix M3U URL errors, Xtream Codes login issues, expired subscriptions & connection problems with these simple steps in minutes.",
+    image: "/iptv-playlist-not-loading-thumbnail.png",
+    imageAlt: "IPTV playlist not loading — fix M3U and Xtream Codes errors",
+    keywords: [
+      "IPTV playlist not loading",
+      "M3U playlist error",
+      "Xtream Codes login failed",
+      "fix IPTV playlist",
+      "IPTV M3U not working",
+      "Sky Glass IPTV playlist",
+    ],
+  },
+  {
+    slug: "sky-glass-iptv-trial-vs-paid-subscription",
+    path: "/sky-glass-iptv-trial-vs-paid-subscription/",
+    title: "Sky Glass IPTV Trial vs Paid Subscription: Key Differences",
+    shortTitle: "Trial vs Paid",
+    excerpt:
+      "Compare the 24-hour Sky Glass IPTV trial with full paid plans, device testing, package access, and Standard subscription prices.",
+    description:
+      "Compare the Sky Glass IPTV trial vs Sky Glass IPTV Full subscription. Learn about the 24-hour trial, paid plans, device compatibility & subscription prices.",
+    image: "/sky-glass-iptv-trial-vs-paid-thumbnail.png",
+    imageAlt: "Sky Glass IPTV trial vs full paid subscription comparison",
+    keywords: [
+      "Sky Glass IPTV trial",
+      "Sky Glass IPTV free trial",
+      "Sky Glass IPTV subscription",
+      "trial vs paid IPTV",
+      "24 hour IPTV trial",
+      "Sky Glass IPTV plans",
+    ],
+  },
 ] as const;
 
 export function getBlogPost(slug: string): BlogPost | undefined {
