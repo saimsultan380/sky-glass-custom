@@ -137,6 +137,18 @@ export const sitePages = [
     priority: 0.65,
     changeFrequency: "monthly" as const,
   },
+  {
+    path: "/sky-glass-iptv-epg-not-working/",
+    name: "EPG Not Working",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/sky-glass-iptv-keeps-signing-out/",
+    name: "Keeps Signing Out",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
 ] as const;
 
 export type SitePagePath = (typeof sitePages)[number]["path"];

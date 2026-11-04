@@ -154,6 +154,46 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       "Sky Glass IPTV plans",
     ],
   },
+  {
+    slug: "sky-glass-iptv-epg-not-working",
+    path: "/sky-glass-iptv-epg-not-working/",
+    title: "Sky Glass IPTV EPG Not Working: Fix Missing TV Guide",
+    shortTitle: "EPG Not Working",
+    excerpt:
+      "Fix a missing Sky Glass IPTV TV guide, blank channels, wrong programme times, and EPG loading issues with simple troubleshooting steps.",
+    description:
+      "Sky Glass IPTV EPG not working? Fix a missing TV guide, blank channels, wrong programme times, and EPG loading issues with these simple steps.",
+    image: "/sky-glass-iptv-epg-not-working-thumbnail-v2.png",
+    imageAlt: "Sky Glass IPTV EPG not working — fix missing TV guide",
+    keywords: [
+      "Sky Glass IPTV EPG not working",
+      "IPTV TV guide blank",
+      "fix IPTV EPG",
+      "EPG missing channels",
+      "IPTV programme guide",
+      "Sky Glass IPTV XMLTV",
+    ],
+  },
+  {
+    slug: "sky-glass-iptv-keeps-signing-out",
+    path: "/sky-glass-iptv-keeps-signing-out/",
+    title: "Sky Glass IPTV Keeps Signing Out: 10 Ways to Fix It",
+    shortTitle: "Keeps Signing Out",
+    excerpt:
+      "Find out why your Sky Glass IPTV app forgets login details and how to fix account, device, and connection sign-out problems.",
+    description:
+      "Sky Glass IPTV keeps signing out? Find out why your IPTV app forgets login details and learn how to fix account, device, and connection problems.",
+    image: "/sky-glass-iptv-keeps-signing-out-thumbnail-v2.png",
+    imageAlt: "Sky Glass IPTV keeps signing out — fix IPTV login issues",
+    keywords: [
+      "Sky Glass IPTV keeps signing out",
+      "IPTV app keeps logging out",
+      "IPTV forgets login",
+      "IPTV Smarters Pro signing out",
+      "TiviMate keeps signing out",
+      "fix IPTV login",
+    ],
+  },
 ] as const;
 
 export function getBlogPost(slug: string): BlogPost | undefined {
