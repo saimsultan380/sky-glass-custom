@@ -31,8 +31,8 @@ export function BlogListingSection() {
                 <BlogCoverImage
                   src={post.image}
                   alt={post.imageAlt ?? post.title}
-                  className="rounded-none"
-                  aspectClassName="aspect-[16/10]"
+                  className="rounded-none bg-white"
+                  aspectClassName="aspect-video"
                   label="Cover image placeholder"
                 />
               </Link>

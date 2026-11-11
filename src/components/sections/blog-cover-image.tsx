@@ -24,7 +24,7 @@ export function BlogCoverImage({
     return (
       <div
         className={cn(
-          "relative overflow-hidden bg-[rgba(11,14,44,0.03)]",
+          "relative overflow-hidden bg-white",
           aspectClassName,
           className,
         )}
@@ -35,7 +35,7 @@ export function BlogCoverImage({
           fill
           priority={priority}
           unoptimized
-          className="object-cover"
+          className="object-contain object-center"
           sizes="(max-width: 768px) 100vw, 760px"
         />
       </div>
