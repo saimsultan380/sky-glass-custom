@@ -194,6 +194,26 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       "fix IPTV login",
     ],
   },
+  {
+    slug: "sky-glass-iptv-reseller-panel",
+    path: "/sky-glass-iptv-reseller-panel/",
+    title: "Get Sky Glass IPTV Reseller Panel | Become IPTV Reseller UK",
+    shortTitle: "Reseller Panel",
+    excerpt:
+      "Explore the Sky Glass IPTV reseller panel, credit system, customer account management, and how to become an IPTV reseller in the UK.",
+    description:
+      "Explore the Sky Glass IPTV reseller panel, learn how IPTV reseller credits work & manage customer accounts in IPTV Reseller Panel. Become IPTV Reseller UK",
+    image: "/sky-glass-iptv-reseller-panel-thumbnail-v2.png",
+    imageAlt: "Sky Glass IPTV reseller panel — start your UK business",
+    keywords: [
+      "Sky Glass IPTV reseller panel",
+      "IPTV reseller UK",
+      "become IPTV reseller",
+      "IPTV reseller credits",
+      "reseller IPTV panel",
+      "Sky Glass IPTV reseller",
+    ],
+  },
 ] as const;
 
 export function getBlogPost(slug: string): BlogPost | undefined {

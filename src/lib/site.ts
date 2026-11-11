@@ -149,6 +149,12 @@ export const sitePages = [
     priority: 0.65,
     changeFrequency: "monthly" as const,
   },
+  {
+    path: "/sky-glass-iptv-reseller-panel/",
+    name: "Reseller Panel",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
 ] as const;
 
 export type SitePagePath = (typeof sitePages)[number]["path"];
