@@ -223,8 +223,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       "Compare Sky Glass IPTV subscription packages, deals, and UK prices — Standard plans from £12, Premium options, and a 24-hour trial.",
     description:
       "IPTV Sky Glass subscription, Sky Glass deals, packages & prices in the UK. Compare plans, explore features and choose the right Sky Glass IPTV package today!",
-    image:
-      "/iptv-sky-glass-subscription-packages-deals-prices-uk-thumbnail.png",
+    image: "/sky-glass-iptv-subscription-packages-thumbnail-v2.png",
     imageAlt:
       "Sky Glass IPTV subscription packages, deals and UK prices",
     keywords: [
