@@ -214,6 +214,28 @@ export const BLOG_POSTS: readonly BlogPost[] = [
       "Sky Glass IPTV reseller",
     ],
   },
+  {
+    slug: "iptv-sky-glass-subscription-packages-deals-prices-uk",
+    path: "/iptv-sky-glass-subscription-packages-deals-prices-uk/",
+    title: "Sky Glass Subscription: IPTV Sky Glass Deals & Packages UK",
+    shortTitle: "Subscription Packages",
+    excerpt:
+      "Compare Sky Glass IPTV subscription packages, deals, and UK prices — Standard plans from £12, Premium options, and a 24-hour trial.",
+    description:
+      "IPTV Sky Glass subscription, Sky Glass deals, packages & prices in the UK. Compare plans, explore features and choose the right Sky Glass IPTV package today!",
+    image:
+      "/iptv-sky-glass-subscription-packages-deals-prices-uk-thumbnail.png",
+    imageAlt:
+      "Sky Glass IPTV subscription packages, deals and UK prices",
+    keywords: [
+      "Sky Glass subscription",
+      "IPTV Sky Glass deals",
+      "Sky Glass packages UK",
+      "Sky Glass IPTV prices",
+      "Sky Glass IPTV subscription",
+      "Sky Glass package prices",
+    ],
+  },
 ] as const;
 
 export function getBlogPost(slug: string): BlogPost | undefined {

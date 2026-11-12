@@ -155,6 +155,12 @@ export const sitePages = [
     priority: 0.65,
     changeFrequency: "monthly" as const,
   },
+  {
+    path: "/iptv-sky-glass-subscription-packages-deals-prices-uk/",
+    name: "Subscription Packages",
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  },
 ] as const;
 
 export type SitePagePath = (typeof sitePages)[number]["path"];
